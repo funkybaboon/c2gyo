@@ -26,15 +26,33 @@ angular
         templateUrl: 'views/c2g.html',
         controller: 'C2gcontrollerCtrl'
       })
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/c2gb', {
+        templateUrl: 'views/c2gb.html',
+        controller: 'C2gbcontrollerCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/sm', {
+        templateUrl: 'views/sm.html',
+        controller: 'SmcontrollerCtrl',
+        resolve: {
+          stadtmobilRates: ['stadtMobilRates', function(stadtMobilRates) {
+            return stadtMobilRates().then(function(resp) {
+              return resp.data;
+            });
+          }]
+        }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+      .when('/dtp', {
+        templateUrl: 'views/dtp.html',
+        controller: 'DatetimepickerCtrl',
+        resolve: {
+          stadtmobilRates: ['stadtMobilRates', function(stadtMobilRates) {
+            return stadtMobilRates().then(function(resp) {
+              return resp.data;
+            });
+          }]
+        }
+      }).
+    otherwise({
+      redirectTo: '/c2g'
+    });
   });

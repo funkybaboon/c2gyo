@@ -1,0 +1,34 @@
+<time-Input-Form></time-Input-Form>
+
+<div class="form-group">
+	<div class="input-group">
+		Fahrzeugklasse:
+		<form>
+			<input type="radio" ng-model="rate" value="A" id="rateA">A Kleinstwagen<br/>
+			<input type="radio" ng-model="rate" value="B" id="rateB">B Kleinwagen<br/>
+			<input type="radio" ng-model="rate" value="C" id="rateC">C Kombi/Fun<br/>
+			<input type="radio" ng-model="rate" value="D" id="rateD">D Komfort/Kleinbus<br/>
+			<input type="radio" ng-model="rate" value="F" id="rateF">F Transporter<br/>
+		</form>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="input-group">
+		Tarif:
+		<form>
+			<input type="radio" ng-model="tariff" value="classic" id="tariffclassic">Classic<br/>
+			<input type="radio" ng-model="tariff" value="basic" id="tariffbasic">Basic<br/>
+			<input type="radio" ng-model="tariff" value="studi" id="tariffstudi">Studi<br/>
+			<input type="radio" ng-model="tariff" value="business" id="tariffbusiness" disabled>Business<br/>
+		</form>
+	</div>
+</div>
+
+<div class="highlight">
+	<h1 id="price">{{ price(distance, timeHours, timeDays, timeWeeks, rate, tariff) | currency }}</h1>
+	<h2 id="priceDistance">{{ priceDistance(distance, rate, tariff) | currency }}</h2> Km Preis<br>
+	<h2 id="priceTime">{{ priceTime(timeHours, timeDays, timeWeeks, rate, tariff) | currency }}</h2> Zeit Preis<br>
+</div>
+
+<billed-Box></billed-Box>
