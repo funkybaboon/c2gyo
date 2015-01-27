@@ -1,0 +1,49 @@
+<div class="form-group">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Strecke" ng-model="distance">
+		<span class="input-group-addon">Km</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('minutes')}}">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Zeit" ng-model="time">
+		<span class="input-group-addon">Minuten</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('hours')}}">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Zeit" ng-model="timeHours">
+		<span class="input-group-addon">Stunden</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('days')}}">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Zeit" ng-model="timeDays">
+		<span class="input-group-addon">Tage</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('weeks')}}">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Zeit" ng-model="timeWeeks">
+		<span class="input-group-addon">Wochen</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('minutesStanding')}}">
+	<div class="input-group">
+		<input type="number" class="form-control" placeholder="Zeit stehend" ng-model="timeStanding">
+		<span class="input-group-addon">Minuten (Stehend)</span>
+	</div>
+</div>
+
+<div class="form-group" ng-show="{{isResolution('airport')}}">
+	<div class="input-group">
+		<div class="checkbox">
+			<label><input type="checkbox" ng-model="airport">Flughafenpauschale</label>
+		</div>
+	</div>
+</div>

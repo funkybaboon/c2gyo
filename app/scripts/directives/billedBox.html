@@ -1,0 +1,16 @@
+<div class="highlight">
+	<h2>Abgerechnete Zeit</h2>
+
+	<div ng-show="{{isResolution('minutes')}}">{{ getMinutesBilled( time ) }} Minuten</div>
+	<div ng-show="{{isResolution('hours')}}">{{ getHoursBilled( time ) }} Stunden</div>
+	<div ng-show="{{isResolution('days')}}">{{ getDaysBilled( time ) }} Tage</div>
+	<div ng-show="{{isResolution('weeks')}}">{{ getWeeksBilled( time ) }} Wochen</div>
+
+	<h2>Wahre Zeit</h2>
+
+	<div ng-show="{{isResolution('minutes')}}">{{ getMinutes( time ) }} Minuten</div>
+	<div ng-show="{{isResolution('hours')}}">{{ getHours( time ) }} Stunden</div>
+	<div ng-show="{{isResolution('days')}}">{{ getDays( time ) }} Tage</div>
+	<div ng-show="{{isResolution('weeks')}}">{{ getWeeks( time ) }} Wochen</div>
+
+</div>
