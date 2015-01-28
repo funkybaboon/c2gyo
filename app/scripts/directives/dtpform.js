@@ -7,9 +7,9 @@
  * # dtpForm
  */
 angular.module('c2gyoApp')
-	.directive('dtpForm', function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'scripts/directives/dtpform.html'
-		};
-	});
+  .directive('dtpForm', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'scripts/directives/dtpform.html'
+    };
+  });
