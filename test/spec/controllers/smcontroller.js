@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: SmcontrollerCtrl', function () {
+describe('Controller: SmCtrl', function () {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
 
-  var SmcontrollerCtrl,
+  var SmCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    SmcontrollerCtrl = $controller('SmcontrollerCtrl', {
+    SmCtrl = $controller('SmCtrl', {
       $scope: scope
     });
   }));

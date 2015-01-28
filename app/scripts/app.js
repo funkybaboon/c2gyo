@@ -24,15 +24,15 @@ angular
     $routeProvider
       .when('/c2g', {
         templateUrl: 'views/c2g.html',
-        controller: 'C2gcontrollerCtrl'
+        controller: 'C2gCtrl'
       })
       .when('/c2gb', {
         templateUrl: 'views/c2gb.html',
-        controller: 'C2gbcontrollerCtrl'
+        controller: 'C2gbCtrl'
       })
       .when('/sm', {
         templateUrl: 'views/sm.html',
-        controller: 'SmcontrollerCtrl',
+        controller: 'SmCtrl',
         resolve: {
           stadtmobilRates: ['stadtMobilRates', function(stadtMobilRates) {
             return stadtMobilRates().then(function(resp) {

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name c2gyoApp.controller:C2gbcontrollerCtrl
+ * @name c2gyoApp.controller:C2gbCtrl
  * @description
- * # C2gbcontrollerCtrl
+ * # C2gbCtrl
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-	.controller('C2gbcontrollerCtrl', function($scope) {
+	.controller('C2gbCtrl', function($scope) {
 		$scope.vendor = 'car2go Black';
 		$scope.distance = 10;
 		$scope.time = 20;
