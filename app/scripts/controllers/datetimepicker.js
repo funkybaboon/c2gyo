@@ -20,6 +20,7 @@ angular.module('c2gyoApp')
       $scope.rate = 'A';
       $scope.tariff = 'classic';
 
+      $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       var getDurationExact = function(start, end) {
