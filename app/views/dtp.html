@@ -1,23 +1,21 @@
 <div class="highlight">
-<section ng-controller="InputtabCtrl as tab">
 	<ul class="nav nav-tabs">
-		<li ng-class="{ active:tab.isSet(1) }">
-		<a href ng-click="tab.setTab(1)">Simple</a>
+		<li ng-class="{ active:isSet('simple') }">
+		<a href ng-click="setTab('simple')">Simple</a>
 		</li>
-		<li ng-class="{ active:tab.isSet(2) }">
-			<a href ng-click="tab.setTab(2)">Exact</a>
+		<li ng-class="{ active:isSet('exact') }">
+			<a href ng-click="setTab('exact')">Exact</a>
 		</li>
 	</ul>
 
-	<div ng-show="tab.isSet(1)">
+	<div ng-show="isSet('simple')">
 		<br>
 		<time-Input-Form></time-Input-Form>
 	</div>
 
-	<div ng-show="tab.isSet(2)">
+	<div ng-show="isSet('exact')">
 		<dtp-Form></dtp-Form>
 	</div>
-</section>
 </div>
 
 <div class="highlight">

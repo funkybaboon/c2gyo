@@ -17,28 +17,44 @@ angular.module('c2gyoApp')
       $scope.endDate = new moment().add(10, 'h');
       $scope.distance = 10;
 
+      $scope.timeHours = 10;
+      $scope.timeDays = 0;
+      $scope.timeWeeks = 0;
+
       $scope.rate = 'A';
       $scope.tariff = 'classic';
 
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
-      var getDurationExact = function(start, end) {
-        var timespan = moment.duration(end - start);
-        var timespanExact = {
-          hours: timespan.hours(),
-          days: Math.floor(timespan.asDays() % 7),
-          weeks: Math.floor(timespan.asDays() / 7)
-        };
-        return timespanExact;
+      $scope.tab = 'simple';
+      $scope.isSet = function(checkTab) {
+        return this.tab === checkTab;
+      };
+      $scope.setTab = function(setTab) {
+        this.tab = setTab;
       };
 
-      var getFeeTime = function(timespan, rate) {
-        return (
-          timespan.hours * rate.hour +
-          timespan.days * rate.day +
-          timespan.weeks * rate.week
-        );
+      $scope.getDurationSimple = function(hours, days, weeks) {
+        var durationHours = moment.duration(hours, 'h');
+        var durationDays = moment.duration(days, 'd');
+        var durationWeeks = moment.duration(weeks, 'w');
+
+        var durationAll = durationHours.add(durationDays).add(durationWeeks);
+        return durationAll;
+      };
+
+      $scope.getDurationExact = function(start, end) {
+        return moment.duration(end - start);
+      };
+
+      var getFeeTime = function(duration, rate) {
+        var feeHours = duration.hours() * rate.hour;
+        var feeDays = Math.floor(duration.asDays() % 7) * rate.day;
+        var feeWeeks = Math.floor(duration.asDays() / 7) * rate.week;
+
+        var fee = feeHours + feeDays + feeWeeks;
+        return fee;
       };
 
       var getFeeDistance = function(km, rate) {
@@ -65,14 +81,20 @@ angular.module('c2gyoApp')
         var currentRate = getCurrentRate(rate, tariff);
         return getFeeDistance(km, currentRate);
       };
-
-      var priceTime = function(startDate, endDate, rate, tariff) {
-        var currentRate = getCurrentRate(rate, tariff);
-        var duration = getDurationExact(startDate, endDate);
+      /*
+            var priceTimeSimple = function(timeHours, timeDays, timeWeeks, rate, tariff) {
+              var currentRate = $scope.getCurrentRate(rate, tariff);
+              var duration = $scope.getDurationSimple(timeHours, timeDays, timeWeeks);
+              return getFeeTime(duration, currentRate);
+            };
+      */
+      var priceTimeExact = function(startDate, endDate, rate, tariff) {
+        var currentRate = $scope.getCurrentRate(rate, tariff);
+        var duration = $scope.getDurationExact(startDate, endDate);
         return getFeeTime(duration, currentRate);
       };
 
-      var price = function(
+      $scope.price = function(
         distance,
         startDate,
         endDate,
@@ -80,20 +102,21 @@ angular.module('c2gyoApp')
         tariff) {
         return (
           priceDistance(distance, rate, tariff) +
-          priceTime(startDate, endDate, rate, tariff)
+          priceTimeExact(startDate, endDate, rate, tariff)
         );
       };
-
-      $scope.price = price;
-      $scope.priceDistance = priceDistance;
-      $scope.priceTime = priceTime;
-      $scope.getDurationExact = getDurationExact;
 
       //-------------------------------------------------------------------------
       // Billing Box Hack
       //-------------------------------------------------------------------------
       var getDurationAll = function() {
-        return moment.duration($scope.endDate - $scope.startDate);
+        var duration;
+        if ($scope.isSet('simple')) {
+          duration = $scope.getDurationSimple($scope.timeHours, $scope.timeDays, $scope.timeWeeks);
+        } else {
+          duration = $scope.getDurationExact($scope.startDate, $scope.endDate);
+        }
+        return duration;
       };
 
       var getCurrentRateAll = function() {
