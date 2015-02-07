@@ -48,7 +48,7 @@ angular.module('c2gyoApp')
         return moment.duration(end - start);
       };
 
-      var getFeeTime = function(duration, rate) {
+      $scope.getFeeTime = function(duration, rate) {
         var feeHours = duration.hours() * rate.hour;
         var feeDays = Math.floor(duration.asDays() % 7) * rate.day;
         var feeWeeks = Math.floor(duration.asDays() / 7) * rate.week;
@@ -57,7 +57,7 @@ angular.module('c2gyoApp')
         return fee;
       };
 
-      var getFeeDistance = function(km, rate) {
+      $scope.getFeeDistance = function(km, rate) {
         var fee = 0;
         if (km >= 701) {
           fee = 100 * rate.km000 + 600 * rate.km101 + (km - 700) * rate.km701;
@@ -69,7 +69,7 @@ angular.module('c2gyoApp')
         return fee;
       };
 
-      var getCurrentRate = function(rate, tariff) {
+      $scope.getCurrentRate = function(rate, tariff) {
         // studi and classic have the same rates
         if (tariff === 'studi') {
           tariff = 'classic';
@@ -77,21 +77,21 @@ angular.module('c2gyoApp')
         return stadtmobilRates[tariff][rate];
       };
 
-      var priceDistance = function(km, rate, tariff) {
-        var currentRate = getCurrentRate(rate, tariff);
-        return getFeeDistance(km, currentRate);
+      $scope.priceDistance = function(km, rate, tariff) {
+        var currentRate = $scope.getCurrentRate(rate, tariff);
+        return $scope.getFeeDistance(km, currentRate);
       };
-      /*
-            var priceTimeSimple = function(timeHours, timeDays, timeWeeks, rate, tariff) {
-              var currentRate = $scope.getCurrentRate(rate, tariff);
-              var duration = $scope.getDurationSimple(timeHours, timeDays, timeWeeks);
-              return getFeeTime(duration, currentRate);
-            };
-      */
-      var priceTimeExact = function(startDate, endDate, rate, tariff) {
+
+      $scope.priceTimeSimple = function(timeHours, timeDays, timeWeeks, rate, tariff) {
+        var currentRate = $scope.getCurrentRate(rate, tariff);
+        var duration = $scope.getDurationSimple(timeHours, timeDays, timeWeeks);
+        return $scope.getFeeTime(duration, currentRate);
+      };
+
+      $scope.priceTimeExact = function(startDate, endDate, rate, tariff) {
         var currentRate = $scope.getCurrentRate(rate, tariff);
         var duration = $scope.getDurationExact(startDate, endDate);
-        return getFeeTime(duration, currentRate);
+        return $scope.getFeeTime(duration, currentRate);
       };
 
       $scope.price = function(
@@ -101,8 +101,8 @@ angular.module('c2gyoApp')
         rate,
         tariff) {
         return (
-          priceDistance(distance, rate, tariff) +
-          priceTimeExact(startDate, endDate, rate, tariff)
+          $scope.priceDistance(distance, rate, tariff) +
+          $scope.priceTimeExact(startDate, endDate, rate, tariff)
         );
       };
 
