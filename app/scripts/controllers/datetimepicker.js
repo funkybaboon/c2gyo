@@ -8,10 +8,15 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
+  .value('smConfig', {
+    rate: 'A',
+    tariff: 'classic'
+  })
   .controller('DatetimepickerCtrl', [
     '$scope',
     'stadtmobilRates',
-    function($scope, stadtmobilRates) {
+    'smConfig',
+    function($scope, stadtmobilRates, smConfig) {
       moment.locale('de');
       $scope.startDate = new moment();
       $scope.endDate = new moment().add(10, 'h');
@@ -21,8 +26,8 @@ angular.module('c2gyoApp')
       $scope.timeDays = 0;
       $scope.timeWeeks = 0;
 
-      $scope.rate = 'A';
-      $scope.tariff = 'classic';
+      $scope.rate = smConfig.rate;
+      $scope.tariff = smConfig.tariff;
 
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
