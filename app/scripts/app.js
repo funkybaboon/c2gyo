@@ -33,24 +33,10 @@ angular
       .when('/sm', {
         templateUrl: 'views/sm.html',
         controller: 'SmCtrl',
-        resolve: {
-          stadtmobilRates: ['stadtMobilRates', function(stadtMobilRates) {
-            return stadtMobilRates().then(function(resp) {
-              return resp.data;
-            });
-          }]
-        }
       })
       .when('/dtp', {
         templateUrl: 'views/dtp.html',
         controller: 'DatetimepickerCtrl',
-        resolve: {
-          stadtmobilRates: ['stadtMobilRates', function(stadtMobilRates) {
-            return stadtMobilRates().then(function(resp) {
-              return resp.data;
-            });
-          }]
-        }
       }).
     otherwise({
       redirectTo: '/c2g'
