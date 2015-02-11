@@ -11,13 +11,15 @@ angular.module('c2gyoApp')
   .controller('SmCtrl', [
     '$scope',
     'stadtmobilRates',
-    function($scope, stadtmobilRates) {
+    'smConfig',
+    function($scope, stadtmobilRates, smConfig) {
       $scope.distance = 10;
       $scope.timeHours = 10;
       $scope.timeDays = 0;
       $scope.timeWeeks = 0;
-      $scope.rate = 'A';
-      $scope.tariff = 'classic';
+
+      $scope.rate = smConfig.rate;
+      $scope.tariff = smConfig.tariff;
 
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];

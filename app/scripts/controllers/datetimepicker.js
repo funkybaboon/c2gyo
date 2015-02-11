@@ -8,10 +8,6 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .value('smConfig', {
-    rate: 'A',
-    tariff: 'classic'
-  })
   .controller('DatetimepickerCtrl', [
     '$scope',
     'stadtmobilRates',
