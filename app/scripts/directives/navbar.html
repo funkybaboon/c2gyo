@@ -1,5 +1,5 @@
 <ul class="nav nav-pills pull-right">
 	<li ng-class="{ active:isActive('/{{tab.url}}') }" ng-repeat="tab in tabs">
-		<a href="#{{tab.url}}">{{tab.name}}</a>
+		<a ng-href="#{{tab.url}}">{{tab.name}}</a>
 	</li>
 </ul>
