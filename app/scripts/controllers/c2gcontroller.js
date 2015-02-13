@@ -8,8 +8,8 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('C2gCtrl', function($scope) {
-    $scope.vendor = 'car2go';
+  .controller('C2gCtrl', ['$scope', 'c2gConfig', function($scope, c2gConfig) {
+    $scope.vendor = c2gConfig.vendor;
     $scope.distance = 10;
     $scope.time = 20;
     $scope.timeStanding = 0;
@@ -203,4 +203,4 @@ angular.module('c2gyoApp')
       return getDurationBilled(minutes).days();
     };
 
-  });
+  }]);
