@@ -95,7 +95,7 @@ angular.module('c2gyoApp')
         return $scope.getFeeTime(duration, currentRate);
       };
 
-      $scope.price = function(
+      $scope.priceExact = function(
         distance,
         startDate,
         endDate,
@@ -104,6 +104,19 @@ angular.module('c2gyoApp')
         return (
           $scope.priceDistance(distance, rate, tariff) +
           $scope.priceTimeExact(startDate, endDate, rate, tariff)
+        );
+      };
+
+      $scope.priceSimple = function(
+        distance,
+        timeHours,
+        timeDays,
+        timeWeeks,
+        rate,
+        tariff) {
+        return (
+          $scope.priceDistance(distance, rate, tariff) +
+          $scope.priceTimeSimple(timeHours, timeDays, timeWeeks, rate, tariff)
         );
       };
 

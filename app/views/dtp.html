@@ -47,12 +47,14 @@
 </div>
 
 <div class="highlight">
-	<h1 id="price">{{ price(distance, startDate, endDate, rate, tariff) | currency }}</h1>
-	<h2 id="priceDistance">{{ priceDistance(distance, rate, tariff) | currency }}</h2> Km Preis<br>
 	<section  ng-show="isSet('exact')">
-		<h2 id="priceTime">{{ priceTimeExact(startDate, endDate, rate, tariff) | currency }}</h2> Zeit Preis<br>	
+    <h1 id="price">{{ priceExact(distance, startDate, endDate, rate, tariff) | currency }}</h1>
+    <h2 id="priceDistance">{{ priceDistance(distance, rate, tariff) | currency }}</h2> Km Preis<br>
+		<h2 id="priceTime">{{ priceTimeExact(startDate, endDate, rate, tariff) | currency }}</h2> Zeit Preis<br>
 	</section>
 	<section  ng-show="isSet('simple')">
+    <h1 id="price">{{ priceSimple(distance, timeHours, timeDays, timeWeeks, rate, tariff) | currency }}</h1>
+    <h2 id="priceDistance">{{ priceDistance(distance, rate, tariff) | currency }}</h2> Km Preis<br>
 		<h2 id="priceTime">{{ priceTimeSimple(timeHours, timeDays, timeWeeks, rate, tariff) | currency }}</h2> Zeit Preis<br>
 	</section>
 </div>
