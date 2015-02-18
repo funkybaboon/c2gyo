@@ -24,50 +24,94 @@ describe('Controller: DatetimepickerCtrl', function() {
     var startDate = new moment();
     var endDate = new moment().add(10, 'h');
 
-    expect(scope.priceExact(10, startDate, endDate, 'A', 'basic')
+    scope.tariff = 'basic';
+
+    scope.rate = 'A';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((18.20).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'B', 'basic')
+
+    scope.rate = 'B';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((29.70).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'C', 'basic')
+
+    scope.rate = 'C';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((36.10).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'D', 'basic')
+
+    scope.rate = 'D';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((40.40).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'F', 'basic')
+
+    scope.rate = 'F';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((50.80).toFixed(2));
 
-    expect(scope.priceExact(10, startDate, endDate, 'A', 'classic')
+    scope.tariff = 'classic';
+
+    scope.rate = 'A';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((16.00).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'B', 'classic')
+    
+    scope.rate = 'B';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((24.20).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'C', 'classic')
+    
+    scope.rate = 'C';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((30.60).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'D', 'classic')
+    
+    scope.rate = 'D';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((34.90).toFixed(2));
-    expect(scope.priceExact(10, startDate, endDate, 'F', 'classic')
+    
+    scope.rate = 'F';
+    expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((45.30).toFixed(2));
   });
 
   it('should calculate the correct price using simple time', function() {
-    expect(scope.priceSimple(10, 10, 0, 0, 'A', 'basic')
+    scope.tariff = 'basic';
+
+    scope.rate = 'A';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((18.20).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'B', 'basic')
+
+    scope.rate = 'B';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((29.70).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'C', 'basic')
+
+    scope.rate = 'C';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((36.10).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'D', 'basic')
+
+    scope.rate = 'D';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((40.40).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'F', 'basic')
+
+    scope.rate = 'F';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((50.80).toFixed(2));
 
-    expect(scope.priceSimple(10, 10, 0, 0, 'A', 'classic')
+    scope.tariff = 'classic';
+
+    scope.rate = 'A';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((16.00).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'B', 'classic')
+
+    scope.rate = 'B';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((24.20).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'C', 'classic')
+
+    scope.rate = 'C';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((30.60).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'D', 'classic')
+
+    scope.rate = 'D';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((34.90).toFixed(2));
-    expect(scope.priceSimple(10, 10, 0, 0, 'F', 'classic')
+
+    scope.rate = 'F';
+    expect(scope.priceSimple(10, 10, 0, 0)
       .toFixed(2)).toEqual((45.30).toFixed(2));
   });
 
