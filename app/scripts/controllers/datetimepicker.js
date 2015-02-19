@@ -58,7 +58,11 @@ angular.module('c2gyoApp')
       var getDurationAll = function() {
         var duration;
         if ($scope.isSet('simple')) {
-          duration = $scope.getDurationSimple($scope.timeHours, $scope.timeDays, $scope.timeWeeks);
+          duration = $scope.getDurationSimple(
+            $scope.timeHours,
+            $scope.timeDays,
+            $scope.timeWeeks
+          );
         } else {
           duration = $scope.getDurationExact($scope.startDate, $scope.endDate);
         }
@@ -66,7 +70,7 @@ angular.module('c2gyoApp')
       };
 
       //-----------------------------------------------------------------------
-      // get actual time 
+      // get actual time
       //-----------------------------------------------------------------------
       $scope.getHours = function() {
         return getDurationAll().hours();
@@ -187,6 +191,10 @@ angular.module('c2gyoApp')
         var currentRate = getCurrentRate();
         return $scope.getFeeDistance(km, currentRate);
       };
+
+      //-----------------------------------------------------------------------
+      // get other fees
+      //-----------------------------------------------------------------------
 
       //-----------------------------------------------------------------------
       // calculate final prices

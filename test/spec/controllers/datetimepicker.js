@@ -51,19 +51,19 @@ describe('Controller: DatetimepickerCtrl', function() {
     scope.rate = 'A';
     expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((16.00).toFixed(2));
-    
+
     scope.rate = 'B';
     expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((24.20).toFixed(2));
-    
+
     scope.rate = 'C';
     expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((30.60).toFixed(2));
-    
+
     scope.rate = 'D';
     expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((34.90).toFixed(2));
-    
+
     scope.rate = 'F';
     expect(scope.priceExact(10, startDate, endDate)
       .toFixed(2)).toEqual((45.30).toFixed(2));
