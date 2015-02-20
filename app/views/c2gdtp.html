@@ -1,0 +1,35 @@
+<div class="highlight">
+  <ul class="nav nav-tabs">
+    <li ng-class="{ active:isSet('simple') }">
+    <a href ng-click="setTab('simple')">Simple</a>
+    </li>
+    <li ng-class="{ active:isSet('exact') }">
+      <a href ng-click="setTab('exact')">Exact</a>
+    </li>
+  </ul>
+
+  <div ng-show="isSet('simple')">
+    <br>
+    <time-Input-Form></time-Input-Form>
+  </div>
+
+  <div ng-show="isSet('exact')">
+    <dtp-Form></dtp-Form>
+  </div>
+</div>
+
+<!--
+<div class="highlight">
+  <section  ng-show="isSet('exact')">
+    <h1 id="price">{{ priceExact(distance, startDate, endDate) | currency }}</h1>
+    <h2 id="priceDistance">{{ priceDistance(distance) | currency }}</h2> Km Preis<br>
+    <h2 id="priceTime">{{ priceTimeExact(startDate, endDate) | currency }}</h2> Zeit Preis<br>
+  </section>
+  <section  ng-show="isSet('simple')">
+    <h1 id="price">{{ priceSimple(distance, timeHours, timeDays, timeWeeks) | currency }}</h1>
+    <h2 id="priceDistance">{{ priceDistance(distance) | currency }}</h2> Km Preis<br>
+    <h2 id="priceTime">{{ priceTimeSimple(timeHours, timeDays, timeWeeks) | currency }}</h2> Zeit Preis<br>
+  </section>
+</div>
+-->
+<billed-Box></billed-Box>

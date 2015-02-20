@@ -22,7 +22,7 @@ describe('c2g test', function() {
 
   // 10km and 229 minutes)
   it('10km, 229 minutes', function() {
-    element(by.model('time')).clear().sendKeys(229);
+    element(by.model('timeMinutes')).clear().sendKeys(229);
 
     //Preis
     expect(price.getText()).toEqual('58,91 €');
@@ -56,7 +56,7 @@ describe('c2g test', function() {
 
   // 10km and 230 minutes)
   it('10km, 230 minutes', function() {
-    element(by.model('time')).clear().sendKeys(230);
+    element(by.model('timeMinutes')).clear().sendKeys(230);
 
     //Preis
     expect(price.getText()).toEqual('59,00 €');
@@ -90,7 +90,7 @@ describe('c2g test', function() {
 
   // 10km and 1439 minutes)
   it('10km, 1439 minutes', function() {
-    element(by.model('time')).clear().sendKeys(1439);
+    element(by.model('timeMinutes')).clear().sendKeys(1439);
 
     //Preis
     expect(price.getText()).toEqual('59,00 €');

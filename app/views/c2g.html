@@ -1,23 +1,23 @@
 <time-Input-Form></time-Input-Form>
 
 <div class="highlight">
-	<h1><span>{{ price(distance, time, timeStanding, airport) | currency }}</span></h1>
+	<h1><span>{{ price(distance, timeMinutes, timeStanding, airport) | currency }}</span></h1>
 
 	<p>Preis im Detail:</p>
-	
+
 	<b>Zeit</b><br>
 
-	<span>{{ getMinutes(time) }}</span> Minuten a <span>{{ feeMinute | currency }}</span> = <span>{{ getFeeMinutes(time) | currency }}</span><span class="MsgRoundDownToHours" ng-show="showMsgRoundDownToHours">{{msgRoundDownToHours}}</span><br>
+	<span>{{ getMinutes(timeMinutes) }}</span> Minuten a <span>{{ feeMinute | currency }}</span> = <span>{{ getFeeMinutes(timeMinutes) | currency }}</span><span class="MsgRoundDownToHours" ng-show="showMsgRoundDownToHours">{{msgRoundDownToHours}}</span><br>
 
-	<span>{{ getHours(time) }}</span> Stunden a <span>{{ feeHour | currency }}</span> = <span>{{ getFeeHours(time) | currency }}</span><span class="MsgRoundDownToDays" ng-show="showMsgRoundDownToDays">{{msgRoundDownToDays}}</span><br>
+	<span>{{ getHours(timeMinutes) }}</span> Stunden a <span>{{ feeHour | currency }}</span> = <span>{{ getFeeHours(timeMinutes) | currency }}</span><span class="MsgRoundDownToDays" ng-show="showMsgRoundDownToDays">{{msgRoundDownToDays}}</span><br>
 
-	<span>{{ getDays(time) }}</span> Tage a <span>{{ feeDay | currency }}</span> = <span>{{ getFeeDays(time) | currency }}</span><br>
+	<span>{{ getDays(timeMinutes) }}</span> Tage a <span>{{ feeDay | currency }}</span> = <span>{{ getFeeDays(timeMinutes) | currency }}</span><br>
 
 	<b>Distanz</b><br>
 
-	<span>{{ getFreeKm( time) }}</span> Freikilometer<br>
+	<span>{{ getFreeKm( timeMinutes) }}</span> Freikilometer<br>
 
-	<span><span>{{ getAdditionalKm(distance, time) }}</span></span> km a <span>{{ feeAdditionalKm | currency }}</span> Zusätzlicher Kilometer Preis = <span>{{ getfeeAdditionalKm(distance, time) | currency }}</span> Kilometer Preis<br>
+	<span><span>{{ getAdditionalKm(distance, timeMinutes) }}</span></span> km a <span>{{ feeAdditionalKm | currency }}</span> Zusätzlicher Kilometer Preis = <span>{{ getfeeAdditionalKm(distance, timeMinutes) | currency }}</span> Kilometer Preis<br>
 
 	<b>Sonstiges</b><br>
 

@@ -22,7 +22,7 @@ describe('c2g test', function() {
 
   // 10km and 2000 minutes)
   it('1000km, 2000 minutes', function() {
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
 
     //Preis
@@ -57,7 +57,7 @@ describe('c2g test', function() {
 
   it('1000km, 2000 minutes, airport fee', function() {
     element(by.model('airport')).click();
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
 
     //Preis
@@ -89,7 +89,7 @@ describe('c2g test', function() {
 
   it('10km, 2000 minutes, 10 standing minutes', function() {
     element(by.model('timeStanding')).clear().sendKeys(10);
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
 
     //Preis
@@ -125,7 +125,7 @@ describe('c2g test', function() {
   it('10km, 2000 minutes, 10 standing minutes, airport fee', function() {
     element(by.model('airport')).click();
     element(by.model('timeStanding')).clear().sendKeys(10);
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
 
     //Preis

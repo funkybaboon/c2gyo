@@ -14,7 +14,7 @@ angular.module('c2gyoApp')
     function($scope, c2gConfig) {
       $scope.vendor = c2gConfig.vendor;
       $scope.distance = 10;
-      $scope.time = 20;
+      $scope.timeMinutes = 20;
       $scope.timeStanding = 0;
       $scope.airport = false;
 

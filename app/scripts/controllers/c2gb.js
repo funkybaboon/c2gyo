@@ -14,7 +14,7 @@ angular.module('c2gyoApp')
     function($scope, $controller) {
       $scope.vendor = 'car2go Black';
       $scope.distance = 10;
-      $scope.time = 20;
+      $scope.timeMinutes = 20;
       $scope.airport = false;
 
       $scope.feeDay = 89;

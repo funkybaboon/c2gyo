@@ -16,7 +16,7 @@ describe('c2gb test', function() {
   });
 
   it('10km, 2000 minutes', function() {
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
 
     //Preis
     expect(price.getText()).toEqual('178,00 €');
@@ -43,7 +43,7 @@ describe('c2gb test', function() {
   });
 
   it('10km, 2000 minutes, airport fee', function() {
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('airport')).click();
 
     //Preis

@@ -15,9 +15,9 @@ exports.config = {
 
 		'sm10km10hClassicScenario.js',
 		'sm10km10hBasicScenario.js',
-
+/*
 		'dtpSm10km10hClassicScenario.js',
-		'dtpSm10km10hBasicScenario.js'
+		'dtpSm10km10hBasicScenario.js'*/
 	],
 
 	capabilities: {

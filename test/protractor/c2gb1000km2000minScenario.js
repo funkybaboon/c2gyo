@@ -16,7 +16,7 @@ describe('c2gb test', function() {
   });
 
   it('1000km, 2000 minutes', function() {
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
 
     //Preis
@@ -44,7 +44,7 @@ describe('c2gb test', function() {
   });
 
   it('1000km, 2000 minutes, airport fee', function() {
-    element(by.model('time')).clear().sendKeys(2000);
+    element(by.model('timeMinutes')).clear().sendKeys(2000);
     element(by.model('distance')).clear().sendKeys(1000);
     element(by.model('airport')).click();
 
