@@ -147,7 +147,6 @@ angular.module('c2gyoApp')
         return duration;
       };
 
-      /*
       //-----------------------------------------------------------------------
       // get current rate
       //-----------------------------------------------------------------------
@@ -155,74 +154,52 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // get price for used time
       //-----------------------------------------------------------------------
-      $scope.getFeeTime = function(duration, rate) {
-        var feeHours = duration.hours() * rate.hour;
-        var feeDays = Math.floor(duration.asDays() % 7) * rate.day;
-        var feeWeeks = Math.floor(duration.asDays() / 7) * rate.week;
+      $scope.getFeeTime = function() {
+        var feeMinutes = $scope.getMinutesBilled() * $scope.feeMinute;
+        var feeHours = $scope.getHoursBilled() * $scope.feeHour;
+        var feeDays = $scope.getDaysBilled() * $scope.feeDay;
 
-        var fee = feeHours + feeDays + feeWeeks;
+        var fee = feeMinutes + feeHours + feeDays;
         return fee;
-      };
-
-      $scope.priceTimeSimple = function(timeHours, timeDays, timeWeeks) {
-        var duration = $scope.getDurationSimple(timeHours, timeDays, timeWeeks);
-        return $scope.getFeeTime(duration, currentRate);
-      };
-
-      $scope.priceTimeExact = function(startDate, endDate) {
-        var duration = $scope.getDurationExact(startDate, endDate);
-        return $scope.getFeeTime(duration, currentRate);
       };
 
       //-----------------------------------------------------------------------
       // get price for distance
       //-----------------------------------------------------------------------
-      $scope.getFeeDistance = function(km, rate) {
-        var fee = 0;
-        if (km >= 701) {
-          fee = 100 * rate.km000 + 600 * rate.km101 + (km - 700) * rate.km701;
-        } else if (km < 701 && km >= 101) {
-          fee = 100 * rate.km000 + (km - 100) * rate.km101;
-        } else {
-          fee = km * rate.km000;
+      $scope.getFeeDistance = function() {
+        var fee = ($scope.distance - 50) * $scope.feeAdditionalKm;
+        if (fee < 0) {
+          fee = 0;
         }
         return fee;
-      };
-
-      $scope.priceDistance = function(km) {
-        var currentRate = getCurrentRate();
-        return $scope.getFeeDistance(km, currentRate);
       };
 
       //-----------------------------------------------------------------------
       // get other fees
       //-----------------------------------------------------------------------
+      $scope.getFeeStanding = function() {
+        return $scope.timeStanding * 0.19;
+      };
+
+      $scope.getFeeAirport = function() {
+        var fee = 0;
+        if ($scope.airport) {
+          fee = 4.90;
+        }
+        return fee;
+      };
 
       //-----------------------------------------------------------------------
       // calculate final prices
       //-----------------------------------------------------------------------
-      $scope.priceExact = function(
-        distance,
-        startDate,
-        endDate) {
+      $scope.price = function() {
         return (
-          $scope.priceDistance(distance) +
-          $scope.priceTimeExact(startDate, endDate)
+          $scope.getFeeTime() +
+          $scope.getFeeDistance() +
+          $scope.getFeeStanding() +
+          $scope.getFeeAirport()
         );
       };
-
-      $scope.priceSimple = function(
-        distance,
-        timeHours,
-        timeDays,
-        timeWeeks) {
-        return (
-          $scope.priceDistance(distance) +
-          $scope.priceTimeSimple(timeHours, timeDays, timeWeeks)
-        );
-      };*/
-
-
 
     }
   ]);

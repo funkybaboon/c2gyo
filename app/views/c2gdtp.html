@@ -18,18 +18,10 @@
   </div>
 </div>
 
-<!--
 <div class="highlight">
-  <section  ng-show="isSet('exact')">
-    <h1 id="price">{{ priceExact(distance, startDate, endDate) | currency }}</h1>
-    <h2 id="priceDistance">{{ priceDistance(distance) | currency }}</h2> Km Preis<br>
-    <h2 id="priceTime">{{ priceTimeExact(startDate, endDate) | currency }}</h2> Zeit Preis<br>
-  </section>
-  <section  ng-show="isSet('simple')">
-    <h1 id="price">{{ priceSimple(distance, timeHours, timeDays, timeWeeks) | currency }}</h1>
-    <h2 id="priceDistance">{{ priceDistance(distance) | currency }}</h2> Km Preis<br>
-    <h2 id="priceTime">{{ priceTimeSimple(timeHours, timeDays, timeWeeks) | currency }}</h2> Zeit Preis<br>
-  </section>
+    <h1 id="price">{{ price() | currency }}</h1>
+    <h2 id="priceDistance">{{ getFeeDistance() | currency }}</h2> Km Preis<br>
+    <h2 id="priceTime">{{ getFeeTime() | currency }}</h2> Zeit Preis<br>
 </div>
--->
+
 <billed-Box></billed-Box>
