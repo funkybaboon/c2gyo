@@ -29,3 +29,11 @@
 		<span class="input-group-addon">Km</span>
 	</div>
 </div>
+
+<div class="form-group" ng-show="{{isResolution('airport')}}">
+  <div class="input-group">
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="airport">Flughafenpauschale</label>
+    </div>
+  </div>
+</div>
