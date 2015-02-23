@@ -39,7 +39,7 @@ angular.module('c2gyoApp')
         'hours',
         'days',
         'airport'
-        ];
+      ];
       $scope.resolutionTime = ['minutes', 'hours', 'days'];
 
       //-----------------------------------------------------------------------
@@ -158,8 +158,9 @@ angular.module('c2gyoApp')
         var feeMinutes = $scope.getMinutesBilled() * $scope.feeMinute;
         var feeHours = $scope.getHoursBilled() * $scope.feeHour;
         var feeDays = $scope.getDaysBilled() * $scope.feeDay;
+        var feeStanding = $scope.getFeeStanding();
 
-        var fee = feeMinutes + feeHours + feeDays;
+        var fee = feeMinutes + feeHours + feeDays + feeStanding;
         return fee;
       };
 
@@ -196,10 +197,8 @@ angular.module('c2gyoApp')
         return (
           $scope.getFeeTime() +
           $scope.getFeeDistance() +
-          $scope.getFeeStanding() +
           $scope.getFeeAirport()
         );
       };
-
     }
   ]);
