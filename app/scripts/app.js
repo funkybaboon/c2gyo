@@ -34,6 +34,10 @@ angular
         templateUrl: 'views/c2gdtp.html',
         controller: 'C2gdtpCtrl'
       })
+      .when('/c2gbdtp', {
+        templateUrl: 'views/c2gbdtp.html',
+        controller: 'C2gbdtpCtrl'
+      })
       .when('/sm', {
         templateUrl: 'views/sm.html',
         controller: 'SmCtrl',

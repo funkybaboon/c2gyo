@@ -8,16 +8,16 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('C2gdtpCtrl', [
+  .controller('C2gbdtpCtrl', [
     '$scope',
     'c2gConfig',
-    function($scope, config) {
+    function($scope, c2gConfig) {
       moment.locale('de');
       $scope.startDate = new moment();
       $scope.endDate = new moment().add(10, 'h');
       $scope.distance = 10;
 
-      $scope.vendor = config.vendor;
+      $scope.vendor = c2gConfig.vendor;
       $scope.distance = 10;
       $scope.timeMinutes = 0;
       $scope.timeHours = 10;
@@ -25,20 +25,17 @@ angular.module('c2gyoApp')
       $scope.timeStanding = 0;
       $scope.airport = false;
 
-      $scope.feeDay = 59;
+      $scope.feeDay = 89;
       $scope.feeHour = 14.9;
-      $scope.feeMinute = 0.29;
 
       $scope.feeAdditionalKm = 0.29;
 
       $scope.resolution = [
-        'minutes',
-        'minutesStanding',
         'hours',
         'days',
         'airport'
       ];
-      $scope.resolutionTime = ['minutes', 'hours', 'days'];
+      $scope.resolutionTime = ['hours', 'days'];
 
       //-----------------------------------------------------------------------
       // simple or exact time calculation?
@@ -54,12 +51,11 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
-      $scope.getDurationSimple = function(minutes, hours, days) {
-        var durationMinutes = moment.duration(minutes, 'm');
+      $scope.getDurationSimple = function(hours, days) {
         var durationHours = moment.duration(hours, 'h');
         var durationDays = moment.duration(days, 'd');
 
-        var durationAll = durationMinutes.add(durationHours).add(durationDays);
+        var durationAll = durationHours.add(durationDays);
         return durationAll;
       };
 
@@ -71,7 +67,6 @@ angular.module('c2gyoApp')
         var duration;
         if ($scope.isSet('simple')) {
           duration = $scope.getDurationSimple(
-            $scope.timeMinutes,
             $scope.timeHours,
             $scope.timeDays
           );
@@ -112,24 +107,13 @@ angular.module('c2gyoApp')
       };
 
       var getDurationBilled = function() {
-        var feeMinutes = $scope.getMinutes() * $scope.feeMinute;
         var feeHours = $scope.getHours() * $scope.feeHour;
         var feeDays = $scope.getDays() * $scope.feeDay;
 
-        var minutesBilled = $scope.getMinutes();
         var hoursBilled = $scope.getHours();
         var daysBilled = $scope.getDays();
 
-        if (feeMinutes >= $scope.feeHour) {
-          minutesBilled = 0;
-          feeMinutes = 0;
-          hoursBilled += 1;
-          feeHours = hoursBilled * $scope.feeHour;
-        }
-
-        if (feeMinutes + feeHours >= $scope.feeDay) {
-          minutesBilled = 0;
-          feeMinutes = 0;
+        if (feeHours >= $scope.feeDay) {
           hoursBilled = 0;
           feeHours = 0;
           daysBilled += 1;
@@ -137,7 +121,6 @@ angular.module('c2gyoApp')
         }
 
         var duration = moment.duration({
-          minutes: minutesBilled,
           hours: hoursBilled,
           days: daysBilled,
         });
@@ -153,12 +136,11 @@ angular.module('c2gyoApp')
       // get price for used time
       //-----------------------------------------------------------------------
       $scope.getFeeTime = function() {
-        var feeMinutes = $scope.getMinutesBilled() * $scope.feeMinute;
         var feeHours = $scope.getHoursBilled() * $scope.feeHour;
         var feeDays = $scope.getDaysBilled() * $scope.feeDay;
         var feeStanding = $scope.getFeeStanding();
 
-        var fee = feeMinutes + feeHours + feeDays + feeStanding;
+        var fee = feeHours + feeDays + feeStanding;
         return fee;
       };
 

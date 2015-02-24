@@ -22,6 +22,9 @@ angular.module('c2gyoApp')
           name: 'Car2godtp',
           url: 'c2gdtp'
         }, {
+          name: 'Car2goBlackdtp',
+          url: 'c2gbdtp'
+        }, {
           name: 'Stadtmobil',
           url: 'sm'
         }, {
