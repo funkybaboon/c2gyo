@@ -151,31 +151,24 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // get price for used time
       //-----------------------------------------------------------------------
-      $scope.getFeeTime = function(duration, rate) {
-        var feeHours = duration.hours() * rate.hour;
-        var feeDays = Math.floor(duration.asDays() % 7) * rate.day;
-        var feeWeeks = Math.floor(duration.asDays() / 7) * rate.week;
+      $scope.getFeeTime = function() {
+        var rate = getCurrentRate();
+
+        var feeHours = $scope.getHoursBilled() * rate.hour;
+        var feeDays = $scope.getDaysBilled() * rate.day;
+        var feeWeeks = $scope.getWeeksBilled() * rate.week;
 
         var fee = feeHours + feeDays + feeWeeks;
         return fee;
       };
 
-      $scope.priceTimeSimple = function(timeHours, timeDays, timeWeeks) {
-        var currentRate = getCurrentRate();
-        var duration = $scope.getDurationSimple(timeHours, timeDays, timeWeeks);
-        return $scope.getFeeTime(duration, currentRate);
-      };
-
-      $scope.priceTimeExact = function(startDate, endDate) {
-        var currentRate = getCurrentRate();
-        var duration = $scope.getDurationExact(startDate, endDate);
-        return $scope.getFeeTime(duration, currentRate);
-      };
-
       //-----------------------------------------------------------------------
       // get price for distance
       //-----------------------------------------------------------------------
-      $scope.getFeeDistance = function(km, rate) {
+      $scope.getFeeDistance = function() {
+        var rate = getCurrentRate();
+        var km = $scope.distance;
+
         var fee = 0;
         if (km >= 701) {
           fee = 100 * rate.km000 + 600 * rate.km101 + (km - 700) * rate.km701;
@@ -187,11 +180,6 @@ angular.module('c2gyoApp')
         return fee;
       };
 
-      $scope.priceDistance = function(km) {
-        var currentRate = getCurrentRate();
-        return $scope.getFeeDistance(km, currentRate);
-      };
-
       //-----------------------------------------------------------------------
       // get other fees
       //-----------------------------------------------------------------------
@@ -199,26 +187,11 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // calculate final prices
       //-----------------------------------------------------------------------
-      $scope.priceExact = function(
-        distance,
-        startDate,
-        endDate) {
+      $scope.price = function() {
         return (
-          $scope.priceDistance(distance) +
-          $scope.priceTimeExact(startDate, endDate)
+          $scope.getFeeTime() +
+          $scope.getFeeDistance()
         );
       };
-
-      $scope.priceSimple = function(
-        distance,
-        timeHours,
-        timeDays,
-        timeWeeks) {
-        return (
-          $scope.priceDistance(distance) +
-          $scope.priceTimeSimple(timeHours, timeDays, timeWeeks)
-        );
-      };
-
     }
   ]);
