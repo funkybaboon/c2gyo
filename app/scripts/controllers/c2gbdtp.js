@@ -51,27 +51,24 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
-      $scope.getDurationSimple = function(hours, days) {
-        var durationHours = moment.duration(hours, 'h');
-        var durationDays = moment.duration(days, 'd');
+      $scope.getDurationSimple = function() {
+        var durationHours = moment.duration($scope.timeHours, 'h');
+        var durationDays = moment.duration($scope.timeDays, 'd');
 
         var durationAll = durationHours.add(durationDays);
         return durationAll;
       };
 
-      $scope.getDurationExact = function(start, end) {
-        return moment.duration(end - start);
+      $scope.getDurationExact = function() {
+        return moment.duration($scope.endDate - $scope.startDate);
       };
 
       var getDurationAll = function() {
         var duration;
         if ($scope.isSet('simple')) {
-          duration = $scope.getDurationSimple(
-            $scope.timeHours,
-            $scope.timeDays
-          );
+          duration = $scope.getDurationSimple();
         } else {
-          duration = $scope.getDurationExact($scope.startDate, $scope.endDate);
+          duration = $scope.getDurationExact();
         }
         return duration;
       };
