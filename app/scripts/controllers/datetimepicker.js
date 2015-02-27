@@ -22,8 +22,10 @@ angular.module('c2gyoApp')
       $scope.timeDays = 0;
       $scope.timeWeeks = 0;
 
-      $scope.rate = smConfig.rate;
-      $scope.tariff = smConfig.tariff;
+      $scope.rate = {
+        carClass: smConfig.carClass,
+        tariff: smConfig.tariff
+      };
 
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
@@ -135,13 +137,13 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var rate = $scope.rate;
-        var tariff = $scope.tariff;
+        var carClass = $scope.rate.carClass;
+        var tariff = $scope.rate.tariff;
         // studi and classic have the same rates
         if (tariff === 'studi') {
           tariff = 'classic';
         }
-        return stadtmobilRates[tariff][rate];
+        return stadtmobilRates[tariff][carClass];
       };
 
       //-----------------------------------------------------------------------

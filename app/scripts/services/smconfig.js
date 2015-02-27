@@ -9,6 +9,6 @@
  */
 angular.module('c2gyoApp')
   .constant('smConfig', {
-    rate: 'A',
+    carClass: 'A',
     tariff: 'classic'
   });
