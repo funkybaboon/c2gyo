@@ -13,9 +13,8 @@ angular.module('c2gyoApp')
     'stadtmobilRates',
     'smConfig',
     function($scope, stadtmobilRates, smConfig) {
-      moment.locale('de');
-      $scope.startDate = new moment();
-      $scope.endDate = new moment().add(10, 'h');
+      $scope.startDate = new moment().startOf('hour').add(1, 'h');
+      $scope.endDate = $scope.startDate.clone().add(10, 'h');
       $scope.distance = 10;
 
       $scope.timeHours = 10;
@@ -54,6 +53,7 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDurationExact = function() {
+        //console.log(typeof $scope.endDate);
         return moment.duration($scope.endDate - $scope.startDate);
       };
 
@@ -150,6 +150,18 @@ angular.module('c2gyoApp')
       // get price for used time
       //-----------------------------------------------------------------------
       $scope.getFeeTime = function() {
+        var fee;
+
+        if ($scope.isSet('simple')) {
+          fee = getFeeTimeSimple();
+        } else {
+          fee = getFeeTimeExact();
+        }
+
+        return fee.toFixed(2);
+      };
+
+      var getFeeTimeSimple = function() {
         var rate = getCurrentRate();
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
@@ -157,6 +169,25 @@ angular.module('c2gyoApp')
         var feeWeeks = $scope.getWeeksBilled() * rate.week;
 
         var fee = feeHours + feeDays + feeWeeks;
+
+        return fee;
+      };
+
+      var getFeeTimeExact = function() {
+        var fee = 0;
+        var rate = getCurrentRate();
+
+        var startDate = new moment($scope.startDate);
+        var endDate = new moment($scope.endDate);
+
+        for (var i = startDate; i < endDate; i.add(1, 'h')) {
+          if (i.hour >= 0 && i.hour < 7) {
+            fee += rate.night;
+          } else {
+            fee += rate.hour;
+          }
+        }
+
         return fee;
       };
 
