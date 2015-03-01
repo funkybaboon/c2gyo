@@ -12,7 +12,6 @@ angular.module('c2gyoApp')
     '$scope',
     'c2gConfig',
     function($scope, config) {
-      moment.locale('de');
       $scope.startDate = new moment().startOf('hour').add(1, 'h');
       $scope.endDate = $scope.startDate.clone().add(10, 'h');
       $scope.distance = 10;
