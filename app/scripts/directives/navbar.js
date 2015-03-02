@@ -25,11 +25,8 @@ angular.module('c2gyoApp')
           name: 'Car2goBlackdtp',
           url: 'c2gbdtp'
         }, {
-          name: 'Stadtmobil',
-          url: 'sm'
-        }, {
-          name: 'Datetime',
-          url: 'dtp'
+          name: 'Smdtp',
+          url: 'smdtp'
         }];
 
         $scope.isActive = function(viewLocation) {

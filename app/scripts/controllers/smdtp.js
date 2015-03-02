@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name c2gyoApp.controller:DatetimepickerCtrl
+ * @name c2gyoApp.controller:SmdtpCtrl
  * @description
- * # DatetimepickerCtrl
+ * # SmdtpCtrl
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('DatetimepickerCtrl', [
+  .controller('SmdtpCtrl', [
     '$scope',
     'stadtmobilRates',
     'smConfig',

@@ -38,13 +38,9 @@ angular
         templateUrl: 'views/c2gbdtp.html',
         controller: 'C2gbdtpCtrl'
       })
-      .when('/sm', {
-        templateUrl: 'views/sm.html',
-        controller: 'SmCtrl',
-      })
-      .when('/dtp', {
-        templateUrl: 'views/dtp.html',
-        controller: 'DatetimepickerCtrl',
+      .when('/smdtp', {
+        templateUrl: 'views/smdtp.html',
+        controller: 'SmdtpCtrl',
       }).
     otherwise({
       redirectTo: '/c2g'
