@@ -158,7 +158,7 @@ angular.module('c2gyoApp')
           fee = getFeeTimeExact();
         }
 
-        return fee.toFixed(2);
+        return fee;
       };
 
       var getFeeTimeSimple = function() {

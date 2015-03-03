@@ -12,10 +12,10 @@ exports.config = {
 		'c2gb10km2000minScenario.js',
 		'c2gb100km20minScenario.js',
 		'c2gb1000km2000minScenario.js',
-
+/*
 		'sm10km10hClassicScenario.js',
 		'sm10km10hBasicScenario.js',
-/*
+
 		'dtpSm10km10hClassicScenario.js',
 		'dtpSm10km10hBasicScenario.js'*/
 	],
