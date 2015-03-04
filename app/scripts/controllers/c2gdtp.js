@@ -69,13 +69,9 @@ angular.module('c2gyoApp')
       var getDurationAll = function() {
         var duration;
         if ($scope.isSet('simple')) {
-          duration = $scope.getDurationSimple(
-            $scope.timeMinutes,
-            $scope.timeHours,
-            $scope.timeDays
-          );
+          duration = $scope.getDurationSimple();
         } else {
-          duration = $scope.getDurationExact($scope.startDate, $scope.endDate);
+          duration = $scope.getDurationExact();
         }
         return duration;
       };
