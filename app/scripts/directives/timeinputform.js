@@ -15,15 +15,15 @@ angular.module('c2gyoApp')
         $scope.isResolution = function(value) {
           return $scope.resolution.indexOf(value) !== -1;
         };
+
+        $scope.isSet = function(checkTab) {
+          return this.tab === checkTab;
+        };
+
+        $scope.setTab = function(setTab) {
+          this.tab = setTab;
+        };
+
       }
     };
-    /*
-
-        return {
-          template: '<div></div>',
-          restrict: 'E',
-          link: function postLink(scope, element, attrs) {
-            element.text('this is the timeInputForm directive');
-          }
-        };*/
   });

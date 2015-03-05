@@ -43,12 +43,6 @@ angular.module('c2gyoApp')
       // simple or exact time calculation?
       //-----------------------------------------------------------------------
       $scope.tab = 'simple';
-      $scope.isSet = function(checkTab) {
-        return this.tab === checkTab;
-      };
-      $scope.setTab = function(setTab) {
-        this.tab = setTab;
-      };
 
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
@@ -68,7 +62,7 @@ angular.module('c2gyoApp')
 
       var getDurationAll = function() {
         var duration;
-        if ($scope.isSet('simple')) {
+        if ($scope.tab === 'simple') {
           duration = $scope.getDurationSimple();
         } else {
           duration = $scope.getDurationExact();
