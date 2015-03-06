@@ -22,14 +22,6 @@ angular
   ])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/c2g', {
-        templateUrl: 'views/c2g.html',
-        controller: 'C2gCtrl'
-      })
-      .when('/c2gb', {
-        templateUrl: 'views/c2gb.html',
-        controller: 'C2gbCtrl'
-      })
       .when('/c2gdtp', {
         templateUrl: 'views/c2gdtp.html',
         controller: 'C2gdtpCtrl'
@@ -43,6 +35,6 @@ angular
         controller: 'SmdtpCtrl',
       }).
     otherwise({
-      redirectTo: '/c2g'
+      redirectTo: '/c2gdtp'
     });
   });
