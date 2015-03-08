@@ -13,13 +13,15 @@ angular.module('c2gyoApp')
     'stadtmobilRates',
     'smConfig',
     function($scope, stadtmobilRates, smConfig) {
-      $scope.startDate = new moment().startOf('hour').add(1, 'h');
-      $scope.endDate = $scope.startDate.clone().add(10, 'h');
-      $scope.distance = 10;
-
-      $scope.timeHours = 10;
-      $scope.timeDays = 0;
-      $scope.timeWeeks = 0;
+      var now = new moment();
+      $scope.rental = {
+        startDate: now.clone().startOf('hour').add(1, 'h'),
+        endDate: now.clone().startOf('hour').add(10, 'h'),
+        distance: 10,
+        timeHours: 10,
+        timeDays: 0,
+        timeWeeks: 0
+      };
 
       $scope.rate = {
         carClass: smConfig.carClass,
@@ -38,16 +40,16 @@ angular.module('c2gyoApp')
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
       $scope.getDurationSimple = function() {
-        var durationHours = moment.duration($scope.timeHours, 'h');
-        var durationDays = moment.duration($scope.timeDays, 'd');
-        var durationWeeks = moment.duration($scope.timeWeeks, 'w');
+        var durationHours = moment.duration($scope.rental.timeHours, 'h');
+        var durationDays = moment.duration($scope.rental.timeDays, 'd');
+        var durationWeeks = moment.duration($scope.rental.timeWeeks, 'w');
 
         var durationAll = durationHours.add(durationDays).add(durationWeeks);
         return durationAll;
       };
 
       $scope.getDurationExact = function() {
-        return moment.duration($scope.endDate - $scope.startDate);
+        return moment.duration($scope.rental.endDate - $scope.rental.startDate);
       };
 
       var getDurationAll = function() {
@@ -170,8 +172,8 @@ angular.module('c2gyoApp')
         var fee = 0;
         var rate = getCurrentRate();
 
-        var startDate = new moment($scope.startDate);
-        var endDate = new moment($scope.endDate);
+        var startDate = new moment($scope.rental.startDate);
+        var endDate = new moment($scope.rental.endDate);
 
         for (var i = startDate; i < endDate; i.add(1, 'h')) {
           if (i.hour >= 0 && i.hour < 7) {
@@ -189,7 +191,7 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       $scope.getFeeDistance = function() {
         var rate = getCurrentRate();
-        var km = $scope.distance;
+        var km = $scope.rental.distance;
 
         var fee = 0;
         if (km >= 701) {

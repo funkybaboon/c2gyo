@@ -21,12 +21,12 @@ describe('Controller: SmdtpCtrl', function() {
   }));
 
   it('should calculate the correct price using the datetimepicker', function() {
-    scope.startDate = new moment().hour(7);
-    scope.endDate = scope.startDate.clone().add(10, 'h');
+    scope.rental.startDate = new moment().hour(7);
+    scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
 
     scope.rate.tariff = 'basic';
     scope.tab = 'exact';
-    scope.distance = 10;
+    scope.rental.distance = 10;
 
     scope.rate.carClass = 'A';
     expect(scope.price().toFixed(2)).toEqual((18.20).toFixed(2));
@@ -62,15 +62,13 @@ describe('Controller: SmdtpCtrl', function() {
   });
 
   it('should calculate the correct price using simple time', function() {
-    scope.distance = 10;
-
-    scope.timeHours = 10;
-    scope.timeDays = 0;
-    scope.timeWeeks = 0;
+    scope.rental.timeHours = 10;
+    scope.rental.timeDays = 0;
+    scope.rental.timeWeeks = 0;
 
     scope.rate.tariff = 'basic';
-    scope.tab = 'exact';
-    scope.distance = 10;
+    scope.tab = 'simple';
+    scope.rental.distance = 10;
 
     scope.rate.carClass = 'A';
     expect(scope.price().toFixed(2)).toEqual((18.20).toFixed(2));

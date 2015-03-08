@@ -12,42 +12,42 @@
     <br>
     <div class="form-group">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Strecke" ng-model="distance">
+        <input type="number" class="form-control" placeholder="Strecke" ng-model="rental.distance">
         <span class="input-group-addon">Km</span>
       </div>
     </div>
 
     <div class="form-group" ng-show="{{isResolution('minutes')}}">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Zeit" ng-model="timeMinutes">
+        <input type="number" class="form-control" placeholder="Zeit" ng-model="rental.timeMinutes">
         <span class="input-group-addon">Minuten</span>
       </div>
     </div>
 
     <div class="form-group" ng-show="{{isResolution('hours')}}">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Zeit" ng-model="timeHours">
+        <input type="number" class="form-control" placeholder="Zeit" ng-model="rental.timeHours">
         <span class="input-group-addon">Stunden</span>
       </div>
     </div>
 
     <div class="form-group" ng-show="{{isResolution('days')}}">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Zeit" ng-model="timeDays">
+        <input type="number" class="form-control" placeholder="Zeit" ng-model="rental.timeDays">
         <span class="input-group-addon">Tage</span>
       </div>
     </div>
 
     <div class="form-group" ng-show="{{isResolution('weeks')}}">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Zeit" ng-model="timeWeeks">
+        <input type="number" class="form-control" placeholder="Zeit" ng-model="rental.timeWeeks">
         <span class="input-group-addon">Wochen</span>
       </div>
     </div>
 
     <div class="form-group" ng-show="{{isResolution('minutesStanding')}}">
       <div class="input-group">
-        <input type="number" class="form-control" placeholder="Zeit stehend" ng-model="timeStanding">
+        <input type="number" class="form-control" placeholder="Zeit stehend" ng-model="rental.timeStanding">
         <span class="input-group-addon">Minuten (Stehend)</span>
       </div>
     </div>
@@ -55,7 +55,7 @@
     <div class="form-group" ng-show="{{isResolution('airport')}}">
       <div class="input-group">
         <div class="checkbox">
-          <label><input type="checkbox" ng-model="airport">Flughafenpauschale</label>
+          <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
         </div>
       </div>
     </div>
@@ -65,11 +65,11 @@
     <h4>Startdatum</h4>
     <div class="dropdown">
       <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="" href="">
-        <div class="input-group"><input type="text" class="form-control" data-ng-model="startDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <div class="input-group"><input type="text" class="form-control" data-ng-model="rental.startDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
         </div>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <datetimepicker data-ng-model="startDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', minView: 'hour' }"/>
+        <datetimepicker data-ng-model="rental.startDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', minView: 'hour' }"/>
       </ul>
     </div>
 
@@ -77,11 +77,11 @@
 
     <div class="dropdown">
       <a class="dropdown-toggle" id="dropdown3" role="button" data-toggle="dropdown" data-target="" href="">
-        <div class="input-group"><input type="text" class="form-control" data-ng-model="endDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <div class="input-group"><input type="text" class="form-control" data-ng-model="rental.endDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
         </div>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <datetimepicker data-ng-model="endDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown3', minView: 'hour' }"/>
+        <datetimepicker data-ng-model="rental.endDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown3', minView: 'hour' }"/>
       </ul>
     </div>
 
@@ -105,7 +105,7 @@
     <div class="form-group" ng-show="{{isResolution('airport')}}">
       <div class="input-group">
         <div class="checkbox">
-          <label><input type="checkbox" ng-model="airport">Flughafenpauschale</label>
+          <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
         </div>
       </div>
     </div>

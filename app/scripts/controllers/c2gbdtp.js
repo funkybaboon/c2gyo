@@ -12,17 +12,19 @@ angular.module('c2gyoApp')
     '$scope',
     'c2gConfig',
     function($scope, c2gConfig) {
-      $scope.startDate = new moment().startOf('hour').add(1, 'h');
-      $scope.endDate = $scope.startDate.clone().add(10, 'h');
-      $scope.distance = 10;
+      var now = new moment();
+      $scope.rental = {
+        startDate: now.clone().startOf('hour').add(1, 'h'),
+        endDate: now.clone().startOf('hour').add(10, 'h'),
+        distance: 10,
+        timeMinutes: 0,
+        timeHours: 10,
+        timeDays: 0,
+        timeStanding: 0,
+        airport: false
+      };
 
       $scope.vendor = c2gConfig.vendor;
-      $scope.distance = 10;
-      $scope.timeMinutes = 0;
-      $scope.timeHours = 10;
-      $scope.timeDays = 0;
-      $scope.timeStanding = 0;
-      $scope.airport = false;
 
       $scope.feeDay = 89;
       $scope.feeHour = 14.9;
@@ -45,15 +47,15 @@ angular.module('c2gyoApp')
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
       $scope.getDurationSimple = function() {
-        var durationHours = moment.duration($scope.timeHours, 'h');
-        var durationDays = moment.duration($scope.timeDays, 'd');
+        var durationHours = moment.duration($scope.rental.timeHours, 'h');
+        var durationDays = moment.duration($scope.rental.timeDays, 'd');
 
         var durationAll = durationHours.add(durationDays);
         return durationAll;
       };
 
       $scope.getDurationExact = function() {
-        return moment.duration($scope.endDate - $scope.startDate);
+        return moment.duration($scope.rental.endDate - $scope.rental.startDate);
       };
 
       var getDurationAll = function() {
@@ -138,7 +140,7 @@ angular.module('c2gyoApp')
       // get price for distance
       //-----------------------------------------------------------------------
       $scope.getFeeDistance = function() {
-        var fee = ($scope.distance - 50) * $scope.feeAdditionalKm;
+        var fee = ($scope.rental.distance - 50) * $scope.feeAdditionalKm;
         if (fee < 0) {
           fee = 0;
         }
@@ -154,7 +156,7 @@ angular.module('c2gyoApp')
 
       $scope.getFeeAirport = function() {
         var fee = 0;
-        if ($scope.airport) {
+        if ($scope.rental.airport) {
           fee = 4.90;
         }
         return fee;
