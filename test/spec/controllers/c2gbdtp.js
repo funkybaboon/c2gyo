@@ -16,20 +16,57 @@ describe('Controller: C2gbdtpCtrl', function() {
     });
   }));
 
-  /*
-    it('should calculate the correct price', function() {
-      expect(scope.price(10, 20, false)).toEqual(14.90);
-      expect(scope.price(10, 20, true)).toEqual(19.80);
+  it('should calculate the correct price', function() {
+    scope.tab = 'simple';
 
-      expect(scope.price(10, 2000, false)).toEqual(178.00);
-      expect(scope.price(10, 2000, true)).toEqual(182.90);
+    scope.rental.distance = 10;
+    scope.rental.timeHours = 1;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = false;
+    expect(scope.price().toFixed(2)).toEqual((14.90).toFixed(2));
 
-      expect(scope.price(100, 20, false)).toEqual(29.40);
-      expect(scope.price(100, 20, true)).toEqual(34.30);
+    scope.rental.distance = 10;
+    scope.rental.timeHours = 1;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = true;
+    expect(scope.price().toFixed(2)).toEqual((19.80).toFixed(2));
 
-      expect(scope.price(1000, 2000, false)).toEqual(352.00);
-      expect(scope.price(1000, 2000, true)).toEqual(356.90);
-    });
-  */
+    scope.rental.distance = 10;
+    scope.rental.timeHours = 33;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = false;
+    expect(scope.price().toFixed(2)).toEqual((178.00).toFixed(2));
+
+    scope.rental.distance = 10;
+    scope.rental.timeHours = 33;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = true;
+    expect(scope.price().toFixed(2)).toEqual((182.90).toFixed(2));
+
+    scope.rental.distance = 100;
+    scope.rental.timeHours = 1;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = false;
+    expect(scope.price().toFixed(2)).toEqual((29.40).toFixed(2));
+
+    scope.rental.distance = 100;
+    scope.rental.timeHours = 1;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = true;
+    expect(scope.price().toFixed(2)).toEqual((34.30).toFixed(2));
+
+    scope.rental.distance = 1000;
+    scope.rental.timeHours = 33;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = false;
+    expect(scope.price().toFixed(2)).toEqual((453.50).toFixed(2));
+
+    scope.rental.distance = 1000;
+    scope.rental.timeHours = 33;
+    scope.rental.timeDays = 0;
+    scope.rental.airport = true;
+    expect(scope.price().toFixed(2)).toEqual((458.40).toFixed(2));
+
+  });
 
 });

@@ -17,7 +17,6 @@ angular.module('c2gyoApp')
         startDate: now.clone().startOf('hour').add(1, 'h'),
         endDate: now.clone().startOf('hour').add(10, 'h'),
         distance: 10,
-        timeMinutes: 0,
         timeHours: 10,
         timeDays: 0,
         timeStanding: 0,
@@ -151,7 +150,7 @@ angular.module('c2gyoApp')
       // get other fees
       //-----------------------------------------------------------------------
       $scope.getFeeStanding = function() {
-        return $scope.timeStanding * 0.19;
+        return $scope.rental.timeStanding * 0.19;
       };
 
       $scope.getFeeAirport = function() {
