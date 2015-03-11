@@ -10,7 +10,7 @@ angular.module('c2gyoApp')
   .directive('billedBox', function() {
     return {
       restrict: 'E',
-      templateUrl: 'views/billedbox.html',
+      templateUrl: 'scripts/directives/billedbox.html',
       controller: function($scope) {
         $scope.isResolution = function(value) {
           return $scope.resolutionTime.indexOf(value) !== -1;
