@@ -125,7 +125,7 @@ angular.module('c2gyoApp')
       $scope.getFeeTime = function() {
         var fee;
 
-        if ($scope.tab === 'simple') {
+        if ($scope.rental.tab === 'simple') {
           fee = getFeeTimeSimple();
         } else {
           fee = getFeeTimeExact();
