@@ -16,7 +16,7 @@ describe('Controller: C2gdtpCtrl', function() {
     });
   }));
 
-  it('should calculate the correct price', function() {
+  it('should calculate the correct price using simple time', function() {
     scope.rental.tab = 'simple';
 
     scope.rental.distance = 10;
