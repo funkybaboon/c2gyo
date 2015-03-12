@@ -17,7 +17,7 @@ describe('Controller: C2gbdtpCtrl', function() {
   }));
 
   it('should calculate the correct price', function() {
-    scope.tab = 'simple';
+    scope.rental.tab = 'simple';
 
     scope.rental.distance = 10;
     scope.rental.timeHours = 1;
@@ -66,7 +66,6 @@ describe('Controller: C2gbdtpCtrl', function() {
     scope.rental.timeDays = 0;
     scope.rental.airport = true;
     expect(scope.price().toFixed(2)).toEqual((458.40).toFixed(2));
-
   });
 
 });

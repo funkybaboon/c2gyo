@@ -12,9 +12,11 @@ angular.module('c2gyoApp')
     '$scope',
     'stadtmobilRates',
     'smConfig',
-    function($scope, stadtmobilRates, smConfig) {
+    'duration',
+    function($scope, stadtmobilRates, smConfig, duration) {
       var now = new moment();
       $scope.rental = {
+        tab: 'simple',
         startDate: now.clone().startOf('hour').add(1, 'h'),
         endDate: now.clone().startOf('hour').add(10, 'h'),
         distance: 10,
@@ -32,49 +34,25 @@ angular.module('c2gyoApp')
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       //-----------------------------------------------------------------------
-      // simple or exact time calculation?
-      //-----------------------------------------------------------------------
-      $scope.tab = 'simple';
-
-      //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
-      $scope.getDurationSimple = function() {
-        var durationHours = moment.duration($scope.rental.timeHours, 'h');
-        var durationDays = moment.duration($scope.rental.timeDays, 'd');
-        var durationWeeks = moment.duration($scope.rental.timeWeeks, 'w');
-
-        var durationAll = durationHours.add(durationDays).add(durationWeeks);
-        return durationAll;
-      };
-
-      $scope.getDurationExact = function() {
-        return moment.duration($scope.rental.endDate - $scope.rental.startDate);
-      };
-
-      var getDurationAll = function() {
-        var duration;
-        if ($scope.tab === 'simple') {
-          duration = $scope.getDurationSimple();
-        } else {
-          duration = $scope.getDurationExact();
-        }
-        return duration;
+      var durationAll = function() {
+        return duration.getDurationAll($scope.rental);
       };
 
       //-----------------------------------------------------------------------
       // get actual time
       //-----------------------------------------------------------------------
       $scope.getHours = function() {
-        return getDurationAll().hours();
+        return durationAll().hours();
       };
 
       $scope.getDays = function() {
-        return Math.floor(getDurationAll().asDays() % 7);
+        return Math.floor(durationAll().asDays() % 7);
       };
 
       $scope.getWeeks = function() {
-        return Math.floor(getDurationAll().asDays() / 7);
+        return Math.floor(durationAll().asDays() / 7);
       };
 
       //-----------------------------------------------------------------------

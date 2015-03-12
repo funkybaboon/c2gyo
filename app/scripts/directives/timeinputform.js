@@ -17,11 +17,11 @@ angular.module('c2gyoApp')
         };
 
         $scope.isSet = function(checkTab) {
-          return this.tab === checkTab;
+          return this.rental.tab === checkTab;
         };
 
         $scope.setTab = function(setTab) {
-          this.tab = setTab;
+          this.rental.tab = setTab;
         };
 
       }
