@@ -1,10 +1,10 @@
-describe('sm test', function() {
+describe('sm test 10km 10 hours', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
   beforeEach(function() {
-    browser.get('http://localhost:9000/#/dtp');
+    browser.get('http://localhost:9000/#/smdtp');
   });
 
   it('10km, 10 hours, classic, A', function() {

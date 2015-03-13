@@ -1,28 +1,25 @@
 exports.config = {
-	seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
-	specs: [
-		'c2g10km20minScenario.js',
-		'c2g10km229minScenario.js',
-		'c2g10km2000minScenario.js',
-		'c2g100km20minScenario.js',
-		'c2g1000km2000minScenario.js',
+  specs: [
+    'c2g10km20minScenario.js',
+    'c2g10km229minScenario.js',
+    'c2g10km2000minScenario.js',
+    'c2g100km20minScenario.js',
+    'c2g1000km2000minScenario.js',
 
-		'c2gb10km20minScenario.js',
-		'c2gb10km2000minScenario.js',
-		'c2gb100km20minScenario.js',
-		'c2gb1000km2000minScenario.js',
-/*
-		'sm10km10hClassicScenario.js',
-		'sm10km10hBasicScenario.js',
+    'c2gb10km1hourScenario.js',
+    'c2gb10km33hoursScenario.js',
+    'c2gb100km1hourScenario.js',
+    'c2gb1000km33hoursScenario.js',
 
-		'dtpSm10km10hClassicScenario.js',
-		'dtpSm10km10hBasicScenario.js'*/
-	],
+    'sm10km10hoursClassicScenario.js',
+    'sm10km10hoursBasicScenario.js'
+  ],
 
-	capabilities: {
-		'browserName': 'chrome',
-		shardTestFiles: true,
-		maxInstances: 7
-	},
+  capabilities: {
+    'browserName': 'chrome',
+    shardTestFiles: true,
+    maxInstances: 7
+  },
 };
