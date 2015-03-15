@@ -8,15 +8,8 @@
     </li>
   </ul>
 
-  <div ng-if="isSet('simple')" class="animate-if">
-    <br>
-    <div class="form-group">
-      <div class="input-group">
-        <input type="number" class="form-control" placeholder="Strecke" ng-model="rental.distance">
-        <span class="input-group-addon">Km</span>
-      </div>
-    </div>
-
+  <div ng-if="isSet('simple')">
+    <h4>Zeit</h4>
     <div class="form-group" ng-show="{{isResolution('minutes')}}">
       <div class="input-group">
         <input type="number" class="form-control" placeholder="Minuten" ng-model="rental.timeMinutes">
@@ -51,17 +44,9 @@
         <span class="input-group-addon">Minuten (Stehend)</span>
       </div>
     </div>
-
-    <div class="form-group" ng-show="{{isResolution('airport')}}">
-      <div class="input-group">
-        <div class="checkbox">
-          <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <div ng-if="isSet('exact')" class="animate-if">
+  <div ng-if="isSet('exact')">
     <h4>Startdatum</h4>
     <div class="dropdown">
       <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="" href="">
@@ -92,21 +77,20 @@
         <span class="input-group-addon">Minuten (Stehend)</span>
       </div>
     </div>
+  </div>
 
-    <h4>Strecke</h4>
-
-    <div class="form-group">
-      <div class="input-group">
-        <input type="number" class="form-control" placeholder="Strecke" ng-model="rental.distance">
-        <span class="input-group-addon">Km</span>
-      </div>
+  <h4>Strecke</h4>
+  <div class="form-group">
+    <div class="input-group">
+      <input type="number" class="form-control" placeholder="Strecke" ng-model="rental.distance">
+      <span class="input-group-addon">Km</span>
     </div>
+  </div>
 
-    <div class="form-group" ng-show="{{isResolution('airport')}}">
-      <div class="input-group">
-        <div class="checkbox">
-          <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
-        </div>
+  <div class="form-group" ng-show="{{isResolution('airport')}}">
+    <div class="input-group">
+      <div class="checkbox">
+        <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
       </div>
     </div>
   </div>
