@@ -12,18 +12,9 @@ angular.module('c2gyoApp')
     '$scope',
     'c2gConfig',
     'duration',
-    function($scope, c2gConfig, duration) {
-      var now = new moment();
-      $scope.rental = {
-        tab: 'simple',
-        startDate: now.clone().startOf('hour').add(1, 'h'),
-        endDate: now.clone().startOf('hour').add(10, 'h'),
-        distance: 10,
-        timeHours: 10,
-        timeDays: 0,
-        timeStanding: 0,
-        airport: false
-      };
+    'state',
+    function($scope, c2gConfig, duration, state) {
+      $scope.rental = state.rental;
 
       $scope.vendor = c2gConfig.vendor;
 

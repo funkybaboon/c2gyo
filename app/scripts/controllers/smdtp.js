@@ -13,17 +13,9 @@ angular.module('c2gyoApp')
     'stadtmobilRates',
     'smConfig',
     'duration',
-    function($scope, stadtmobilRates, smConfig, duration) {
-      var now = new moment();
-      $scope.rental = {
-        tab: 'simple',
-        startDate: now.clone().startOf('hour').add(1, 'h'),
-        endDate: now.clone().startOf('hour').add(10, 'h'),
-        distance: 10,
-        timeHours: 10,
-        timeDays: 0,
-        timeWeeks: 0
-      };
+    'state',
+    function($scope, stadtmobilRates, smConfig, duration, state) {
+      $scope.rental = state.rental;
 
       $scope.rate = {
         carClass: smConfig.carClass,
