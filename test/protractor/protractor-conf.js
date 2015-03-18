@@ -14,7 +14,9 @@ exports.config = {
     'c2gb1000km33hoursScenario.js',
 
     'sm10km10hoursClassicScenario.js',
-    'sm10km10hoursBasicScenario.js'
+    'sm10km10hoursBasicScenario.js',
+
+    'KeepStateScenario.js'
   ],
 
   capabilities: {

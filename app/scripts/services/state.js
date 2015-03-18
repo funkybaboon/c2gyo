@@ -10,13 +10,13 @@
 angular.module('c2gyoApp')
   .factory('state', function() {
 
-    var now = new moment();
+    var now = new moment().startOf('hour');
 
     return {
       rental: {
         tab: 'simple',
-        startDate: now.clone().startOf('hour').add(1, 'h'),
-        endDate: now.clone().startOf('hour').add(10, 'h'),
+        startDate: now.clone().add(1, 'h'),
+        endDate: now.clone().add(10, 'h'),
         distance: 10,
         timeMinutes: 0,
         timeHours: 10,

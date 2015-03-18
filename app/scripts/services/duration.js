@@ -14,8 +14,12 @@ angular.module('c2gyoApp')
       var durationMinutes = moment.duration(rental.timeMinutes, 'm');
       var durationHours = moment.duration(rental.timeHours, 'h');
       var durationDays = moment.duration(rental.timeDays, 'd');
+      var durationWeeks = moment.duration(rental.timeWeeks, 'w');
 
-      var durationAll = durationMinutes.add(durationHours).add(durationDays);
+      var durationAll = durationMinutes
+        .add(durationHours)
+        .add(durationDays)
+        .add(durationWeeks);
       return durationAll;
     };
 
