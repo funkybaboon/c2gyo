@@ -16,6 +16,9 @@ angular.module('c2gyoApp')
     'state',
     function($scope, stadtmobilRates, smConfig, duration, state) {
       $scope.rental = state.rental;
+      $scope.clear = function() {
+        state.clearRental($scope.rental.tab);
+      };
 
       $scope.rate = {
         carClass: smConfig.carClass,

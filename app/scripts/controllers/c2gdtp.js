@@ -15,6 +15,9 @@ angular.module('c2gyoApp')
     'state',
     function($scope, config, duration, state) {
       $scope.rental = state.rental;
+      $scope.clear = function() {
+        state.clearRental($scope.rental.tab);
+      };
 
       $scope.vendor = config.vendor;
 

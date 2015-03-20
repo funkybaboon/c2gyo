@@ -16,7 +16,8 @@ exports.config = {
     'sm10km10hoursClassicScenario.js',
     'sm10km10hoursBasicScenario.js',
 
-    'KeepStateScenario.js'
+    'KeepStateScenario.js',
+    'ClearData.js'
   ],
 
   capabilities: {
