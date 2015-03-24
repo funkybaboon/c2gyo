@@ -9,161 +9,166 @@
  */
 angular.module('c2gyoApp')
   .constant('stadtmobilrates2', {
-    "resolution": "h",
-    "A": {
-      "time": {
-        "monday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "tuesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "wednesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "thursday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "friday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "saturday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "sunday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 1.6}],
-        "day": 26,
-        "week": 140
+    'resolution': 'h',
+    'A': {
+      'time': {
+        '1': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '2': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '3': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '4':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '5':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '6':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        '7': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 1.6}],
+        'hour': 1.6,
+        'day': 26,
+        'week': 140
       },
-      "km": [
-        { "Start": 0, "End": 100, "fee": 0.22},
-        { "Start": 101,"End": 701, "fee": 0.18},
-        { "Start": 701,"End": -1, "fee": 0.18}]
+      'km': [
+        { 'start': 0, 'end': 100, 'fee': 0.22},
+        { 'start': 101,'end': 601, 'fee': 0.18},
+        { 'start': 701,'end': -1, 'fee': 0.18}]
     },
-    "B": {
-      "time": {
-        "monday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "tuesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "wednesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "thursday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "friday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "saturday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "sunday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 2.7}],
-        "day": 30,
-        "week": 155
+    'B': {
+      'time': {
+        '1': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '2': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '3': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '4':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '5':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '6':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        '7': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 2.7}],
+        'hour': 2.7,
+        'day': 30,
+        'week': 155
       },
-      "km": [
-        { "Start": 0, "End": 100, "fee": 0.27},
-        { "Start": 101,"End": 701, "fee": 0.21},
-        { "Start": 701,"End": -1, "fee": 0.16}]
+      'km': [
+        { 'start': 0, 'end': 100, 'fee': 0.27},
+        { 'start': 101,'end': 601, 'fee': 0.21},
+        { 'start': 701,'end': -1, 'fee': 0.16}]
     },
-    "C": {
-      "time": {
-        "monday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "tuesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "wednesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "thursday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "friday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "saturday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "sunday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.3}],
-        "day": 37,
-        "week": 175
+    'C': {
+      'time': {
+        '1': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '2': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '3': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '4':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '5':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '6':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        '7': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.3}],
+        'hour': 3.3,
+        'day': 37,
+        'week': 175
       },
-      "km": [
-        { "Start": 0, "End": 100, "fee": 0.31},
-        { "Start": 101,"End": 701, "fee": 0.23},
-        { "Start": 701,"End": -1, "fee": 0.17}]
+      'km': [
+        { 'start': 0, 'end': 100, 'fee': 0.31},
+        { 'start': 101,'end': 601, 'fee': 0.23},
+        { 'start': 701,'end': -1, 'fee': 0.17}]
     },
-    "D": {
-      "time": {
-        "monday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "tuesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "wednesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "thursday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "friday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "saturday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "sunday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 3.7}],
-        "day": 40,
-        "week": 210
+    'D': {
+      'time': {
+        '1': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '2': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '3': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '4':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '5':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '6':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        '7': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 3.7}],
+        'hour': 3.7,
+        'day': 40,
+        'week': 210
       },
-      "km": [
-        { "Start": 0, "End": 100, "fee": 0.34},
-        { "Start": 101,"End": 701, "fee": 0.25},
-        { "Start": 701,"End": -1, "fee": 0.25}]
+      'km': [
+        { 'start': 0, 'end': 100, 'fee': 0.34},
+        { 'start': 101,'end': 601, 'fee': 0.25},
+        { 'start': 701,'end': -1, 'fee': 0.25}]
     },
-    "F": {
-      "time": {
-        "monday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "tuesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "wednesday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "thursday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "friday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "saturday":  [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "sunday": [
-          { "Start": 0, "End": 7, "fee": 0 },
-          { "Start": 7, "End": 0, "fee": 4.7}],
-        "day": 49,
-        "week": 260
+    'F': {
+      'time': {
+        '1': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '2': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '3': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '4':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '5':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '6':  [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        '7': [
+          { 'start': 0, 'end': 6, 'fee': 0 },
+          { 'start': 7, 'end': 23, 'fee': 4.7}],
+        'hour': 4.7,
+        'day': 49,
+        'week': 260
       },
-      "km": [
-        { "Start": 0, "End": 100, "fee": 0.38},
-        { "Start": 101,"End": 701, "fee": 0.27},
-        { "Start": 701,"End": -1, "fee": 0.27}]
+      'km': [
+        { 'start': 0, 'end': 100, 'fee': 0.38},
+        { 'start': 101,'end': 601, 'fee': 0.27},
+        { 'start': 701,'end': -1, 'fee': 0.27}]
     }
   }
 );

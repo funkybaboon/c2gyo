@@ -10,11 +10,11 @@
 angular.module('c2gyoApp')
   .controller('SmdtpCtrl', [
     '$scope',
-    'stadtmobilRates',
+    'stadtmobilrates2',
     'smConfig',
     'duration',
     'state',
-    function($scope, stadtmobilRates, smConfig, duration, state) {
+    function($scope, stadtmobilrates2, smConfig, duration, state) {
       $scope.rental = state.rental;
       $scope.clear = function() {
         state.clearRental($scope.rental.tab);
@@ -111,7 +111,11 @@ angular.module('c2gyoApp')
         if (tariff === 'studi') {
           tariff = 'classic';
         }
-        return stadtmobilRates[tariff][carClass];
+
+        //return stadtmobilRates[tariff][carClass];
+        //console.log(angular.toJson(stadtmobilrates2[carClass]));
+        return (stadtmobilrates2[carClass]);
+
       };
 
       //-----------------------------------------------------------------------
@@ -130,7 +134,7 @@ angular.module('c2gyoApp')
       };
 
       var getFeeTimeSimple = function() {
-        var rate = getCurrentRate();
+        var rate = getCurrentRate().time;
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
         var feeDays = $scope.getDaysBilled() * rate.day;
@@ -142,37 +146,51 @@ angular.module('c2gyoApp')
       };
 
       var getFeeTimeExact = function() {
-        var fee = 0;
-        var rate = getCurrentRate();
+        var totalFee = 0;
+        var rate = getCurrentRate().time;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
 
-        for (var i = startDate; i < endDate; i.add(1, 'h')) {
-          if (i.hour >= 0 && i.hour < 7) {
-            fee += rate.night;
-          } else {
-            fee += rate.hour;
+        // go through until endate - 1 hour
+        for (var i = startDate.clone(); i < endDate; i.add(1, 'h')) {
+          var day = i.isoWeekday();
+          var hour = i.hour();
+          var currentRate = rate[day];
+
+          // loop through possible hour rates
+          for (var j = 0; j <= currentRate.length-1; j++) {
+            var start = currentRate[j].start;
+            var end = currentRate[j].end;
+            var fee = currentRate[j].fee;
+
+            if(hour >= start && hour <= end) {
+              //console.log('Day: ' + day + ' hour: ' + hour + ' fee: ' + fee);
+              totalFee += fee;
+            }
           }
+
         }
 
-        return fee;
+        return totalFee;
       };
 
       //-----------------------------------------------------------------------
       // get price for distance
       //-----------------------------------------------------------------------
       $scope.getFeeDistance = function() {
-        var rate = getCurrentRate();
+        var rate = getCurrentRate().km;
         var km = $scope.rental.distance;
+
+        //console.log(rate);
 
         var fee = 0;
         if (km >= 701) {
-          fee = 100 * rate.km000 + 600 * rate.km101 + (km - 700) * rate.km701;
+          fee = 100 * rate[0].fee + 600 * rate[1].fee + (km - 700) * rate[2].fee;
         } else if (km < 701 && km >= 101) {
-          fee = 100 * rate.km000 + (km - 100) * rate.km101;
+          fee = 100 * rate[0].fee + (km - 100) * rate[1].fee;
         } else {
-          fee = km * rate.km000;
+          fee = km * rate[0].fee;
         }
         return fee;
       };

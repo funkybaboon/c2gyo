@@ -42,7 +42,7 @@ describe('Controller: SmdtpCtrl', function() {
 
     scope.rate.carClass = 'F';
     expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
-
+/*
     scope.rate.tariff = 'classic';
 
     scope.rate.carClass = 'A';
@@ -58,7 +58,7 @@ describe('Controller: SmdtpCtrl', function() {
     expect(scope.price().toFixed(2)).toEqual((34.90).toFixed(2));
 
     scope.rate.carClass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
+    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));*/
   });
 
   it('should calculate the correct price using simple time', function() {
@@ -84,7 +84,7 @@ describe('Controller: SmdtpCtrl', function() {
 
     scope.rate.carClass = 'F';
     expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
-
+/*
     scope.rate.tariff = 'classic';
 
     scope.rate.carClass = 'A';
@@ -100,7 +100,7 @@ describe('Controller: SmdtpCtrl', function() {
     expect(scope.price().toFixed(2)).toEqual((34.90).toFixed(2));
 
     scope.rate.carClass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
+    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));*/
   });
 
 });
