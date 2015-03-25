@@ -10,11 +10,18 @@
 angular.module('c2gyoApp')
   .controller('SmdtpCtrl', [
     '$scope',
-    'stadtmobilrates2',
+    'stadtmobilratebasic',
+    'stadtmobilrateclassic',
     'smConfig',
     'duration',
     'state',
-    function($scope, stadtmobilrates2, smConfig, duration, state) {
+    function(
+      $scope,
+      stadtmobilratebasic,
+      stadtmobilrateclassic,
+      smConfig,
+      duration,
+      state) {
       $scope.rental = state.rental;
       $scope.clear = function() {
         state.clearRental($scope.rental.tab);
@@ -107,15 +114,20 @@ angular.module('c2gyoApp')
       var getCurrentRate = function() {
         var carClass = $scope.rate.carClass;
         var tariff = $scope.rate.tariff;
+        var rate = {};
+
         // studi and classic have the same rates
         if (tariff === 'studi') {
           tariff = 'classic';
         }
 
-        //return stadtmobilRates[tariff][carClass];
-        //console.log(angular.toJson(stadtmobilrates2[carClass]));
-        return (stadtmobilrates2[carClass]);
+        if (tariff === 'classic') {
+          rate = stadtmobilrateclassic[carClass];
+        } else if (tariff === 'basic') {
+          rate = stadtmobilratebasic[carClass];
+        }
 
+        return rate;
       };
 
       //-----------------------------------------------------------------------
@@ -159,12 +171,12 @@ angular.module('c2gyoApp')
           var currentRate = rate[day];
 
           // loop through possible hour rates
-          for (var j = 0; j <= currentRate.length-1; j++) {
+          for (var j = 0; j <= currentRate.length - 1; j++) {
             var start = currentRate[j].start;
             var end = currentRate[j].end;
             var fee = currentRate[j].fee;
 
-            if(hour >= start && hour <= end) {
+            if (hour >= start && hour <= end) {
               //console.log('Day: ' + day + ' hour: ' + hour + ' fee: ' + fee);
               totalFee += fee;
             }
