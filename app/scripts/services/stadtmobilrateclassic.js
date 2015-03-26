@@ -35,7 +35,7 @@ angular.module('c2gyoApp')
           {'start': 7, 'end': 23, 'fee': 1.4}],
         'hour': 1.4,
         'day': 21,
-        'week': 140
+        'week': 125
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.2},

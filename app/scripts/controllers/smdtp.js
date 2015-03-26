@@ -12,6 +12,7 @@ angular.module('c2gyoApp')
     '$scope',
     'stadtmobilratebasic',
     'stadtmobilrateclassic',
+    'stadtmobilratebusiness',
     'smConfig',
     'duration',
     'state',
@@ -19,6 +20,7 @@ angular.module('c2gyoApp')
       $scope,
       stadtmobilratebasic,
       stadtmobilrateclassic,
+      stadtmobilratebusiness,
       smConfig,
       duration,
       state) {
