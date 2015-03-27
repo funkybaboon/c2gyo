@@ -24,6 +24,7 @@ angular.module('c2gyoApp')
       smConfig,
       duration,
       state) {
+
       $scope.rental = state.rental;
       $scope.clear = function() {
         state.clearRental($scope.rental.tab);
@@ -195,18 +196,29 @@ angular.module('c2gyoApp')
       $scope.getFeeDistance = function() {
         var rate = getCurrentRate().km;
         var km = $scope.rental.distance;
+        var totalFee = 0;
 
-        //console.log(rate);
+        // counter for possible km rates
+        var k = 0;
 
-        var fee = 0;
-        if (km >= 701) {
-          fee = 100 * rate[0].fee + 600 * rate[1].fee + (km - 700) * rate[2].fee;
-        } else if (km < 701 && km >= 101) {
-          fee = 100 * rate[0].fee + (km - 100) * rate[1].fee;
-        } else {
-          fee = km * rate[0].fee;
+        // go through kms
+        while (km > 0) {
+          var start = rate[k].start;
+          var end = rate[k].end;
+          var fee = rate[k].fee;
+
+          if (km <= end || end === -1) {
+            totalFee += (km * fee);
+            km = 0;
+          } else {
+            var range = end - start;
+            km = km - range;
+            totalFee += (range * fee);
+            k++;
+          }
         }
-        return fee;
+
+        return totalFee;
       };
 
       //-----------------------------------------------------------------------
