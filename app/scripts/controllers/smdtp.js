@@ -128,6 +128,8 @@ angular.module('c2gyoApp')
           rate = stadtmobilrateclassic[carClass];
         } else if (tariff === 'basic') {
           rate = stadtmobilratebasic[carClass];
+        } else {
+          rate = stadtmobilratebusiness[carClass];
         }
 
         return rate;
