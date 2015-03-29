@@ -140,23 +140,6 @@ describe('Controller: SmdtpCtrl', function() {
     scope.rental.tab = 'simple';
     scope.rental.distance = 50;
 
-    scope.rate.tariff = 'basic';
-
-    scope.rate.carClass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
-
-    scope.rate.carClass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.50).toFixed(2));
-
-    scope.rate.carClass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((15.50).toFixed(2));
-
-    scope.rate.carClass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((17.00).toFixed(2));
-
-    scope.rate.carClass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((19.00).toFixed(2));
-
     scope.rate.tariff = 'classic';
 
     scope.rate.carClass = 'A';
@@ -173,6 +156,23 @@ describe('Controller: SmdtpCtrl', function() {
 
     scope.rate.carClass = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((16.50).toFixed(2));
+
+    scope.rate.tariff = 'basic';
+
+    scope.rate.carClass = 'A';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.50).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((15.50).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((17.00).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((19.00).toFixed(2));
 
     scope.rate.tariff = 'studi';
 
@@ -207,6 +207,80 @@ describe('Controller: SmdtpCtrl', function() {
 
     scope.rate.carClass = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((13.50).toFixed(2));
+
+  });
+
+  it('should calculate the correct price for 150 km', function() {
+    scope.rental.tab = 'simple';
+    scope.rental.distance = 150;
+
+    scope.rate.tariff = 'classic';
+
+    scope.rate.carClass = 'A';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.50).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((36.50).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((41.50).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
+
+    scope.rate.tariff = 'basic';
+
+    scope.rate.carClass = 'A';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.00).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((37.50).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((42.50).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((51.50).toFixed(2));
+
+    scope.rate.tariff = 'studi';
+
+    scope.rate.carClass = 'A';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.50).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((36.50).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((41.50).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
+
+    scope.rate.tariff = 'business';
+
+    scope.rate.carClass = 'A';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((25.50).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((25.50).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((27.00).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((37.50).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.getFeeDistance().toFixed(2)).toEqual((40.50).toFixed(2));
 
   });
 
