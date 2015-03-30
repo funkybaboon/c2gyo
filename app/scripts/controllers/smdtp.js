@@ -208,12 +208,12 @@ angular.module('c2gyoApp')
           var start = rate[k].start;
           var end = rate[k].end;
           var fee = rate[k].fee;
+          var range = end - start;
 
-          if (km <= end || end === -1) {
+          if (km <= range || end === -1) {
             totalFee += (km * fee);
             km = 0;
           } else {
-            var range = end - start;
             km = km - range;
             totalFee += (range * fee);
             k++;

@@ -39,8 +39,8 @@ angular.module('c2gyoApp')
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.2},
-        {'start': 101, 'end': 700, 'fee': 0.18},
-        {'start': 701, 'end': -1, 'fee': 0.18}]
+        {'start': 100, 'end': 700, 'fee': 0.18},
+        {'start': 700, 'end': -1, 'fee': 0.18}]
    },
     'B': {
       'time': {
@@ -71,8 +71,8 @@ angular.module('c2gyoApp')
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.22},
-        {'start': 101, 'end': 700, 'fee': 0.19},
-        {'start': 701, 'end': -1, 'fee': 0.16}]
+        {'start': 100, 'end': 700, 'fee': 0.19},
+        {'start': 700, 'end': -1, 'fee': 0.16}]
    },
     'C': {
       'time': {
@@ -103,8 +103,8 @@ angular.module('c2gyoApp')
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.26},
-        {'start': 101, 'end': 700, 'fee': 0.21},
-        {'start': 701, 'end': -1, 'fee': 0.17}]
+        {'start': 100, 'end': 700, 'fee': 0.21},
+        {'start': 700, 'end': -1, 'fee': 0.17}]
    },
     'D': {
       'time': {
@@ -135,8 +135,8 @@ angular.module('c2gyoApp')
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.29},
-        {'start': 101, 'end': 700, 'fee': 0.25},
-        {'start': 701, 'end': -1, 'fee': 0.25}]
+        {'start': 100, 'end': 700, 'fee': 0.25},
+        {'start': 700, 'end': -1, 'fee': 0.25}]
    },
     'F': {
       'time': {
@@ -167,8 +167,8 @@ angular.module('c2gyoApp')
      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.33},
-        {'start': 101, 'end': 700, 'fee': 0.27},
-        {'start': 701, 'end': -1, 'fee': 0.27}]
+        {'start': 100, 'end': 700, 'fee': 0.27},
+        {'start': 700, 'end': -1, 'fee': 0.27}]
    }
  }
 );
