@@ -164,13 +164,31 @@ angular.module('c2gyoApp')
 
       var getFeeTimeExact = function() {
         var totalFee = 0;
+        var totalFeeHours = 0;
         var rate = getCurrentRate().time;
+
+        var feeDay = rate.day;
+        var feeWeek = rate.week;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
 
-        // go through until endate - 1 hour
-        for (var i = startDate.clone(); i < endDate; i.add(1, 'h')) {
+        var currentTime = startDate.clone();
+
+        // go through with weeks
+        while (currentTime.clone().add(1, 'w') < endDate) {
+          totalFee += feeWeek;
+          currentTime.add(1, 'w');
+        }
+
+        // go through with days
+        while (currentTime.clone().add(1, 'd') < endDate) {
+          totalFee += feeDay;
+          currentTime.add(1, 'd');
+        }
+
+        // go through hours exactly until endate - 1 hour
+        for (var i = currentTime.clone(); i < endDate; i.add(1, 'h')) {
           var day = i.isoWeekday();
           var hour = i.hour();
           var currentRate = rate[day];
@@ -183,13 +201,17 @@ angular.module('c2gyoApp')
 
             if (hour >= start && hour <= end) {
               //console.log('Day: ' + day + ' hour: ' + hour + ' fee: ' + fee);
-              totalFee += fee;
+              totalFeeHours += fee;
             }
           }
-
         }
 
-        return totalFee;
+        // check to see if it is cheaper to rent for the full day
+        if (totalFeeHours >= feeDay) {
+          totalFeeHours = feeDay;
+        }
+
+        return (totalFee + totalFeeHours);
       };
 
       //-----------------------------------------------------------------------
