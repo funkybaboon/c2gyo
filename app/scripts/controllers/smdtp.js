@@ -75,8 +75,23 @@ angular.module('c2gyoApp')
         return Math.floor(getDurationBilled().asDays() / 7);
       };
 
+      //-----------------------------------------------------------------------
+      // calculate billed time
+      //-----------------------------------------------------------------------
       var getDurationBilled = function() {
-        var rate = getCurrentRate();
+        var durationBilled;
+
+        if ($scope.rental.tab === 'simple') {
+          durationBilled = getDurationBilledSimple();
+        } else {
+          durationBilled = getDurationBilledExact();
+        }
+
+        return durationBilled;
+      };
+
+      var getDurationBilledSimple = function() {
+        var rate = getCurrentRate().time;
 
         var feeHours = $scope.getHours() * rate.hour;
         var feeDays = $scope.getDays() * rate.day;
@@ -100,6 +115,92 @@ angular.module('c2gyoApp')
           feeDays = 0;
           weeksBilled += 1;
           feeWeeks = weeksBilled * rate.week;
+        }
+
+        var duration = moment.duration({
+          hours: hoursBilled,
+          days: daysBilled,
+          weeks: weeksBilled
+        });
+
+        return duration;
+      };
+
+      var getDurationBilledExact = function() {
+        var totalFee = 0;
+        var totalFeeHours = 0;
+        var totalFeeDays = 0;
+        var rate = getCurrentRate().time;
+
+        var feeDay = rate.day;
+        var feeWeek = rate.week;
+
+        var startDate = new moment($scope.rental.startDate);
+        var endDate = new moment($scope.rental.endDate);
+
+        var currentTime = startDate.clone();
+
+        var hoursBilled = 0;
+        var daysBilled = 0;
+        var weeksBilled = 0;
+
+        // go through with weeks
+        while (currentTime.clone().add(1, 'w') < endDate) {
+          totalFee += feeWeek;
+          currentTime.add(1, 'w');
+          weeksBilled++;
+        }
+
+        // go through with days
+        var startOfDays = currentTime.clone();
+        while (currentTime.clone().add(1, 'd') < endDate) {
+          totalFeeDays += feeDay;
+          currentTime.add(1, 'd');
+          daysBilled++;
+        }
+
+        // check to see if it is cheaper to rent for the full week
+        if (totalFeeDays >= feeWeek) {
+          totalFeeDays = feeWeek;
+          currentTime = startOfDays.add(1, 'w');
+          daysBilled = 0;
+          weeksBilled++;
+        }
+
+        // go through hours exactly until endate - 1 hour
+        for (var i = currentTime.clone(); i < endDate; i.add(1, 'h')) {
+          var day = i.isoWeekday();
+          var hour = i.hour();
+          var currentRate = rate[day];
+
+          // loop through possible hour rates
+          for (var j = 0; j <= currentRate.length - 1; j++) {
+            var start = currentRate[j].start;
+            var end = currentRate[j].end;
+            var fee = currentRate[j].fee;
+
+            if (hour >= start && hour <= end) {
+              //console.log('Day: ' + day + ' hour: ' + hour + ' fee: ' + fee);
+              totalFeeHours += fee;
+              hoursBilled++;
+            }
+          }
+        }
+
+        // check to see if it is cheaper to rent for the full day
+        if (totalFeeHours >= feeDay) {
+          totalFeeHours = feeDay;
+          hoursBilled = 0;
+          daysBilled++;
+        }
+
+        // check to see if it is cheaper to rent for the full week
+        if (totalFeeDays + totalFeeHours >= feeWeek) {
+          totalFeeHours = 0;
+          totalFeeDays = feeWeek;
+          hoursBilled = 0;
+          daysBilled = 0;
+          weeksBilled++;
         }
 
         var duration = moment.duration({
