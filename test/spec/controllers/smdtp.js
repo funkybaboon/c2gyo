@@ -358,4 +358,62 @@ describe('Controller: SmdtpCtrl', function() {
 
   });
 
+  it('should calculate the correct price for 1.5 days', function() {
+    scope.rental.startDate = new moment().startOf('hour').hour(0).isoWeekday(1);
+    scope.rental.endDate = scope.rental.startDate.clone().add(36, 'h');
+
+    scope.rate.tariff = 'basic';
+    scope.rental.tab = 'exact';
+    scope.rental.distance = 10;
+
+    scope.rate.carClass = 'A';
+    expect(scope.price().toFixed(2)).toEqual((36.20).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.price().toFixed(2)).toEqual((46.20).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.price().toFixed(2)).toEqual((56.60).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.price().toFixed(2)).toEqual((68.90).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.price().toFixed(2)).toEqual((90.30).toFixed(2));
+
+    scope.rate.tariff = 'classic';
+
+    scope.rate.carClass = 'A';
+    expect(scope.price().toFixed(2)).toEqual((30.00).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.price().toFixed(2)).toEqual((38.20).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.price().toFixed(2)).toEqual((48.60).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.price().toFixed(2)).toEqual((60.90).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.price().toFixed(2)).toEqual((82.30).toFixed(2));
+
+    scope.rate.tariff = 'business';
+
+    scope.rate.carClass = 'A';
+    expect(scope.price().toFixed(2)).toEqual((28.20).toFixed(2));
+
+    scope.rate.carClass = 'B';
+    expect(scope.price().toFixed(2)).toEqual((30.20).toFixed(2));
+
+    scope.rate.carClass = 'C';
+    expect(scope.price().toFixed(2)).toEqual((39.30).toFixed(2));
+
+    scope.rate.carClass = 'D';
+    expect(scope.price().toFixed(2)).toEqual((56.50).toFixed(2));
+
+    scope.rate.carClass = 'F';
+    expect(scope.price().toFixed(2)).toEqual((75.70).toFixed(2));
+  });
+
 });
