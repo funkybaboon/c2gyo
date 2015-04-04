@@ -71,11 +71,11 @@ angular.module('c2gyoApp')
           {'start': 16, 'end': 23, 'fee': 1.9}],
         '6': [
           {'start':  0, 'end':  6, 'fee': 0},
-          {'start':  7, 'end': 15, 'fee': 1.3},
+          {'start':  7, 'end': 15, 'fee': 1.9},
           {'start': 16, 'end': 23, 'fee': 1.9}],
         '7': [
           {'start':  0, 'end':  6, 'fee': 0},
-          {'start':  7, 'end': 15, 'fee': 1.3},
+          {'start':  7, 'end': 15, 'fee': 1.9},
           {'start': 16, 'end': 23, 'fee': 1.9}],
         'hour': 1.9,
         'day': 22,
@@ -108,11 +108,11 @@ angular.module('c2gyoApp')
           {'start': 16, 'end': 23, 'fee': 2.3}],
         '6': [
           {'start':  0, 'end':  6, 'fee': 0},
-          {'start':  7, 'end': 15, 'fee': 1.9},
+          {'start':  7, 'end': 15, 'fee': 2.3},
           {'start': 16, 'end': 23, 'fee': 2.3}],
         '7': [
           {'start':  0, 'end':  6, 'fee': 0},
-          {'start':  7, 'end': 15, 'fee': 1.9},
+          {'start':  7, 'end': 15, 'fee': 2.3},
           {'start': 16, 'end': 23, 'fee': 2.3}],
         'hour': 2.3,
         'day': 28,
