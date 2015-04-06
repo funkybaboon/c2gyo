@@ -5,6 +5,19 @@
  * @name c2gyoApp.directive:navBar
  * @description
  * # navBar
+ * ToDo:
+ *   - Book N Drive
+ *   - CiteeCar
+ *   - Cambio
+ *   - DriveNow
+ *   - Flinkster <-----------
+ *   - Greenwheels
+ *   - Hertz
+ *   - Multicity
+ *   - Scouter
+ *   - SpotCar
+ *   - teilAuto
+ *   - Quicar
  */
 angular.module('c2gyoApp')
   .directive('navBar', function() {
@@ -21,6 +34,9 @@ angular.module('c2gyoApp')
         }, {
           name: 'Stadtmobil',
           url: 'smdtp'
+        }, {
+          name: 'Flinkster',
+          url: 'flinkster'
         }];
 
         $scope.isActive = function(viewLocation) {

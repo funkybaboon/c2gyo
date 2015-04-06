@@ -33,8 +33,12 @@ angular
       .when('/smdtp', {
         templateUrl: 'views/smdtp.html',
         controller: 'SmdtpCtrl',
-      }).
-    otherwise({
-      redirectTo: '/c2gdtp'
-    });
+      })
+      .when('/flinkster', {
+        templateUrl: 'views/flinkster.html',
+        controller: 'FlinksterCtrl'
+      })
+      .otherwise({
+        redirectTo: '/c2gdtp'
+      });
   });
