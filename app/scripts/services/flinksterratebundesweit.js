@@ -158,7 +158,7 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.2}]
     },
-    'transport': {
+    'transporter': {
       'time': {
         '1': [
           {'start': 0, 'end': 7, 'fee': 1.9},
