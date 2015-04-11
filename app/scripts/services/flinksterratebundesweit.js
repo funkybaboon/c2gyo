@@ -10,6 +10,43 @@
 angular.module('c2gyoApp')
   .constant('flinksterratebundesweit', {
     'resolution': 'h',
+    'sonder': {
+      'time': {
+        '1': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '2': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '3': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '4': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '5': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '6': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        '7': [
+          {'start': 0, 'end': 7, 'fee': 1.5},
+          {'start': 8, 'end': 21, 'fee': 2.5},
+          {'start': 22, 'end': 23, 'fee': 1.5}],
+        'hour': 2.5,
+        'day1': 40,
+        'day2': 29,
+     },
+      'km': [
+        {'start': 0, 'end': -1, 'fee': 0.2}]
+    },
     'mini': {
       'time': {
         '1': [
@@ -191,43 +228,6 @@ angular.module('c2gyoApp')
         'hour': 8,
         'day1': 80,
         'day2': 59,
-     },
-      'km': [
-        {'start': 0, 'end': -1, 'fee': 0.2}]
-    },
-    'sonder': {
-      'time': {
-        '1': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '2': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '3': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '4': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '5': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '6': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        '7': [
-          {'start': 0, 'end': 7, 'fee': 1.5},
-          {'start': 8, 'end': 21, 'fee': 2.5},
-          {'start': 22, 'end': 23, 'fee': 1.5}],
-        'hour': 2.5,
-        'day1': 40,
-        'day2': 29,
      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.2}]
