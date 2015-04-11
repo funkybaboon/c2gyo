@@ -1,18 +1,6 @@
 <time-Input-Form></time-Input-Form>
 
 <div class="highlight">
-  <div class="form-group">
-    <div class="input-group">
-      Fahrzeugklasse:
-      <form>
-        <input type="radio" ng-model="rate.carClass" value="A" id="rateA">A Kleinstwagen<br/>
-        <input type="radio" ng-model="rate.carClass" value="B" id="rateB">B Kleinwagen<br/>
-        <input type="radio" ng-model="rate.carClass" value="C" id="rateC">C Kombi/Fun<br/>
-        <input type="radio" ng-model="rate.carClass" value="D" id="rateD">D Komfort/Kleinbus<br/>
-        <input type="radio" ng-model="rate.carClass" value="F" id="rateF">F Transporter<br/>
-      </form>
-    </div>
-  </div>
 
   <div class="form-group">
     <div class="input-group">
@@ -23,6 +11,21 @@
       </form>
     </div>
   </div>
+
+  <div class="form-group">
+    <div class="input-group">
+    Fahrzeugklasse:
+      <form>
+        <input type="radio" ng-model="rate.carClass" value="sonder" id="ratesonder">Sonder<br/>
+        <input type="radio" ng-model="rate.carClass" value="mini" id="ratemini">Mini<br/>
+        <input type="radio" ng-model="rate.carClass" value="klein" id="rateklein">Klein<br/>
+        <input type="radio" ng-model="rate.carClass" value="kompakt" id="ratekompakt">Kompakt<br/>
+        <input type="radio" ng-model="rate.carClass" value="mittel" id="ratemittel">Mittel<br/>
+        <input type="radio" ng-model="rate.carClass" value="transporter" id="rateF">Transporter<br/>
+      </form>
+    </div>
+  </div>
+
 </div>
 
 <price-Box></price-Box>

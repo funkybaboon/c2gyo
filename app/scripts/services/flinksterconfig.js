@@ -9,6 +9,6 @@
  */
 angular.module('c2gyoApp')
   .constant('flinksterConfig', {
-    carClass: 'A',
-    tariff: 'bundesweit'
+    tariff: 'bundesweit',
+    carClass: 'sonder'
   });
