@@ -10,17 +10,15 @@
 angular.module('c2gyoApp')
   .controller('FlinksterCtrl', [
     '$scope',
-    'stadtmobilratebasic',
-    'stadtmobilrateclassic',
-    'stadtmobilratebusiness',
+    'flinksterratebundesweit',
+    'flinksterratelokal',
     'flinksterConfig',
     'duration',
     'state',
     function(
       $scope,
-      stadtmobilratebasic,
-      stadtmobilrateclassic,
-      stadtmobilratebusiness,
+      flinksterratebundesweit,
+      flinksterratelokal,
       flinksterConfig,
       duration,
       state) {
@@ -31,8 +29,8 @@ angular.module('c2gyoApp')
       };
 
       $scope.rate = {
-        carClass: flinksterConfig.carClass,
-        tariff: flinksterConfig.tariff
+        tariff: flinksterConfig.tariff,
+        carClass: flinksterConfig.carClass
       };
 
       $scope.resolution = ['hours', 'days'];
@@ -226,11 +224,11 @@ angular.module('c2gyoApp')
         }
 
         if (tariff === 'classic') {
-          rate = stadtmobilrateclassic[carClass];
+          rate = flinksterratelokal[carClass];
         } else if (tariff === 'basic') {
-          rate = stadtmobilratebasic[carClass];
+          rate = flinksterratebundesweit[carClass];
         } else {
-          rate = stadtmobilratebusiness[carClass];
+          rate = [carClass];
         }
 
         return rate;
