@@ -33,7 +33,7 @@ angular.module('c2gyoApp')
         carClass: flinksterConfig.carClass
       };
 
-      $scope.resolution = ['hours', 'days'];
+      $scope.resolution = ['hours', 'days', 'airport'];
       $scope.resolutionTime = ['hours', 'days'];
 
       //-----------------------------------------------------------------------
@@ -51,10 +51,6 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDays = function() {
-        return Math.floor(durationAll().asDays() % 7);
-      };
-
-      $scope.getWeeks = function() {
         return Math.floor(durationAll().asDays() / 7);
       };
 
@@ -66,10 +62,6 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDaysBilled = function() {
-        return Math.floor(getDurationBilled().asDays() % 7);
-      };
-
-      $scope.getWeeksBilled = function() {
         return Math.floor(getDurationBilled().asDays() / 7);
       };
 
@@ -93,11 +85,9 @@ angular.module('c2gyoApp')
 
         var feeHours = $scope.getHours() * rate.hour;
         var feeDays = $scope.getDays() * rate.day;
-        var feeWeeks = $scope.getWeeks() * rate.week;
 
         var hoursBilled = $scope.getHours();
         var daysBilled = $scope.getDays();
-        var weeksBilled = $scope.getWeeks();
 
         if (feeHours >= rate.day) {
           hoursBilled = 0;
@@ -106,32 +96,20 @@ angular.module('c2gyoApp')
           feeDays = daysBilled * rate.day;
         }
 
-        if (feeHours + feeDays >= rate.week) {
-          hoursBilled = 0;
-          feeHours = 0;
-          daysBilled = 0;
-          feeDays = 0;
-          weeksBilled += 1;
-          feeWeeks = weeksBilled * rate.week;
-        }
-
         var duration = moment.duration({
           hours: hoursBilled,
-          days: daysBilled,
-          weeks: weeksBilled
+          days: daysBilled
         });
 
         return duration;
       };
 
       var getDurationBilledExact = function() {
-        var totalFee = 0;
         var totalFeeHours = 0;
         var totalFeeDays = 0;
         var rate = getCurrentRate().time;
 
         var feeDay = rate.day;
-        var feeWeek = rate.week;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
@@ -140,29 +118,12 @@ angular.module('c2gyoApp')
 
         var hoursBilled = 0;
         var daysBilled = 0;
-        var weeksBilled = 0;
-
-        // go through with weeks
-        while (currentTime.clone().add(1, 'w') < endDate) {
-          totalFee += feeWeek;
-          currentTime.add(1, 'w');
-          weeksBilled++;
-        }
 
         // go through with days
-        var startOfDays = currentTime.clone();
         while (currentTime.clone().add(1, 'd') < endDate) {
           totalFeeDays += feeDay;
           currentTime.add(1, 'd');
           daysBilled++;
-        }
-
-        // check to see if it is cheaper to rent for the full week
-        if (totalFeeDays >= feeWeek) {
-          totalFeeDays = feeWeek;
-          currentTime = startOfDays.add(1, 'w');
-          daysBilled = 0;
-          weeksBilled++;
         }
 
         // go through hours exactly until endate - 1 hour
@@ -192,19 +153,9 @@ angular.module('c2gyoApp')
           daysBilled++;
         }
 
-        // check to see if it is cheaper to rent for the full week
-        if (totalFeeDays + totalFeeHours >= feeWeek) {
-          totalFeeHours = 0;
-          totalFeeDays = feeWeek;
-          hoursBilled = 0;
-          daysBilled = 0;
-          weeksBilled++;
-        }
-
         var duration = moment.duration({
           hours: hoursBilled,
-          days: daysBilled,
-          weeks: weeksBilled
+          days: daysBilled
         });
 
         return duration;
@@ -218,17 +169,11 @@ angular.module('c2gyoApp')
         var tariff = $scope.rate.tariff;
         var rate = {};
 
-        // studi and classic have the same rates
-        if (tariff === 'studi') {
-          tariff = 'classic';
-        }
-
-        if (tariff === 'classic') {
+        if (tariff === 'lokal') {
           rate = flinksterratelokal[carClass];
-        } else if (tariff === 'basic') {
-          rate = flinksterratebundesweit[carClass];
         } else {
-          rate = [carClass];
+          rate = flinksterratebundesweit[carClass];
+          debugger;
         }
 
         return rate;
@@ -254,11 +199,8 @@ angular.module('c2gyoApp')
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
         var feeDays = $scope.getDaysBilled() * rate.day;
-        var feeWeeks = $scope.getWeeksBilled() * rate.week;
 
-        var fee = feeHours + feeDays + feeWeeks;
-
-        return fee;
+        return feeHours + feeDays;
       };
 
       var getFeeTimeExact = function() {
@@ -268,30 +210,16 @@ angular.module('c2gyoApp')
         var rate = getCurrentRate().time;
 
         var feeDay = rate.day;
-        var feeWeek = rate.week;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
 
         var currentTime = startDate.clone();
 
-        // go through with weeks
-        while (currentTime.clone().add(1, 'w') < endDate) {
-          totalFee += feeWeek;
-          currentTime.add(1, 'w');
-        }
-
         // go through with days
-        var startOfDays = currentTime.clone();
         while (currentTime.clone().add(1, 'd') < endDate) {
           totalFeeDays += feeDay;
           currentTime.add(1, 'd');
-        }
-
-        // check to see if it is cheaper to rent for the full week
-        if (totalFeeDays >= feeWeek) {
-          totalFeeDays = feeWeek;
-          currentTime = startOfDays.add(1, 'w');
         }
 
         // go through hours exactly until endate - 1 hour
@@ -316,12 +244,6 @@ angular.module('c2gyoApp')
         // check to see if it is cheaper to rent for the full day
         if (totalFeeHours >= feeDay) {
           totalFeeHours = feeDay;
-        }
-
-        // check to see if it is cheaper to rent for the full week
-        if (totalFeeDays + totalFeeHours >= feeWeek) {
-          totalFeeHours = 0;
-          totalFeeDays = feeWeek;
         }
 
         return (totalFee + totalFeeDays + totalFeeHours);
