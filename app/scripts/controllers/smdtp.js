@@ -31,8 +31,8 @@ angular.module('c2gyoApp')
       };
 
       $scope.rate = {
-        tariff: smConfig.tariff,
-        carClass: smConfig.carClass
+        carClass: smConfig.carClass,
+        tariff: smConfig.tariff
       };
 
       $scope.resolution = ['hours', 'days', 'weeks'];
