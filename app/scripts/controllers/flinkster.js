@@ -84,16 +84,14 @@ angular.module('c2gyoApp')
         var rate = getCurrentRate().time;
 
         var feeHours = $scope.getHours() * rate.hour;
-        var feeDays = $scope.getDays() * rate.day;
+        var feeDays = $scope.getDays() * rate.day1;
 
         var hoursBilled = $scope.getHours();
         var daysBilled = $scope.getDays();
 
-        if (feeHours >= rate.day) {
+        if (feeHours >= feeDays) {
           hoursBilled = 0;
-          feeHours = 0;
           daysBilled += 1;
-          feeDays = daysBilled * rate.day;
         }
 
         var duration = moment.duration({
@@ -105,19 +103,33 @@ angular.module('c2gyoApp')
       };
 
       var getDurationBilledExact = function() {
+        return getDurationAndFeeExact();
+      };
+
+      var getDurationAndFeeExact = function() {
+
+        // init variables for calculating fee
         var totalFeeHours = 0;
         var totalFeeDays = 0;
         var rate = getCurrentRate().time;
+        var feeDay = rate.day1;
 
-        var feeDay = rate.day;
+        // init variables for billed time
+        var hoursBilled = 0;
+        var daysBilled = 0;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
-
         var currentTime = startDate.clone();
 
-        var hoursBilled = 0;
-        var daysBilled = 0;
+        // in tariff "bundesweit" there is a different price for day1 and day2
+        var tariff = $scope.rate.tariff;
+        if (tariff === 'bundesweit' && currentTime.clone().add(1, 'd') < endDate) {
+          totalFeeDays += feeDay;
+          currentTime.add(1, 'd');
+          feeDay = rate.day2;
+          daysBilled++;
+        }
 
         // go through with days
         while (currentTime.clone().add(1, 'd') < endDate) {
@@ -169,11 +181,11 @@ angular.module('c2gyoApp')
         var tariff = $scope.rate.tariff;
         var rate = {};
 
+
         if (tariff === 'lokal') {
           rate = flinksterratelokal[carClass];
         } else {
           rate = flinksterratebundesweit[carClass];
-          debugger;
         }
 
         return rate;
@@ -198,7 +210,7 @@ angular.module('c2gyoApp')
         var rate = getCurrentRate().time;
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
-        var feeDays = $scope.getDaysBilled() * rate.day;
+        var feeDays = $scope.getDaysBilled() * rate.day1;
 
         return feeHours + feeDays;
       };
@@ -208,13 +220,21 @@ angular.module('c2gyoApp')
         var totalFeeHours = 0;
         var totalFeeDays = 0;
         var rate = getCurrentRate().time;
+        var tariff = $scope.rate.tariff;
 
-        var feeDay = rate.day;
+        var feeDay = rate.day1;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
 
         var currentTime = startDate.clone();
+
+        // in tariff "bundesweit" there is a different price for day1 and day2
+        if (tariff === 'bundesweit' && currentTime.clone().add(1, 'd') < endDate) {
+          totalFeeDays += feeDay;
+          currentTime.add(1, 'd');
+          feeDay = rate.day2;
+        }
 
         // go through with days
         while (currentTime.clone().add(1, 'd') < endDate) {
