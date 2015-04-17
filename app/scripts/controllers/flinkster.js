@@ -51,7 +51,7 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDays = function() {
-        return Math.floor(durationAll().asDays() / 7);
+        return Math.floor(durationAll().asDays());
       };
 
       //-----------------------------------------------------------------------
@@ -62,7 +62,7 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDaysBilled = function() {
-        return Math.floor(getDurationBilled().asDays() / 7);
+        return Math.floor(getDurationBilled().asDays());
       };
 
       //-----------------------------------------------------------------------
