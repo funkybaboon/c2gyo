@@ -23,7 +23,7 @@ angular.module('c2gyoApp')
   .directive('navBar', function() {
     return {
       restrict: 'E',
-      templateUrl: 'scripts/directives/navbar.html',
+      templateUrl: 'views/navbar.html',
       controller: function($scope, $element, $location) {
         $scope.tabs = [{
           name: 'Car2go',

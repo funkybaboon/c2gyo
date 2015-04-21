@@ -10,7 +10,7 @@ angular.module('c2gyoApp')
   .directive('priceBox', function() {
     return {
       restrict: 'E',
-      templateUrl: 'scripts/directives/priceBox.html',
+      templateUrl: 'views/priceBox.html',
       controller: function($scope) {
         $scope.pricePerKm = function() {
           return $scope.price() / $scope.rental.distance;
