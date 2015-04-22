@@ -17,7 +17,46 @@ describe('Controller: FlinksterCtrl', function () {
     flinksterConfig = _flinksterConfig_;
   }));
 
+  var testdata = {
+    bundesweit: {
+      sonder: '26.00',
+      mini: '24.00',
+      klein: '48.30',
+      kompakt: '57.70',
+      mittel: '66.90',
+      transporter: '75.90'
+    },
+    lokal: {
+      sonder: '18.35',
+      mini: '18.35',
+      klein: '23.85',
+      kompakt: '28.35',
+      mittel: '42.40',
+      transporter: '42.40'
+    }
+  };
 
+  var testcase = function (tariff, carClass, expectedPrice) {
+    it('distance: ' + 10 + ', tariff: ' + tariff + ', carClass: ' + carClass, function () {
+
+      scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
+      scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
+
+      scope.rental.tab = 'exact';
+      scope.rental.distance = 10;
+
+      scope.rate.tariff = tariff;
+      scope.rate.carClass = carClass;
+      expect(scope.price().toFixed(2)).toEqual(expectedPrice);
+    });
+  };
+
+  for (var tariff in testdata) {
+    for (var carClass in testdata[tariff]) {
+      var expectedPrice = testdata[tariff][carClass];
+      testcase(tariff, carClass, expectedPrice);
+    }
+  }
 
 
   it('should calculate the correct price using the datetimepicker', function() {
@@ -28,23 +67,6 @@ describe('Controller: FlinksterCtrl', function () {
     scope.rental.distance = 10;
 
     scope.rate.tariff = 'bundesweit';
-
-    var testdata = {
-      bundesweit: {
-        sonder: '26.00',
-        mini: '24.00',
-        klein: '48.30',
-        kompakt: '57.70',
-        mittel: '66.90',
-        transporter: '75.90'
-      }
-    };
-
-    for( var carClass in testdata.bundesweit) {
-      scope.rate.carClass = carClass;
-      var expectedPrice = testdata.bundesweit[carClass];
-      expect(scope.price().toFixed(2)).toEqual(expectedPrice);
-    }
 
     scope.rate.carClass = 'sonder';
     expect(scope.price().toFixed(2)).toEqual((26.00).toFixed(2));
