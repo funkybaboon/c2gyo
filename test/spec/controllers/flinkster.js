@@ -22,24 +22,27 @@ describe('Controller: FlinksterCtrl', function () {
     for (var tariff in testdata.expectedPrices) {
       for (var carClass in testdata.expectedPrices[tariff]) {
         var expectedPrice = testdata.expectedPrices[tariff][carClass];
-        it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
-          scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
-          scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
+        (function(tariff, carClass, expectedPrice){
+          it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
+            scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
+            scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
 
-          scope.rental.tab = testdata.tab;
-          scope.rental.distance = testdata.distance;
+            scope.rental.tab = testdata.tab;
+            scope.rental.distance = testdata.distance;
 
-          scope.rate.tariff = tariff;
-          scope.rate.carClass = carClass;
-          expect(scope.price().toFixed(2)).toEqual(expectedPrice);
-        });
+            scope.rate.tariff = tariff;
+            scope.rate.carClass = carClass;
+            expect(scope.price().toFixed(2)).toEqual(expectedPrice);
+          });
+        })(tariff, carClass, expectedPrice);
       }
     }
-  }
+  };
 
-  describe('should calculate the correct price with 10km distance and 10 hour lease', function () {
+  describe ('should calculate the correct price with 10km distance and 10 hour lease', function () {
 
     var testdata = {
+      //start: new moment(),
       tab: 'exact',
       distance: 10,
       expectedPrices: {
@@ -64,8 +67,8 @@ describe('Controller: FlinksterCtrl', function () {
 
     test(testdata);
 
-  })
-/*
+  });
+
   it('should calculate the correct price using the datetimepicker', function() {
     scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
     scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
@@ -114,6 +117,5 @@ describe('Controller: FlinksterCtrl', function () {
     expect(scope.price().toFixed(2)).toEqual((42.40).toFixed(2));
 
   });
-*/
 
 });
