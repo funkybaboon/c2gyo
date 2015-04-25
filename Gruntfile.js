@@ -351,7 +351,26 @@ module.exports = function(grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    ngtemplates: {
+      app: {
+        src: [
+          '<%= yeoman.app %>/views/**/*.html',
+        ],
+        dest: '<%= yeoman.dist %>/views/views.js',
+        options: {
+          /*
+           url: function (url) {
+           return url.replace('app/', '');
+           },*/
+          bootstrap: function (module, script) {
+            return 'angular.module("c2gyo").run(["$templateCache", function($templateCache) {' + script + '}]);';
+          }
+        }
+      }
     }
+
   });
 
 
@@ -386,6 +405,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'ngtemplates',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -405,4 +425,10 @@ module.exports = function(grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('new', [
+    'newer:jshint',
+    'test'
+  ]);
+
 };

@@ -28,7 +28,8 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'app/scripts/**/*.js',
       //'test/mock/**/*.js',
-      'test/spec/**/*.js',
+      //'test/spec/**/*.js',
+      'test/spec/controllers/*.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -56,7 +57,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-mocha-reporter'
     ],
 
     // Continuous Integration mode
@@ -75,5 +77,7 @@ module.exports = function(config) {
     // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
+
+    reporters: ['mocha'],
   });
 };
