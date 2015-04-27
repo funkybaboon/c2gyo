@@ -25,7 +25,7 @@ describe('Controller: FlinksterCtrl', function () {
         (function(tariff, carClass, expectedPrice){
           it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
             scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
-            scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
+            scope.rental.endDate = scope.rental.startDate.clone().add(testdata.hours, 'h');
 
             scope.rental.tab = testdata.tab;
             scope.rental.distance = testdata.distance;
@@ -42,9 +42,9 @@ describe('Controller: FlinksterCtrl', function () {
   describe ('should calculate the correct price with 10km distance and 10 hour lease', function () {
 
     var testdata = {
-      //start: new moment(),
       tab: 'exact',
       distance: 10,
+      hours: 10,
       expectedPrices: {
         bundesweit: {
           sonder: '26.00',
