@@ -24,8 +24,8 @@ describe('Controller: FlinksterCtrl', function () {
         var expectedPrice = testdata.expectedPrices[tariff][carClass];
         (function(tariff, carClass, expectedPrice){
           it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
-            scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
-            scope.rental.endDate = scope.rental.startDate.clone().add(testdata.hours, 'h');
+            scope.rental.startDate = new moment(testdata.start, "YYYY-MM-DD HH:mm");
+            scope.rental.endDate = new moment(testdata.end, "YYYY-MM-DD HH:mm");
 
             scope.rental.tab = testdata.tab;
             scope.rental.distance = testdata.distance;
@@ -42,9 +42,10 @@ describe('Controller: FlinksterCtrl', function () {
   describe ('should calculate the correct price with 10km distance and 10 hour lease', function () {
 
     var testdata = {
+      start: "2010-04-20 07:00",
+      end: "2010-04-20 17:00",
       tab: 'exact',
       distance: 10,
-      hours: 10,
       expectedPrices: {
         bundesweit: {
           sonder: '26.00',
