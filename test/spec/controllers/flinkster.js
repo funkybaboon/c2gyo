@@ -39,7 +39,38 @@ describe('Controller: FlinksterCtrl', function () {
     }
   };
 
-  describe ('should calculate the correct price with 10km distance and 10 hour lease', function () {
+  describe ('should calculate the correct price with 10km distance and a 8 hour lease between 2 time zones', function () {
+
+    var testdata = {
+      start: "2010-04-20 04:00",
+      end: "2010-04-20 12:00",
+      tab: 'exact',
+      distance: 10,
+      expectedPrices: {
+        bundesweit: {
+          sonder: '18.00',
+          mini: '17.00',
+          klein: '27.80',
+          kompakt: '33.40',
+          mittel: '37.60',
+          transporter: '41.60'
+        },
+        lokal: {
+          sonder: '9.60',
+          mini: '9.60',
+          klein: '15.60',
+          kompakt: '17.60',
+          mittel: '27.90',
+          transporter: '27.90'
+        }
+      }
+    };
+
+    test(testdata);
+
+  });
+
+  describe ('should calculate the correct price with 10km distance and a 10 hour lease', function () {
 
     var testdata = {
       start: "2010-04-20 07:00",
