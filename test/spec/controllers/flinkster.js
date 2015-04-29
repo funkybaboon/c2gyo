@@ -39,8 +39,10 @@ describe('Controller: FlinksterCtrl', function () {
     }
   };
 
-  describe ('should calculate the correct price with 10km distance and a 8 hour lease between 2 time zones', function () {
-
+  describe (
+    'should calculate the correct price with 10km distance and a 8 hour lease' +
+    ' between 2 time zones',
+    function () {
     var testdata = {
       start: "2010-04-20 04:00",
       end: "2010-04-20 12:00",
@@ -65,89 +67,92 @@ describe('Controller: FlinksterCtrl', function () {
         }
       }
     };
-
     test(testdata);
-
   });
 
-  describe ('should calculate the correct price with 10km distance and a 10 hour lease', function () {
-
+  describe ('should calculate the correct price with 10km distance and a 12 ' +
+  'hour lease triggering the price for a day',
+    function () {
     var testdata = {
-      start: "2010-04-20 07:00",
-      end: "2010-04-20 17:00",
+      start: "2010-04-20 08:00",
+      end: "2010-04-20 20:00",
       tab: 'exact',
       distance: 10,
       expectedPrices: {
         bundesweit: {
-          sonder: '26.00',
-          mini: '24.00',
-          klein: '48.30',
-          kompakt: '57.70',
-          mittel: '66.90',
-          transporter: '75.90'
+          klein: '51.80',
+          kompakt: '61.80',
+          mittel: '72.00',
+          transporter: '82.00'
         },
         lokal: {
-          sonder: '18.35',
-          mini: '18.35',
-          klein: '23.85',
-          kompakt: '28.35',
+          sonder: '22.10',
+          mini: '22.10',
+          klein: '27.10',
+          kompakt: '32.10',
           mittel: '42.40',
           transporter: '42.40'
         }
       }
     };
-
     test(testdata);
-
   });
 
-  it('should calculate the correct price using the datetimepicker', function() {
-    scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
-    scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
-
-    scope.rental.tab = 'exact';
-    scope.rental.distance = 10;
-
-    scope.rate.tariff = 'bundesweit';
-
-    scope.rate.carClass = 'sonder';
-    expect(scope.price().toFixed(2)).toEqual((26.00).toFixed(2));
-
-    scope.rate.carClass = 'mini';
-    expect(scope.price().toFixed(2)).toEqual((24.00).toFixed(2));
-
-    scope.rate.carClass = 'klein';
-    expect(scope.price().toFixed(2)).toEqual((48.30).toFixed(2));
-
-    scope.rate.carClass = 'kompakt';
-    expect(scope.price().toFixed(2)).toEqual((57.70).toFixed(2));
-
-    scope.rate.carClass = 'mittel';
-    expect(scope.price().toFixed(2)).toEqual((66.90).toFixed(2));
-
-    scope.rate.carClass = 'transporter';
-    expect(scope.price().toFixed(2)).toEqual((75.90).toFixed(2));
-
-    scope.rate.tariff = 'lokal';
-
-    scope.rate.carClass = 'sonder';
-    expect(scope.price().toFixed(2)).toEqual((18.35).toFixed(2));
-
-    scope.rate.carClass = 'mini';
-    expect(scope.price().toFixed(2)).toEqual((18.35).toFixed(2));
-
-    scope.rate.carClass = 'klein';
-    expect(scope.price().toFixed(2)).toEqual((23.85).toFixed(2));
-
-    scope.rate.carClass = 'kompakt';
-    expect(scope.price().toFixed(2)).toEqual((28.35).toFixed(2));
-
-    scope.rate.carClass = 'mittel';
-    expect(scope.price().toFixed(2)).toEqual((42.40).toFixed(2));
-
-    scope.rate.carClass = 'transporter';
-    expect(scope.price().toFixed(2)).toEqual((42.40).toFixed(2));
-
+  describe ('should calculate the correct price with 10km distance and a 19 ' +
+  'hour lease triggering the price for a day',
+    function () {
+    var testdata = {
+      start: "2010-04-20 03:00",
+      end: "2010-04-20 22:00",
+      tab: 'exact',
+      distance: 10,
+      expectedPrices: {
+        bundesweit: {
+          sonder: '42.00',
+          mini: '40.80'
+        }
+      }
+    };
+    test(testdata);
   });
+
+  describe ('should calculate the correct price with 10km distance and a 36 ' +
+    'hour lease triggering the price for a day and a second day',
+    function () {
+      var testdata = {
+        start: "2010-04-20 08:00",
+        end: "2010-04-21 20:00",
+        tab: 'exact',
+        distance: 10,
+        expectedPrices: {
+          bundesweit: {
+            klein: '80.80',
+            kompakt: '100.80',
+            mittel: '121.00',
+            transporter: '141.00'
+          }
+        }
+      };
+      test(testdata);
+    });
+
+  describe ('should calculate the correct price with 10km distance and a 43 ' +
+    'hour lease triggering the price for a day and a second day',
+    function () {
+      var testdata = {
+        start: "2010-04-20 03:00",
+        end: "2010-04-21 22:00",
+        tab: 'exact',
+        distance: 10,
+        expectedPrices: {
+          bundesweit: {
+            sonder: '71.00',
+            mini: '69.80'
+          }
+        }
+      };
+      test(testdata);
+    });
+
 
 });
