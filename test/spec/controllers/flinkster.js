@@ -154,5 +154,28 @@ describe('Controller: FlinksterCtrl', function () {
       test(testdata);
     });
 
+  describe (
+    'should calculate the correct price with 10km distance and a 8 hour lease' +
+    ' triggering the price for a week',
+    function () {
+      var testdata = {
+        start: "2010-04-20 04:00",
+        end: "2010-04-25<< 4:00",
+        tab: 'exact',
+        distance: 10,
+        expectedPrices: {
+          lokal: {
+            sonder: '122.60',
+            mini: '122.60',
+            klein: '132.60',
+            kompakt: '160.00',
+            mittel: '252.90',
+            transporter: '252.90'
+          }
+        }
+      };
+      test(testdata);
+    });
+
 
 });
