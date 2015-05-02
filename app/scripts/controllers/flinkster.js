@@ -33,8 +33,8 @@ angular.module('c2gyoApp')
         carClass: flinksterConfig.carClass
       };
 
-      $scope.resolution = ['hours', 'days', 'airport'];
-      $scope.resolutionTime = ['hours', 'days'];
+      $scope.resolution = ['hours', 'days', 'weeks', 'airport'];
+      $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
@@ -111,12 +111,16 @@ angular.module('c2gyoApp')
         // init variables for calculating fee
         var totalFeeHours = 0;
         var totalFeeDays = 0;
+        var totalFeeWeeks = 0;
+
         var rate = getCurrentRate().time;
         var feeDay = rate.day1;
+        var feeWeeks = rate.week;
 
         // init variables for billed time
         var hoursBilled = 0;
         var daysBilled = 0;
+        var weeksBilled = 0;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
@@ -167,7 +171,8 @@ angular.module('c2gyoApp')
 
         var duration = moment.duration({
           hours: hoursBilled,
-          days: daysBilled
+          days: daysBilled,
+          weeks: weeksBilled
         });
 
         return duration;
