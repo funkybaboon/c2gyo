@@ -115,7 +115,7 @@ angular.module('c2gyoApp')
 
         var rate = getCurrentRate().time;
         var feeDay = rate.day1;
-        var feeWeeks = rate.week;
+        var feeWeek = rate.week;
 
         // init variables for billed time
         var hoursBilled = 0;
@@ -126,8 +126,18 @@ angular.module('c2gyoApp')
         var endDate = new moment($scope.rental.endDate);
         var currentTime = startDate.clone();
 
-        // in tariff "bundesweit" there is a different price for day1 and day2
         var tariff = $scope.rate.tariff;
+
+        // go through with weeks
+        if (tariff === 'lokal') {
+          while (currentTime.clone().add(1, 'w') < endDate) {
+            totalFeeWeeks += feeWeek;
+            currentTime.add(1, 'w');
+            weeksBilled++;
+          }
+        }
+
+        // in tariff "bundesweit" there is a different price for day1 and day2
         if (tariff === 'bundesweit' && currentTime.clone().add(1, 'd') < endDate) {
           totalFeeDays += feeDay;
           currentTime.add(1, 'd');
@@ -167,6 +177,17 @@ angular.module('c2gyoApp')
           totalFeeHours = feeDay;
           hoursBilled = 0;
           daysBilled++;
+        }
+
+        // check to see if it is cheaper to rent for the full week
+        if (tariff === 'lokal') {
+          if (totalFeeDays + totalFeeHours >= feeWeek) {
+            totalFeeHours = 0;
+            totalFeeDays = feeWeek;
+            hoursBilled = 0;
+            daysBilled = 0;
+            weeksBilled++;
+          }
         }
 
         var duration = moment.duration({
@@ -224,15 +245,25 @@ angular.module('c2gyoApp')
         var totalFee = 0;
         var totalFeeHours = 0;
         var totalFeeDays = 0;
+        var totalFeeWeeks = 0;
+
         var rate = getCurrentRate().time;
         var tariff = $scope.rate.tariff;
-
         var feeDay = rate.day1;
+        var feeWeek = rate.week;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
 
         var currentTime = startDate.clone();
+
+        // go through with weeks
+        if (tariff === 'lokal') {
+          while (currentTime.clone().add(1, 'w') < endDate) {
+            totalFeeWeeks += feeWeek;
+            currentTime.add(1, 'w');
+          }
+        }
 
         // in tariff "bundesweit" there is a different price for day1 and day2
         if (tariff === 'bundesweit' && currentTime.clone().add(1, 'd') < endDate) {
@@ -271,7 +302,15 @@ angular.module('c2gyoApp')
           totalFeeHours = feeDay;
         }
 
-        return (totalFee + totalFeeDays + totalFeeHours);
+        // check to see if it is cheaper to rent for the full week
+        if (tariff === 'lokal') {
+          if (totalFeeDays + totalFeeHours >= feeWeek) {
+            totalFeeHours = 0;
+            totalFeeDays = feeWeek;
+          }
+        }
+
+        return (totalFee + totalFeeWeeks + totalFeeDays + totalFeeHours);
       };
 
       //-----------------------------------------------------------------------

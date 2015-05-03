@@ -160,7 +160,7 @@ describe('Controller: FlinksterCtrl', function () {
     function () {
       var testdata = {
         start: "2010-04-20 04:00",
-        end: "2010-04-25<< 4:00",
+        end: "2010-04-26 10:00",
         tab: 'exact',
         distance: 10,
         expectedPrices: {
@@ -168,7 +168,7 @@ describe('Controller: FlinksterCtrl', function () {
             sonder: '122.60',
             mini: '122.60',
             klein: '132.60',
-            kompakt: '160.00',
+            kompakt: '162.60',
             mittel: '252.90',
             transporter: '252.90'
           }
