@@ -51,7 +51,11 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDays = function() {
-        return Math.floor(durationAll().asDays());
+        return Math.floor(durationAll().asDays() % 7);
+      };
+
+      $scope.getWeeks = function() {
+        return Math.floor(durationAll().asDays() / 7);
       };
 
       //-----------------------------------------------------------------------
@@ -62,7 +66,11 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDaysBilled = function() {
-        return Math.floor(getDurationBilled().asDays());
+        return Math.floor(getDurationBilled().asDays() % 7);
+      };
+
+      $scope.getWeeksBilled = function() {
+        return Math.floor(getDurationBilled().asDays() / 7);
       };
 
       //-----------------------------------------------------------------------
@@ -88,31 +96,95 @@ angular.module('c2gyoApp')
 
         var hoursBilled = $scope.getHours();
         var daysBilled = $scope.getDays();
+        var weeksBilled = $scope.getWeeks();
 
-        if (feeHours >= feeDays) {
+        if (feeHours >= rate.day) {
           hoursBilled = 0;
+          feeHours = 0;
           daysBilled += 1;
+          feeDays = daysBilled * rate.day;
+        }
+
+        if (feeHours + feeDays >= rate.week) {
+          hoursBilled = 0;
+          daysBilled = 0;
+          weeksBilled += 1;
         }
 
         var duration = moment.duration({
           hours: hoursBilled,
-          days: daysBilled
+          days: daysBilled,
+          weeks: weeksBilled
         });
 
         return duration;
       };
 
       var getDurationBilledExact = function() {
-        return getDurationAndFeeExact();
+        return getDurationAndFeeExact().duration;
       };
 
+      //-----------------------------------------------------------------------
+      // get current rate
+      //-----------------------------------------------------------------------
+      var getCurrentRate = function() {
+        var carClass = $scope.rate.carClass;
+        var tariff = $scope.rate.tariff;
+        var rate = {};
+
+
+        if (tariff === 'lokal') {
+          rate = flinksterratelokal[carClass];
+        } else {
+          rate = flinksterratebundesweit[carClass];
+          // add a fake weekly rate here
+          rate.time.week = rate.time.day1 * 7;
+          //debugger;
+        }
+
+        return rate;
+      };
+
+      //-----------------------------------------------------------------------
+      // get price for used time
+      //-----------------------------------------------------------------------
+      $scope.getFeeTime = function() {
+        var fee;
+
+        if ($scope.rental.tab === 'simple') {
+          fee = getFeeTimeSimple();
+        } else {
+          fee = getFeeTimeExact();
+        }
+
+        return fee;
+      };
+
+      var getFeeTimeSimple = function() {
+        var rate = getCurrentRate().time;
+
+        var feeHours = $scope.getHoursBilled() * rate.hour;
+        var feeDays = $scope.getDaysBilled() * rate.day1;
+        var feeWeeks = $scope.getWeeksBilled() * rate.week;
+
+        var fee = feeHours + feeDays + feeWeeks;
+
+        return fee;
+      };
+
+      var getFeeTimeExact = function() {
+        return getDurationAndFeeExact().fee;
+      };
+      
+      //-----------------------------------------------------------------------
+      // get duration and fee exact
+      //-----------------------------------------------------------------------
       var getDurationAndFeeExact = function() {
 
         // init variables for calculating fee
         var totalFeeHours = 0;
         var totalFeeDays = 0;
         var totalFeeWeeks = 0;
-
         var rate = getCurrentRate().time;
         var feeDay = rate.day1;
         var feeWeek = rate.week;
@@ -196,121 +268,13 @@ angular.module('c2gyoApp')
           weeks: weeksBilled
         });
 
-        return duration;
-      };
+        // fee billed
+        var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
 
-      //-----------------------------------------------------------------------
-      // get current rate
-      //-----------------------------------------------------------------------
-      var getCurrentRate = function() {
-        var carClass = $scope.rate.carClass;
-        var tariff = $scope.rate.tariff;
-        var rate = {};
-
-
-        if (tariff === 'lokal') {
-          rate = flinksterratelokal[carClass];
-        } else {
-          rate = flinksterratebundesweit[carClass];
-        }
-
-        return rate;
-      };
-
-      //-----------------------------------------------------------------------
-      // get price for used time
-      //-----------------------------------------------------------------------
-      $scope.getFeeTime = function() {
-        var fee;
-
-        if ($scope.rental.tab === 'simple') {
-          fee = getFeeTimeSimple();
-        } else {
-          fee = getFeeTimeExact();
-        }
-
-        return fee;
-      };
-
-      var getFeeTimeSimple = function() {
-        var rate = getCurrentRate().time;
-
-        var feeHours = $scope.getHoursBilled() * rate.hour;
-        var feeDays = $scope.getDaysBilled() * rate.day1;
-
-        return feeHours + feeDays;
-      };
-
-      var getFeeTimeExact = function() {
-        var totalFee = 0;
-        var totalFeeHours = 0;
-        var totalFeeDays = 0;
-        var totalFeeWeeks = 0;
-
-        var rate = getCurrentRate().time;
-        var tariff = $scope.rate.tariff;
-        var feeDay = rate.day1;
-        var feeWeek = rate.week;
-
-        var startDate = new moment($scope.rental.startDate);
-        var endDate = new moment($scope.rental.endDate);
-
-        var currentTime = startDate.clone();
-
-        // go through with weeks
-        if (tariff === 'lokal') {
-          while (currentTime.clone().add(1, 'w') < endDate) {
-            totalFeeWeeks += feeWeek;
-            currentTime.add(1, 'w');
-          }
-        }
-
-        // in tariff "bundesweit" there is a different price for day1 and day2
-        if (tariff === 'bundesweit' && currentTime.clone().add(1, 'd') < endDate) {
-          totalFeeDays += feeDay;
-          currentTime.add(1, 'd');
-          feeDay = rate.day2;
-        }
-
-        // go through with days
-        while (currentTime.clone().add(1, 'd') < endDate) {
-          totalFeeDays += feeDay;
-          currentTime.add(1, 'd');
-        }
-
-        // go through hours exactly until endate - 1 hour
-        for (var i = currentTime.clone(); i < endDate; i.add(1, 'h')) {
-          var day = i.isoWeekday();
-          var hour = i.hour();
-          var currentRate = rate[day];
-
-          // loop through possible hour rates
-          for (var j = 0; j <= currentRate.length - 1; j++) {
-            var start = currentRate[j].start;
-            var end = currentRate[j].end;
-            var fee = currentRate[j].fee;
-
-            if (hour >= start && hour <= end) {
-              //console.log('Day: ' + day + ' hour: ' + hour + ' fee: ' + fee);
-              totalFeeHours += fee;
-            }
-          }
-        }
-
-        // check to see if it is cheaper to rent for the full day
-        if (totalFeeHours >= feeDay) {
-          totalFeeHours = feeDay;
-        }
-
-        // check to see if it is cheaper to rent for the full week
-        if (tariff === 'lokal') {
-          if (totalFeeDays + totalFeeHours >= feeWeek) {
-            totalFeeHours = 0;
-            totalFeeDays = feeWeek;
-          }
-        }
-
-        return (totalFee + totalFeeWeeks + totalFeeDays + totalFeeHours);
+        return {
+          duration: duration,
+          fee: totalFee
+        };
       };
 
       //-----------------------------------------------------------------------
