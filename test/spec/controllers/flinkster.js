@@ -24,11 +24,13 @@ describe('Controller: FlinksterCtrl', function () {
         var expectedPrice = testdata.expectedPrices[tariff][carClass];
         (function(tariff, carClass, expectedPrice){
           it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
-            scope.rental.startDate = new moment(testdata.start, "YYYY-MM-DD HH:mm");
-            scope.rental.endDate = new moment(testdata.end, "YYYY-MM-DD HH:mm");
+            scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
+            scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
 
             scope.rental.tab = testdata.tab;
             scope.rental.distance = testdata.distance;
+
+            scope.rental.airport = false || testdata.airport;
 
             scope.rate.tariff = tariff;
             scope.rate.carClass = carClass;
@@ -44,8 +46,8 @@ describe('Controller: FlinksterCtrl', function () {
     ' between 2 time zones',
     function () {
     var testdata = {
-      start: "2010-04-20 04:00",
-      end: "2010-04-20 12:00",
+      start: '2010-04-20 04:00',
+      end: '2010-04-20 12:00',
       tab: 'exact',
       distance: 10,
       expectedPrices: {
@@ -74,8 +76,8 @@ describe('Controller: FlinksterCtrl', function () {
   'hour lease triggering the price for a day',
     function () {
     var testdata = {
-      start: "2010-04-20 08:00",
-      end: "2010-04-20 20:00",
+      start: '2010-04-20 08:00',
+      end: '2010-04-20 20:00',
       tab: 'exact',
       distance: 10,
       expectedPrices: {
@@ -102,8 +104,8 @@ describe('Controller: FlinksterCtrl', function () {
   'hour lease triggering the price for a day',
     function () {
     var testdata = {
-      start: "2010-04-20 03:00",
-      end: "2010-04-20 22:00",
+      start: '2010-04-20 03:00',
+      end: '2010-04-20 22:00',
       tab: 'exact',
       distance: 10,
       expectedPrices: {
@@ -120,8 +122,8 @@ describe('Controller: FlinksterCtrl', function () {
     'hour lease triggering the price for a day and a second day',
     function () {
       var testdata = {
-        start: "2010-04-20 08:00",
-        end: "2010-04-21 20:00",
+        start: '2010-04-20 08:00',
+        end: '2010-04-21 20:00',
         tab: 'exact',
         distance: 10,
         expectedPrices: {
@@ -140,8 +142,8 @@ describe('Controller: FlinksterCtrl', function () {
     'hour lease triggering the price for a day and a second day',
     function () {
       var testdata = {
-        start: "2010-04-20 03:00",
-        end: "2010-04-21 22:00",
+        start: '2010-04-20 03:00',
+        end: '2010-04-21 22:00',
         tab: 'exact',
         distance: 10,
         expectedPrices: {
@@ -159,8 +161,8 @@ describe('Controller: FlinksterCtrl', function () {
     ' triggering the price for a week',
     function () {
       var testdata = {
-        start: "2010-04-20 04:00",
-        end: "2010-04-26 10:00",
+        start: '2010-04-20 04:00',
+        end: '2010-04-26 10:00',
         tab: 'exact',
         distance: 10,
         expectedPrices: {
@@ -171,6 +173,30 @@ describe('Controller: FlinksterCtrl', function () {
             kompakt: '162.60',
             mittel: '252.90',
             transporter: '252.90'
+          }
+        }
+      };
+      test(testdata);
+    });
+
+  describe (
+    'should calculate the correct price with 10km distance and a 8 hour lease' +
+    ' between 2 time zones and an airport lease',
+    function () {
+      var testdata = {
+        start: '2010-04-20 04:00',
+        end: '2010-04-20 12:00',
+        tab: 'exact',
+        distance: 10,
+        airport: true,
+        expectedPrices: {
+          bundesweit: {
+            sonder: '22.50',
+            mini: '21.25',
+            klein: '34.75',
+            kompakt: '41.75',
+            mittel: '47.00',
+            transporter: '52.00'
           }
         }
       };
