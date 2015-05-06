@@ -169,13 +169,17 @@ angular.module('c2gyoApp')
 
         var fee = feeHours + feeDays + feeWeeks;
 
+        if ($scope.rental.airport) {
+          fee  = fee * 1.25;
+        }
+
         return fee;
       };
 
       var getFeeTimeExact = function() {
         return getDurationAndFeeExact().fee;
       };
-      
+
       //-----------------------------------------------------------------------
       // get duration and fee exact
       //-----------------------------------------------------------------------
@@ -270,6 +274,10 @@ angular.module('c2gyoApp')
 
         // fee billed
         var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
+
+        if ($scope.rental.airport) {
+          totalFee  = totalFee * 1.25;
+        }
 
         return {
           duration: duration,

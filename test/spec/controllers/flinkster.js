@@ -191,12 +191,12 @@ describe('Controller: FlinksterCtrl', function () {
         airport: true,
         expectedPrices: {
           bundesweit: {
-            sonder: '22.50',
-            mini: '21.25',
-            klein: '34.75',
-            kompakt: '41.75',
-            mittel: '47.00',
-            transporter: '52.00'
+            sonder: '22.00',
+            mini: '20.80',
+            klein: '34.30',
+            kompakt: '41.30',
+            mittel: '46.50',
+            transporter: '51.50'
           }
         }
       };
