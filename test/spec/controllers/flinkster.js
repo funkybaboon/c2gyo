@@ -208,34 +208,37 @@ describe('Controller: FlinksterCtrl', function () {
       });
   });
 
-  describe (
-    'should calculate the correct price with 10km distance and a 8 hour lease' +
-    ' with simple calculation',
-    function () {
-      var testdata = {
-        tab: 'simple',
-        distance: 10,
-        expectedPrices: {
-          bundesweit: {
-            sonder: '27.00',
-            mini: '24.80',
-            klein: '51.80',
-            kompakt: '61.80',
-            mittel: '72.00',
-            transporter: '82.00'
-          },
-          lokal: {
-            sonder: '20.10',
-            mini: '20.10',
-            klein: '25.10',
-            kompakt: '30.10',
-            mittel: '50.40',
-            transporter: '50.40'
-          }
-        }
-      };
-      test(testdata);
-    });
+  describe (' tests with simple time', function() {
 
+    describe(
+      'should calculate the correct price with 10km distance and a 8 hour lease' +
+      ' with simple calculation',
+      function () {
+        var testdata = {
+          tab: 'simple',
+          distance: 10,
+          expectedPrices: {
+            bundesweit: {
+              sonder: '27.00',
+              mini: '24.80',
+              klein: '51.80',
+              kompakt: '61.80',
+              mittel: '72.00',
+              transporter: '82.00'
+            },
+            lokal: {
+              sonder: '20.10',
+              mini: '20.10',
+              klein: '25.10',
+              kompakt: '30.10',
+              mittel: '50.40',
+              transporter: '50.40'
+            }
+          }
+        };
+        test(testdata);
+      });
+
+  });
 
 });
