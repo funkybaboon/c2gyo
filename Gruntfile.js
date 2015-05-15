@@ -360,12 +360,11 @@ module.exports = function(grunt) {
         ],
         dest: '<%= yeoman.dist %>/views/views.js',
         options: {
-          /*
-           url: function (url) {
-           return url.replace('app/', '');
-           },*/
+          url: function (url) {
+            return url.replace('app/', '');
+          },
           bootstrap: function (module, script) {
-            return 'angular.module("c2gyo").run(["$templateCache", function($templateCache) {' + script + '}]);';
+            return 'angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {' + script + '}]);';
           }
         }
       }
