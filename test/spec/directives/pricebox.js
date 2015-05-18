@@ -5,8 +5,8 @@ describe('Directive: pricebox', function() {
   // load the directive's module
   beforeEach(module('c2gyoApp'));
 
-  var element,
-    scope;
+  // var element
+  var scope;
 
   beforeEach(inject(function($rootScope) {
     scope = $rootScope.$new();
