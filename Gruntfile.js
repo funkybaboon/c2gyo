@@ -309,7 +309,7 @@ module.exports = function(grunt) {
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/{,*/}*.*',
-            'bower_components/moment/locale/de.js*',
+            'bower_components/moment/locale/de.js',
             'bower_components/angular-i18n/angular-locale_de-de.js'
           ]
         }, {
