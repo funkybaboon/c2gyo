@@ -103,3 +103,8 @@ body {
 .red {
   background-color: lightgrey;
 }
+
+.input-group-addon {
+  min-width: 80px;
+  text-align: left;
+}
