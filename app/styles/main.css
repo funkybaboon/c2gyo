@@ -16,6 +16,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -37,6 +38,7 @@ body {
     max-width: 730px;
   }
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -46,6 +48,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
@@ -55,6 +58,7 @@ body {
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
@@ -68,10 +72,12 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
@@ -96,15 +102,32 @@ body {
   border-radius: 4px;
 }
 
-.nav-pills > .active > a, .nav-pills > .active > a:hover {
-  background-color: red;
-}
-
-.red {
-  background-color: lightgrey;
-}
-
 .input-group-addon {
   min-width: 80px;
   text-align: left;
 }
+
+.nav-pills > li.active > a.c2gdtp,
+.nav-pills > li.active > a.c2gdtp:hover,
+.nav-pills > li.active > a.c2gdtp:focus {
+  background-color: #009fe4;
+}
+
+.nav-pills > li.active > a.c2gbdtp,
+.nav-pills > li.active > a.c2gbdtp:hover,
+.nav-pills > li.active > a.c2gbdtp:focus {
+  background-color: black;
+}
+
+.nav-pills > li.active > a.smdtp,
+.nav-pills > li.active > a.smdtp:hover,
+.nav-pills > li.active > a.smdtp:focus {
+  background-color: #E2001A;
+}
+
+.nav-pills > li.active > a.flinkster,
+.nav-pills > li.active > a.flinkster:hover,
+.nav-pills > li.active > a.flinkster:focus {
+  background-color: #FF0000;
+}
+
