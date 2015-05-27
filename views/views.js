@@ -18,31 +18,38 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
 
 
   $templateCache.put('views/c2gbdtp.html',
-    "<div class=\"row\">\n" +
-    "  <div class=\"col-md-6\">\n" +
-    "    <time-Input-Form></time-Input-Form>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-6\">\n" +
-    "    <price-Box></price-Box>\n" +
-    "  </div>\n" +
+    "<div class=\"c2gbdtp\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <time-Input-Form></time-Input-Form>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <price-Box></price-Box>\n" +
+    "    </div>\n" +
     "</div>\n"
   );
 
 
   $templateCache.put('views/c2gdtp.html',
-    "<div class=\"row\">\n" +
-    "  <div class=\"col-md-6\">\n" +
-    "    <time-Input-Form></time-Input-Form>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-6\">\n" +
-    "    <price-Box></price-Box>\n" +
+    "<div class=\"c2gdtp\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <time-Input-Form></time-Input-Form>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <price-Box></price-Box>\n" +
+    "    </div>\n" +
     "  </div>\n" +
     "</div>\n"
   );
 
 
   $templateCache.put('views/flinkster.html',
-    "<div class=\"row\">\n" +
+    "<div class=\"flinkster\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
     "  <div class=\"col-md-6\">\n" +
     "    <time-Input-Form></time-Input-Form>\n" +
     "\n" +
@@ -80,12 +87,20 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
 
 
   $templateCache.put('views/navbar.html',
-    "<ul class=\"nav nav-pills pull-right\">\n" +
-    "\t<li\n" +
-    "    ng-class=\"{ active:isActive('/{{tab.url}}'), red: {{true}} }\" ng-repeat=\"tab in tabs\">\n" +
-    "\t\t<a ng-href=\"#{{tab.url}}\" id=\"{{tab.url}}\">{{tab.name}}</a>\n" +
-    "\t</li>\n" +
-    "</ul>\n"
+    "<div class=\"header\">\n" +
+    "  <ul class=\"nav nav-pills pull-right\">\n" +
+    "    <li\n" +
+    "      ng-class=\"{ active:isActive('/{{tab.url}}') }\"\n" +
+    "      ng-repeat=\"tab in tabs\">\n" +
+    "      <a class=\"{{tab.url}}\" ng-href=\"#{{tab.url}}\" id=\"{{tab.url}}\">{{tab\n" +
+    "        .name}}</a>\n" +
+    "    </li>\n" +
+    "  </ul>\n" +
+    "  <h3 class=\"text-muted\">c2gyo</h3>\n" +
+    "</div>\n" +
+    "\n" +
+    "\n" +
+    "\n"
   );
 
 
@@ -102,7 +117,9 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
 
 
   $templateCache.put('views/smdtp.html',
-    "<div class=\"row\">\n" +
+    "<div class=\"smdtp\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
     "\n" +
     "  <div class=\"col-md-6\">\n" +
     "    <time-Input-Form></time-Input-Form>\n" +
@@ -181,12 +198,6 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"form-group\" ng-show=\"{{isResolution('minutesStanding')}}\">\n" +
-    "      <div class=\"input-group\">\n" +
-    "        <input type=\"number\" class=\"form-control\" placeholder=\"Minuten stehend\" ng-model=\"rental.timeStanding\">\n" +
-    "        <span class=\"input-group-addon\">Minuten (Stehend)</span>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
     "  </div>\n" +
     "\n" +
     "  <div ng-if=\"isSet('exact')\">\n" +
@@ -202,7 +213,6 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "    </div>\n" +
     "\n" +
     "    <h4>Enddatum</h4>\n" +
-    "\n" +
     "    <div class=\"dropdown\">\n" +
     "      <a class=\"dropdown-toggle\" id=\"dropdown3\" role=\"button\" data-toggle=\"dropdown\" data-target=\"\" href=\"\">\n" +
     "        <div class=\"input-group\"><input type=\"text\" class=\"form-control\" data-ng-model=\"rental.endDate\"><span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-calendar\"></i></span>\n" +
@@ -213,12 +223,13 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "      </ul>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"form-group\" ng-show=\"{{isResolution('minutesStanding')}}\">\n" +
-    "      <h5>Zeit stehend</h5>\n" +
-    "      <div class=\"input-group\">\n" +
-    "        <input type=\"number\" class=\"form-control\" placeholder=\"Zeit stehend\" ng-model=\"timeStanding\">\n" +
-    "        <span class=\"input-group-addon\">Minuten (Stehend)</span>\n" +
-    "      </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"form-group\" ng-show=\"{{isResolution('minutesStanding')}}\">\n" +
+    "    <h5 ng-if=\"isSet('exact')\">Zeit stehend</h5>\n" +
+    "    <div class=\"input-group\">\n" +
+    "      <input type=\"number\" class=\"form-control\" placeholder=\"Minuten stehend\" ng-model=\"rental.timeStanding\">\n" +
+    "      <span class=\"input-group-addon\">Minuten (Stehend)</span>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "\n" +
