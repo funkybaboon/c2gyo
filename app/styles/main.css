@@ -107,31 +107,58 @@ body {
   text-align: left;
 }
 
-.nav-pills li a {
-  border: 2px solid #cccccc;
-}
-
-.nav-pills > li.active > a.c2gdtp,
-.nav-pills > li.active > a.c2gdtp:hover,
-.nav-pills > li.active > a.c2gdtp:focus {
+.c2gdtp .nav-pills li.active a,
+.c2gdtp .nav-pills li.active a:hover,
+.c2gdtp .nav-pills li.active a:focus {
   background-color: #009fe4;
 }
 
-.nav-pills > li.active > a.c2gbdtp,
-.nav-pills > li.active > a.c2gbdtp:hover,
-.nav-pills > li.active > a.c2gbdtp:focus {
+.c2gdtp .nav-pills li a {
+  border: 2px solid #009fe4;
+}
+
+.c2gdtp a {
+  color: #009fe4;
+}
+
+.c2gbdtp .nav-pills li.active a,
+.c2gbdtp .nav-pills li.active a:hover,
+.c2gbdtp .nav-pills li.active a:focus {
   background-color: black;
 }
 
-.nav-pills > li.active > a.smdtp,
-.nav-pills > li.active > a.smdtp:hover,
-.nav-pills > li.active > a.smdtp:focus {
+.c2gbdtp .nav-pills li a {
+  border: 2px solid black;
+}
+
+.c2gbdtp a {
+  color: black;
+}
+
+.smdtp .nav-pills li.active a,
+.smdtp .nav-pills li.active a:hover,
+.smdtp .nav-pills li.active a:focus {
   background-color: #E2001A;
 }
 
-.nav-pills > li.active > a.flinkster,
-.nav-pills > li.active > a.flinkster:hover,
-.nav-pills > li.active > a.flinkster:focus {
+.smdtp .nav-pills li a {
+  border: 2px solid #E2001A;
+}
+
+.smdtp a {
+  color: #E2001A;
+}
+
+.flinkster .nav-pills li.active a,
+.flinkster .nav-pills li.active a:hover,
+.flinkster .nav-pills li.active a:focus {
   background-color: #FF0000;
 }
 
+.flinkster .nav-pills li a {
+  border: 2px solid #FF0000;
+}
+
+.flinkster a {
+  color: #FF0000;
+}
