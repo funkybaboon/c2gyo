@@ -456,4 +456,8 @@ module.exports = function(grunt) {
     'test'
   ]);
 
+  grunt.registerTask('gh-pages', [
+    'default',
+    'buildcontrol:pages'
+  ]);
 };
