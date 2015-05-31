@@ -11,7 +11,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
-  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -68,7 +69,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 7680px) {
+@media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
@@ -88,4 +89,87 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* False Input*/
+.ng-invalid.ng-dirty {
+  border-color: red;
+}
+
+/* Correct Input*/
+.ng-valid.ng-dirty {
+  border-color: green;
+}
+
+/* Boxes for input forms and calculation */
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+
+.input-group-addon {
+  min-width: 80px;
+  text-align: left;
+}
+
+.c2gdtp .nav-pills li.active a,
+.c2gdtp .nav-pills li.active a:hover,
+.c2gdtp .nav-pills li.active a:focus {
+  background-color: #009fe4;
+}
+
+.c2gdtp .highlight,
+.c2gdtp .nav-pills li a {
+  border: 1px solid #009fe4;
+}
+
+.c2gdtp a {
+  color: #009fe4;
+}
+
+.c2gbdtp .nav-pills li.active a,
+.c2gbdtp .nav-pills li.active a:hover,
+.c2gbdtp .nav-pills li.active a:focus {
+  background-color: black;
+}
+
+.c2gbdtp .highlight,
+.c2gbdtp .nav-pills li a {
+  border: 1px solid black;
+}
+
+.c2gbdtp a {
+  color: black;
+}
+
+.smdtp .nav-pills li.active a,
+.smdtp .nav-pills li.active a:hover,
+.smdtp .nav-pills li.active a:focus {
+  background-color: #E2001A;
+}
+
+.smdtp .highlight,
+.smdtp .nav-pills li a {
+  border: 1px solid #E2001A;
+}
+
+.smdtp a {
+  color: #E2001A;
+}
+
+.flinkster .nav-pills li.active a,
+.flinkster .nav-pills li.active a:hover,
+.flinkster .nav-pills li.active a:focus {
+  background-color: #FF0000;
+}
+
+.flinkster .highlight,
+.flinkster .nav-pills li a {
+  border: 1px solid #FF0000;
+}
+
+.flinkster a {
+  color: #FF0000;
 }
