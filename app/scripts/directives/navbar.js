@@ -30,7 +30,7 @@ angular.module('c2gyoApp')
           url: 'c2gdtp'
         }, {
           name: 'Car2goBlack',
-          url: 'c2gbdtp'
+          url: 'c2gb'
         }, {
           name: 'Stadtmobil',
           url: 'smdtp'

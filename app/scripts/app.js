@@ -26,9 +26,9 @@ angular
         templateUrl: 'views/c2gdtp.html',
         controller: 'C2gdtpCtrl'
       })
-      .when('/c2gbdtp', {
-        templateUrl: 'views/c2gbdtp.html',
-        controller: 'C2gbdtpCtrl'
+      .when('/c2gb', {
+        templateUrl: 'views/c2gb.html',
+        controller: 'C2gbCtrl'
       })
       .when('/smdtp', {
         templateUrl: 'views/smdtp.html',

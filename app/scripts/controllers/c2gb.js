@@ -8,7 +8,7 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('C2gbdtpCtrl', [
+  .controller('C2gbCtrl', [
     '$scope',
     'c2gConfig',
     'duration',
