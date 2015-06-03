@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name c2gyoApp.controller:C2gdtpCtrl
+ * @name c2gyoApp.controller:C2gbCtrl
  * @description
- * # C2gdtpCtrl
+ * # C2gbCtrl
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name c2gyoApp.controller:C2gdtpCtrl
+ * @name c2gyoApp.controller:C2gCtrl
  * @description
- * # C2gdtpCtrl
+ * # C2gCtrl
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('C2gdtpCtrl', [
+  .controller('C2gCtrl', [
     '$scope',
     'c2gConfig',
     'duration',

@@ -27,7 +27,7 @@ angular.module('c2gyoApp')
       controller: function($scope, $element, $location) {
         $scope.tabs = [{
           name: 'Car2go',
-          url: 'c2gdtp'
+          url: 'c2g'
         }, {
           name: 'Car2goBlack',
           url: 'c2gb'

@@ -22,9 +22,9 @@ angular
   ])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/c2gdtp', {
-        templateUrl: 'views/c2gdtp.html',
-        controller: 'C2gdtpCtrl'
+      .when('/c2g', {
+        templateUrl: 'views/c2g.html',
+        controller: 'C2gCtrl'
       })
       .when('/c2gb', {
         templateUrl: 'views/c2gb.html',
@@ -39,6 +39,6 @@ angular
         controller: 'FlinksterCtrl'
       })
       .otherwise({
-        redirectTo: '/c2gdtp'
+        redirectTo: '/c2g'
       });
   });
