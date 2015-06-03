@@ -13,7 +13,7 @@ angular.module('c2gyoApp')
       templateUrl: 'views/priceBox.html',
       controller: function($scope) {
         $scope.pricePerKm = function() {
-          return $scope.price() / $scope.rental.distance;
+          return $scope.price() / $scope.rental.distance || 0;
         };
       }
     };
