@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Controller: SmdtpCtrl', function() {
+describe('Controller: SmCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
 
-  var SmdtpCtrl;
+  var SmCtrl;
   var scope;
   var smConfig;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller, $rootScope, _smConfig_) {
     scope = $rootScope.$new();
-    SmdtpCtrl = $controller('SmdtpCtrl', {
+    SmCtrl = $controller('SmCtrl', {
       $scope: scope
     });
     smConfig = _smConfig_;

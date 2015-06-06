@@ -33,7 +33,7 @@ angular.module('c2gyoApp')
           url: 'c2gb'
         }, {
           name: 'Stadtmobil',
-          url: 'smdtp'
+          url: 'sm'
         }, {
           name: 'Flinkster',
           url: 'flinkster'

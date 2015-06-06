@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name c2gyoApp.controller:SmdtpCtrl
+ * @name c2gyoApp.controller:SmCtrl
  * @description
- * # SmdtpCtrl
+ * # SmCtrl
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('SmdtpCtrl', [
+  .controller('SmCtrl', [
     '$scope',
     'stadtmobilratebasic',
     'stadtmobilrateclassic',

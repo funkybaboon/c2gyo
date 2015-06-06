@@ -30,9 +30,9 @@ angular
         templateUrl: 'views/c2gb.html',
         controller: 'C2gbCtrl'
       })
-      .when('/smdtp', {
-        templateUrl: 'views/smdtp.html',
-        controller: 'SmdtpCtrl',
+      .when('/sm', {
+        templateUrl: 'views/sm.html',
+        controller: 'SmCtrl',
       })
       .when('/flinkster', {
         templateUrl: 'views/flinkster.html',
