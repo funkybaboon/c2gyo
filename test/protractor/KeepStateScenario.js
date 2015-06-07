@@ -26,6 +26,12 @@ describe('Keep State over different tabs', function() {
     expect(priceDistance.getText()).toEqual('14,50 €');
     expect(priceTime.getText()).toEqual('712,00 €');
 
+    element(by.id('flinkster')).click();
+    expect(price.getText()).toEqual('325,00 €');
+    expect(priceDistance.getText()).toEqual('20,00 €');
+    expect(priceTime.getText()).toEqual('305,00 €');
+
+
   });
 
 });
