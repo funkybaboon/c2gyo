@@ -4,7 +4,7 @@ describe('sm test 10km 10 hours', function() {
   var priceTime = element(by.id('priceTime'));
 
   beforeEach(function() {
-    browser.get('http://localhost:9000/#/sm');
+    browser.get('http://localhost:9999/#/sm');
     element(by.id('tariffbasic')).click();
   });
 

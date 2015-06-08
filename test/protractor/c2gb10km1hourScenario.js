@@ -4,7 +4,7 @@ describe('c2gb test 10km 1 hour', function() {
   var priceTime = element(by.id('priceTime'));
 
   beforeEach(function() {
-    browser.get('http://localhost:9000/#/c2gb');
+    browser.get('http://localhost:9999/#/c2gb');
   });
 
   it('10km, 1 hour', function() {
