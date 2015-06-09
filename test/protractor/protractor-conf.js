@@ -1,7 +1,7 @@
 exports.config = {
   seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
-  specs: [
+  specs: [/*
     'c2g10km20minScenario.js',
     'c2g10km229minScenario.js',
     'c2g10km2000minScenario.js',
@@ -15,15 +15,20 @@ exports.config = {
 
     'sm10km10hoursClassicScenario.js',
     'sm10km10hoursBasicScenario.js',
-    'sm10km10hoursBusinessScenario.js',
+    'sm10km10hoursBusinessScenario.js',*/
 
     'KeepStateScenario.js',
     'ClearData.js'
   ],
 
-  capabilities: {
-    'browserName': 'chrome',
+  multiCapabilities: [{
+    browserName: 'chrome',
     shardTestFiles: true,
     maxInstances: 7
-  },
+  }, {
+    browserName: 'firefox',
+    shardTestFiles: true,
+    maxInstances: 7
+  }],
+
 };
