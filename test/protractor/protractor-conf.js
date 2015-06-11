@@ -18,7 +18,8 @@ exports.config = {
     'sm10km10hoursBusinessScenario.js',*/
 
     'KeepStateScenario.js',
-    'ClearData.js'
+    'ClearData.js',
+    'flinkster.js'
   ],
 
   multiCapabilities: [{
