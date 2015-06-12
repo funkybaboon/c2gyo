@@ -17,22 +17,8 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
   );
 
 
-  $templateCache.put('views/c2gbdtp.html',
-    "<div class=\"c2gbdtp\">\n" +
-    "  <nav-Bar></nav-Bar>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-md-6\">\n" +
-    "      <time-Input-Form></time-Input-Form>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-md-6\">\n" +
-    "      <price-Box></price-Box>\n" +
-    "    </div>\n" +
-    "</div>\n"
-  );
-
-
-  $templateCache.put('views/c2gdtp.html',
-    "<div class=\"c2gdtp\">\n" +
+  $templateCache.put('views/c2g.html',
+    "<div class=\"c2g\">\n" +
     "  <nav-Bar></nav-Bar>\n" +
     "  <div class=\"row\">\n" +
     "    <div class=\"col-md-6\">\n" +
@@ -42,6 +28,20 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "      <price-Box></price-Box>\n" +
     "    </div>\n" +
     "  </div>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/c2gb.html',
+    "<div class=\"c2gb\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <time-Input-Form></time-Input-Form>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <price-Box></price-Box>\n" +
+    "    </div>\n" +
     "</div>\n"
   );
 
@@ -116,8 +116,8 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
   );
 
 
-  $templateCache.put('views/smdtp.html',
-    "<div class=\"smdtp\">\n" +
+  $templateCache.put('views/sm.html',
+    "<div class=\"sm\">\n" +
     "  <nav-Bar></nav-Bar>\n" +
     "  <div class=\"row\">\n" +
     "\n" +
