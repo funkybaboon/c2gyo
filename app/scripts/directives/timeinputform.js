@@ -16,6 +16,15 @@ angular.module('c2gyoApp')
           return $scope.resolution.indexOf(value) !== -1;
         };
 
+        $scope.isAirport = function() {
+          // not so nice fix to disable airport button for
+          // flinkster lokal tariff
+          if( $scope.rate.tariff === 'lokal') {
+            return false;
+          }
+          return $scope.resolution.indexOf('airport') !== -1;
+        };
+
         $scope.isSet = function(checkTab) {
           return this.rental.tab === checkTab;
         };

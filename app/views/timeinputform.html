@@ -81,7 +81,7 @@
     </div>
   </div>
 
-  <div class="form-group" ng-show="{{isResolution('airport')}}">
+  <div class="form-group" ng-if="isAirport()">
     <div class="input-group">
       <div class="checkbox">
         <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>

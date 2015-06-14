@@ -3,10 +3,13 @@ describe('test flinkster customization', function() {
     browser.get('http://localhost:9999/#/flinkster');
   });
 
-  fit('tariff "lokal" should not have an airport checkbox', function() {
+
+  it('tariff "lokal" should not have an airport checkbox', function() {
+    expect(element(by.model('rental.airport')).isPresent()).toBe(true);
+
     element(by.id('tarifflokal')).click();
 
-    expect(element(by.model('rental.airport')).isDisplayed()).toBe(false);
+    expect(element(by.model('rental.airport')).isPresent()).toBe(false);
   });
 
 });
