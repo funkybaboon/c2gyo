@@ -241,7 +241,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "    </div>\n" +
     "  </div>\n" +
     "\n" +
-    "  <div class=\"form-group\" ng-show=\"{{isResolution('airport')}}\">\n" +
+    "  <div class=\"form-group\" ng-if=\"isAirport()\">\n" +
     "    <div class=\"input-group\">\n" +
     "      <div class=\"checkbox\">\n" +
     "        <label><input type=\"checkbox\" ng-model=\"rental.airport\">Flughafenpauschale</label>\n" +
