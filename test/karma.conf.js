@@ -30,6 +30,7 @@ module.exports = function(config) {
       //'test/mock/**/*.js',
       //'test/spec/**/*.js',
       'test/spec/controllers/*.js',
+      'test/spec/directives/*.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
