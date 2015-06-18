@@ -11,6 +11,7 @@ angular.module('c2gyoApp')
     return {
       restrict: 'E',
       templateUrl: 'views/billedBox.html',
+      scope: true,
       controller: function($scope) {
         $scope.isResolution = function(value) {
           return $scope.resolutionTime.indexOf(value) !== -1;

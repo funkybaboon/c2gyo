@@ -11,6 +11,7 @@ angular.module('c2gyoApp')
     return {
       template: '<div></div>',
       restrict: 'A',
+      scope: true,
       link: function postLink(scope, element, attrs) {
         element.text('this is the tooltip directive');
       }

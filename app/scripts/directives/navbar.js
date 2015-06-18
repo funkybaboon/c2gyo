@@ -24,6 +24,7 @@ angular.module('c2gyoApp')
     return {
       restrict: 'E',
       templateUrl: 'views/navbar.html',
+      scope: true,
       controller: function($scope, $element, $location) {
         $scope.tabs = [{
           name: 'Car2go',

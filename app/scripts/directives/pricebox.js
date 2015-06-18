@@ -11,6 +11,7 @@ angular.module('c2gyoApp')
     return {
       restrict: 'E',
       templateUrl: 'views/priceBox.html',
+      scope: true,
       controller: function($scope) {
         $scope.pricePerKm = function() {
           return $scope.price() / $scope.rental.distance || 0;
