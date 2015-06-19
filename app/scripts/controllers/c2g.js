@@ -31,8 +31,7 @@ angular.module('c2gyoApp')
         'minutes',
         'minutesStanding',
         'hours',
-        'days',
-        'airport'
+        'days'
       ];
       $scope.resolutionTime = ['minutes', 'hours', 'days'];
 

@@ -33,7 +33,7 @@ angular.module('c2gyoApp')
         carClass: flinksterConfig.carClass
       };
 
-      $scope.resolution = ['hours', 'days', 'weeks', 'airport'];
+      $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       //-----------------------------------------------------------------------
@@ -169,7 +169,7 @@ angular.module('c2gyoApp')
 
         var fee = feeHours + feeDays + feeWeeks;
 
-        if ($scope.rental.airport) {
+        if ($scope.rental.airport && $scope.rate.tariff === 'bundesweit') {
           fee  = fee * 1.25;
         }
 
@@ -275,7 +275,7 @@ angular.module('c2gyoApp')
         // fee billed
         var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
 
-        if ($scope.rental.airport) {
+        if ($scope.rental.airport && $scope.rate.tariff === 'bundesweit') {
           totalFee  = totalFee * 1.25;
         }
 
@@ -328,6 +328,17 @@ angular.module('c2gyoApp')
           $scope.getFeeTime() +
           $scope.getFeeDistance()
         );
+      };
+
+      //-----------------------------------------------------------------------
+      // disable airport fee for lokal tariff
+      //-----------------------------------------------------------------------
+      $scope.isAirport = function() {
+        if ( $scope.rate.tariff === 'bundesweit') {
+          return true;
+        } else {
+          return false;
+        }
       };
     }
   ]);
