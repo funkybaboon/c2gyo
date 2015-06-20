@@ -10,28 +10,28 @@
 
   <div ng-if="isSet('simple')">
     <h4>Zeit</h4>
-    <div class="form-group" ng-show="{{isResolution('minutes')}}">
+    <div class="form-group" ng-if="isResolution('minutes')">
       <div class="input-group">
         <input type="number" class="form-control" placeholder="Minuten" ng-model="rental.timeMinutes">
         <span class="input-group-addon">Minuten</span>
       </div>
     </div>
 
-    <div class="form-group" ng-show="{{isResolution('hours')}}">
+    <div class="form-group" ng-if="isResolution('hours')">
       <div class="input-group">
         <input type="number" class="form-control" placeholder="Stunden" ng-model="rental.timeHours">
         <span class="input-group-addon">Stunden</span>
       </div>
     </div>
 
-    <div class="form-group" ng-show="{{isResolution('days')}}">
+    <div class="form-group" ng-if="isResolution('days')">
       <div class="input-group">
         <input type="number" class="form-control" placeholder="Tage" ng-model="rental.timeDays">
         <span class="input-group-addon">Tage</span>
       </div>
     </div>
 
-    <div class="form-group" ng-show="{{isResolution('weeks')}}">
+    <div class="form-group" ng-if="isResolution('weeks')">
       <div class="input-group">
         <input type="number" class="form-control" placeholder="Wochen" ng-model="rental.timeWeeks">
         <span class="input-group-addon">Wochen</span>
@@ -65,7 +65,7 @@
 
   </div>
 
-  <div class="form-group" ng-show="{{isResolution('minutesStanding')}}">
+  <div class="form-group" ng-if="isResolution('minutesStanding')">
     <h5 ng-if="isSet('exact')">Zeit stehend</h5>
     <div class="input-group">
       <input type="number" class="form-control" placeholder="Minuten stehend" ng-model="rental.timeStanding">
