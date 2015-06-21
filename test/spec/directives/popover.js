@@ -12,7 +12,7 @@ describe('Directive: tooltip', function () {
     scope = $rootScope.$new();
   }));
 
-  fit('should generate a tooltop', inject(function ($compile) {
+  it('should generate a popover', inject(function ($compile) {
     element = angular.element('<div tooltip="test"></div>');
     element = $compile(element)(scope);
     //expect(element.text()).toBe('this is the tooltip directive');
