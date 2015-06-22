@@ -13,6 +13,9 @@ angular.module('c2gyoApp')
     return {
       restrict: 'A',
       transclude: true,
-      template: '<span popover-placement="right" popover="On the Right!" popover-trigger="mouseenter" ng-transclude></span>'
+      scope: {
+        text: '@tariffPopover'
+      },
+      template: '<span popover-placement="right" popover="{{text}}" popover-trigger="mouseenter" ng-transclude></span>'
     };
   });
