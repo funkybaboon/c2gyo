@@ -16,6 +16,11 @@ angular.module('c2gyoApp')
       scope: {
         text: '@tariffPopover'
       },
-      template: '<span popover-placement="right" popover="{{text}}" popover-trigger="mouseenter" ng-transclude></span>'
+      template:
+      '<span ng-transclude></span>' +
+      '<span popover-placement="right" popover="{{text}}" popover-trigger="mouseenter" class="fa-stack">' +
+        '<i class="fa fa-square-o fa-stack-2x"></i>' +
+        '<i class="fa fa fa-info fa-stack-1x"></i>' +
+      '</span>'
     };
   });
