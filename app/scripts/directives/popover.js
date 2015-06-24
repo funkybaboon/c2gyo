@@ -17,10 +17,12 @@ angular.module('c2gyoApp')
         text: '@tariffPopover'
       },
       template:
-      '<span ng-transclude></span>' +
-      '<span popover-placement="right" popover="{{text}}" popover-trigger="mouseenter" class="fa-stack">' +
-        '<i class="fa fa-square-o fa-stack-2x"></i>' +
-        '<i class="fa fa fa-info fa-stack-1x"></i>' +
-      '</span>'
+        '<span ng-transclude></span>' +
+        '&nbsp;' +
+        '<span popover-placement="right" ' +
+              'popover="{{text}}" ' +
+              'popover-trigger="mouseenter" ' +
+              'class="fa fa-info-circle">' +
+        '</span>'
     };
   });
