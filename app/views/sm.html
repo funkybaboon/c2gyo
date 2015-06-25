@@ -39,27 +39,37 @@
                  ng-model="rate.carClass"
                  value="A"
                  id="rateA">
-          <span tariff-popover="text">A Kleinstwagen</span><br/>
+          <span tariff-popover="{{info.carClass.rateA}}">
+            A Kleinstwagen
+          </span><br/>
           <input type="radio"
                  ng-model="rate.carClass"
                  value="B"
                  id="rateB">
-          <span tariff-popover="text">B Kleinwagen</span><br/>
+          <span tariff-popover="{{info.carClass.rateB}}">
+            B Kleinwagen
+          </span><br/>
           <input type="radio"
                  ng-model="rate.carClass"
                  value="C"
                  id="rateC">
-          <span tariff-popover="text">C Kombi/Fun</span><br/>
+          <span tariff-popover="{{info.carClass.rateC}}">
+            C Kombi/Fun
+          </span><br/>
           <input type="radio"
                  ng-model="rate.carClass"
                  value="D"
                  id="rateD">
-          <span tariff-popover="text">D Komfort/Kleinbus</span><br/>
+          <span tariff-popover="{{info.carClass.rateD}}">
+            D Komfort/Kleinbus
+          </span><br/>
           <input type="radio"
                  ng-model="rate.carClass"
                  value="F"
                  id="rateF">
-          <span tariff-popover="text">F Transporter</span><br/>
+          <span tariff-popover="{{info.carClass.rateF}}">
+            F Transporter
+          </span><br/>
         </form>
       </div>
 
