@@ -13,22 +13,22 @@
                  ng-model="rate.tariff"
                  value="classic"
                  id="tariffclassic">
-          <span tariff-popover="text">Classic</span><br/>
+          <span tariff-popover="{{info.tariff.tariffclassic}}">Classic</span><br/>
           <input type="radio"
                  ng-model="rate.tariff"
                  value="basic"
                  id="tariffbasic">
-          <span tariff-popover="text">Basic</span><br/>
+          <span tariff-popover="{{info.tariff.tariffbasic}}">Basic</span><br/>
           <input type="radio"
                  ng-model="rate.tariff"
                  value="studi"
                  id="tariffstudi">
-          <span tariff-popover="text">Studi</span><br/>
+          <span tariff-popover="{{info.tariff.tariffstudi}}">Studi</span><br/>
           <input type="radio"
                  ng-model="rate.tariff"
                  value="business"
                  id="tariffbusiness">
-          <span tariff-popover="text">Business</span><br/>
+          <span tariff-popover="{{info.tariff.tariffbusiness}}">Business</span><br/>
         </form>
       </div>
 
