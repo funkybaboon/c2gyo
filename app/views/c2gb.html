@@ -8,7 +8,14 @@
         <div class="form-group">
           <div class="input-group">
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="rental.airport">Flughafenpauschale</label>
+              <label>
+                <input type="checkbox"
+                       ng-model="rental.airport">
+                <span tariff-popover="{{info.airport}}">
+                  Flughafenpauschale
+                </span>
+                <br/>
+              </label>
             </div>
           </div>
         </div>
@@ -18,4 +25,5 @@
     <div class="col-md-6">
       <price-Box></price-Box>
     </div>
+  </div>
 </div>

@@ -13,13 +13,13 @@ angular.module('c2gyoApp')
     'c2gConfig',
     'duration',
     'state',
-    function($scope, config, duration, state) {
+    function($scope, c2gConfig, duration, state) {
       $scope.rental = state.rental;
       $scope.clear = function() {
         state.clearRental($scope.rental.tab);
       };
 
-      $scope.vendor = config.vendor;
+      $scope.vendor = c2gConfig.vendor;
 
       $scope.feeDay = 59;
       $scope.feeHour = 14.9;
@@ -34,6 +34,8 @@ angular.module('c2gyoApp')
         'days'
       ];
       $scope.resolutionTime = ['minutes', 'hours', 'days'];
+
+      $scope.info = c2gConfig.info;
 
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
