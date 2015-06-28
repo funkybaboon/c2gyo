@@ -36,6 +36,8 @@ angular.module('c2gyoApp')
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
+      $scope.info = flinksterConfig.info;
+
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
