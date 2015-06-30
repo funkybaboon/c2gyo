@@ -22,7 +22,7 @@ angular.module('c2gyoApp')
         '<span popover-placement="right" ' +
               'popover="{{text}}" ' +
               'popover-trigger="mouseenter" ' +
-              'class="fa fa-info-circle">' +
+              'class="glyphicon glyphicon-info-sign">' +
         '</span>'
     };
   });
