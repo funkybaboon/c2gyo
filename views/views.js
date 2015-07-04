@@ -240,22 +240,34 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"classic\"\n" +
     "                 id=\"tariffclassic\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffclassic}}\">Classic</span><br/>\n" +
+    "          <span tariff-popover=\"{{info.tariff.tariffclassic}}\">\n" +
+    "            Classic\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"basic\"\n" +
     "                 id=\"tariffbasic\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffbasic}}\">Basic</span><br/>\n" +
+    "          <span tariff-popover=\"{{info.tariff.tariffbasic}}\">\n" +
+    "            Basic\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"studi\"\n" +
     "                 id=\"tariffstudi\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffstudi}}\">Studi</span><br/>\n" +
+    "          <span tariff-popover=\"{{info.tariff.tariffstudi}}\">\n" +
+    "            Studi\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"business\"\n" +
     "                 id=\"tariffbusiness\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffbusiness}}\">Business</span><br/>\n" +
+    "          <span tariff-popover=\"{{info.tariff.tariffbusiness}}\">\n" +
+    "            Business\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "        </form>\n" +
     "      </div>\n" +
     "\n" +
@@ -268,35 +280,40 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 id=\"rateA\">\n" +
     "          <span tariff-popover=\"{{info.carClass.rateA}}\">\n" +
     "            A Kleinstwagen\n" +
-    "          </span><br/>\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"B\"\n" +
     "                 id=\"rateB\">\n" +
     "          <span tariff-popover=\"{{info.carClass.rateB}}\">\n" +
     "            B Kleinwagen\n" +
-    "          </span><br/>\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"C\"\n" +
     "                 id=\"rateC\">\n" +
     "          <span tariff-popover=\"{{info.carClass.rateC}}\">\n" +
     "            C Kombi/Fun\n" +
-    "          </span><br/>\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"D\"\n" +
     "                 id=\"rateD\">\n" +
     "          <span tariff-popover=\"{{info.carClass.rateD}}\">\n" +
     "            D Komfort/Kleinbus\n" +
-    "          </span><br/>\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "          <input type=\"radio\"\n" +
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"F\"\n" +
     "                 id=\"rateF\">\n" +
     "          <span tariff-popover=\"{{info.carClass.rateF}}\">\n" +
     "            F Transporter\n" +
-    "          </span><br/>\n" +
+    "          </span>\n" +
+    "          <br/>\n" +
     "        </form>\n" +
     "      </div>\n" +
     "\n" +
