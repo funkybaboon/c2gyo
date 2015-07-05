@@ -394,6 +394,11 @@ module.exports = function(grunt) {
           dest: '<%= yeoman.dist %>'
         },{
           expand: true,
+          cwd: 'bower_components/font-awesome/fonts',
+          src: '*',
+          dest: '<%= yeoman.dist %>/fonts'
+        },{
+          expand: true,
           cwd: 'bower_components/angular-i18n/',
           src: '*.js',
           dest: '<%= yeoman.dist %>/bower_components/angular-i18n'
@@ -523,8 +528,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('new', [
-    'newer:jshint',
-    'test'
+    'clean:dist',
+    'copy:dist'
   ]);
 
   grunt.registerTask('gh-pages', [
