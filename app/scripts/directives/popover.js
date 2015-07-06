@@ -20,7 +20,7 @@ angular.module('c2gyoApp')
         '<span ng-transclude></span>' +
         '&nbsp;' +
         '<span popover-placement="right" ' +
-        '      popover="{{text}}" ' +
+        '      popover-template="text" ' +
         '      popover-trigger="mouseenter" ' +
         '      class="fa fa-info-circle">' +
         '</span>'
