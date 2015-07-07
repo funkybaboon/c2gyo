@@ -11,6 +11,6 @@ angular.module('c2gyoApp')
   .constant('c2gConfig', {
     vendor: 'car2go',
     info: {
-      airport: '4,90€ für alle Fahrten von und zum Flughafen'
+      airport: 'views/popovers/c2g/airport.html'
     }
   });
