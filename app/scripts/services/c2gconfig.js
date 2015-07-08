@@ -9,8 +9,5 @@
  */
 angular.module('c2gyoApp')
   .constant('c2gConfig', {
-    vendor: 'car2go',
-    info: {
-      airport: 'views/popovers/c2g/airport.html'
-    }
+    vendor: 'car2go'
   });
