@@ -9,8 +9,5 @@
  */
 angular.module('c2gyoApp')
   .constant('c2gbConfig', {
-    vendor: 'car2go',
-    info: {
-      airport: '4,90€ für alle Fahrten von und zum Flughafen'
-    }
+    vendor: 'car2go'
   });

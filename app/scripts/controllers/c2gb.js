@@ -32,8 +32,6 @@ angular.module('c2gyoApp')
       ];
       $scope.resolutionTime = ['hours', 'days'];
 
-      $scope.info = c2gbConfig.info;
-
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
       //-----------------------------------------------------------------------
