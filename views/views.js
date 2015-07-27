@@ -31,7 +31,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
     "                       ng-model=\"rental.airport\">\n" +
-    "                <span tariff-popover=\"{{info.airport}}\">\n" +
+    "                <span tariff-popover=\"views/popovers/c2g/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
     "                <br/>\n" +
@@ -64,7 +64,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
     "                       ng-model=\"rental.airport\">\n" +
-    "                <span tariff-popover=\"{{info.airport}}\">\n" +
+    "                <span tariff-popover=\"views/popovers/c2gb/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
     "                <br/>\n" +
@@ -99,7 +99,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.tariff\"\n" +
     "                   value=\"bundesweit\"\n" +
     "                   id=\"tariffbundesweit\">\n" +
-    "            <span tariff-popover=\"{{info.tariff.tariffbundesweit}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/tariffbundesweit.html\">\n" +
     "              Bundesweit\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -107,7 +107,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.tariff\"\n" +
     "                   value=\"lokal\"\n" +
     "                   id=\"tarifflokal\">\n" +
-    "            <span tariff-popover=\"{{info.tariff.tarifflokal}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/tarifflokal.html\">\n" +
     "              Lokal\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -121,7 +121,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"sonder\"\n" +
     "                   id=\"ratesonder\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.sonder}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassSonder.html\">\n" +
     "              Sonder\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -129,7 +129,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"mini\"\n" +
     "                   id=\"ratemini\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.mini}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassMini.html\">\n" +
     "              Mini\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -137,7 +137,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"klein\"\n" +
     "                   id=\"rateklein\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.klein}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassKlein.html\">\n" +
     "              Klein\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -145,7 +145,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"kompakt\"\n" +
     "                   id=\"ratekompakt\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.kompakt}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassKompakt.html\">\n" +
     "              Kompakt\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -153,7 +153,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"mittel\"\n" +
     "                   id=\"ratemittel\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.mittel}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassMittel.html\">\n" +
     "              Mittel\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -161,7 +161,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rate.carClass\"\n" +
     "                   value=\"transporter\"\n" +
     "                   id=\"ratetransporter\">\n" +
-    "            <span tariff-popover=\"{{info.carClass.transporter}}\">\n" +
+    "            <span tariff-popover=\"views/popovers/flinkster/carClassTransporter.html\">\n" +
     "              Transporter\n" +
     "            </span>\n" +
     "            <br/>\n" +
@@ -174,7 +174,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
     "                       ng-model=\"rental.airport\">\n" +
-    "                <span tariff-popover=\"{{info.airport}}\">\n" +
+    "                <span tariff-popover=\"views/popovers/flinkster/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
     "              </label>\n" +
@@ -212,6 +212,175 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
   );
 
 
+  $templateCache.put('views/popovers/c2g/airport.html',
+    "<div>4,90€ für alle Fahrten von und zum Flughafen</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/c2gb/airport.html',
+    "<div>4,90€ für alle Fahrten von und zum Flughafen</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/airport.html',
+    "<div>Anmietungen an Flughäfen +25% auf den Zeitpreis sind nur zum Tagespreis der bundesweiten Flinkster Preisliste möglich. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt auf eigene Rechnung ohne Verbrauchspauschale.</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassKlein.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>VW Polo</li>\n" +
+    "    <li>Citroen DS3</li>\n" +
+    "    <li>Opel Corsa</li>\n" +
+    "    <li>Ford Fiesta</li>\n" +
+    "    <li>MINI E</li>\n" +
+    "    <li>Peugeot iOn</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassKompakt.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Opel Astra</li>\n" +
+    "    <li>VW Golf</li>\n" +
+    "    <li>Seat Leon</li>\n" +
+    "    <li>VW Caddy</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassMini.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Smart</li>\n" +
+    "    <li>Fiat Panda</li>\n" +
+    "    <li>e-Smart</li>\n" +
+    "    <li>Citroen C1</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassMittel.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Ford Mondeo</li>\n" +
+    "    <li>VW Passat</li>\n" +
+    "    <li>C-Klasse</li>\n" +
+    "    <li>Toyota Prius Plug-In PHV</li>\n" +
+    "    <li>Opel Ampera</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassSonder.html',
+    "<div>Fahrzeuge mit Vollbranding:\n" +
+    "  <ul>\n" +
+    "    <li>Citroen DS3</li>\n" +
+    "    <li>Fiat 500</li>\n" +
+    "    <li>Mercedes C-Klasse</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/carClassTransporter.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Ford Transit</li>\n" +
+    "    <li>MB Sprinter</li>\n" +
+    "    <li>Opel Movano</li>\n" +
+    "    <li>VW T5</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/tariffbundesweit.html',
+    "<div>Keine Monatliche Grundgebühr</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/flinkster/tarifflokal.html',
+    "<div>10€ Monatliche Grundgebühr</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/carClassRateA.html',
+    "<div>Toyota Aygo</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/carClassRateB.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Opel Agila</li>\n" +
+    "    <li>Opel Corsa</li>\n" +
+    "    <li>Renault Zoe</li>\n" +
+    "    <li>Toyota Yaris Hybrid</li>\n" +
+    "    <li>Fiat 500 Cabrio</li>\n" +
+    "    <li>Opel Adam</li>\n" +
+    "    <li>Renault Wind</li>\n" +
+    "    <li>Opel Combo Kastenwagen</li>\n" +
+    "    <li>Renault Kangoo Kastenwagen</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/carClassRateC.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>Opel Astra Kombi</li>\n" +
+    "    <li>Ford Tourneo Hochdachkombi</li>\n" +
+    "    <li>Mini One</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/carClassRateD.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>BMW 116d</li>\n" +
+    "    <li>Mazda MX5 Cabrio</li>\n" +
+    "    <li>Ford Custom Kleinbus</li>\n" +
+    "    <li>Opel Vivaro Kleinbus</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/carClassRateF.html',
+    "<div>Ford Transit Transporter</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/tariffbasic.html',
+    "<div>4€ pro Person, 4€ pro weiterer Person, ohne Kaution</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/tariffbusiness.html',
+    "<div>29€ pro Haushalt, 550€ Kaution</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/tariffclassic.html',
+    "<div>11€ pro Person, 15€ pro Haushalt, ohne Kaution. 7,50€ pro Person, 11€ pro Haushalt, 550€ Kaution.</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/sm/tariffstudi.html',
+    "<div>5€ pro Person, 200€ Kaution. Tarif entspricht Classic Tarif</div>\n"
+  );
+
+
   $templateCache.put('views/priceBox.html',
     "<div class=\"highlight\">\n" +
     "    <h1 id=\"price\">{{ price() | currency }}</h1>\n" +
@@ -240,7 +409,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"classic\"\n" +
     "                 id=\"tariffclassic\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffclassic}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/tariffclassic.html\">\n" +
     "            Classic\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -248,7 +417,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"basic\"\n" +
     "                 id=\"tariffbasic\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffbasic}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/tariffbasic.html\">\n" +
     "            Basic\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -256,7 +425,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"studi\"\n" +
     "                 id=\"tariffstudi\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffstudi}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/tariffstudi.html\">\n" +
     "            Studi\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -264,7 +433,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.tariff\"\n" +
     "                 value=\"business\"\n" +
     "                 id=\"tariffbusiness\">\n" +
-    "          <span tariff-popover=\"{{info.tariff.tariffbusiness}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/tariffbusiness.html\">\n" +
     "            Business\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -278,7 +447,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"A\"\n" +
     "                 id=\"rateA\">\n" +
-    "          <span tariff-popover=\"{{info.carClass.rateA}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/carClassRateA.html\">\n" +
     "            A Kleinstwagen\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -286,7 +455,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"B\"\n" +
     "                 id=\"rateB\">\n" +
-    "          <span tariff-popover=\"{{info.carClass.rateB}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/carClassRateB.html\">\n" +
     "            B Kleinwagen\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -294,7 +463,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"C\"\n" +
     "                 id=\"rateC\">\n" +
-    "          <span tariff-popover=\"{{info.carClass.rateC}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/carClassRateC.html\">\n" +
     "            C Kombi/Fun\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -302,7 +471,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"D\"\n" +
     "                 id=\"rateD\">\n" +
-    "          <span tariff-popover=\"{{info.carClass.rateD}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/carClassRateD.html\">\n" +
     "            D Komfort/Kleinbus\n" +
     "          </span>\n" +
     "          <br/>\n" +
@@ -310,7 +479,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                 ng-model=\"rate.carClass\"\n" +
     "                 value=\"F\"\n" +
     "                 id=\"rateF\">\n" +
-    "          <span tariff-popover=\"{{info.carClass.rateF}}\">\n" +
+    "          <span tariff-popover=\"views/popovers/sm/carClassRateF.html\">\n" +
     "            F Transporter\n" +
     "          </span>\n" +
     "          <br/>\n" +
