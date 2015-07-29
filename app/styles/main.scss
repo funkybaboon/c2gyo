@@ -123,6 +123,7 @@ $c2g-brand-color: #009fe4;
 $c2gb-brand-color: black;
 $sm-brand-color: #E2001A;
 $flinkster-brand-color: #FF0000;
+$greenwheels-brand-color: #56be00;
 
 @mixin brand-page($color) {
   .nav-pills li.active a,
@@ -152,4 +153,7 @@ $flinkster-brand-color: #FF0000;
 }
 .flinkster {
   @include brand-page($flinkster-brand-color);
+}
+.greenwheels {
+  @include brand-page($greenwheels-brand-color);
 }

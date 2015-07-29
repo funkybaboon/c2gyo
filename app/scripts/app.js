@@ -38,6 +38,10 @@ angular
         templateUrl: 'views/flinkster.html',
         controller: 'FlinksterCtrl'
       })
+      .when('/greenwheels', {
+        templateUrl: 'views/greenwheels.html',
+        controller: 'GreenwheelsCtrl'
+      })
       .otherwise({
         redirectTo: '/c2g'
       });

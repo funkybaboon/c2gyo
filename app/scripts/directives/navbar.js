@@ -38,6 +38,9 @@ angular.module('c2gyoApp')
         }, {
           name: 'Flinkster',
           url: 'flinkster'
+        }, {
+          name: 'Greenwheels',
+          url: 'greenwheels'
         }];
 
         $scope.isActive = function(viewLocation) {
