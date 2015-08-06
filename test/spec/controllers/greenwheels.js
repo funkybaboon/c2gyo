@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: GreenwheelsCtrl', function() {
+fdescribe('Controller: GreenwheelsCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
@@ -42,6 +42,28 @@ describe('Controller: GreenwheelsCtrl', function() {
       }
     }
   };
+
+  describe (' tests with exact start and end date', function() {
+    describe(
+      'should calculate the correct price with 10km distance and a 36 hour ' +
+      'lease',
+      function () {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-21 16:00',
+          tab: 'exact',
+          distance: 10,
+          expectedPrices: {
+            default: {
+              compact: '62.04',
+            }
+          }
+        };
+        test(testdata);
+      });
+  });
+
+});
 
 /*
   describe (' tests with exact start and end date', function() {
@@ -240,5 +262,3 @@ describe (' tests with simple time', function() {
 
 });
 */
-
-});

@@ -13,25 +13,25 @@ angular.module('c2gyoApp')
     'compact': {
       'time': {
         '1': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '2': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '3': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '4':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '5':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '6':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         '7': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         'hour': 1.99,
         'day': 30,
@@ -43,25 +43,25 @@ angular.module('c2gyoApp')
     'van': {
       'time': {
         '1': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '2': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '3': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '4':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '5':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '6':  [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         '7': [
-          {'start': 0, 'end': 8, 'fee': 0.99},
+          {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         'hour': 3.99,
         'day': 40,
