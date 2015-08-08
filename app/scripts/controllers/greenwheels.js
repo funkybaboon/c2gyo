@@ -10,13 +10,15 @@
 angular.module('c2gyoApp')
   .controller('GreenwheelsCtrl', [
     '$scope',
-    'greenwheelsrate',
+    'greenwheelsratestandard',
+    'greenwheelsratejoker',
     'greenwheelsConfig',
     'duration',
     'state',
     function(
       $scope,
-      greenwheelsrate,
+      greenwheelsratestandard,
+      greenwheelsratejoker,
       greenwheelsConfig,
       duration,
       state) {
@@ -27,7 +29,8 @@ angular.module('c2gyoApp')
       };
 
       $scope.rate = {
-        carClass: greenwheelsConfig.carClass
+        carClass: greenwheelsConfig.carClass,
+        tariff: greenwheelsConfig.tariff
       };
 
       $scope.resolution = ['hours', 'days', 'weeks'];
@@ -126,8 +129,16 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
         var carClass = $scope.rate.carClass;
-        //debugger;
-        return greenwheelsrate[carClass];
+        var tariff = $scope.rate.tariff;
+        var rate = {};
+
+        if (tariff === 'standard') {
+          rate = greenwheelsratestandard[carClass];
+        } else {
+          rate = greenwheelsratejoker[carClass];
+        }
+
+        return rate;
       };
 
       //-----------------------------------------------------------------------
@@ -171,8 +182,8 @@ angular.module('c2gyoApp')
         var totalFeeDays = 0;
         var totalFeeWeeks = 0;
         var rate = getCurrentRate().time;
-        // var feeDay = rate.day;
-        // var feeWeek = rate.week;
+        var feeDay = rate.day;
+        var feeWeek = rate.week;
 
         // init variables for billed time
         var hoursBilled = 0;
@@ -183,7 +194,6 @@ angular.module('c2gyoApp')
         var endDate = new moment($scope.rental.endDate);
         var currentTime = startDate.clone();
 
-        /*
         // go through with weeks
         while (currentTime.clone().add(1, 'w') < endDate) {
           totalFeeWeeks += feeWeek;
@@ -197,7 +207,6 @@ angular.module('c2gyoApp')
           currentTime.add(1, 'd');
           daysBilled++;
         }
-        */
 
         // go through hours exactly until endate - 1 hour
         for (var i = currentTime.clone(); i < endDate; i.add(1, 'h')) {
@@ -219,7 +228,6 @@ angular.module('c2gyoApp')
           }
         }
 
-        /*
         // check to see if it is cheaper to rent for the full day
         if (totalFeeHours >= feeDay) {
           totalFeeHours = feeDay;
@@ -235,7 +243,6 @@ angular.module('c2gyoApp')
           daysBilled = 0;
           weeksBilled++;
         }
-        */
 
         var duration = moment.duration({
           hours: hoursBilled,

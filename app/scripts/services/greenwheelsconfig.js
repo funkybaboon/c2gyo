@@ -9,5 +9,6 @@
  */
 angular.module('c2gyoApp')
   .constant('greenwheelsConfig', {
+    tariff: 'standard',
     carClass: 'compact'
   });

@@ -8,7 +8,7 @@
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('greenwheelsrate', {
+  .constant('greenwheelsratestandard', {
     'resolution': 'h',
     'compact': {
       'time': {
@@ -34,8 +34,8 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 1.99}],
         'hour': 1.99,
-        'day': 30,
-        'week': 210
+        'day': 39.76,
+        'week': 278.32
      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.24}]
@@ -64,8 +64,8 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 7, 'fee': 0.99},
           {'start': 8, 'end': 23, 'fee': 3.99}],
         'hour': 3.99,
-        'day': 40,
-        'week': 280
+        'day': 71.76,
+        'week': 502.32
      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.34}]

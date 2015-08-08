@@ -54,8 +54,13 @@ fdescribe('Controller: GreenwheelsCtrl', function() {
           tab: 'exact',
           distance: 10,
           expectedPrices: {
-            default: {
+            standard: {
               compact: '62.04',
+              van: '111.04'
+            },
+            joker: {
+              compact: '52.28',
+              van: '79.28'
             }
           }
         };
