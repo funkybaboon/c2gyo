@@ -22,7 +22,15 @@ angular.module('c2gyoApp')
       timeDays: 0,
       timeWeeks: 0,
       timeStanding: 0,
-      airport: false
+      airport: false,
+      tariff: {
+        flinkster: 'bundesweit',
+        greenwheels: 'standard'
+      },
+      carClass: {
+        flinkster: 'sonder',
+        greenwheels: 'van'
+      }
     };
 
     var clearRental = function(currenttab) {

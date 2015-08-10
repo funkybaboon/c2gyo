@@ -1,6 +1,6 @@
 'use strict';
 
-fdescribe('Controller: GreenwheelsCtrl', function() {
+describe('Controller: GreenwheelsCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
@@ -34,8 +34,8 @@ fdescribe('Controller: GreenwheelsCtrl', function() {
 
             scope.rental.airport = false || testdata.airport;
 
-            scope.rental.tariff = tariff;
-            scope.rental.carClass = carClass;
+            scope.rental.tariff.greenwheels = tariff;
+            scope.rental.carClass.greenwheels = carClass;
             expect(scope.price().toFixed(2)).toEqual(expectedPrice);
           });
         })(tariff, carClass, expectedPrice);

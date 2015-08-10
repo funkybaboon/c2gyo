@@ -24,8 +24,8 @@ angular.module('c2gyoApp')
       $scope.rental = state.rental;
 
       // set default car class and tariff to start with
-      $scope.rental.carClass = state.rental.carClass || 'van';
-      $scope.rental.tariff = state.rental.tariff || 'standard';
+      $scope.rental.carClass.greenwheels = state.rental.carClass.greenwheels;
+      $scope.rental.tariff.greenwheels = state.rental.tariff.greenwheels;
 
       $scope.clear = function() {
         state.clearRental($scope.rental.tab);
@@ -126,8 +126,8 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.carClass;
-        var tariff = $scope.rental.tariff;
+        var carClass = $scope.rental.carClass.greenwheels;
+        var tariff = $scope.rental.tariff.greenwheels;
         var rate = {};
 
         if (tariff === 'standard') {
