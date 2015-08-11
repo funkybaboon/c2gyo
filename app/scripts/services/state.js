@@ -29,7 +29,7 @@ angular.module('c2gyoApp')
       },
       carClass: {
         flinkster: 'sonder',
-        greenwheels: 'van'
+        greenwheels: 'compact'
       }
     };
 

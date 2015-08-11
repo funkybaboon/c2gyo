@@ -22,15 +22,6 @@ angular.module('c2gyoApp')
       state) {
 
       $scope.rental = state.rental;
-
-      // set default car class and tariff to start with
-      $scope.rental.carClass.greenwheels = state.rental.carClass.greenwheels;
-      $scope.rental.tariff.greenwheels = state.rental.tariff.greenwheels;
-
-      $scope.clear = function() {
-        state.clearRental($scope.rental.tab);
-      };
-
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
