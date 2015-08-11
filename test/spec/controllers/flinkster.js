@@ -6,15 +6,14 @@ describe('Controller: FlinksterCtrl', function () {
   beforeEach(module('c2gyoApp'));
 
   var FlinksterCtrl,
-    scope, flinksterConfig;
+    scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _flinksterConfig_) {
+  beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     FlinksterCtrl = $controller('FlinksterCtrl', {
       $scope: scope
     });
-    flinksterConfig = _flinksterConfig_;
   }));
 
 
@@ -34,8 +33,8 @@ describe('Controller: FlinksterCtrl', function () {
 
             scope.rental.airport = false || testdata.airport;
 
-            scope.rate.tariff = tariff;
-            scope.rate.carClass = carClass;
+            scope.rental.tariff.flinkster = tariff;
+            scope.rental.carClass.flinkster = carClass;
             expect(scope.price().toFixed(2)).toEqual(expectedPrice);
           });
         })(tariff, carClass, expectedPrice);
