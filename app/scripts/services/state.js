@@ -25,11 +25,13 @@ angular.module('c2gyoApp')
       airport: false,
       tariff: {
         flinkster: 'bundesweit',
-        greenwheels: 'standard'
+        greenwheels: 'standard',
+        sm: 'classic'
       },
       carClass: {
         flinkster: 'sonder',
-        greenwheels: 'compact'
+        greenwheels: 'compact',
+        sm: 'A'
       }
     };
 

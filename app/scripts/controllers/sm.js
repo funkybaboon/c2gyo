@@ -13,7 +13,6 @@ angular.module('c2gyoApp')
     'stadtmobilratebasic',
     'stadtmobilrateclassic',
     'stadtmobilratebusiness',
-    'smConfig',
     'duration',
     'state',
     function(
@@ -21,20 +20,10 @@ angular.module('c2gyoApp')
       stadtmobilratebasic,
       stadtmobilrateclassic,
       stadtmobilratebusiness,
-      smConfig,
       duration,
       state) {
 
       $scope.rental = state.rental;
-      $scope.clear = function() {
-        state.clearRental($scope.rental.tab);
-      };
-
-      $scope.rate = {
-        carClass: smConfig.carClass,
-        tariff: smConfig.tariff
-      };
-
       $scope.resolution = ['hours', 'days', 'weeks'];
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
@@ -130,8 +119,8 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rate.carClass;
-        var tariff = $scope.rate.tariff;
+        var carClass = $scope.rental.carClass.sm;
+        var tariff = $scope.rental.tariff.sm;
         var rate = {};
 
         // studi and classic have the same rates
