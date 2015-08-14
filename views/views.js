@@ -96,7 +96,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          Tarif:\n" +
     "          <form>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.tariff\"\n" +
+    "                   ng-model=\"rental.tariff.flinkster\"\n" +
     "                   value=\"bundesweit\"\n" +
     "                   id=\"tariffbundesweit\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/tariffbundesweit.html\">\n" +
@@ -104,7 +104,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.tariff\"\n" +
+    "                   ng-model=\"rental.tariff.flinkster\"\n" +
     "                   value=\"lokal\"\n" +
     "                   id=\"tarifflokal\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/tarifflokal.html\">\n" +
@@ -118,7 +118,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          Fahrzeugklasse:\n" +
     "          <form>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"sonder\"\n" +
     "                   id=\"ratesonder\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassSonder.html\">\n" +
@@ -126,7 +126,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"mini\"\n" +
     "                   id=\"ratemini\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassMini.html\">\n" +
@@ -134,7 +134,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"klein\"\n" +
     "                   id=\"rateklein\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassKlein.html\">\n" +
@@ -142,7 +142,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"kompakt\"\n" +
     "                   id=\"ratekompakt\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassKompakt.html\">\n" +
@@ -150,7 +150,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"mittel\"\n" +
     "                   id=\"ratemittel\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassMittel.html\">\n" +
@@ -158,7 +158,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
-    "                   ng-model=\"rate.carClass\"\n" +
+    "                   ng-model=\"rental.carClass.flinkster\"\n" +
     "                   value=\"transporter\"\n" +
     "                   id=\"ratetransporter\">\n" +
     "            <span tariff-popover=\"views/popovers/flinkster/carClassTransporter.html\">\n" +
@@ -191,6 +191,69 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "  </div>\n" +
     "</div>\n" +
     "\n"
+  );
+
+
+  $templateCache.put('views/greenwheels.html',
+    "<div class=\"greenwheels\">\n" +
+    "  <nav-Bar></nav-Bar>\n" +
+    "  <div class=\"row\">\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <time-Input-Form></time-Input-Form>\n" +
+    "\n" +
+    "      <div class=\"highlight\">\n" +
+    "\n" +
+    "        <div class=\"form-group\">\n" +
+    "          Tarif:\n" +
+    "          <form>\n" +
+    "            <input type=\"radio\"\n" +
+    "                   ng-model=\"rental.tariff.greenwheels\"\n" +
+    "                   value=\"standard\"\n" +
+    "                   id=\"tariffstandard\">\n" +
+    "            <span tariff-popover=\"views/popovers/greenwheels/tariffstandard.html\">\n" +
+    "              Standard\n" +
+    "            </span>\n" +
+    "            <br/>\n" +
+    "            <input type=\"radio\"\n" +
+    "                   ng-model=\"rental.tariff.greenwheels\"\n" +
+    "                   value=\"joker\"\n" +
+    "                   id=\"tariffjoker\">\n" +
+    "            <span tariff-popover=\"views/popovers/greenwheels/tariffjoker.html\">\n" +
+    "              Joker\n" +
+    "            </span>\n" +
+    "            <br/>\n" +
+    "          </form>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"form-group\">\n" +
+    "          Fahrzeugklasse:\n" +
+    "          <form>\n" +
+    "            <input type=\"radio\"\n" +
+    "                   ng-model=\"rental.carClass.greenwheels\"\n" +
+    "                   value=\"compact\"\n" +
+    "                   id=\"ratecompact\">\n" +
+    "              <span tariff-popover=\"views/popovers/greenwheels/carClassCompact.html\">\n" +
+    "                Compact\n" +
+    "              </span>\n" +
+    "            <br/>\n" +
+    "            <input type=\"radio\"\n" +
+    "                   ng-model=\"rental.carClass.greenwheels\"\n" +
+    "                   value=\"van\"\n" +
+    "                   id=\"ratevan\">\n" +
+    "              <span tariff-popover=\"views/popovers/greenwheels/carClassVan.html\">\n" +
+    "                Van / Lieferwagen\n" +
+    "              </span>\n" +
+    "            <br/>\n" +
+    "          </form>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"col-md-6\">\n" +
+    "      <price-Box></price-Box>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>\n"
   );
 
 
@@ -311,6 +374,38 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
   );
 
 
+  $templateCache.put('views/popovers/greenwheels/carClassCompact.html',
+    "<div>VW Up</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/greenwheels/carClassVan.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>VW Golf Variant</li>\n" +
+    "    <li>VW Caddy</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/greenwheels/tariffjoker.html',
+    "<div>\n" +
+    "  <ul>\n" +
+    "    <li>10€ Grundgebühr pro Monat</li>\n" +
+    "    <li>60 gratis Kilometer</li>\n" +
+    "    <li>30 € für 24 Stunden Buchungen in der Fahrzeugklasse Compact (anstatt 39.76€)</li>\n" +
+    "    <li>40 € für 24 Stunden Buchungen in der Fahrzeugklasse Van (anstatt 71.76€)</li>\n" +
+    "  </ul>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('views/popovers/greenwheels/tariffstandard.html',
+    "<div>Keine Monatliche Grundgebühr</div>\n"
+  );
+
+
   $templateCache.put('views/popovers/sm/carClassRateA.html',
     "<div>Toyota Aygo</div>\n"
   );
@@ -406,7 +501,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "        Tarif:\n" +
     "        <form>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.tariff\"\n" +
+    "                 ng-model=\"rental.tariff.sm\"\n" +
     "                 value=\"classic\"\n" +
     "                 id=\"tariffclassic\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/tariffclassic.html\">\n" +
@@ -414,7 +509,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.tariff\"\n" +
+    "                 ng-model=\"rental.tariff.sm\"\n" +
     "                 value=\"basic\"\n" +
     "                 id=\"tariffbasic\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/tariffbasic.html\">\n" +
@@ -422,7 +517,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.tariff\"\n" +
+    "                 ng-model=\"rental.tariff.sm\"\n" +
     "                 value=\"studi\"\n" +
     "                 id=\"tariffstudi\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/tariffstudi.html\">\n" +
@@ -430,7 +525,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.tariff\"\n" +
+    "                 ng-model=\"rental.tariff.sm\"\n" +
     "                 value=\"business\"\n" +
     "                 id=\"tariffbusiness\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/tariffbusiness.html\">\n" +
@@ -444,7 +539,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "        Fahrzeugklasse:\n" +
     "        <form>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.carClass\"\n" +
+    "                 ng-model=\"rental.carClass.sm\"\n" +
     "                 value=\"A\"\n" +
     "                 id=\"rateA\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/carClassRateA.html\">\n" +
@@ -452,7 +547,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.carClass\"\n" +
+    "                 ng-model=\"rental.carClass.sm\"\n" +
     "                 value=\"B\"\n" +
     "                 id=\"rateB\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/carClassRateB.html\">\n" +
@@ -460,7 +555,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.carClass\"\n" +
+    "                 ng-model=\"rental.carClass.sm\"\n" +
     "                 value=\"C\"\n" +
     "                 id=\"rateC\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/carClassRateC.html\">\n" +
@@ -468,7 +563,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.carClass\"\n" +
+    "                 ng-model=\"rental.carClass.sm\"\n" +
     "                 value=\"D\"\n" +
     "                 id=\"rateD\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/carClassRateD.html\">\n" +
@@ -476,7 +571,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "          </span>\n" +
     "          <br/>\n" +
     "          <input type=\"radio\"\n" +
-    "                 ng-model=\"rate.carClass\"\n" +
+    "                 ng-model=\"rental.carClass.sm\"\n" +
     "                 value=\"F\"\n" +
     "                 id=\"rateF\">\n" +
     "          <span tariff-popover=\"views/popovers/sm/carClassRateF.html\">\n" +
