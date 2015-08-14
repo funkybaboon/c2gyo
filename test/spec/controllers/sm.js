@@ -7,7 +7,6 @@ describe('Controller: SmCtrl', function() {
 
   var SmCtrl;
   var scope;
-  var smConfig;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller, $rootScope) {
