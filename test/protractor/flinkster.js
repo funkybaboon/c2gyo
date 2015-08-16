@@ -5,11 +5,11 @@ describe('test flinkster customization', function() {
 
 
   it('tariff "lokal" should not have an airport checkbox', function() {
-    expect(element(by.model('rental.airport')).isPresent()).toBe(true);
+    expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(true);
 
     element(by.id('tarifflokal')).click();
 
-    expect(element(by.model('rental.airport')).isPresent()).toBe(false);
+    expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(false);
   });
 
 });
