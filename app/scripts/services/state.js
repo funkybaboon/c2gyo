@@ -22,7 +22,11 @@ angular.module('c2gyoApp')
       timeDays: 0,
       timeWeeks: 0,
       timeStanding: 0,
-      airport: false,
+      airport: {
+        c2g: false,
+        c2gb: false,
+        flinkster: false
+      },
       tariff: {
         flinkster: 'bundesweit',
         greenwheels: 'standard',
