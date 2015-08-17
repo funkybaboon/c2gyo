@@ -30,7 +30,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            <div class=\"checkbox\">\n" +
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
-    "                       ng-model=\"rental.airport\">\n" +
+    "                       ng-model=\"rental.airport.c2g\">\n" +
     "                <span tariff-popover=\"views/popovers/c2g/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
@@ -63,7 +63,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            <div class=\"checkbox\">\n" +
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
-    "                       ng-model=\"rental.airport\">\n" +
+    "                       ng-model=\"rental.airport.c2gb\">\n" +
     "                <span tariff-popover=\"views/popovers/c2gb/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
@@ -173,7 +173,7 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "            <div class=\"checkbox\">\n" +
     "              <label>\n" +
     "                <input type=\"checkbox\"\n" +
-    "                       ng-model=\"rental.airport\">\n" +
+    "                       ng-model=\"rental.airport.flinkster\">\n" +
     "                <span tariff-popover=\"views/popovers/flinkster/airport.html\">\n" +
     "                  Flughafenpauschale\n" +
     "                </span>\n" +
