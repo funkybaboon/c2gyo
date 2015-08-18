@@ -15,10 +15,9 @@ exports.config = {
 
     'sm10km10hoursClassicScenario.js',
     'sm10km10hoursBasicScenario.js',
-    'sm10km10hoursBusinessScenario.js',*/
+    'sm10km10hoursBusinessScenario.js',
 
-    'KeepStateScenario.js',
-    'ClearData.js',
+    'KeepStateScenario.js',*/
     'flinkster.js'
   ],
 
@@ -30,6 +29,6 @@ exports.config = {
     browserName: 'firefox',
     shardTestFiles: true,
     maxInstances: 7
-  }],
+  }]
 
 };
