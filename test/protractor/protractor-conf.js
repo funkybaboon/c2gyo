@@ -16,8 +16,8 @@ exports.config = {
     'sm10km10hoursClassicScenario.js',
     'sm10km10hoursBasicScenario.js',
     'sm10km10hoursBusinessScenario.js',
-
-    'KeepStateScenario.js',*/
+*/
+    'KeepStateScenario.js',
     'flinkster.js'
   ],
 

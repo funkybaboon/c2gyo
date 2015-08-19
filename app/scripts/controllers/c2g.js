@@ -137,7 +137,7 @@ angular.module('c2gyoApp')
 
       $scope.getFeeAirport = function() {
         var fee = 0;
-        if ($scope.rental.airport) {
+        if ($scope.rental.airport.c2g) {
           fee = 4.90;
         }
         return fee;
