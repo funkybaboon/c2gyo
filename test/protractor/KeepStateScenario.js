@@ -21,6 +21,11 @@ describe('Keep State over different tabs', function() {
     expect(priceDistance.getText()).toEqual('14,50 €');
     expect(priceTime.getText()).toEqual('472,00 €');
 
+    element(by.id('greenwheels')).click();
+    expect(price.getText()).toEqual('322,22 €');
+    expect(priceDistance.getText()).toEqual('24,00 €');
+    expect(priceTime.getText()).toEqual('298,22 €');
+
     element(by.id('c2gb')).click();
     expect(price.getText()).toEqual('726,50 €');
     expect(priceDistance.getText()).toEqual('14,50 €');
@@ -30,7 +35,6 @@ describe('Keep State over different tabs', function() {
     expect(price.getText()).toEqual('325,00 €');
     expect(priceDistance.getText()).toEqual('20,00 €');
     expect(priceTime.getText()).toEqual('305,00 €');
-
 
   });
 
