@@ -15,7 +15,7 @@ angular.module('c2gyoApp')
     var rental = {
       tab: 'simple',
       startDate: now.clone().add(1, 'h'),
-      endDate: now.clone().add(10, 'h'),
+      endDate: now.clone().add(11, 'h'),
       distance: 10,
       timeMinutes: 0,
       timeHours: 10,
