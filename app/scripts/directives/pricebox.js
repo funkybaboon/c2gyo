@@ -14,7 +14,11 @@ angular.module('c2gyoApp')
       scope: true,
       controller: function($scope) {
         $scope.pricePerKm = function() {
-          return $scope.price() / $scope.rental.distance || 0;
+          var price = 0;
+          if ($scope.rental.distance) {
+            price = $scope.price() / $scope.rental.distance;
+          }
+          return price;
         };
       }
     };
