@@ -18,6 +18,8 @@ exports.config = {
     'sm10km10hoursBusinessScenario.js',
 */
     'KeepStateScenario.js',
+
+    'c2g.js',
     'flinkster.js'
   ],
 
