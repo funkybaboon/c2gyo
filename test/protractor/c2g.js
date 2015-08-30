@@ -5,6 +5,7 @@ describe('c2g test all input fields and checkboxes', function() {
 
   beforeEach(function() {
     browser.get('http://localhost:9999/#/c2g');
+    browser.waitForAngular();
   });
 
   it('should calculate a price with all input forms filled', function() {
@@ -32,4 +33,5 @@ describe('c2g test all input fields and checkboxes', function() {
     expect(priceDistance.getText()).toEqual('49,88 €');
     expect(priceTime.getText()).toEqual('148,76 €');
   });
+
 });

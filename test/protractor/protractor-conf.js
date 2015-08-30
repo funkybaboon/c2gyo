@@ -26,11 +26,11 @@ exports.config = {
   multiCapabilities: [{
     browserName: 'chrome',
     shardTestFiles: true,
-    maxInstances: 7
+    maxInstances: 99
   }, {
     browserName: 'firefox',
     shardTestFiles: true,
-    maxInstances: 7
+    maxInstances: 99
   }]
 
 };

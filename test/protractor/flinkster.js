@@ -1,6 +1,7 @@
 describe('test flinkster customization', function() {
   beforeEach(function() {
     browser.get('http://localhost:9999/#/flinkster');
+    browser.waitForAngular();
   });
 
 

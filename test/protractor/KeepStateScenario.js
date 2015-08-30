@@ -5,6 +5,7 @@ describe('Keep State over different tabs', function() {
 
   beforeEach(function() {
     browser.get('http://localhost:9999/#/sm');
+    browser.waitForAngular();
   });
 
 
