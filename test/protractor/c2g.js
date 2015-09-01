@@ -34,4 +34,16 @@ describe('c2g test all input fields and checkboxes', function() {
     expect(priceTime.getText()).toEqual('148,76 €');
   });
 
+  it('should display the popover-content on mouseover', function() {
+    var pathIcon = 'span[tariff-popover="views/popovers/c2g/airport.html"]' +
+      ' > .fa.fa-info-circle';
+    var pathPopover = 'span[tariff-popover="views/popovers/c2g/airport.html"] ' +
+      '> .popover.ng-isolate-scope.right.fade.in';
+
+    var popoverIcon = element(by.css(pathIcon));
+    browser.actions().mouseMove(popoverIcon).perform();
+    var popover = element(by.css(pathPopover));
+
+    expect(popover.isDisplayed()).toBeTruthy();
+  });
 });
