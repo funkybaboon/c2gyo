@@ -20,7 +20,9 @@ exports.config = {
     'KeepStateScenario.js',
 
     'c2g.js',
-    'flinkster.js'
+    'c2gb.js',
+    'flinkster.js',
+    'greenwheels.js'
   ],
 
   multiCapabilities: [{
