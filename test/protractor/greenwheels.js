@@ -18,4 +18,12 @@ describe('greenwheels test all input fields and checkboxes', function() {
     expect(priceDistance.getText()).toEqual('53,28 €');
     expect(priceTime.getText()).toEqual('640,14 €');
   });
+
+  it('should calculate a price with all checkboxes ticked', function() {
+    element(by.id('ratevan')).click();
+    expect(price.getText()).toEqual('1231,62 €');
+    expect(priceDistance.getText()).toEqual('75,48 €');
+    expect(priceTime.getText()).toEqual('1156,14 €');
+  });
+
 });
