@@ -21,9 +21,14 @@ describe('greenwheels test all input fields and checkboxes', function() {
 
   it('should calculate a price with all checkboxes ticked', function() {
     element(by.id('ratevan')).click();
-    expect(price.getText()).toEqual('1231,62 €');
+    expect(price.getText()).toEqual('1.231,62 €');
     expect(priceDistance.getText()).toEqual('75,48 €');
-    expect(priceTime.getText()).toEqual('1156,14 €');
+    expect(priceTime.getText()).toEqual('1.156,14 €');
+
+    element(by.id('tariffjoker')).click();
+    expect(price.getText()).toEqual('723,46 €');
+    expect(priceDistance.getText()).toEqual('75,48 €');
+    expect(priceTime.getText()).toEqual('647,98 €');
   });
 
 });
