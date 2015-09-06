@@ -29,6 +29,11 @@ describe('greenwheels test all input fields and checkboxes', function() {
     expect(price.getText()).toEqual('723,46 €');
     expect(priceDistance.getText()).toEqual('75,48 €');
     expect(priceTime.getText()).toEqual('647,98 €');
+
+    element(by.id('compact')).click();
+    expect(price.getText()).toEqual('537,26 €');
+    expect(priceDistance.getText()).toEqual('53,28 €');
+    expect(priceTime.getText()).toEqual('483,98 €');
   });
 
 });
