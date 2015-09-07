@@ -30,7 +30,7 @@ describe('greenwheels test all input fields and checkboxes', function() {
     expect(priceDistance.getText()).toEqual('75,48 €');
     expect(priceTime.getText()).toEqual('647,98 €');
 
-    element(by.id('compact')).click();
+    element(by.id('ratecompact')).click();
     expect(price.getText()).toEqual('537,26 €');
     expect(priceDistance.getText()).toEqual('53,28 €');
     expect(priceTime.getText()).toEqual('483,98 €');
