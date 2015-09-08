@@ -25,4 +25,13 @@ describe('test flinkster input fields', function() {
     expect(priceTime.getText()).toEqual('645,00 €');
   });
 
+  it('should calculate a price with all checkboxes ticked', function() {
+    element(by.id('ratemini')).click();
+    expect(price.getText()).toEqual('668,56 €');
+    expect(priceDistance.getText()).toEqual('39,96 €');
+    expect(priceTime.getText()).toEqual('628,60 €');
+
+  });
+
+
 });
