@@ -31,6 +31,11 @@ describe('test flinkster input fields', function() {
     expect(priceDistance.getText()).toEqual('39,96 €');
     expect(priceTime.getText()).toEqual('628,60 €');
 
+    element(by.id('ratemklein')).click();
+    expect(price.getText()).toEqual('849,96 €');
+    expect(priceDistance.getText()).toEqual('39,96 €');
+    expect(priceTime.getText()).toEqual('810,00 €');
+
   });
 
 
