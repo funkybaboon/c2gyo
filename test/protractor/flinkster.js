@@ -41,6 +41,11 @@ describe('test flinkster input fields', function() {
     expect(priceDistance.getText()).toEqual('39,96 €');
     expect(priceTime.getText()).toEqual('972,00 €');
 
+    element(by.id('ratemittel')).click();
+    expect(price.getText()).toEqual('1.178,40 €');
+    expect(priceDistance.getText()).toEqual('44,40 €');
+    expect(priceTime.getText()).toEqual('1.134,00 €');
+
   });
 
 
