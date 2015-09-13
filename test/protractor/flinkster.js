@@ -51,6 +51,14 @@ describe('test flinkster input fields', function() {
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.296,00 €');
 
+    element(by.model('rental.airport.flinkster')).click();
+    expect(price.getText()).toEqual('1.664,40 €');
+    expect(priceDistance.getText()).toEqual('44,40 €');
+    expect(priceTime.getText()).toEqual('1.620,00 €');
+
+
+
+
   });
 
 
