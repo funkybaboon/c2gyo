@@ -56,6 +56,10 @@ describe('test flinkster input fields', function() {
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.620,00 €');
 
+    element(by.id('tarifflokal')).click();
+    expect(price.getText()).toEqual('652,88 €');
+    expect(priceDistance.getText()).toEqual('64,38 €');
+    expect(priceTime.getText()).toEqual('588,50 €');
 
 
 
