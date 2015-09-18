@@ -13,7 +13,7 @@ describe('test flinkster input fields', function() {
     element(by.model('rental.distance')).clear().sendKeys(222);
   });
 
-  it('tariff "lokal" should not have an airport checkbox', function() {
+  it('should not display an airport checkbox on tariff "lokal"', function() {
     expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(true);
     element(by.id('tarifflokal')).click();
     expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(false);
@@ -25,7 +25,7 @@ describe('test flinkster input fields', function() {
     expect(priceTime.getText()).toEqual('645,00 €');
   });
 
-  it('should calculate a price with all checkboxes ticked', function() {
+  it('should calculate a price with all radio boxes ticked', function() {
     element(by.id('ratemini')).click();
     expect(price.getText()).toEqual('668,56 €');
     expect(priceDistance.getText()).toEqual('39,96 €');
@@ -60,10 +60,36 @@ describe('test flinkster input fields', function() {
     expect(price.getText()).toEqual('652,88 €');
     expect(priceDistance.getText()).toEqual('64,38 €');
     expect(priceTime.getText()).toEqual('588,50 €');
-
-
-
   });
 
+
+  var popover = [
+    'tariffbundesweit',
+    'tarifflokal',
+    'carClassSonder',
+    'carClassMini',
+    'carClassKlein',
+    'carClassKompakt',
+    'carClassMittel',
+    'carClassTransporter',
+    'airport'
+  ];
+
+  popover.forEach(function(entry){
+    it('should display the popover-content of ' + entry +
+    ' on mouseover', function() {
+      var pathIcon = 'span[tariff-popover=' +
+        '"views/popovers/flinkster/' + entry + '.html"]' +
+        ' > .fa.fa-info-circle';
+      var pathPopover = 'span[tariff-popover=' +
+        '"views/popovers/flinkster/' + entry + '.html"] ' +
+        '> .popover.ng-isolate-scope.right.fade.in';
+
+      var popoverIcon = element(by.css(pathIcon));
+      browser.actions().mouseMove(popoverIcon).perform();
+      var popover = element(by.css(pathPopover));
+      expect(popover.isDisplayed()).toBeTruthy();
+    });
+  });
 
 });
