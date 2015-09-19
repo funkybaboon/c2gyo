@@ -11,6 +11,7 @@ describe('greenwheels test all input fields and checkboxes', function() {
     element(by.model('rental.timeDays')).clear().sendKeys(2);
     element(by.model('rental.timeWeeks')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
+
   });
 
   it('should calculate a price with all input forms filled', function() {
@@ -36,21 +37,30 @@ describe('greenwheels test all input fields and checkboxes', function() {
     expect(priceTime.getText()).toEqual('483,98 €');
   });
 
-  it('should display the popover-content on mouseover', function() {
-    var pathIcon = 'span[tariff-popover=' +
-      '"views/popovers/greenwheels/tariffstandard.html"]' +
-      ' > .fa.fa-info-circle';
-    var pathPopover = 'span[tariff-popover=' +
-      '"views/popovers/greenwheels/tariffstandard.html"] ' +
-      '> .popover.ng-isolate-scope.right.fade.in';
 
-    var popoverIcon = element(by.css(pathIcon));
-    browser.actions().mouseMove(popoverIcon).perform();
-    var popover = element(by.css(pathPopover));
 
-    //browser.driver.sleep(3000);
+  var popover = [
+    'tariffstandard',
+    'tariffjoker',
+    'carClassCompact',
+    'carClassVan'
+  ];
 
-    expect(popover.isDisplayed()).toBeTruthy();
+  popover.forEach(function(entry){
+    it('should display the popover-content of ' + entry +
+    ' on mouseover', function() {
+      var pathIcon = 'span[tariff-popover=' +
+        '"views/popovers/greenwheels/' + entry + '.html"]' +
+        ' > .fa.fa-info-circle';
+      var pathPopover = 'span[tariff-popover=' +
+        '"views/popovers/greenwheels/' + entry + '.html"] ' +
+        '> .popover.ng-isolate-scope.right.fade.in';
+
+      var popoverIcon = element(by.css(pathIcon));
+      browser.actions().mouseMove(popoverIcon).perform();
+      var popover = element(by.css(pathPopover));
+      expect(popover.isDisplayed()).toBeTruthy();
+    });
   });
 
 });
