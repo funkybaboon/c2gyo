@@ -56,4 +56,31 @@ describe('test stadtmobil input fields', function() {
     expect(priceTime.getText()).toEqual('547,60 €');
   });
 
+  var popover = [
+    'tariffclassic',
+    'tariffbasic',
+    'tariffstudi',
+    'tariffbusiness',
+    'carClassRateA',
+    'carClassRateB',
+    'carClassRateC',
+    'carClassRateD',
+    'carClassRateF'
+  ];
+
+  popover.forEach(function(entry){
+    it('should display the popover-content on mouseover', function() {
+      var pathIcon = 'span[tariff-popover=' +
+        '"views/popovers/sm/' + entry + '.html"]' +
+        ' > .fa.fa-info-circle';
+      var pathPopover = 'span[tariff-popover=' +
+        '"views/popovers/sm/' + entry + '.html"] ' +
+        '> .popover.ng-isolate-scope.right.fade.in';
+
+      var popoverIcon = element(by.css(pathIcon));
+      browser.actions().mouseMove(popoverIcon).perform();
+      var popover = element(by.css(pathPopover));
+      expect(popover.isDisplayed()).toBeTruthy();
+    });
+  });
 });
