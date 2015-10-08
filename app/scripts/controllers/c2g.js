@@ -21,12 +21,21 @@ angular.module('c2gyoApp')
 
       $scope.feeAdditionalKm = 0.29;
 
-      $scope.resolution = [
-        'minutes',
-        'minutesStanding',
-        'hours',
-        'days'
-      ];
+      $scope.resolution = function() {
+        var resolution = [
+          'minutes',
+          'minutesStanding',
+          'hours',
+          'days'
+        ];
+
+        if(durationAll().asMinutes() > 60*24*7){
+          resolution.push('weeks');
+        }
+
+        return resolution;
+      };
+
       $scope.resolutionTime = ['minutes', 'hours', 'days'];
 
       //-----------------------------------------------------------------------

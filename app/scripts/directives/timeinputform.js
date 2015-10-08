@@ -14,7 +14,7 @@ angular.module('c2gyoApp')
       scope: true,
       controller: function($scope) {
         $scope.isResolution = function(value) {
-          return $scope.resolution.indexOf(value) !== -1;
+          return $scope.resolution().indexOf(value) !== -1;
         };
 
         $scope.isSet = function(checkTab) {

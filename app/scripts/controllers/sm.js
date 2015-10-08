@@ -24,7 +24,9 @@ angular.module('c2gyoApp')
       state) {
 
       $scope.rental = state.rental;
-      $scope.resolution = ['hours', 'days', 'weeks'];
+      $scope.resolution = function() {
+        return ['hours', 'days', 'weeks'];
+      };
       $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       //-----------------------------------------------------------------------
