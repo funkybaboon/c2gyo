@@ -18,6 +18,14 @@ describe('c2g test all input fields and checkboxes', function() {
     expect(price.getText()).toEqual('198,64 €');
     expect(priceDistance.getText()).toEqual('49,88 €');
     expect(priceTime.getText()).toEqual('148,76 €');
+
+    // with all input forms
+    element(by.model('rental.timeDays')).clear().sendKeys(7);
+    element(by.model('rental.timeWeeks')).clear().sendKeys(2);
+
+    expect(price.getText()).toEqual('1.319,64 €');
+    expect(priceDistance.getText()).toEqual('49,88 €');
+    expect(priceTime.getText()).toEqual('1.269,76 €');
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
@@ -32,6 +40,23 @@ describe('c2g test all input fields and checkboxes', function() {
     expect(price.getText()).toEqual('203,54 €');
     expect(priceDistance.getText()).toEqual('49,88 €');
     expect(priceTime.getText()).toEqual('148,76 €');
+
+    // with all input forms
+    element(by.model('rental.timeDays')).clear().sendKeys(7);
+    element(by.model('rental.timeWeeks')).clear().sendKeys(2);
+
+    expect(price.getText()).toEqual('1.324,54 €');
+    expect(priceDistance.getText()).toEqual('49,88 €');
+    expect(priceTime.getText()).toEqual('1.269,76 €');
+  });
+
+  it('should display the week input field if rental time is greater than 7 ' +
+  'days', function() {
+    expect(element(by.model('rental.timeWeeks')).isPresent()).toBe(false);
+    element(by.model('rental.timeDays')).clear().sendKeys(8);
+    expect(element(by.model('rental.timeWeeks')).isPresent()).toBe(true);
+    element(by.model('rental.timeDays')).clear().sendKeys(6);
+    expect(element(by.model('rental.timeWeeks')).isPresent()).toBe(false);
   });
 
   it('should display the popover-content on mouseover', function() {
