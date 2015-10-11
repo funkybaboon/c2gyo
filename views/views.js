@@ -232,17 +232,17 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "                   ng-model=\"rental.carClass.greenwheels\"\n" +
     "                   value=\"compact\"\n" +
     "                   id=\"ratecompact\">\n" +
-    "              <span tariff-popover=\"views/popovers/greenwheels/carClassCompact.html\">\n" +
+    "            <span tariff-popover=\"views/popovers/greenwheels/carClassCompact.html\">\n" +
     "                Compact\n" +
-    "              </span>\n" +
+    "            </span>\n" +
     "            <br/>\n" +
     "            <input type=\"radio\"\n" +
     "                   ng-model=\"rental.carClass.greenwheels\"\n" +
     "                   value=\"van\"\n" +
     "                   id=\"ratevan\">\n" +
-    "              <span tariff-popover=\"views/popovers/greenwheels/carClassVan.html\">\n" +
+    "            <span tariff-popover=\"views/popovers/greenwheels/carClassVan.html\">\n" +
     "                Van / Lieferwagen\n" +
-    "              </span>\n" +
+    "            </span>\n" +
     "            <br/>\n" +
     "          </form>\n" +
     "        </div>\n" +
@@ -675,10 +675,6 @@ angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {  'u
     "      <span class=\"input-group-addon\">Km</span>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "\n" +
-    "  <button type=\"button\" class=\"btn btn-default\" ng-click=\"clear()\" id=\"clear\">\n" +
-    "    Clear\n" +
-    "  </button>\n" +
     "\n" +
     "</div>\n"
   );
