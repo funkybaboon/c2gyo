@@ -8,7 +8,7 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('SmCtrl', [
+  .controller('StadtmobilCtrl', [
     '$scope',
     'stadtmobilratebasic',
     'stadtmobilrateclassic',
@@ -121,8 +121,8 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.carClass.sm;
-        var tariff = $scope.rental.tariff.sm;
+        var carClass = $scope.rental.carClass.stadtmobil;
+        var tariff = $scope.rental.tariff.stadtmobil;
         var rate = {};
 
         // studi and classic have the same rates

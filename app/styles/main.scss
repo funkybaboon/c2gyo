@@ -121,7 +121,7 @@ body {
 
 $c2g-brand-color: #009fe4;
 $c2gb-brand-color: black;
-$sm-brand-color: #E2001A;
+$stadtmobil-brand-color: #E2001A;
 $flinkster-brand-color: #FF0000;
 $greenwheels-brand-color: #56be00;
 
@@ -148,8 +148,8 @@ $greenwheels-brand-color: #56be00;
 .c2gb {
   @include brand-page($c2gb-brand-color);
 }
-.sm {
-  @include brand-page($sm-brand-color);
+.stadtmobil {
+  @include brand-page($stadtmobil-brand-color);
 }
 .flinkster {
   @include brand-page($flinkster-brand-color);

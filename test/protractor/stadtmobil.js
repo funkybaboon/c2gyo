@@ -4,7 +4,7 @@ describe('test stadtmobil input fields', function() {
   var priceTime = element(by.id('priceTime'));
 
   beforeEach(function() {
-    browser.get('http://localhost:9999/#/sm');
+    browser.get('http://localhost:9999/#/stadtmobil');
     browser.waitForAngular();
 
     element(by.model('rental.timeHours')).clear().sendKeys(2);
@@ -71,10 +71,10 @@ describe('test stadtmobil input fields', function() {
   popover.forEach(function(entry){
     it('should display the popover-content on mouseover', function() {
       var pathIcon = 'span[tariff-popover=' +
-        '"views/popovers/sm/' + entry + '.html"]' +
+        '"views/popovers/stadtmobil/' + entry + '.html"]' +
         ' > .fa.fa-info-circle';
       var pathPopover = 'span[tariff-popover=' +
-        '"views/popovers/sm/' + entry + '.html"] ' +
+        '"views/popovers/stadtmobil/' + entry + '.html"] ' +
         '> .popover.ng-isolate-scope.right.fade.in';
 
       var popoverIcon = element(by.css(pathIcon));

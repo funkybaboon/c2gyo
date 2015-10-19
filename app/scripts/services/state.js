@@ -30,12 +30,12 @@ angular.module('c2gyoApp')
       tariff: {
         flinkster: 'bundesweit',
         greenwheels: 'standard',
-        sm: 'classic'
+        stadtmobil: 'classic'
       },
       carClass: {
         flinkster: 'sonder',
         greenwheels: 'compact',
-        sm: 'A'
+        stadtmobil: 'A'
       }
     };
 

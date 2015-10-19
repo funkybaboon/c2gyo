@@ -30,9 +30,9 @@ angular
         templateUrl: 'views/c2gb.html',
         controller: 'C2gbCtrl'
       })
-      .when('/sm', {
-        templateUrl: 'views/sm.html',
-        controller: 'SmCtrl',
+      .when('/stadtmobil', {
+        templateUrl: 'views/stadtmobil.html',
+        controller: 'StadtmobilCtrl',
       })
       .when('/flinkster', {
         templateUrl: 'views/flinkster.html',

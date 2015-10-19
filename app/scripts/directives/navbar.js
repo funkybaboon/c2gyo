@@ -9,9 +9,9 @@
  *   - Book N Drive
  *   - CiteeCar
  *   - Cambio
- *   - DriveNow
- *   - Flinkster <-----------
- *   - Greenwheels
+ *   - DriveNow <-----------
+ *   - Flinkster x
+ *   - Greenwheels x
  *   - Hertz
  *   - Multicity
  *   - Scouter
@@ -34,7 +34,7 @@ angular.module('c2gyoApp')
           url: 'c2gb'
         }, {
           name: 'Stadtmobil',
-          url: 'sm'
+          url: 'stadtmobil'
         }, {
           name: 'Flinkster',
           url: 'flinkster'
