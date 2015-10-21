@@ -26,9 +26,9 @@ angular
         templateUrl: 'views/car2go.html',
         controller: 'Car2goCtrl'
       })
-      .when('/c2gb', {
-        templateUrl: 'views/c2gb.html',
-        controller: 'C2gbCtrl'
+      .when('/car2goblack', {
+        templateUrl: 'views/car2goblack.html',
+        controller: 'Car2goblackCtrl'
       })
       .when('/stadtmobil', {
         templateUrl: 'views/stadtmobil.html',

@@ -24,7 +24,7 @@ angular.module('c2gyoApp')
       timeStanding: 0,
       airport: {
         car2go: false,
-        c2gb: false,
+        car2goblack: false,
         flinkster: false
       },
       tariff: {

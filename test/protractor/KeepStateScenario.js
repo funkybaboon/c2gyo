@@ -27,7 +27,7 @@ describe('Keep State over different tabs', function() {
     expect(priceDistance.getText()).toEqual('24,00 €');
     expect(priceTime.getText()).toEqual('298,22 €');
 
-    element(by.id('c2gb')).click();
+    element(by.id('car2goblack')).click();
     expect(price.getText()).toEqual('726,50 €');
     expect(priceDistance.getText()).toEqual('14,50 €');
     expect(priceTime.getText()).toEqual('712,00 €');

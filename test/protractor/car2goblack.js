@@ -1,10 +1,10 @@
-describe('c2gb test all input fields and checkboxes', function() {
+describe('car2goblack test all input fields and checkboxes', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
   beforeEach(function() {
-    browser.get('http://localhost:9999/#/c2gb');
+    browser.get('http://localhost:9999/#/car2goblack');
     browser.waitForAngular();
   });
 
@@ -31,7 +31,7 @@ describe('c2gb test all input fields and checkboxes', function() {
     element(by.model('rental.timeDays')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
 
-    element(by.model('rental.airport.c2gb')).click();
+    element(by.model('rental.airport.car2goblack')).click();
 
     expect(price.getText()).toEqual('262,58 €');
     expect(priceDistance.getText()).toEqual('49,88 €');
@@ -56,9 +56,9 @@ describe('c2gb test all input fields and checkboxes', function() {
   });
 
   it('should display the popover-content on mouseover', function() {
-    var pathIcon = 'span[tariff-popover="views/popovers/c2gb/airport.html"]' +
+    var pathIcon = 'span[tariff-popover="views/popovers/car2goblack/airport.html"]' +
       ' > .fa.fa-info-circle';
-    var pathPopover = 'span[tariff-popover="views/popovers/c2gb/airport.html"] ' +
+    var pathPopover = 'span[tariff-popover="views/popovers/car2goblack/airport.html"] ' +
       '> .popover.ng-isolate-scope.right.fade.in';
 
     var popoverIcon = element(by.css(pathIcon));

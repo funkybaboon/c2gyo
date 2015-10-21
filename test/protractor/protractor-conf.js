@@ -5,7 +5,7 @@ exports.config = {
     'KeepStateScenario.js',
 
     'car2go.js',
-    'c2gb.js',
+    'car2goblack.js',
     'flinkster.js',
     'greenwheels.js',
     'stadtmobil.js'
