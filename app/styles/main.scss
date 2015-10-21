@@ -119,7 +119,7 @@ body {
   text-align: left;
 }
 
-$c2g-brand-color: #009fe4;
+$car2go-brand-color: #009fe4;
 $c2gb-brand-color: black;
 $stadtmobil-brand-color: #E2001A;
 $flinkster-brand-color: #FF0000;
@@ -142,8 +142,8 @@ $greenwheels-brand-color: #56be00;
   }
 }
 
-.c2g {
-  @include brand-page($c2g-brand-color);
+.car2go {
+  @include brand-page($car2go-brand-color);
 }
 .c2gb {
   @include brand-page($c2gb-brand-color);

@@ -8,7 +8,7 @@
  * Controller of the c2gyoApp
  */
 angular.module('c2gyoApp')
-  .controller('C2gCtrl', [
+  .controller('Car2goCtrl', [
     '$scope',
     'duration',
     'state',
@@ -146,7 +146,7 @@ angular.module('c2gyoApp')
 
       $scope.getFeeAirport = function() {
         var fee = 0;
-        if ($scope.rental.airport.c2g) {
+        if ($scope.rental.airport.car2go) {
           fee = 4.90;
         }
         return fee;

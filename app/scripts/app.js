@@ -22,9 +22,9 @@ angular
   ])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/c2g', {
-        templateUrl: 'views/c2g.html',
-        controller: 'C2gCtrl'
+      .when('/car2go', {
+        templateUrl: 'views/car2go.html',
+        controller: 'Car2goCtrl'
       })
       .when('/c2gb', {
         templateUrl: 'views/c2gb.html',
@@ -43,6 +43,6 @@ angular
         controller: 'GreenwheelsCtrl'
       })
       .otherwise({
-        redirectTo: '/c2g'
+        redirectTo: '/car2go'
       });
   });

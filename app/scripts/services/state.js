@@ -23,7 +23,7 @@ angular.module('c2gyoApp')
       timeWeeks: 0,
       timeStanding: 0,
       airport: {
-        c2g: false,
+        car2go: false,
         c2gb: false,
         flinkster: false
       },

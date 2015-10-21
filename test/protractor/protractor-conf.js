@@ -4,7 +4,7 @@ exports.config = {
   specs: [
     'KeepStateScenario.js',
 
-    'c2g.js',
+    'car2go.js',
     'c2gb.js',
     'flinkster.js',
     'greenwheels.js',
