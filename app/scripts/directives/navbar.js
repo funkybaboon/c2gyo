@@ -41,6 +41,9 @@ angular.module('c2gyoApp')
         }, {
           name: 'Greenwheels',
           url: 'greenwheels'
+        }, {
+          name: 'DriveNow',
+          url: 'drivenow'
         }];
 
         $scope.isActive = function(viewLocation) {
