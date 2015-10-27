@@ -31,7 +31,7 @@ angular.module('c2gyoApp')
           url: 'car2go'
         }, {
           name: 'Car2goBlack',
-          url: 'c2gb'
+          url: 'car2goblack'
         }, {
           name: 'Stadtmobil',
           url: 'stadtmobil'
