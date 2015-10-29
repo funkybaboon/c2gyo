@@ -159,3 +159,7 @@ $drivenow-brand-color: #007ea4;
 .greenwheels {
   @include brand-page($greenwheels-brand-color);
 }
+.drivenow {
+  @include brand-page($drivenow-brand-color);
+}
+
