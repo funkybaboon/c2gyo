@@ -42,6 +42,10 @@ angular
         templateUrl: 'views/greenwheels.html',
         controller: 'GreenwheelsCtrl'
       })
+      .when('/drivenow', {
+        templateUrl: 'views/drivenow.html',
+        controller: 'DriveNowCtrl'
+      })
       .otherwise({
         redirectTo: '/car2go'
       });
