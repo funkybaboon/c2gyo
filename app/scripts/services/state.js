@@ -35,7 +35,8 @@ angular.module('c2gyoApp')
       carClass: {
         flinkster: 'sonder',
         greenwheels: 'compact',
-        stadtmobil: 'A'
+        stadtmobil: 'A',
+        drivenow: 'mini'
       }
     };
 

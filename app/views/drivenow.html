@@ -7,85 +7,39 @@
       <div class="highlight">
 
         <div class="form-group">
-          Tarif:
-          <form>
-            <input type="radio"
-                   ng-model="rental.tariff.stadtmobil"
-                   value="classic"
-                   id="tariffclassic">
-          <span tariff-popover="views/popovers/stadtmobil/tariffclassic.html">
-            Classic
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.tariff.stadtmobil"
-                   value="basic"
-                   id="tariffbasic">
-          <span tariff-popover="views/popovers/stadtmobil/tariffbasic.html">
-            Basic
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.tariff.stadtmobil"
-                   value="studi"
-                   id="tariffstudi">
-          <span tariff-popover="views/popovers/stadtmobil/tariffstudi.html">
-            Studi
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.tariff.stadtmobil"
-                   value="business"
-                   id="tariffbusiness">
-          <span tariff-popover="views/popovers/stadtmobil/tariffbusiness.html">
-            Business
-          </span>
-            <br/>
-          </form>
-        </div>
-
-        <div class="form-group">
           Fahrzeugklasse:
           <form>
             <input type="radio"
-                   ng-model="rental.carClass.stadtmobil"
-                   value="A"
-                   id="rateA">
-          <span tariff-popover="views/popovers/stadtmobil/carClassRateA.html">
-            A Kleinstwagen
-          </span>
+                   ng-model="rental.carClass.drivenow"
+                   value="mini"
+                   id="mini">
+            <span tariff-popover="views/popovers/stadtmobil/carClassMini.html">
+              Mini
+            </span>
             <br/>
             <input type="radio"
-                   ng-model="rental.carClass.stadtmobil"
-                   value="B"
-                   id="rateB">
-          <span tariff-popover="views/popovers/stadtmobil/carClassRateB.html">
-            B Kleinwagen
-          </span>
+                   ng-model="rental.carClass.drivenow"
+                   value="bmw"
+                   id="bmw">
+            <span tariff-popover="views/popovers/stadtmobil/carClassBMW.html">
+              BMW
+            </span>
             <br/>
             <input type="radio"
-                   ng-model="rental.carClass.stadtmobil"
-                   value="C"
-                   id="rateC">
-          <span tariff-popover="views/popovers/stadtmobil/carClassRateC.html">
-            C Kombi/Fun
-          </span>
+                   ng-model="rental.carClass.drivenow"
+                   value="minicabriosummer"
+                   id="rateminicabriosummer">
+            <span tariff-popover="views/popovers/stadtmobil/carClassMiniCabrioSummer.html">
+              Mini Cabrio Sommer
+            </span>
             <br/>
             <input type="radio"
-                   ng-model="rental.carClass.stadtmobil"
-                   value="D"
-                   id="rateD">
-          <span tariff-popover="views/popovers/stadtmobil/carClassRateD.html">
-            D Komfort/Kleinbus
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.carClass.stadtmobil"
-                   value="F"
-                   id="rateF">
-          <span tariff-popover="views/popovers/stadtmobil/carClassRateF.html">
-            F Transporter
-          </span>
+                   ng-model="rental.carClass.drivenow"
+                   value="minicabriowinter"
+                   id="rateminicabriowinter">
+            <span tariff-popover="views/popovers/stadtmobil/carClassMiniCabrioWinter.html">
+              Mini Cabrio Winter
+            </span>
             <br/>
           </form>
         </div>
