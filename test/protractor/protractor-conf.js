@@ -8,7 +8,8 @@ exports.config = {
     'car2goblack.js',
     'flinkster.js',
     'greenwheels.js',
-    'stadtmobil.js'
+    'stadtmobil.js',
+    'drivenow.js',
   ],
 
   multiCapabilities: [{
