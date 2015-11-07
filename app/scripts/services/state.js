@@ -35,8 +35,25 @@ angular.module('c2gyoApp')
       carClass: {
         flinkster: 'sonder',
         greenwheels: 'compact',
-        stadtmobil: 'A',
-        drivenow: 'mini'
+        stadtmobil: 'A'
+      },
+      drivenow: {
+        carClass: 'mini',
+        'airport': {
+          'berlintegel': false,
+          'berlinschoenefeld': false,
+          'hamburg': false,
+          'muenchen': false,
+          'koeln': false,
+          'duesseldorf': false,
+          'wien': false,
+        },
+        'drivecitytocity': {
+          'duesseldorfkoeln': false,
+          'koelnduesseldorf': false,
+          'hildengerresheim': false,
+          'neubibergbavariafilmstadt': false,
+        }
       }
     };
 
