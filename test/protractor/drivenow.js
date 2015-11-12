@@ -20,7 +20,19 @@ describe('drivenow test all input fields and checkboxes', function() {
     'carClassMini',
     'carClassBMW',
     'carClassMiniCabrioSummer',
-    'carClassMiniCabrioWinter'
+
+    'airport.berlintegel',
+    'airport.berlinschoenefeld',
+    'airport.hamburg',
+    'airport.muenchen',
+    'airport.koeln',
+    'airport.duesseldorf',
+    'airport.wien',
+
+    'drivecitytocity.duesseldorfkoeln',
+    'drivecitytocity.koelnduesseldorf',
+    'drivecitytocity.hildengerresheim',
+    'drivecitytocity.neubibergbavariafilmstadt'
   ];
 
   popover.forEach(function(entry){
