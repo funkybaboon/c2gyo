@@ -25,12 +25,12 @@ describe('drivenow test all input fields and checkboxes', function() {
     'airport.berlinschoenefeld',
     'airport.hamburg',
     'airport.muenchen',
-    'airport.koeln',
+    'airport.cologne',
     'airport.duesseldorf',
     'airport.wien',
 
-    'drivecitytocity.duesseldorfkoeln',
-    'drivecitytocity.koelnduesseldorf',
+    'drivecitytocity.duesseldorfcologne',
+    'drivecitytocity.cologneduesseldorf',
     'drivecitytocity.hildengerresheim',
     'drivecitytocity.neubibergbavariafilmstadt'
   ];

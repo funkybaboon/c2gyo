@@ -44,13 +44,13 @@ angular.module('c2gyoApp')
           'berlinschoenefeld': false,
           'hamburg': false,
           'muenchen': false,
-          'koeln': false,
+          'cologne': false,
           'duesseldorf': false,
           'wien': false,
         },
         'drivecitytocity': {
-          'duesseldorfkoeln': false,
-          'koelnduesseldorf': false,
+          'duesseldorfcologne': false,
+          'cologneduesseldorf': false,
           'hildengerresheim': false,
           'neubibergbavariafilmstadt': false,
         }
