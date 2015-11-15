@@ -26,6 +26,7 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 0.31}],
         '7': [
           {'start': 0, 'end': 23, 'fee': 0.31}],
+        'minute': 0.31,
       },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0}]
@@ -46,6 +47,49 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 0.34}],
         '7': [
           {'start': 0, 'end': 23, 'fee': 0.34}],
+        'minute': 0.34,
+      },
+      'km': [
+        {'start': 0, 'end': -1, 'fee': 0}]
+    },
+    'minicabriosummer': {
+      'time': {
+        '1': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '2': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '3': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '4': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '5': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '6': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        '7': [
+          {'start': 0, 'end': 23, 'fee': 0.31}],
+        'minute': 0.31,
+      },
+      'km': [
+        {'start': 0, 'end': -1, 'fee': 0}]
+    },
+    'minicabriowinter': {
+      'time': {
+        '1': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '2': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '3': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '4': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '5': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '6': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        '7': [
+          {'start': 0, 'end': 23, 'fee': 0.34}],
+        'minute': 0.34,
       },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0}]
