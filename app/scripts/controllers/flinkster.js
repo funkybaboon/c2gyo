@@ -160,7 +160,7 @@ angular.module('c2gyoApp')
 
         var fee = feeHours + feeDays + feeWeeks;
 
-        if ($scope.rental.airport.flinkster && $scope.rental.tariff.flinkster === 'bundesweit') {
+        if ($scope.rental.flinkster.airport && $scope.rental.tariff.flinkster === 'bundesweit') {
           fee  = fee * 1.25;
         }
 
@@ -266,7 +266,7 @@ angular.module('c2gyoApp')
         // fee billed
         var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
 
-        if ($scope.rental.airport.flinkster && $scope.rental.tariff.flinkster === 'bundesweit') {
+        if ($scope.rental.flinkster.airport && $scope.rental.tariff.flinkster === 'bundesweit') {
           totalFee  = totalFee * 1.25;
         }
 

@@ -35,7 +35,7 @@ describe('car2go test all input fields and checkboxes', function() {
     element(by.model('rental.timeStanding')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
 
-    element(by.model('rental.airport.car2go')).click();
+    element(by.model('rental.car2go.airport')).click();
 
     expect(price.getText()).toEqual('203,54 €');
     expect(priceDistance.getText()).toEqual('49,88 €');

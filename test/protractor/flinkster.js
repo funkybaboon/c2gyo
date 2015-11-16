@@ -14,9 +14,9 @@ describe('test flinkster input fields', function() {
   });
 
   it('should not display an airport checkbox on tariff "lokal"', function() {
-    expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(true);
+    expect(element(by.model('rental.flinkster.airport')).isPresent()).toBe(true);
     element(by.id('tarifflokal')).click();
-    expect(element(by.model('rental.airport.flinkster')).isPresent()).toBe(false);
+    expect(element(by.model('rental.flinkster.airport')).isPresent()).toBe(false);
   });
 
   it('should calculate a price with all input forms filled', function() {
@@ -51,7 +51,7 @@ describe('test flinkster input fields', function() {
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.296,00 €');
 
-    element(by.model('rental.airport.flinkster')).click();
+    element(by.model('rental.flinkster.airport')).click();
     expect(price.getText()).toEqual('1.664,40 €');
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.620,00 €');

@@ -31,7 +31,7 @@ describe('car2goblack test all input fields and checkboxes', function() {
     element(by.model('rental.timeDays')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
 
-    element(by.model('rental.airport.car2goblack')).click();
+    element(by.model('rental.car2goblack.airport')).click();
 
     expect(price.getText()).toEqual('262,58 €');
     expect(priceDistance.getText()).toEqual('49,88 €');

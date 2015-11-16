@@ -22,11 +22,6 @@ angular.module('c2gyoApp')
       timeDays: 0,
       timeWeeks: 0,
       timeStanding: 0,
-      airport: {
-        car2go: false,
-        car2goblack: false,
-        flinkster: false
-      },
       tariff: {
         flinkster: 'bundesweit',
         greenwheels: 'standard',
@@ -36,6 +31,15 @@ angular.module('c2gyoApp')
         flinkster: 'sonder',
         greenwheels: 'compact',
         stadtmobil: 'A'
+      },
+      car2go: {
+        airport: false,
+      },
+      car2goblack: {
+        airport: false,
+      },
+      flinkster: {
+        airport: false,
       },
       drivenow: {
         carClass: 'mini',
