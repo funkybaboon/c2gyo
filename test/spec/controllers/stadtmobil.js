@@ -20,7 +20,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
     scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
     scope.rental.tab = 'exact';
     scope.rental.distance = 10;
 
@@ -39,7 +39,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((16.00).toFixed(2));
@@ -56,7 +56,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((14.70).toFixed(2));
@@ -79,7 +79,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.timeDays = 0;
     scope.rental.timeWeeks = 0;
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
     scope.rental.tab = 'simple';
     scope.rental.distance = 10;
 
@@ -98,7 +98,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((16.00).toFixed(2));
@@ -115,7 +115,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((14.70).toFixed(2));
@@ -138,7 +138,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.tab = 'simple';
     scope.rental.distance = 50;
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((10.00).toFixed(2));
@@ -155,7 +155,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((16.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
@@ -172,7 +172,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((19.00).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'studi';
+    scope.rental.stadtmobil.tariff = 'studi';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((10.00).toFixed(2));
@@ -189,7 +189,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((16.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((8.50).toFixed(2));
@@ -212,7 +212,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.tab = 'simple';
     scope.rental.distance = 150;
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
@@ -229,7 +229,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((31.00).toFixed(2));
@@ -246,7 +246,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((51.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'studi';
+    scope.rental.stadtmobil.tariff = 'studi';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
@@ -263,7 +263,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((25.50).toFixed(2));
@@ -286,7 +286,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.tab = 'simple';
     scope.rental.distance = 750;
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((137.00).toFixed(2));
@@ -303,7 +303,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((208.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((139.00).toFixed(2));
@@ -320,7 +320,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((213.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'studi';
+    scope.rental.stadtmobil.tariff = 'studi';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((137.00).toFixed(2));
@@ -337,7 +337,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((208.50).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.getFeeDistance().toFixed(2)).toEqual((127.50).toFixed(2));
@@ -360,7 +360,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.startDate = new moment().startOf('hour').hour(0).isoWeekday(1);
     scope.rental.endDate = scope.rental.startDate.clone().add(36, 'h');
 
-    scope.rental.tariff.stadtmobil = 'basic';
+    scope.rental.stadtmobil.tariff = 'basic';
     scope.rental.tab = 'exact';
     scope.rental.distance = 10;
 
@@ -379,7 +379,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((90.30).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'classic';
+    scope.rental.stadtmobil.tariff = 'classic';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((30.00).toFixed(2));
@@ -396,7 +396,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.carClass.stadtmobil = 'F';
     expect(scope.price().toFixed(2)).toEqual((82.30).toFixed(2));
 
-    scope.rental.tariff.stadtmobil = 'business';
+    scope.rental.stadtmobil.tariff = 'business';
 
     scope.rental.carClass.stadtmobil = 'A';
     expect(scope.price().toFixed(2)).toEqual((28.20).toFixed(2));

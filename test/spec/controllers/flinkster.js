@@ -33,7 +33,7 @@ describe('Controller: FlinksterCtrl', function () {
 
             scope.rental.airport.flinkster = false || testdata.airport;
 
-            scope.rental.tariff.flinkster = tariff;
+            scope.rental.flinkster.tariff = tariff;
             scope.rental.carClass.flinkster = carClass;
             expect(scope.price().toFixed(2)).toEqual(expectedPrice);
           });

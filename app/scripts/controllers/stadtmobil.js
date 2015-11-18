@@ -122,7 +122,7 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
         var carClass = $scope.rental.carClass.stadtmobil;
-        var tariff = $scope.rental.tariff.stadtmobil;
+        var tariff = $scope.rental.stadtmobil.tariff;
         var rate = {};
 
         // studi and classic have the same rates

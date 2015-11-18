@@ -120,7 +120,7 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
         var carClass = $scope.rental.carClass.flinkster;
-        var tariff = $scope.rental.tariff.flinkster;
+        var tariff = $scope.rental.flinkster.tariff;
         var rate = {};
 
 
@@ -160,7 +160,7 @@ angular.module('c2gyoApp')
 
         var fee = feeHours + feeDays + feeWeeks;
 
-        if ($scope.rental.flinkster.airport && $scope.rental.tariff.flinkster === 'bundesweit') {
+        if ($scope.rental.flinkster.airport && $scope.rental.flinkster.tariff === 'bundesweit') {
           fee  = fee * 1.25;
         }
 
@@ -193,7 +193,7 @@ angular.module('c2gyoApp')
         var endDate = new moment($scope.rental.endDate);
         var currentTime = startDate.clone();
 
-        var tariff = $scope.rental.tariff.flinkster;
+        var tariff = $scope.rental.flinkster.tariff;
 
         // go through with weeks
         if (tariff === 'lokal') {
@@ -266,7 +266,7 @@ angular.module('c2gyoApp')
         // fee billed
         var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
 
-        if ($scope.rental.flinkster.airport && $scope.rental.tariff.flinkster === 'bundesweit') {
+        if ($scope.rental.flinkster.airport && $scope.rental.flinkster.tariff === 'bundesweit') {
           totalFee  = totalFee * 1.25;
         }
 
@@ -325,7 +325,7 @@ angular.module('c2gyoApp')
       // disable airport fee for lokal tariff
       //-----------------------------------------------------------------------
       $scope.isAirport = function() {
-        if ( $scope.rental.tariff.flinkster === 'bundesweit') {
+        if ( $scope.rental.flinkster.tariff === 'bundesweit') {
           return true;
         } else {
           return false;

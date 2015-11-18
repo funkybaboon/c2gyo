@@ -120,7 +120,7 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
         var carClass = $scope.rental.carClass.greenwheels;
-        var tariff = $scope.rental.tariff.greenwheels;
+        var tariff = $scope.rental.greenwheels.tariff;
         var rate = {};
 
         if (tariff === 'standard') {
