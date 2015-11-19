@@ -31,7 +31,7 @@ describe('Controller: FlinksterCtrl', function () {
             scope.rental.tab = testdata.tab;
             scope.rental.distance = testdata.distance;
 
-            scope.rental.airport.flinkster = false || testdata.airport;
+            scope.rental.flinkster.airport = false || testdata.airport;
 
             scope.rental.flinkster.tariff = tariff;
             scope.rental.carClass.flinkster = carClass;
