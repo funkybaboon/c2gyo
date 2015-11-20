@@ -35,7 +35,7 @@ describe('Controller: GreenwheelsCtrl', function() {
             scope.rental.airport = false || testdata.airport;
 
             scope.rental.greenwheels.tariff = tariff;
-            scope.rental.carClass.greenwheels = carClass;
+            scope.rental.greenwheels.carClass = carClass;
             expect(scope.price().toFixed(2)).toEqual(expectedPrice);
           });
         })(tariff, carClass, expectedPrice);

@@ -119,7 +119,7 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.carClass.flinkster;
+        var carClass = $scope.rental.flinkster.carClass;
         var tariff = $scope.rental.flinkster.tariff;
         var rate = {};
 

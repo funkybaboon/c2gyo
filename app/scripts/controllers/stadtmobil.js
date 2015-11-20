@@ -121,7 +121,7 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.carClass.stadtmobil;
+        var carClass = $scope.rental.stadtmobil.carClass;
         var tariff = $scope.rental.stadtmobil.tariff;
         var rate = {};
 
