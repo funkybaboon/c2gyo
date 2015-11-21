@@ -138,12 +138,17 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       // get other fees
       //-----------------------------------------------------------------------
+      $scope.getFeeStanding = function() {
+        return $scope.rental.timeStanding * drivenowrate.parking;
+      };
+
 
       //-----------------------------------------------------------------------
       // calculate final prices
       //-----------------------------------------------------------------------
       $scope.price = function() {
         return (
+          $scope.getFeeStanding() +
           $scope.getFeeTime() +
           $scope.getFeeDistance()
         );
