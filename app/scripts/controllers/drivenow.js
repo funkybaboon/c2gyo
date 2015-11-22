@@ -142,6 +142,16 @@ angular.module('c2gyoApp')
         return $scope.rental.timeStanding * drivenowrate.parking;
       };
 
+      $scope.getFeeAirport = function() {
+        var fee = 0;
+        for (var i in $scope.rental.drivenow.airport) {
+          if ($scope.rental.drivenow.airport[i]) {
+            fee += drivenowrate.airport[i];
+          }
+        }
+        return fee;
+      };
+
 
       //-----------------------------------------------------------------------
       // calculate final prices
@@ -149,6 +159,7 @@ angular.module('c2gyoApp')
       $scope.price = function() {
         return (
           $scope.getFeeStanding() +
+          $scope.getFeeAirport() +
           $scope.getFeeTime() +
           $scope.getFeeDistance()
         );
