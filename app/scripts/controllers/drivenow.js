@@ -152,6 +152,17 @@ angular.module('c2gyoApp')
         return fee;
       };
 
+      $scope.getFeeCitytoCity = function() {
+        var fee = 0;
+        for (var i in $scope.rental.drivenow.drivecitytocity) {
+          if ($scope.rental.drivenow.drivecitytocity[i]) {
+            fee += drivenowrate.drivecitytocity[i];
+          }
+        }
+        return fee;
+      };
+
+
 
       //-----------------------------------------------------------------------
       // calculate final prices
@@ -160,6 +171,7 @@ angular.module('c2gyoApp')
         return (
           $scope.getFeeStanding() +
           $scope.getFeeAirport() +
+          $scope.getFeeCitytoCity() +
           $scope.getFeeTime() +
           $scope.getFeeDistance()
         );
