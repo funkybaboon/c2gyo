@@ -25,25 +25,27 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   var popover = [
-    'carClassMini',
-    'carClassBMW',
-    'carClassMiniCabrioSummer',
+    ['carClassMini','930,00 €','0,00 €','930,00 €'],
+    ['carClassBMW','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carClassMiniCabrioSummer','930,00 €','0,00 €','930,00 €'],
+    ['carClassMiniCabrioWinter','1.020,00 €','0,00 €','1.020,00 €'],
 
-    'airport.berlintegel',
-    'airport.berlinschoenefeld',
-    'airport.hamburg',
-    'airport.muenchen',
-    'airport.cologne',
-    'airport.duesseldorf',
-    'airport.wien',
+    ['airport.berlintegel','934,00 €','0,00 €','930,00 €'],
+    ['airport.berlinschoenefeld','940,00 €','0,00 €','930,00 €'],
+    ['airport.hamburg','945,00 €','0,00 €','930,00 €'],
+    ['airport.muenchen','957,00 €','0,00 €','930,00 €'],
+    ['airport.cologne','961,00 €','0,00 €','930,00 €'],
+    ['airport.duesseldorf','967,00 €','0,00 €','930,00 €'],
+    ['airport.wien','977,00 €','0,00 €','930,00 €'],
 
-    'drivecitytocity.duesseldorfcologne',
-    'drivecitytocity.cologneduesseldorf',
-    'drivecitytocity.hildengerresheim',
-    'drivecitytocity.neubibergbavariafilmstadt'
+    ['drivecitytocity.duesseldorfcologne','987,00 €','0,00 €','930,00 €'],
+    ['drivecitytocity.cologneduesseldorf','993,00 €','0,00 €','930,00 €'],
+    ['drivecitytocity.hildengerresheim','996,00 €','0,00 €','930,00 €'],
+    ['drivecitytocity.neubibergbavariafilmstadt','999,00 €','0,00 €','930,00 €']
   ];
 
   popover.forEach(function(entry){
+    entry = entry[0];
     it('should display the popover-content of ' + entry +
     ' on mouseover', function() {
       var pathIcon = 'span[tariff-popover=' +
@@ -59,5 +61,40 @@ describe('drivenow test all input fields and checkboxes', function() {
       expect(popover.isDisplayed()).toBeTruthy();
     });
   });
+
+  it('should calculate a price with all checkboxes ticked', function() {
+    var checkboxes = popover.splice(4);
+    checkboxes.forEach(function(entry){
+      var drivenowModel = 'rental.drivenow.' + entry[0];
+      var drivenowPrice = entry[1];
+      var drivenowPriceDistance = entry[2];
+      var drivenowPriceTime = entry[3];
+
+      element(by.model(drivenowModel)).click();
+      expect(price.getText()).toEqual(drivenowPrice);
+      expect(priceDistance.getText()).toEqual(drivenowPriceDistance);
+      expect(priceTime.getText()).toEqual(drivenowPriceTime);
+
+    });
+  });
+
+  it('should calculate a price with all tariffs chosen', function() {
+    var tariffs = popover.splice(0,3);
+    tariffs.forEach(function(entry){
+      var drivenowModel = entry[0];
+      var drivenowPrice = entry[1];
+      var drivenowPriceDistance = entry[2];
+      var drivenowPriceTime = entry[3];
+
+      element(by.id(drivenowModel)).click();
+      expect(price.getText()).toEqual(drivenowPrice);
+      expect(priceDistance.getText()).toEqual(drivenowPriceDistance);
+      expect(priceTime.getText()).toEqual(drivenowPriceTime);
+
+    });
+  });
+
+
+
 
 });
