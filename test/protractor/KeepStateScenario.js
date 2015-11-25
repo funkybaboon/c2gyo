@@ -37,6 +37,10 @@ describe('Keep State over different tabs', function() {
     expect(priceDistance.getText()).toEqual('20,00 €');
     expect(priceTime.getText()).toEqual('305,00 €');
 
+    element(by.id('drivenow')).click();
+    expect(price.getText()).toEqual('3.310,80 €');
+    expect(priceDistance.getText()).toEqual('0,00 €');
+    expect(priceTime.getText()).toEqual('3.310,80 €');
   });
 
 });
