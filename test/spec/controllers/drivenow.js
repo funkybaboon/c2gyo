@@ -19,7 +19,7 @@ describe('Controller: DriveNowCtrl', function() {
   it('should calculate the correct price using simple time', function() {
     scope.rental.tab = 'simple';
 
-    scope.rental.drivenow.carClass = 'mini'
+    scope.rental.drivenow.tariff = 'mini'
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -27,7 +27,7 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((148.80).toFixed(2));
 
-    scope.rental.drivenow.carClass = 'bmw'
+    scope.rental.drivenow.tariff = 'bmw'
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -35,7 +35,7 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((163.20).toFixed(2));
 
-    scope.rental.drivenow.carClass = 'minicabriosummer'
+    scope.rental.drivenow.tariff = 'minicabriosummer'
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -43,7 +43,7 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((148.80).toFixed(2));
 
-    scope.rental.drivenow.carClass = 'minicabriowinter'
+    scope.rental.drivenow.tariff = 'minicabriowinter'
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;

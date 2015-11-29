@@ -83,8 +83,8 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.drivenow.carClass;
-        return drivenowrate[carClass];
+        var tariff = $scope.rental.drivenow.tariff;
+        return drivenowrate[tariff];
       };
 
       //-----------------------------------------------------------------------

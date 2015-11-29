@@ -42,7 +42,7 @@ angular.module('c2gyoApp')
         carClass: 'compact',
       },
       drivenow: {
-        carClass: 'mini',
+        tariff: 'mini',
         'airport': {
           'berlintegel': false,
           'berlinschoenefeld': false,
