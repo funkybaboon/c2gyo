@@ -19,7 +19,7 @@ describe('Controller: DriveNowCtrl', function() {
   it('should calculate the correct price using simple time', function() {
     scope.rental.tab = 'simple';
 
-    scope.rental.drivenow.tariff = 'mini'
+    scope.rental.drivenow.tariff = 'mini';
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -27,7 +27,7 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((148.80).toFixed(2));
 
-    scope.rental.drivenow.tariff = 'bmw'
+    scope.rental.drivenow.tariff = 'bmw';
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -35,7 +35,7 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((163.20).toFixed(2));
 
-    scope.rental.drivenow.tariff = 'minicabriosummer'
+    scope.rental.drivenow.tariff = 'minicabriosummer';
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
@@ -43,13 +43,43 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((148.80).toFixed(2));
 
-    scope.rental.drivenow.tariff = 'minicabriowinter'
+    scope.rental.drivenow.tariff = 'minicabriowinter';
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 0;
     scope.rental.timeStanding = 0;
     scope.rental.timeHours = 8;
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((163.20).toFixed(2));
+  });
+
+  it('should calculate the correct price using exact time', function() {
+    var now = new moment();
+    scope.rental.tab = 'exact';
+
+    scope.rental.drivenow.tariff = 'mini';
+    scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
+    scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
+    scope.rental.distance = 10;
+    expect(scope.price().toFixed(2)).toEqual((669.60).toFixed(2));
+
+    scope.rental.drivenow.tariff = 'bmw';
+    scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
+    scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
+    scope.rental.distance = 10;
+    expect(scope.price().toFixed(2)).toEqual((734.40).toFixed(2));
+
+    scope.rental.drivenow.tariff = 'minicabriosummer';
+    scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
+    scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
+    scope.rental.distance = 10;
+    expect(scope.price().toFixed(2)).toEqual((669.60).toFixed(2));
+
+    scope.rental.drivenow.tariff = 'minicabriowinter';
+    scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
+    scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
+    scope.rental.distance = 10;
+    expect(scope.price().toFixed(2)).toEqual((734.40).toFixed(2));
+  });
 
   });
 });
