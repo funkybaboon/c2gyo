@@ -81,6 +81,33 @@ describe('Controller: DriveNowCtrl', function() {
     expect(scope.price().toFixed(2)).toEqual((734.40).toFixed(2));
   });
 
+  var extraFares = [
+    ['airport', 'berlintegel', 190.00],
+    ['airport', 'berlinschoenefeld', 192.00],
+    ['airport', 'hamburg', 191.00],
+    ['airport', 'muenchen', 198.00],
+    ['airport', 'cologne', 190.00],
+    ['airport', 'duesseldorf', 192.00],
+    ['airport', 'wien', 196.00],
+
+    ['drivecitytocity', 'duesseldorfcologne', 196.00],
+    ['drivecitytocity', 'cologneduesseldorf', 192.00],
+    ['drivecitytocity', 'hildengerresheim', 189.00],
+    ['drivecitytocity', 'neubibergbavariafilmstadt', 189.00]
+  ];
+
+  extraFares.forEach(function(entry){
+    var extraFareCategory = entry[0];
+    var extraFare = entry[1];
+    var extraFarePrice = entry[2];
+
+    it('should calculate the correct price with extra fare ' + extraFareCategory +
+      ' ' + extraFare, function() {
+      scope.rental.drivenow[extraFareCategory][extraFare] = true;
+      expect(scope.price().toFixed(2)).toEqual((extraFarePrice).toFixed(2));
+      scope.rental.drivenow[extraFareCategory][extraFare] = false;
+    });
   });
+
 });
 
