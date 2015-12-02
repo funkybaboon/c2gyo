@@ -506,6 +506,15 @@ module.exports = function(grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('autotest', [
+    'clean:server',
+    'wiredep',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:test',
     'karma:server'
   ]);
 
