@@ -9,9 +9,6 @@
  *   - Book N Drive
  *   - CiteeCar
  *   - Cambio
- *   - DriveNow <-----------
- *   - Flinkster x
- *   - Greenwheels x
  *   - Hertz
  *   - Multicity
  *   - Scouter
