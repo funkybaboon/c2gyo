@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'angularMoment',
     'ui.bootstrap',
-    'ui.bootstrap.datetimepicker'
+    'ui.bootstrap.datetimepicker',
+    'pascalprecht.translate'
   ])
   .config(function($routeProvider) {
     $routeProvider
@@ -49,4 +50,15 @@ angular
       .otherwise({
         redirectTo: '/car2go'
       });
+  })
+  .config(function ($translateProvider) {
+    $translateProvider.translations('de_DE', {
+      time: 'Zeit',
+    });
+
+    $translateProvider.translations('en_US', {
+      time: 'Time',
+    });
+
+    $translateProvider.preferredLanguage('en_US');
   });
