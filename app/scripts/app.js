@@ -53,11 +53,33 @@ angular
   })
   .config(function ($translateProvider) {
     $translateProvider.translations('de_DE', {
+      //timeinputform.html
+      simple_: 'Einfach',
+      exact_: 'Exakt',
       time: 'Zeit',
+      minute: 'Minuten',
+      hour: 'Stunden',
+      day: 'Tage',
+      startdate: 'Startdatum',
+      enddate: 'Enddatum',
+      timeStanding: 'Zeit stehend',
+      minuteStanding: 'Minuten (stehend)',
+      distance: 'Strecke',
     });
 
     $translateProvider.translations('en_US', {
+      //timeinputform.html
+      simple_: 'Simple',
+      exact_: 'Exact',
       time: 'Time',
+      minute: 'Minutes',
+      hour: 'Hours',
+      day: 'Days',
+      startDate: 'Start date',
+      endDate: 'End date',
+      timeStanding: 'Time standing',
+      minuteStanding: 'Minutes (standing)',
+      distance: 'Distance',
     });
 
     $translateProvider.preferredLanguage('en_US');
