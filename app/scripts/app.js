@@ -65,6 +65,10 @@ angular
       timeStanding: 'Zeit stehend',
       minuteStanding: 'Minuten (stehend)',
       distance: 'Strecke',
+
+      //billedBox.html
+      billedTime: 'Abgerechnete Zeit',
+      trueTime: 'Wahre Zeit'
     });
 
     $translateProvider.translations('en_US', {
@@ -80,7 +84,11 @@ angular
       timeStanding: 'Time standing',
       minuteStanding: 'Minutes (standing)',
       distance: 'Distance',
+
+      //billedBox.html
+      billedTime: 'Billed time',
+      trueTime: 'True time'
     });
 
-    $translateProvider.preferredLanguage('en_US');
+    $translateProvider.preferredLanguage('de_DE');
   });
