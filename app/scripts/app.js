@@ -68,7 +68,12 @@ angular
 
       //billedBox.html
       billedTime: 'Abgerechnete Zeit',
-      trueTime: 'Wahre Zeit'
+      trueTime: 'Wahre Zeit',
+
+      //priceBox.html
+      kmPrice: 'Preis',
+      timePrice: 'Zeit Preis',
+      byKm: 'pro Km',
     });
 
     $translateProvider.translations('en_US', {
@@ -87,7 +92,12 @@ angular
 
       //billedBox.html
       billedTime: 'Billed time',
-      trueTime: 'True time'
+      trueTime: 'True time',
+
+      //priceBox.html
+      kmPrice: 'Price',
+      timePrice: 'Time price',
+      byKm: 'for each Km',
     });
 
     $translateProvider.preferredLanguage('de_DE');
