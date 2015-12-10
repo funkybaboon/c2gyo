@@ -74,6 +74,12 @@ angular
       kmPrice: 'Preis',
       timePrice: 'Zeit Preis',
       byKm: 'pro Km',
+
+      rental: {
+        car2go: {
+          airportFee: 'Flughafenpauschale'
+        }
+      }
     });
 
     $translateProvider.translations('en_US', {
@@ -98,6 +104,13 @@ angular
       kmPrice: 'Price',
       timePrice: 'Time price',
       byKm: 'for each Km',
+
+      rental: {
+        car2go: {
+          airportFee: 'Airport Fee'
+        }
+      }
+
     });
 
     $translateProvider.preferredLanguage('de_DE');
