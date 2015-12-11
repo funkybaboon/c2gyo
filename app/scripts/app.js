@@ -75,8 +75,31 @@ angular
       timePrice: 'Zeit Preis',
       byKm: 'pro Km',
 
+      //general carsharing sites
       airportFee: 'Flughafenpauschale',
+      carClass: 'Fahrzeugklasse',
+      airport: 'Flughafen',
+      airports: 'Flughäfen',
+      specialDestinations: 'Sonderziele',
+
+      //custom carsharing sites
       rental: {
+        drivenow: {
+          airport: {
+            berlintegel: 'Flughafen Berlin-Tegel',
+            berlinschoenefeld: 'Flughafen Berlin-Schönefeld',
+            hamburg: 'Flughafen Hamburg',
+            muenchen: 'Flughafen München',
+            cologne: 'Flughafen Köln',
+            duesseldorf: 'Flughafen Düsseldorf',
+            wien: 'Flughafen Wien'
+          },
+          drivecitytocity: {
+            duesseldorfcologne: 'Fahrt von Düsseldorf nach Köln',
+            cologneduesseldorf: 'Fahrt von Köln nach Düsseldorf',
+            hildengerresheim: 'Fahrt von Hilden / Gerresheim',
+            neubibergbavariafilmstadt: 'Fahrt von Neubiberg / Bavaria Filmstadt'
+          }
         }
       }
     });
@@ -104,8 +127,31 @@ angular
       timePrice: 'Time price',
       byKm: 'for each Km',
 
+      //general carsharing sites
       airportFee: 'Airport Fee',
+      carClass: 'Car class',
+      airport: 'Airport',
+      airports: 'Airports',
+      specialDestinations: 'Special destinations',
+
+      //custom carsharing sites
       rental: {
+        drivenow: {
+          airport: {
+            berlintegel: 'Berlin-Tegel Airport',
+            berlinschoenefeld: 'Berlin Schönefeld Airport',
+            hamburg: 'Hamburg International Airport',
+            muenchen: 'Munich International Airport',
+            cologne: 'Cologne International Airport',
+            duesseldorf: 'Dusseldorf International Airport',
+            wien: 'Vienna International Airport'
+          },
+          drivecitytocity: {
+            duesseldorfcologne: 'Trip from Dusseldorf to Cologne',
+            cologneduesseldorf: 'Trip from Cologne to Dusseldorf',
+            hildengerresheim: 'Trip to Hilden/Gerresheim',
+            neubibergbavariafilmstadt: 'Trip to Neubiberg/Bavaria Filmstadt'
+          }
         }
       }
     });

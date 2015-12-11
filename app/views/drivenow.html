@@ -7,7 +7,7 @@
       <div class="highlight">
 
         <div class="form-group">
-          Fahrzeugklasse:
+          {{"carClass" | translate }}:
           <form>
             <input type="radio"
                    ng-model="rental.drivenow.tariff"
@@ -45,14 +45,14 @@
         </div>
 
         <div class="form-group">
-          Flughäfen:
+          {{"airports" | translate }}:
           <div class="input-group">
             <div class="checkbox">
               <label>
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.berlintegel">
                 <span tariff-popover="views/popovers/drivenow/airport.berlintegel.html">
-                  Flughafen Berlin-Tegel
+                  {{"rental.drivenow.airport.berlintegel" | translate }}
                 </span>
               </label>
               <br/>
@@ -60,7 +60,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.berlinschoenefeld">
                 <span tariff-popover="views/popovers/drivenow/airport.berlinschoenefeld.html">
-                  Flughafen Berlin-Schönefeld
+                  {{"rental.drivenow.airport.berlinschoenefeld" | translate }}
                 </span>
               </label>
               <br/>
@@ -68,7 +68,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.hamburg">
                 <span tariff-popover="views/popovers/drivenow/airport.hamburg.html">
-                  Flughafen Hamburg
+                  {{"rental.drivenow.airport.hamburg" | translate }}
                 </span>
               </label>
               <br/>
@@ -76,7 +76,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.muenchen">
                 <span tariff-popover="views/popovers/drivenow/airport.muenchen.html">
-                  Flughafen München
+                  {{"rental.drivenow.airport.muenchen" | translate }}
                 </span>
               </label>
               <br/>
@@ -84,7 +84,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.cologne">
                 <span tariff-popover="views/popovers/drivenow/airport.cologne.html">
-                  Flughafen Köln
+                  {{"rental.drivenow.airport.cologne" | translate }}
                 </span>
               </label>
               <br/>
@@ -92,7 +92,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.duesseldorf">
                 <span tariff-popover="views/popovers/drivenow/airport.duesseldorf.html">
-                  Flughafen Düsseldorf
+                  {{"rental.drivenow.airport.duesseldorf" | translate }}
                 </span>
               </label>
               <br/>
@@ -100,20 +100,20 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.airport.wien">
                 <span tariff-popover="views/popovers/drivenow/airport.wien.html">
-                  Flughafen Wien
+                  {{"rental.drivenow.airport.wien" | translate }}
                 </span>
               </label>
             </div>
           </div>
 
-          Sonderziele:
+          {{"specialDestinations" | translate }}:
           <div class="input-group">
             <div class="checkbox">
               <label>
                 <input type="checkbox"
                        ng-model="rental.drivenow.drivecitytocity.duesseldorfcologne">
                 <span tariff-popover="views/popovers/drivenow/drivecitytocity.duesseldorfcologne.html">
-                  Fahrt von Düsseldorf nach Köln
+                  {{"rental.drivenow.drivecitytocity.duesseldorfcologne" | translate }}
                 </span>
               </label>
               <br/>
@@ -121,7 +121,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.drivecitytocity.cologneduesseldorf">
                 <span tariff-popover="views/popovers/drivenow/drivecitytocity.cologneduesseldorf.html">
-                  Fahrt von Köln nach Düsseldorf
+                  {{"rental.drivenow.drivecitytocity.cologneduesseldorf" | translate }}
                 </span>
               </label>
               <br/>
@@ -129,7 +129,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.drivecitytocity.hildengerresheim">
                 <span tariff-popover="views/popovers/drivenow/drivecitytocity.hildengerresheim.html">
-                  Fahrt von Hilden / Gerresheim
+                  {{"rental.drivenow.drivecitytocity.hildengerresheim" | translate }}
                 </span>
               </label>
               <br/>
@@ -137,7 +137,7 @@
                 <input type="checkbox"
                        ng-model="rental.drivenow.drivecitytocity.neubibergbavariafilmstadt">
                 <span tariff-popover="views/popovers/drivenow/drivecitytocity.neubibergbavariafilmstadt.html">
-                  Fahrt von Neubiberg / Bavaria Filmstadt
+                  {{"rental.drivenow.drivecitytocity.neubibergbavariafilmstadt" | translate }}
                 </span>
               </label>
             </div>
