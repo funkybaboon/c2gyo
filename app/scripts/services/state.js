@@ -47,7 +47,7 @@ angular.module('c2gyoApp')
           'berlintegel': false,
           'berlinschoenefeld': false,
           'hamburg': false,
-          'muenchen': false,
+          'munich': false,
           'cologne': false,
           'duesseldorf': false,
           'wien': false,

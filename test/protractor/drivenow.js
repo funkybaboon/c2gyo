@@ -33,7 +33,7 @@ describe('drivenow test all input fields and checkboxes', function() {
     ['airport.berlintegel','934,00 €','0,00 €','930,00 €'],
     ['airport.berlinschoenefeld','940,00 €','0,00 €','930,00 €'],
     ['airport.hamburg','945,00 €','0,00 €','930,00 €'],
-    ['airport.muenchen','957,00 €','0,00 €','930,00 €'],
+    ['airport.munich','957,00 €','0,00 €','930,00 €'],
     ['airport.cologne','961,00 €','0,00 €','930,00 €'],
     ['airport.duesseldorf','967,00 €','0,00 €','930,00 €'],
     ['airport.wien','977,00 €','0,00 €','930,00 €'],

@@ -85,7 +85,7 @@ describe('Controller: DriveNowCtrl', function() {
     ['airport', 'berlintegel', 190.00],
     ['airport', 'berlinschoenefeld', 192.00],
     ['airport', 'hamburg', 191.00],
-    ['airport', 'muenchen', 198.00],
+    ['airport', 'munich', 198.00],
     ['airport', 'cologne', 190.00],
     ['airport', 'duesseldorf', 192.00],
     ['airport', 'wien', 196.00],

@@ -101,7 +101,7 @@ angular.module('c2gyoApp')
       'berlintegel': 4,
       'berlinschoenefeld':6,
       'hamburg': 5,
-      'muenchen': 12,
+      'munich': 12,
       'cologne': 4,
       'duesseldorf': 6,
       'wien': 10,

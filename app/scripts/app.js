@@ -89,7 +89,7 @@ angular
             berlintegel: 'Flughafen Berlin-Tegel',
             berlinschoenefeld: 'Flughafen Berlin-Schönefeld',
             hamburg: 'Flughafen Hamburg',
-            muenchen: 'Flughafen München',
+            munich: 'Flughafen München',
             cologne: 'Flughafen Köln',
             duesseldorf: 'Flughafen Düsseldorf',
             wien: 'Flughafen Wien'
@@ -141,7 +141,7 @@ angular
             berlintegel: 'Berlin-Tegel Airport',
             berlinschoenefeld: 'Berlin Schönefeld Airport',
             hamburg: 'Hamburg International Airport',
-            muenchen: 'Munich International Airport',
+            munich: 'Munich International Airport',
             cologne: 'Cologne International Airport',
             duesseldorf: 'Dusseldorf International Airport',
             wien: 'Vienna International Airport'
