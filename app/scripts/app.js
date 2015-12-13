@@ -54,8 +54,8 @@ angular
   .config(function ($translateProvider) {
     $translateProvider.translations('de_DE', {
       //timeinputform.html
-      simple_: 'Einfach',
-      exact_: 'Exakt',
+      simple: 'Einfach',
+      exact: 'Exakt',
       time: 'Zeit',
       minute: 'Minuten',
       hour: 'Stunden',
@@ -106,8 +106,8 @@ angular
 
     $translateProvider.translations('en_US', {
       //timeinputform.html
-      simple_: 'Simple',
-      exact_: 'Exact',
+      simple: 'Simple',
+      exact: 'Exact',
       time: 'Time',
       minute: 'Minutes',
       hour: 'Hours',

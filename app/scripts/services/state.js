@@ -13,7 +13,7 @@ angular.module('c2gyoApp')
     var now = new moment().startOf('hour');
 
     var rental = {
-      tab: 'simple',
+      tab: 'tabSimple',
       startDate: now.clone().add(1, 'h'),
       endDate: now.clone().add(11, 'h'),
       distance: 10,

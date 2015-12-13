@@ -29,7 +29,7 @@ angular.module('c2gyoApp')
 
     this.getDurationAll = function(rental) {
       var duration;
-      if (rental.tab === 'simple') {
+      if (rental.tab === 'tabSimple') {
         duration = this.getDurationSimple(rental);
       } else {
         duration = this.getDurationExact(rental);

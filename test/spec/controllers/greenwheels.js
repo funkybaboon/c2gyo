@@ -22,7 +22,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var expectedPrice = testdata.expectedPrices[tariff][carClass];
         (function(tariff, carClass, expectedPrice) {
           it('tariff: ' + tariff + ', carClass: ' + carClass, function() {
-            if (testdata.tab === 'exact') {
+            if (testdata.tab === 'tabExact') {
               scope.rental.startDate = new moment(
                 testdata.start, 'YYYY-MM-DD HH:mm');
               scope.rental.endDate = new moment(
@@ -51,7 +51,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-21 16:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             standard: {
@@ -79,7 +79,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-20 12:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             bundesweit: {
@@ -109,7 +109,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 08:00',
           end: '2010-04-20 20:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             bundesweit: {
@@ -137,7 +137,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 03:00',
           end: '2010-04-20 22:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             bundesweit: {
@@ -155,7 +155,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 08:00',
           end: '2010-04-21 20:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             bundesweit: {
@@ -175,7 +175,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 03:00',
           end: '2010-04-21 22:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             bundesweit: {
@@ -194,7 +194,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-26 10:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           expectedPrices: {
             lokal: {
@@ -217,7 +217,7 @@ describe('Controller: GreenwheelsCtrl', function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-20 12:00',
-          tab: 'exact',
+          tab: 'tabExact',
           distance: 10,
           airport: true,
           expectedPrices: {
@@ -241,7 +241,7 @@ describe (' tests with simple time', function() {
     ' with simple calculation',
     function() {
       var testdata = {
-        tab: 'simple',
+        tab: 'tabSimple',
         distance: 10,
         expectedPrices: {
           bundesweit: {

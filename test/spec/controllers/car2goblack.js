@@ -17,7 +17,7 @@ describe('Controller: Car2goblackCtrl', function() {
   }));
 
   it('should calculate the correct price using simple time', function() {
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
 
     scope.rental.distance = 10;
     scope.rental.timeHours = 1;
@@ -70,7 +70,7 @@ describe('Controller: Car2goblackCtrl', function() {
 
   it('should calculate the correct price using exact time', function() {
     var now = new moment();
-    scope.rental.tab = 'exact';
+    scope.rental.tab = 'tabExact';
 
     scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
     scope.rental.endDate = now.clone().startOf('hour').add(2, 'h');

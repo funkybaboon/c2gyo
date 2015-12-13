@@ -21,7 +21,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
 
     scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'exact';
+    scope.rental.tab = 'tabExact';
     scope.rental.distance = 10;
 
     scope.rental.stadtmobil.carClass = 'A';
@@ -80,7 +80,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.timeWeeks = 0;
 
     scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
     scope.rental.distance = 10;
 
     scope.rental.stadtmobil.carClass = 'A';
@@ -135,7 +135,7 @@ describe('Controller: SmCtrl', function() {
   });
 
   it('should calculate the correct price for 50 km', function() {
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
     scope.rental.distance = 50;
 
     scope.rental.stadtmobil.tariff = 'classic';
@@ -209,7 +209,7 @@ describe('Controller: SmCtrl', function() {
   });
 
   it('should calculate the correct price for 150 km', function() {
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
     scope.rental.distance = 150;
 
     scope.rental.stadtmobil.tariff = 'classic';
@@ -283,7 +283,7 @@ describe('Controller: SmCtrl', function() {
   });
 
   it('should calculate the correct price for 750 km', function() {
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
     scope.rental.distance = 750;
 
     scope.rental.stadtmobil.tariff = 'classic';
@@ -361,7 +361,7 @@ describe('Controller: SmCtrl', function() {
     scope.rental.endDate = scope.rental.startDate.clone().add(36, 'h');
 
     scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'exact';
+    scope.rental.tab = 'tabExact';
     scope.rental.distance = 10;
 
     scope.rental.stadtmobil.carClass = 'A';

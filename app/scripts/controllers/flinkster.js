@@ -70,7 +70,7 @@ angular.module('c2gyoApp')
       var getDurationBilled = function() {
         var durationBilled;
 
-        if ($scope.rental.tab === 'simple') {
+        if ($scope.rental.tab === 'tabSimple') {
           durationBilled = getDurationBilledSimple();
         } else {
           durationBilled = getDurationBilledExact();
@@ -142,7 +142,7 @@ angular.module('c2gyoApp')
       $scope.getFeeTime = function() {
         var fee;
 
-        if ($scope.rental.tab === 'simple') {
+        if ($scope.rental.tab === 'tabSimple') {
           fee = getFeeTimeSimple();
         } else {
           fee = getFeeTimeExact();

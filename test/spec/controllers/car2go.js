@@ -17,7 +17,7 @@ describe('Controller: Car2goCtrl', function() {
   }));
 
   it('should calculate the correct price using simple time', function() {
-    scope.rental.tab = 'simple';
+    scope.rental.tab = 'tabSimple';
 
     scope.rental.distance = 10;
     scope.rental.timeMinutes = 20;
