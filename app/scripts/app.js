@@ -60,6 +60,7 @@ angular
       minute: 'Minuten',
       hour: 'Stunden',
       day: 'Tage',
+      week: 'Wochen',
       startdate: 'Startdatum',
       enddate: 'Enddatum',
       timeStanding: 'Zeit stehend',
@@ -81,6 +82,7 @@ angular
       airport: 'Flughafen',
       airports: 'Flughäfen',
       specialDestinations: 'Sonderziele',
+      tariff: 'Tarif',
 
       //custom carsharing sites
       rental: {
@@ -112,6 +114,7 @@ angular
       minute: 'Minutes',
       hour: 'Hours',
       day: 'Days',
+      week: 'Weeks',
       startDate: 'Start date',
       endDate: 'End date',
       timeStanding: 'Time standing',
@@ -133,6 +136,7 @@ angular
       airport: 'Airport',
       airports: 'Airports',
       specialDestinations: 'Special destinations',
+      tariff: 'Tariff',
 
       //custom carsharing sites
       rental: {

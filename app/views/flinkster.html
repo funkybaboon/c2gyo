@@ -7,7 +7,7 @@
       <div class="highlight">
 
         <div class="form-group">
-          Tarif:
+          {{"tariff" | translate }}:
           <form>
             <input type="radio"
                    ng-model="rental.flinkster.tariff"
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-          Fahrzeugklasse:
+          {{"carClass" | translate }}:
           <form>
             <input type="radio"
                    ng-model="rental.flinkster.carClass"
@@ -89,7 +89,7 @@
                 <input type="checkbox"
                        ng-model="rental.flinkster.airport">
                 <span tariff-popover="views/popovers/flinkster/airport.html">
-                  Flughafenpauschale
+                  {{"airportFee" | translate }}
                 </span>
               </label>
             </div>
