@@ -53,6 +53,9 @@ angular
   })
   .config(function ($translateProvider) {
     $translateProvider.translations('de_DE', {
+      //navbar.html
+      languageButton: 'Deutsch',
+
       //timeinputform.html
       simple: 'Einfach',
       exact: 'Exakt',
@@ -107,6 +110,9 @@ angular
     });
 
     $translateProvider.translations('en_US', {
+      //navbar.html
+      languageButton: 'English',
+
       //timeinputform.html
       simple: 'Simple',
       exact: 'Exact',
@@ -161,4 +167,5 @@ angular
     });
 
     $translateProvider.preferredLanguage('de_DE');
-  });
+  })
+;
