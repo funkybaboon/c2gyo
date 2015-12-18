@@ -167,5 +167,7 @@ angular
     });
 
     $translateProvider.preferredLanguage('de_DE');
+    $translateProvider.useSanitizeValueStrategy('sanitize');
+
   })
 ;
