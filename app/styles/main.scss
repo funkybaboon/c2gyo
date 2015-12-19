@@ -128,14 +128,15 @@ $drivenow-brand-color: #007ea4;
 
 
 @mixin brand-page($color) {
+  .nav-pills li div button.nav-button,
   .nav-pills li.active a,
   .nav-pills li.active a:hover,
   .nav-pills li.active a:focus {
     background-color: $color;
+    color: #fff;
   }
 
-  .highlight,
-  .nav-pills li a {
+  .highlight {
     border: 1px solid $color;
   }
 

@@ -46,6 +46,20 @@ angular.module('c2gyoApp')
         $scope.isActive = function(viewLocation) {
           return viewLocation === $location.path();
         };
+
+        $scope.active = function(viewLocation) {
+          var tabs = {
+            car2go: 'Car2go',
+            car2goblack: 'Car2goBlack',
+            stadtmobil: 'Stadtmobil',
+            flinkster: 'Flinkster',
+            greenwheels: 'Greenwheels',
+            drivenow: 'DriveNow'
+          };
+
+          var tab = $location.path().substring(1);
+          return tabs[tab];
+        };
       }
     };
   });
