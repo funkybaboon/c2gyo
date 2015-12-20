@@ -64,8 +64,8 @@ angular
       hour: 'Stunden',
       day: 'Tage',
       week: 'Wochen',
-      startdate: 'Startdatum',
-      enddate: 'Enddatum',
+      startDate: 'Startdatum',
+      endDate: 'Enddatum',
       timeStanding: 'Zeit stehend',
       minuteStanding: 'Minuten (stehend)',
       distance: 'Strecke',
@@ -75,7 +75,7 @@ angular
       trueTime: 'Wahre Zeit',
 
       //priceBox.html
-      kmPrice: 'Preis',
+      kmPrice: 'Km Preis',
       timePrice: 'Zeit Preis',
       byKm: 'pro Km',
 
@@ -132,7 +132,7 @@ angular
       trueTime: 'True time',
 
       //priceBox.html
-      kmPrice: 'Price',
+      kmPrice: 'Km Price',
       timePrice: 'Time price',
       byKm: 'for each Km',
 
@@ -167,7 +167,7 @@ angular
     });
 
     $translateProvider.preferredLanguage('de_DE');
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.useSanitizeValueStrategy('escape');
 
   })
 ;
