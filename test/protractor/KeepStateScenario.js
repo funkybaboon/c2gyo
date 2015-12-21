@@ -17,26 +17,31 @@ describe('Keep State over different tabs', function() {
     expect(priceDistance.getText()).toEqual('20,00 €');
     expect(priceTime.getText()).toEqual('139,00 €');
 
+    element(by.id('nav-button')).click();
     element(by.id('car2go')).click();
     expect(price.getText()).toEqual('486,50 €');
     expect(priceDistance.getText()).toEqual('14,50 €');
     expect(priceTime.getText()).toEqual('472,00 €');
 
+    element(by.id('nav-button')).click();
     element(by.id('greenwheels')).click();
     expect(price.getText()).toEqual('322,22 €');
     expect(priceDistance.getText()).toEqual('24,00 €');
     expect(priceTime.getText()).toEqual('298,22 €');
 
+    element(by.id('nav-button')).click();
     element(by.id('car2goblack')).click();
     expect(price.getText()).toEqual('726,50 €');
     expect(priceDistance.getText()).toEqual('14,50 €');
     expect(priceTime.getText()).toEqual('712,00 €');
 
+    element(by.id('nav-button')).click();
     element(by.id('flinkster')).click();
     expect(price.getText()).toEqual('325,00 €');
     expect(priceDistance.getText()).toEqual('20,00 €');
     expect(priceTime.getText()).toEqual('305,00 €');
 
+    element(by.id('nav-button')).click();
     element(by.id('drivenow')).click();
     expect(price.getText()).toEqual('3.310,80 €');
     expect(priceDistance.getText()).toEqual('0,00 €');
