@@ -47,7 +47,7 @@ angular.module('c2gyoApp')
           return viewLocation === $location.path();
         };
 
-        $scope.active = function(viewLocation) {
+        $scope.active = function() {
           var tabs = {
             car2go: 'Car2go',
             car2goblack: 'Car2goBlack',
