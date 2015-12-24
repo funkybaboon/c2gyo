@@ -66,5 +66,6 @@ describe('car2goblack test all input fields and checkboxes', function() {
     var popover = element(by.css(pathPopover));
 
     expect(popover.isDisplayed()).toBeTruthy();
+    expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
   });
 });

@@ -59,6 +59,7 @@ describe('drivenow test all input fields and checkboxes', function() {
       browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
       expect(popover.isDisplayed()).toBeTruthy();
+      expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
     });
   });
 
