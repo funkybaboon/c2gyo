@@ -106,7 +106,15 @@ angular
             neubibergbavariafilmstadt: 'Fahrt von Neubiberg / Bavaria Filmstadt'
           }
         }
+      },
+
+      //popovers
+      popover: {
+        car2go: {
+          airport: '4,90€ für alle Fahrten von und zum Flughafen'
+        },
       }
+
     });
 
     $translateProvider.translations('en_US', {
@@ -163,11 +171,19 @@ angular
             neubibergbavariafilmstadt: 'Trip to Neubiberg/Bavaria Filmstadt'
           }
         }
+      },
+
+      //popovers
+      popover: {
+        car2go: {
+          airport: '4,90€ for all rides to and from the airport'
+        },
       }
+
     });
 
     $translateProvider.preferredLanguage('de_DE');
-    $translateProvider.useSanitizeValueStrategy('escape');
+    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
 
   })
 ;
