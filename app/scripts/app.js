@@ -113,6 +113,9 @@ angular
         car2go: {
           airport: '4,90€ für alle Fahrten von und zum Flughafen'
         },
+        car2goblack: {
+          airport: '4,90€ für alle Fahrten von und zum Flughafen'
+        }
       }
 
     });
@@ -176,6 +179,9 @@ angular
       //popovers
       popover: {
         car2go: {
+          airport: '4,90€ for all rides to and from the airport'
+        },
+        car2goblack: {
           airport: '4,90€ for all rides to and from the airport'
         },
       }
