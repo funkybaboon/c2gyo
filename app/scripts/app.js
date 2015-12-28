@@ -115,6 +115,28 @@ angular
         },
         car2goblack: {
           airport: '4,90€ für alle Fahrten von und zum Flughafen'
+        },
+        greenwheels: {
+          tariffstandard: 'Keine Monatliche Grundgebühr',
+          tariffjoker:
+          '<ul>' +
+            '<li>10€ Grundgebühr pro Monat</li>' +
+            '<li>60 gratis Kilometer</li>' +
+            '<li>' +
+              '30 € für 24 Stunden Buchungen in der Fahrzeugklasse Compact' +
+            ' (anstatt 39.76€)' +
+            '</li>' +
+            '<li>' +
+              '40 € für 24 Stunden Buchungen in der Fahrzeugklasse Van ' +
+              '(anstatt 71.76€)' +
+            '</li>' +
+          '</ul>',
+          carClassCompact: 'VW Up',
+          carClassVan:
+          '<ul>' +
+            '<li>VW Golf Variant</li>' +
+            '<li>VW Caddy</li>' +
+          '</ul>',
         }
       }
 
@@ -183,6 +205,28 @@ angular
         },
         car2goblack: {
           airport: '4,90€ for all rides to and from the airport'
+        },
+        greenwheels: {
+          tariffstandard: 'No monthly fee',
+          tariffjoker:
+          '<ul>' +
+            '<li>10€ monthly fee</li>' +
+            '<li>60 kilometers free</li>' +
+            '<li>' +
+              '30 € for 24 hours bookings in car class Compact' +
+              ' (instead of 39.76€)' +
+            '</li>' +
+            '<li>' +
+              '40 € for 24 hours bookings in car class Van ' +
+              '(instead of 71.76€)' +
+            '</li>' +
+          '</ul>',
+          carClassCompact: 'VW Up',
+          carClassVan:
+          '<ul>' +
+            '<li>VW Golf Variant</li>' +
+            '<li>VW Caddy</li>' +
+          '</ul>',
         },
       }
 
