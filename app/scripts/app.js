@@ -137,6 +137,57 @@ angular
             '<li>VW Golf Variant</li>' +
             '<li>VW Caddy</li>' +
           '</ul>',
+        },
+        flinkster: {
+          tariffbundesweit: 'Keine Monatliche Grundgebühr',
+          tarifflokal: '10€ Monatliche Grundgebühr',
+          carClassSonder:
+          '<ul>' +
+            '<li>Citroen DS3</li>' +
+          '</ul>',
+          carClassMini:
+          '<ul>' +
+            '<li>Smart</li>' +
+            '<li>Fiat Panda</li>' +
+            '<li>e-Smart</li>' +
+            '<li>Citroen C1</li>' +
+            '<li>Toyota Aygo</li>' +
+          '</ul>',
+          carClassKlein:
+          '<ul>' +
+            '<li>VW Polo</li>' +
+            '<li>Citroen DS3</li>' +
+            '<li>Opel Corsa</li>' +
+            '<li>Ford Fiesta</li>' +
+            '<li>MINI E</li>' +
+            '<li>Peugeot iOn</li>' +
+          '</ul>',
+          carClassKompakt:
+          '<ul>' +
+            '<li>Opel Astra</li>' +
+            '<li>VW Golf</li>' +
+            '<li>Seat Leon</li>' +
+            '<li>VW Caddy</li>' +
+          '</ul>',
+          carClassMittel:
+          '<ul>' +
+            '<li>Ford Mondeo</li>' +
+            '<li>VW Passat</li>' +
+            '<li>Mercedes C-Klasse</li>' +
+            '<li>Toyota Prius Plug-In PHV</li>' +
+            '<li>Opel Ampera</li>' +
+          '</ul>',
+          carClassTransporter:
+          '<ul>' +
+            '<li>Ford Transit</li>' +
+            '<li>Mercedes Sprinter</li>' +
+            '<li>Opel Movano</li>' +
+            '<li>VW T5</li>' +
+          '</ul>',
+          airport: 'Anmietungen an Flughäfen +25% auf den Zeitpreis sind ' +
+          'nur zum Tagespreis der bundesweiten Flinkster Preisliste möglich' +
+          '. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt ' +
+          'auf eigene Rechnung ohne Verbrauchspauschale.',
         }
       }
 
@@ -228,6 +279,56 @@ angular
             '<li>VW Caddy</li>' +
           '</ul>',
         },
+        flinkster: {
+          tariffbundesweit: 'No monthly fees',
+          tarifflokal: '10€ monthly fees',
+          carClassSonder:
+          '<ul>' +
+            '<li>Citroen DS3</li>' +
+          '</ul>',
+          carClassMini:
+          '<ul>' +
+            '<li>Smart</li>' +
+            '<li>Fiat Panda</li>' +
+            '<li>e-Smart</li>' +
+            '<li>Citroen C1</li>' +
+            '<li>Toyota Aygo</li>' +
+          '</ul>',
+          carClassKlein:
+          '<ul>' +
+            '<li>VW Polo</li>' +
+            '<li>Citroen DS3</li>' +
+            '<li>Opel Corsa</li>' +
+            '<li>Ford Fiesta</li>' +
+            '<li>MINI E</li>' +
+            '<li>Peugeot iOn</li>' +
+          '</ul>',
+          carClassKompakt:
+          '<ul>' +
+            '<li>Opel Astra</li>' +
+            '<li>VW Golf</li>' +
+            '<li>Seat Leon</li>' +
+            '<li>VW Caddy</li>' +
+          '</ul>',
+          carClassMittel:
+          '<ul>' +
+            '<li>Ford Mondeo</li>' +
+            '<li>VW Passat</li>' +
+            '<li>Mercedes C-Class</li>' +
+            '<li>Toyota Prius Plug-In PHV</li>' +
+            '<li>Opel Ampera</li>' +
+          '</ul>',
+          carClassTransporter:
+          '<ul>' +
+            '<li>Ford Transit</li>' +
+            '<li>Mercedes Sprinter</li>' +
+            '<li>Opel Movano</li>' +
+            '<li>VW T5</li>' +
+          '</ul>',
+          airport: 'Rentals on Airports have a minimum duration of one day ' +
+          'and are billed according to tariff \"Bundesweit\" + 25%. No ' +
+          'tariff \"Lokal\" possible. Fuel completely at your own charge.'
+        }
       }
 
     });
