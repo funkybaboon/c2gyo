@@ -188,9 +188,49 @@ angular
           'nur zum Tagespreis der bundesweiten Flinkster Preisliste möglich' +
           '. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt ' +
           'auf eigene Rechnung ohne Verbrauchspauschale.',
+        },
+        stadtmobil: {
+          tariffbasic: '4€ pro Person, 4€ pro weiterer Person, ohne Kaution',
+          tariffbusiness: '29€ pro Haushalt, 550€ Kaution',
+          tariffclassic: '11€ pro Person, 15€ pro Haushalt, ohne Kaution. ' +
+          '7,50€ pro Person, 11€ pro Haushalt, 550€ Kaution.',
+          tariffstudi: '5€ pro Person, 200€ Kaution. Tarif entspricht Classic' +
+          ' Tarif',
+          carClassRateA:
+          '<ul>' +
+            '<li>Toyota Aygo</li>' +
+          '</ul>',
+          carClassRateB:
+          '<ul>' +
+            '<li>Opel Agila</li>' +
+            '<li>Opel Corsa</li>' +
+            '<li>Renault Zoe</li>' +
+            '<li>Toyota Yaris Hybrid</li>' +
+            '<li>Fiat 500 Cabrio</li>' +
+            '<li>Opel Adam</li>' +
+            '<li>Renault Wind</li>' +
+            '<li>Opel Combo Kastenwagen</li>' +
+            '<li>Renault Kangoo Kastenwagen</li>' +
+          '</ul>',
+          carClassRateC:
+          '<ul>' +
+            '<li>Opel Astra Kombi</li>' +
+            '<li>Ford Tourneo Hochdachkombi</li>' +
+            '<li>Mini One</li>' +
+          '</ul>',
+          carClassRateD:
+          '<ul>' +
+            '<li>BMW 116d</li>' +
+            '<li>Mazda MX5 Cabrio</li>' +
+            '<li>Ford Custom Kleinbus</li>' +
+            '<li>Opel Vivaro Kleinbus</li>' +
+          '</ul>',
+          carClassRateF:
+          '<ul>' +
+            '<li>FFord Transit Transporter</li>' +
+          '</ul>'
         }
       }
-
     });
 
     $translateProvider.translations('en_US', {
@@ -328,9 +368,50 @@ angular
           airport: 'Rentals on Airports have a minimum duration of one day ' +
           'and are billed according to tariff \"Bundesweit\" + 25%. No ' +
           'tariff \"Lokal\" possible. Fuel completely at your own charge.'
+        },
+        stadtmobil: {
+          tariffbasic: '4€ per person, 4€ for each additional Person, ' +
+          'whithout bail',
+          tariffbusiness: '29€ per household, 550€ bail',
+          tariffclassic: '11€ per person, 15€ per household, without bail. ' +
+          '7,50€ per person, 11€ per household, 550€ bail.',
+          tariffstudi: '5€ per person, 200€ bail. Tariff is equal to tariff ' +
+          'Classic',
+          carClassRateA:
+          '<ul>' +
+            '<li>Toyota Aygo</li>' +
+          '</ul>',
+          carClassRateB:
+          '<ul>' +
+            '<li>Opel Agila</li>' +
+            '<li>Opel Corsa</li>' +
+            '<li>Renault Zoe</li>' +
+            '<li>Toyota Yaris Hybrid</li>' +
+            '<li>Fiat 500 Cabrio</li>' +
+            '<li>Opel Adam</li>' +
+            '<li>Renault Wind</li>' +
+            '<li>Opel Combo Kastenwagen</li>' +
+            '<li>Renault Kangoo Kastenwagen</li>' +
+          '</ul>',
+          carClassRateC:
+          '<ul>' +
+            '<li>Opel Astra Kombi</li>' +
+            '<li>Ford Tourneo Hochdachkombi</li>' +
+            '<li>Mini One</li>' +
+          '</ul>',
+          carClassRateD:
+          '<ul>' +
+            '<li>BMW 116d</li>' +
+            '<li>Mazda MX5 Cabrio</li>' +
+            '<li>Ford Custom Kleinbus</li>' +
+            '<li>Opel Vivaro Kleinbus</li>' +
+          '</ul>',
+          carClassRateF:
+          '<ul>' +
+            '<li>Ford Transit Transporter</li>' +
+          '</ul>'
         }
       }
-
     });
 
     $translateProvider.preferredLanguage('de_DE');
