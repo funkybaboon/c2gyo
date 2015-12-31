@@ -32,7 +32,7 @@ angular.module('c2gyoApp')
             $translate($scope.translateText).then(function (translatedText) {
               $scope.text = translatedText;
             });
-          }
+          };
 
           translate();
           $rootScope.$on('$translateChangeSuccess', translate);

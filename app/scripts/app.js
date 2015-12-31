@@ -117,118 +117,130 @@ angular
           airport: '4,90€ für alle Fahrten von und zum Flughafen'
         },
         greenwheels: {
-          tariffstandard: 'Keine Monatliche Grundgebühr',
-          tariffjoker:
-          '<ul>' +
-            '<li>10€ Grundgebühr pro Monat</li>' +
-            '<li>60 gratis Kilometer</li>' +
-            '<li>' +
-              '30 € für 24 Stunden Buchungen in der Fahrzeugklasse Compact' +
-            ' (anstatt 39.76€)' +
-            '</li>' +
-            '<li>' +
-              '40 € für 24 Stunden Buchungen in der Fahrzeugklasse Van ' +
-              '(anstatt 71.76€)' +
-            '</li>' +
-          '</ul>',
-          carClassCompact: 'VW Up',
-          carClassVan:
-          '<ul>' +
-            '<li>VW Golf Variant</li>' +
-            '<li>VW Caddy</li>' +
-          '</ul>',
+          carClass: {
+            Compact: 'VW Up',
+            Van:
+            '<ul>' +
+              '<li>VW Golf Variant</li>' +
+              '<li>VW Caddy</li>' +
+            '</ul>',
+          },
+          tariff: {
+            joker:
+            '<ul>' +
+              '<li>10€ Grundgebühr pro Monat</li>' +
+              '<li>60 gratis Kilometer</li>' +
+              '<li>' +
+                '30 € für 24 Stunden Buchungen in der Fahrzeugklasse Compact' +
+              ' (anstatt 39.76€)' +
+              '</li>' +
+              '<li>' +
+                '40 € für 24 Stunden Buchungen in der Fahrzeugklasse Van ' +
+                '(anstatt 71.76€)' +
+              '</li>' +
+            '</ul>',
+            standard: 'Keine Monatliche Grundgebühr',
+          },
         },
         flinkster: {
-          tariffbundesweit: 'Keine Monatliche Grundgebühr',
-          tarifflokal: '10€ Monatliche Grundgebühr',
-          carClassSonder:
-          '<ul>' +
-            '<li>Citroen DS3</li>' +
-          '</ul>',
-          carClassMini:
-          '<ul>' +
-            '<li>Smart</li>' +
-            '<li>Fiat Panda</li>' +
-            '<li>e-Smart</li>' +
-            '<li>Citroen C1</li>' +
-            '<li>Toyota Aygo</li>' +
-          '</ul>',
-          carClassKlein:
-          '<ul>' +
-            '<li>VW Polo</li>' +
-            '<li>Citroen DS3</li>' +
-            '<li>Opel Corsa</li>' +
-            '<li>Ford Fiesta</li>' +
-            '<li>MINI E</li>' +
-            '<li>Peugeot iOn</li>' +
-          '</ul>',
-          carClassKompakt:
-          '<ul>' +
-            '<li>Opel Astra</li>' +
-            '<li>VW Golf</li>' +
-            '<li>Seat Leon</li>' +
-            '<li>VW Caddy</li>' +
-          '</ul>',
-          carClassMittel:
-          '<ul>' +
-            '<li>Ford Mondeo</li>' +
-            '<li>VW Passat</li>' +
-            '<li>Mercedes C-Klasse</li>' +
-            '<li>Toyota Prius Plug-In PHV</li>' +
-            '<li>Opel Ampera</li>' +
-          '</ul>',
-          carClassTransporter:
-          '<ul>' +
-            '<li>Ford Transit</li>' +
-            '<li>Mercedes Sprinter</li>' +
-            '<li>Opel Movano</li>' +
-            '<li>VW T5</li>' +
-          '</ul>',
           airport: 'Anmietungen an Flughäfen +25% auf den Zeitpreis sind ' +
           'nur zum Tagespreis der bundesweiten Flinkster Preisliste möglich' +
           '. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt ' +
           'auf eigene Rechnung ohne Verbrauchspauschale.',
+          carClass: {
+            Sonder:
+            '<ul>' +
+              '<li>Citroen DS3</li>' +
+            '</ul>',
+            Mini:
+            '<ul>' +
+              '<li>Smart</li>' +
+              '<li>Fiat Panda</li>' +
+              '<li>e-Smart</li>' +
+              '<li>Citroen C1</li>' +
+              '<li>Toyota Aygo</li>' +
+            '</ul>',
+            Klein:
+            '<ul>' +
+              '<li>VW Polo</li>' +
+              '<li>Citroen DS3</li>' +
+              '<li>Opel Corsa</li>' +
+              '<li>Ford Fiesta</li>' +
+              '<li>MINI E</li>' +
+              '<li>Peugeot iOn</li>' +
+            '</ul>',
+            Kompakt:
+            '<ul>' +
+              '<li>Opel Astra</li>' +
+              '<li>VW Golf</li>' +
+              '<li>Seat Leon</li>' +
+              '<li>VW Caddy</li>' +
+            '</ul>',
+            Mittel:
+            '<ul>' +
+              '<li>Ford Mondeo</li>' +
+              '<li>VW Passat</li>' +
+              '<li>Mercedes C-Klasse</li>' +
+              '<li>Toyota Prius Plug-In PHV</li>' +
+              '<li>Opel Ampera</li>' +
+            '</ul>',
+            Transporter:
+            '<ul>' +
+              '<li>Ford Transit</li>' +
+              '<li>Mercedes Sprinter</li>' +
+              '<li>Opel Movano</li>' +
+              '<li>VW T5</li>' +
+            '</ul>'
+          },
+          tariff: {
+            bundesweit: 'Keine Monatliche Grundgebühr',
+            lokal: '10€ Monatliche Grundgebühr',
+          },
         },
         stadtmobil: {
-          tariffbasic: '4€ pro Person, 4€ pro weiterer Person, ohne Kaution',
-          tariffbusiness: '29€ pro Haushalt, 550€ Kaution',
-          tariffclassic: '11€ pro Person, 15€ pro Haushalt, ohne Kaution. ' +
-          '7,50€ pro Person, 11€ pro Haushalt, 550€ Kaution.',
-          tariffstudi: '5€ pro Person, 200€ Kaution. Tarif entspricht Classic' +
-          ' Tarif',
-          carClassRateA:
-          '<ul>' +
-            '<li>Toyota Aygo</li>' +
-          '</ul>',
-          carClassRateB:
-          '<ul>' +
-            '<li>Opel Agila</li>' +
-            '<li>Opel Corsa</li>' +
-            '<li>Renault Zoe</li>' +
-            '<li>Toyota Yaris Hybrid</li>' +
-            '<li>Fiat 500 Cabrio</li>' +
-            '<li>Opel Adam</li>' +
-            '<li>Renault Wind</li>' +
-            '<li>Opel Combo Kastenwagen</li>' +
-            '<li>Renault Kangoo Kastenwagen</li>' +
-          '</ul>',
-          carClassRateC:
-          '<ul>' +
-            '<li>Opel Astra Kombi</li>' +
-            '<li>Ford Tourneo Hochdachkombi</li>' +
-            '<li>Mini One</li>' +
-          '</ul>',
-          carClassRateD:
-          '<ul>' +
-            '<li>BMW 116d</li>' +
-            '<li>Mazda MX5 Cabrio</li>' +
-            '<li>Ford Custom Kleinbus</li>' +
-            '<li>Opel Vivaro Kleinbus</li>' +
-          '</ul>',
-          carClassRateF:
-          '<ul>' +
-            '<li>FFord Transit Transporter</li>' +
-          '</ul>'
+          carClass: {
+            RateA:
+            '<ul>' +
+              '<li>Toyota Aygo</li>' +
+            '</ul>',
+            RateB:
+            '<ul>' +
+              '<li>Opel Agila</li>' +
+              '<li>Opel Corsa</li>' +
+              '<li>Renault Zoe</li>' +
+              '<li>Toyota Yaris Hybrid</li>' +
+              '<li>Fiat 500 Cabrio</li>' +
+              '<li>Opel Adam</li>' +
+              '<li>Renault Wind</li>' +
+              '<li>Opel Combo Kastenwagen</li>' +
+              '<li>Renault Kangoo Kastenwagen</li>' +
+            '</ul>',
+            RateC:
+            '<ul>' +
+              '<li>Opel Astra Kombi</li>' +
+              '<li>Ford Tourneo Hochdachkombi</li>' +
+              '<li>Mini One</li>' +
+            '</ul>',
+            RateD:
+            '<ul>' +
+              '<li>BMW 116d</li>' +
+              '<li>Mazda MX5 Cabrio</li>' +
+              '<li>Ford Custom Kleinbus</li>' +
+              '<li>Opel Vivaro Kleinbus</li>' +
+            '</ul>',
+            RateF:
+            '<ul>' +
+              '<li>FFord Transit Transporter</li>' +
+            '</ul>'
+          },
+          tariff: {
+            basic: '4€ pro Person, 4€ pro weiterer Person, ohne Kaution',
+            business: '29€ pro Haushalt, 550€ Kaution',
+            classic: '11€ pro Person, 15€ pro Haushalt, ohne Kaution. ' +
+            '7,50€ pro Person, 11€ pro Haushalt, 550€ Kaution.',
+            studi: '5€ pro Person, 200€ Kaution. Tarif entspricht Classic' +
+            ' Tarif',
+          },
         },
         drivenow: {
           airport: 'for each start/end of booking',
@@ -325,118 +337,130 @@ angular
           airport: '4,90€ for all rides to and from the airport'
         },
         greenwheels: {
-          tariffstandard: 'No monthly fee',
-          tariffjoker:
-          '<ul>' +
-            '<li>10€ monthly fee</li>' +
-            '<li>60 kilometers free</li>' +
-            '<li>' +
-              '30 € for 24 hours bookings in car class Compact' +
-              ' (instead of 39.76€)' +
-            '</li>' +
-            '<li>' +
-              '40 € for 24 hours bookings in car class Van ' +
-              '(instead of 71.76€)' +
-            '</li>' +
-          '</ul>',
-          carClassCompact: 'VW Up',
-          carClassVan:
-          '<ul>' +
-            '<li>VW Golf Variant</li>' +
-            '<li>VW Caddy</li>' +
-          '</ul>',
+          carClass: {
+            Compact: 'VW Up',
+            Van:
+            '<ul>' +
+              '<li>VW Golf Variant</li>' +
+              '<li>VW Caddy</li>' +
+            '</ul>',
+          },
+          tariff: {
+            joker:
+            '<ul>' +
+              '<li>10€ monthly fee</li>' +
+              '<li>60 kilometers free</li>' +
+              '<li>' +
+                '30 € for 24 hours bookings in car class Compact' +
+                ' (instead of 39.76€)' +
+              '</li>' +
+              '<li>' +
+                '40 € for 24 hours bookings in car class Van ' +
+                '(instead of 71.76€)' +
+              '</li>' +
+            '</ul>',
+            standard: 'No monthly fee',
+          },
         },
         flinkster: {
-          tariffbundesweit: 'No monthly fees',
-          tarifflokal: '10€ monthly fees',
-          carClassSonder:
-          '<ul>' +
-            '<li>Citroen DS3</li>' +
-          '</ul>',
-          carClassMini:
-          '<ul>' +
-            '<li>Smart</li>' +
-            '<li>Fiat Panda</li>' +
-            '<li>e-Smart</li>' +
-            '<li>Citroen C1</li>' +
-            '<li>Toyota Aygo</li>' +
-          '</ul>',
-          carClassKlein:
-          '<ul>' +
-            '<li>VW Polo</li>' +
-            '<li>Citroen DS3</li>' +
-            '<li>Opel Corsa</li>' +
-            '<li>Ford Fiesta</li>' +
-            '<li>MINI E</li>' +
-            '<li>Peugeot iOn</li>' +
-          '</ul>',
-          carClassKompakt:
-          '<ul>' +
-            '<li>Opel Astra</li>' +
-            '<li>VW Golf</li>' +
-            '<li>Seat Leon</li>' +
-            '<li>VW Caddy</li>' +
-          '</ul>',
-          carClassMittel:
-          '<ul>' +
-            '<li>Ford Mondeo</li>' +
-            '<li>VW Passat</li>' +
-            '<li>Mercedes C-Class</li>' +
-            '<li>Toyota Prius Plug-In PHV</li>' +
-            '<li>Opel Ampera</li>' +
-          '</ul>',
-          carClassTransporter:
-          '<ul>' +
-            '<li>Ford Transit</li>' +
-            '<li>Mercedes Sprinter</li>' +
-            '<li>Opel Movano</li>' +
-            '<li>VW T5</li>' +
-          '</ul>',
           airport: 'Rentals on Airports have a minimum duration of one day ' +
           'and are billed according to tariff \"Bundesweit\" + 25%. No ' +
-          'tariff \"Lokal\" possible. Fuel completely at your own charge.'
+          'tariff \"Lokal\" possible. Fuel completely at your own charge.',
+          carClass: {
+            Sonder:
+            '<ul>' +
+              '<li>Citroen DS3</li>' +
+            '</ul>',
+            Mini:
+            '<ul>' +
+              '<li>Smart</li>' +
+              '<li>Fiat Panda</li>' +
+              '<li>e-Smart</li>' +
+              '<li>Citroen C1</li>' +
+              '<li>Toyota Aygo</li>' +
+            '</ul>',
+            Klein:
+            '<ul>' +
+              '<li>VW Polo</li>' +
+              '<li>Citroen DS3</li>' +
+              '<li>Opel Corsa</li>' +
+              '<li>Ford Fiesta</li>' +
+              '<li>MINI E</li>' +
+              '<li>Peugeot iOn</li>' +
+            '</ul>',
+            Kompakt:
+            '<ul>' +
+              '<li>Opel Astra</li>' +
+              '<li>VW Golf</li>' +
+              '<li>Seat Leon</li>' +
+              '<li>VW Caddy</li>' +
+            '</ul>',
+            Mittel:
+            '<ul>' +
+              '<li>Ford Mondeo</li>' +
+              '<li>VW Passat</li>' +
+              '<li>Mercedes C-Class</li>' +
+              '<li>Toyota Prius Plug-In PHV</li>' +
+              '<li>Opel Ampera</li>' +
+            '</ul>',
+            Transporter:
+            '<ul>' +
+              '<li>Ford Transit</li>' +
+              '<li>Mercedes Sprinter</li>' +
+              '<li>Opel Movano</li>' +
+              '<li>VW T5</li>' +
+            '</ul>',
+          },
+          tariff: {
+            bundesweit: 'No monthly fees',
+            lokal: '10€ monthly fees',
+          },
         },
         stadtmobil: {
-          tariffbasic: '4€ per person, 4€ for each additional Person, ' +
-          'whithout bail',
-          tariffbusiness: '29€ per household, 550€ bail',
-          tariffclassic: '11€ per person, 15€ per household, without bail. ' +
-          '7,50€ per person, 11€ per household, 550€ bail.',
-          tariffstudi: '5€ per person, 200€ bail. Tariff is equal to tariff ' +
-          'Classic',
-          carClassRateA:
-          '<ul>' +
-            '<li>Toyota Aygo</li>' +
-          '</ul>',
-          carClassRateB:
-          '<ul>' +
-            '<li>Opel Agila</li>' +
-            '<li>Opel Corsa</li>' +
-            '<li>Renault Zoe</li>' +
-            '<li>Toyota Yaris Hybrid</li>' +
-            '<li>Fiat 500 Cabrio</li>' +
-            '<li>Opel Adam</li>' +
-            '<li>Renault Wind</li>' +
-            '<li>Opel Combo Kastenwagen</li>' +
-            '<li>Renault Kangoo Kastenwagen</li>' +
-          '</ul>',
-          carClassRateC:
-          '<ul>' +
-            '<li>Opel Astra Kombi</li>' +
-            '<li>Ford Tourneo Hochdachkombi</li>' +
-            '<li>Mini One</li>' +
-          '</ul>',
-          carClassRateD:
-          '<ul>' +
-            '<li>BMW 116d</li>' +
-            '<li>Mazda MX5 Cabrio</li>' +
-            '<li>Ford Custom Kleinbus</li>' +
-            '<li>Opel Vivaro Kleinbus</li>' +
-          '</ul>',
-          carClassRateF:
-          '<ul>' +
-            '<li>Ford Transit Transporter</li>' +
-          '</ul>'
+          carClass: {
+            RateA:
+            '<ul>' +
+              '<li>Toyota Aygo</li>' +
+            '</ul>',
+            RateB:
+            '<ul>' +
+              '<li>Opel Agila</li>' +
+              '<li>Opel Corsa</li>' +
+              '<li>Renault Zoe</li>' +
+              '<li>Toyota Yaris Hybrid</li>' +
+              '<li>Fiat 500 Cabrio</li>' +
+              '<li>Opel Adam</li>' +
+              '<li>Renault Wind</li>' +
+              '<li>Opel Combo Kastenwagen</li>' +
+              '<li>Renault Kangoo Kastenwagen</li>' +
+            '</ul>',
+            RateC:
+            '<ul>' +
+              '<li>Opel Astra Kombi</li>' +
+              '<li>Ford Tourneo Hochdachkombi</li>' +
+              '<li>Mini One</li>' +
+            '</ul>',
+            RateD:
+            '<ul>' +
+              '<li>BMW 116d</li>' +
+              '<li>Mazda MX5 Cabrio</li>' +
+              '<li>Ford Custom Kleinbus</li>' +
+              '<li>Opel Vivaro Kleinbus</li>' +
+            '</ul>',
+            RateF:
+            '<ul>' +
+              '<li>Ford Transit Transporter</li>' +
+            '</ul>',
+          },
+          tariff: {
+            basic: '4€ per person, 4€ for each additional Person, ' +
+            'whithout bail',
+            business: '29€ per household, 550€ bail',
+            classic: '11€ per person, 15€ per household, without bail. ' +
+            '7,50€ per person, 11€ per household, 550€ bail.',
+            studi: '5€ per person, 200€ bail. Tariff is equal to tariff ' +
+            'Classic',
+          },
         },
         drivenow: {
           airport: 'for each start/end of booking',
