@@ -229,6 +229,33 @@ angular
           '<ul>' +
             '<li>FFord Transit Transporter</li>' +
           '</ul>'
+        },
+        drivenow: {
+          airport: 'for each start/end of booking',
+          carClass: {
+            BMW:
+            '<ul>' +
+              '<li>BMW i3</li>' +
+              '<li>BMW X1</li>' +
+              '<li>BMW 2er Active Tourer</li>' +
+              '<li>BMW 2er Cabrio</li>' +
+            '</ul>',
+            Mini:
+            '<ul>' +
+              '<li>Mini</li>' +
+              '<li>Mini Clubman</li>' +
+              '<li>Mini Countryman</li>' +
+              '<li>BMW 1er</li>' +
+            '</ul>',
+            MiniCabrioSummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
+            MiniCabrioWinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+          },
+          drivecitytocity: {
+            cologneduesseldorf: 'end booking in the other city',
+            duesseldorfcologne: 'end booking in the other city',
+            hildengerresheim: 'plus intercity fee from Cologne',
+            neubibergbavariafilmstadt: 'end booking in satellite'
+          }
         }
       }
     });
@@ -410,6 +437,33 @@ angular
           '<ul>' +
             '<li>Ford Transit Transporter</li>' +
           '</ul>'
+        },
+        drivenow: {
+          airport: 'for each start/end of booking',
+          carClass: {
+            BMW:
+            '<ul>' +
+              '<li>BMW i3</li>' +
+              '<li>BMW X1</li>' +
+              '<li>BMW 2er Active Tourer</li>' +
+              '<li>BMW 2er Cabrio</li>' +
+            '</ul>',
+            Mini:
+            '<ul>' +
+              '<li>Mini</li>' +
+              '<li>Mini Clubman</li>' +
+              '<li>Mini Countryman</li>' +
+              '<li>BMW 1er</li>' +
+            '</ul>',
+            MiniCabrioSummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
+            MiniCabrioWinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+          },
+          drivecitytocity: {
+            cologneduesseldorf: 'end booking in the other city',
+            duesseldorfcologne: 'end booking in the other city',
+            hildengerresheim: 'plus intercity fee from Cologne',
+            neubibergbavariafilmstadt: 'end booking in satellite'
+          }
         }
       }
     });
