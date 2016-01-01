@@ -3,18 +3,19 @@ exports.config = {
 
   params: {
     /*will match any string that contains at least one non-space character*/
-    regexNotEmpty: '^(?!\s*$).+'
+    regexNotEmpty: '^(?!\s*$).+',
+    sleepTimeout: 1000
   },
 
   specs: [
-    'KeepStateScenario.js',
-
     'car2go.js',
     'car2goblack.js',
     'flinkster.js',
     'greenwheels.js',
     'stadtmobil.js',
     'drivenow.js',
+
+    'KeepStateScenario.js',
   ],
 
   multiCapabilities: [{

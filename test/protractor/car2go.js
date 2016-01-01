@@ -60,16 +60,16 @@ describe('car2go test all input fields and checkboxes', function() {
   });
 
   it('should display the popover-content on mouseover', function() {
-    var pathIcon = 'span[tariff-popover="views/popovers/car2go/airport.html"]' +
-      ' > .fa.fa-info-circle';
-    var pathPopover = 'span[tariff-popover="views/popovers/car2go/airport.html"] ' +
-      '> .popover.ng-isolate-scope.right.fade.in';
+    var path = 'span[tariff-popover="popover.car2go.airport"]';
+    var pathIcon =  path + ' > .fa.fa-info-circle';
+    var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
 
     var popoverIcon = element(by.css(pathIcon));
     browser.actions().mouseMove(popoverIcon).perform();
     var popover = element(by.css(pathPopover));
 
     expect(popover.isDisplayed()).toBeTruthy();
+    browser.sleep(browser.params.sleepTimeout);
     expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
   });
 });
