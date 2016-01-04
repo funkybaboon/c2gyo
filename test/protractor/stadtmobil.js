@@ -57,30 +57,31 @@ describe('test stadtmobil input fields', function() {
   });
 
   var popover = [
-    'tariffclassic',
-    'tariffbasic',
-    'tariffstudi',
-    'tariffbusiness',
-    'carClassRateA',
-    'carClassRateB',
-    'carClassRateC',
-    'carClassRateD',
-    'carClassRateF'
+    'tariff.classic',
+    'tariff.basic',
+    'tariff.studi',
+    'tariff.business',
+    'carClass.RateA',
+    'carClass.RateB',
+    'carClass.RateC',
+    'carClass.RateD',
+    'carClass.RateF'
   ];
 
   popover.forEach(function(entry){
-    it('should display the popover-content on mouseover', function() {
-      var pathIcon = 'span[tariff-popover=' +
-        '"views/popovers/stadtmobil/' + entry + '.html"]' +
-        ' > .fa.fa-info-circle';
-      var pathPopover = 'span[tariff-popover=' +
-        '"views/popovers/stadtmobil/' + entry + '.html"] ' +
-        '> .popover.ng-isolate-scope.right.fade.in';
+    it('should display the popover-content on mouseover for ' + entry,
+    function() {
+      var path = 'span[tariff-popover="popover.stadtmobil.' + entry + '"]';
+      var pathIcon =  path + ' > .fa.fa-info-circle';
+      var pathPopover = path +' > .popover.ng-isolate-scope.right.fade.in';
 
       var popoverIcon = element(by.css(pathIcon));
       browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
+
       expect(popover.isDisplayed()).toBeTruthy();
+      var timeout = browser.params.sleepTimeout;
+      browser.sleep(timeout);
       expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
     });
   });
