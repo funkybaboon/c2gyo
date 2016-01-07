@@ -3,6 +3,16 @@ describe('test stadtmobil input fields', function() {
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
+  var EC = protractor.ExpectedConditions;
+  var patternToBePresentInElement = function(elementFinder, pattern) {
+    var matchesPattern = function() {
+      return elementFinder.getText().then(function(actualText) {
+        return actualText.search(pattern) !== -1;
+      });
+    };
+    return EC.and(EC.presenceOf(elementFinder), matchesPattern);
+  };
+
   beforeEach(function() {
     browser.get('http://localhost:9999/#/stadtmobil');
     browser.waitForAngular();
@@ -12,7 +22,6 @@ describe('test stadtmobil input fields', function() {
     element(by.model('rental.timeWeeks')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
   });
-
 
   it('should calculate a price with all checkboxes ticked', function() {
     element(by.id('tariffclassic')).click();
@@ -68,21 +77,21 @@ describe('test stadtmobil input fields', function() {
     'carClass.RateF'
   ];
 
-  popover.forEach(function(entry){
+  popover.forEach(function(entry) {
     it('should display the popover-content on mouseover for ' + entry,
     function() {
       var path = 'span[tariff-popover="popover.stadtmobil.' + entry + '"]';
       var pathIcon =  path + ' > .fa.fa-info-circle';
-      var pathPopover = path +' > .popover.ng-isolate-scope.right.fade.in';
-
+      var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
       var popoverIcon = element(by.css(pathIcon));
-      browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
 
-      expect(popover.isDisplayed()).toBeTruthy();
-      var timeout = browser.params.sleepTimeout;
-      browser.sleep(timeout);
-      expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), 2000);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        2000
+        );
     });
   });
 });
