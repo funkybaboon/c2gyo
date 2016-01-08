@@ -3,6 +3,16 @@ describe('greenwheels test all input fields and checkboxes', function() {
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
+  var EC = protractor.ExpectedConditions;
+  var patternToBePresentInElement = function(elementFinder, pattern) {
+    var matchesPattern = function() {
+      return elementFinder.getText().then(function(actualText) {
+        return actualText.search(pattern) !== -1;
+      });
+    };
+    return EC.and(EC.presenceOf(elementFinder), matchesPattern);
+  };
+
   beforeEach(function() {
     browser.get('http://localhost:9999/#/greenwheels');
     browser.waitForAngular();
@@ -37,8 +47,6 @@ describe('greenwheels test all input fields and checkboxes', function() {
     expect(priceTime.getText()).toEqual('483,98 €');
   });
 
-
-
   var popover = [
     'tariff.standard',
     'tariff.joker',
@@ -46,20 +54,21 @@ describe('greenwheels test all input fields and checkboxes', function() {
     'carClass.Van'
   ];
 
-  popover.forEach(function(entry){
+  popover.forEach(function(entry) {
     it('should display the popover-content of ' + entry +
     ' on mouseover', function() {
       var path = 'span[tariff-popover="popover.greenwheels.' + entry + '"]';
       var pathIcon = path + ' > .fa.fa-info-circle';
       var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
-
       var popoverIcon = element(by.css(pathIcon));
-      browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
 
-      expect(popover.isDisplayed()).toBeTruthy();
-      browser.sleep(browser.params.sleepTimeout);
-      expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), 2000);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        2000
+        );
     });
   });
 
