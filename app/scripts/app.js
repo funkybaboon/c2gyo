@@ -51,7 +51,7 @@ angular
         redirectTo: '/car2go'
       });
   })
-  .config(function ($translateProvider) {
+  .config(function($translateProvider) {
     $translateProvider.translations('de_DE', {
       //navbar.html
       languageButton: 'Deutsch',
@@ -243,7 +243,15 @@ angular
           },
         },
         drivenow: {
-          airport: 'for each start/end of booking',
+          airport: {
+            berlintegel: 'Pro Start/Ende der Buchung',
+            berlinschoenefeld: 'Pro Start/Ende der Buchung',
+            hamburg: 'Pro Start/Ende der Buchung',
+            munich: 'Pro Start/Ende der Buchung',
+            cologne: 'Pro Start/Ende der Buchung',
+            duesseldorf: 'Pro Start/Ende der Buchung',
+            wien: 'Pro Start/Ende der Buchung',
+          },
           carClass: {
             BMW:
             '<ul>' +
@@ -463,7 +471,15 @@ angular
           },
         },
         drivenow: {
-          airport: 'for each start/end of booking',
+          airport: {
+            berlintegel: 'for each start/end of booking',
+            berlinschoenefeld: 'for each start/end of booking',
+            hamburg: 'for each start/end of booking',
+            munich: 'for each start/end of booking',
+            cologne: 'for each start/end of booking',
+            duesseldorf: 'for each start/end of booking',
+            wien: 'for each start/end of booking',
+          },
           carClass: {
             BMW:
             '<ul>' +

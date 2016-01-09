@@ -5,8 +5,18 @@ describe('drivenow test all input fields and checkboxes', function() {
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
+  var EC = protractor.ExpectedConditions;
+  var patternToBePresentInElement = function(elementFinder, pattern) {
+    var matchesPattern = function() {
+      return elementFinder.getText().then(function(actualText) {
+        return actualText.search(pattern) !== -1;
+      });
+    };
+    return EC.and(EC.presenceOf(elementFinder), matchesPattern);
+  };
+
   beforeEach(function() {
-    browser.get('http://localhost:9999/#/'+ vendor);
+    browser.get('http://localhost:9999/#/' + vendor);
     browser.waitForAngular();
 
     element(by.model('rental.timeHours')).clear().sendKeys(2);
@@ -25,10 +35,10 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   var popover = [
-    ['carClassMini','930,00 €','0,00 €','930,00 €'],
-    ['carClassBMW','1.020,00 €','0,00 €','1.020,00 €'],
-    ['carClassMiniCabrioSummer','930,00 €','0,00 €','930,00 €'],
-    ['carClassMiniCabrioWinter','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carClass.Mini','930,00 €','0,00 €','930,00 €'],
+    ['carClass.BMW','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carClass.MiniCabrioSummer','930,00 €','0,00 €','930,00 €'],
+    ['carClass.MiniCabrioWinter','1.020,00 €','0,00 €','1.020,00 €'],
 
     ['airport.berlintegel','934,00 €','0,00 €','930,00 €'],
     ['airport.berlinschoenefeld','940,00 €','0,00 €','930,00 €'],
@@ -44,28 +54,28 @@ describe('drivenow test all input fields and checkboxes', function() {
     ['drivecitytocity.neubibergbavariafilmstadt','999,00 €','0,00 €','930,00 €']
   ];
 
-  popover.forEach(function(entry){
+  popover.forEach(function(entry) {
     entry = entry[0];
-    it('should display the popover-content of ' + entry +
-    ' on mouseover', function() {
-      var pathIcon = 'span[tariff-popover=' +
-        '"views/popovers/' + vendor + '/' + entry + '.html"]' +
-        ' > .fa.fa-info-circle';
-      var pathPopover = 'span[tariff-popover=' +
-        '"views/popovers/' + vendor + '/' + entry + '.html"] ' +
-        '> .popover.ng-isolate-scope.right.fade.in';
-
+    it('should display the popover-content of ' + entry + ' on mouseover',
+    function() {
+      var path = 'span[tariff-popover="popover.' + vendor + '.' + entry + '"]';
+      var pathIcon =  path + ' > .fa.fa-info-circle';
+      var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
       var popoverIcon = element(by.css(pathIcon));
-      browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
-      expect(popover.isDisplayed()).toBeTruthy();
-      expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
+
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), 2000);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        2000
+        );
     });
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
     var checkboxes = popover.splice(4);
-    checkboxes.forEach(function(entry){
+    checkboxes.forEach(function(entry) {
       var drivenowModel = 'rental.drivenow.' + entry[0];
       var drivenowPrice = entry[1];
       var drivenowPriceDistance = entry[2];
@@ -81,7 +91,7 @@ describe('drivenow test all input fields and checkboxes', function() {
 
   it('should calculate a price with all tariffs chosen', function() {
     var tariffs = popover.splice(0,3);
-    tariffs.forEach(function(entry){
+    tariffs.forEach(function(entry) {
       var drivenowModel = entry[0];
       var drivenowPrice = entry[1];
       var drivenowPriceDistance = entry[2];
@@ -94,8 +104,5 @@ describe('drivenow test all input fields and checkboxes', function() {
 
     });
   });
-
-
-
 
 });
