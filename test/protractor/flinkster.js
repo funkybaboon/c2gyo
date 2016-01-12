@@ -3,6 +3,16 @@ describe('test flinkster input fields', function() {
   var priceDistance = element(by.id('priceDistance'));
   var priceTime = element(by.id('priceTime'));
 
+  var EC = protractor.ExpectedConditions;
+  var patternToBePresentInElement = function(elementFinder, pattern) {
+    var matchesPattern = function() {
+      return elementFinder.getText().then(function(actualText) {
+        return actualText.search(pattern) !== -1;
+      });
+    };
+    return EC.and(EC.presenceOf(elementFinder), matchesPattern);
+  };
+
   beforeEach(function() {
     browser.get('http://localhost:9999/#/flinkster');
     browser.waitForAngular();
@@ -62,34 +72,33 @@ describe('test flinkster input fields', function() {
     expect(priceTime.getText()).toEqual('588,50 €');
   });
 
-
   var popover = [
-    'tariffbundesweit',
-    'tarifflokal',
-    'carClassSonder',
-    'carClassMini',
-    'carClassKlein',
-    'carClassKompakt',
-    'carClassMittel',
-    'carClassTransporter',
+    'tariff.bundesweit',
+    'tariff.lokal',
+    'carClass.Sonder',
+    'carClass.Mini',
+    'carClass.Klein',
+    'carClass.Kompakt',
+    'carClass.Mittel',
+    'carClass.Transporter',
     'airport'
   ];
 
-  popover.forEach(function(entry){
+  popover.forEach(function(entry) {
     it('should display the popover-content of ' + entry +
     ' on mouseover', function() {
-      var pathIcon = 'span[tariff-popover=' +
-        '"views/popovers/flinkster/' + entry + '.html"]' +
-        ' > .fa.fa-info-circle';
-      var pathPopover = 'span[tariff-popover=' +
-        '"views/popovers/flinkster/' + entry + '.html"] ' +
-        '> .popover.ng-isolate-scope.right.fade.in';
-
+      var path = 'span[tariff-popover="popover.flinkster.' + entry + '"]';
+      var pathIcon = path + ' > .fa.fa-info-circle';
+      var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
       var popoverIcon = element(by.css(pathIcon));
-      browser.actions().mouseMove(popoverIcon).perform();
       var popover = element(by.css(pathPopover));
-      expect(popover.isDisplayed()).toBeTruthy();
-      expect(popover.getText()).toMatch(browser.params.regexNotEmpty);
+
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), 2000);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        2000
+        );
     });
   });
 
