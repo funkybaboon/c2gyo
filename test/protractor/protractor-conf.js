@@ -4,7 +4,7 @@ exports.config = {
   params: {
     /*will match any string that contains at least one non-space character*/
     regexNotEmpty: '^(?!\s*$).+',
-    sleepTimeout: 1000
+    timeout: 1000
   },
 
   specs: [
