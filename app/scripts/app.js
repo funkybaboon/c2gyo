@@ -249,7 +249,8 @@ angular
             hamburg: 'Pro Start/Ende der Buchung',
             munich: 'Pro Start/Ende der Buchung',
             cologne: 'Pro Start/Ende der Buchung',
-            duesseldorf: 'Pro Start/Ende der Buchung',
+            duesseldorf: 'Pro Start/Ende der Buchung - Keine Abgabegebühr ' +
+            'montags und dienstags',
             wien: 'Pro Start/Ende der Buchung',
           },
           carClass: {
@@ -477,7 +478,8 @@ angular
             hamburg: 'for each start/end of booking',
             munich: 'for each start/end of booking',
             cologne: 'for each start/end of booking',
-            duesseldorf: 'for each start/end of booking',
+            duesseldorf: 'for each start/end of booking - no fee on monday ' +
+            'and tuesday',
             wien: 'for each start/end of booking',
           },
           carClass: {
