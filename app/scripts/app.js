@@ -272,10 +272,11 @@ angular
             MiniCabrioWinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
           },
           drivecitytocity: {
-            cologneduesseldorf: 'end booking in the other city',
-            duesseldorfcologne: 'end booking in the other city',
-            hildengerresheim: 'plus intercity fee from Cologne',
-            neubibergbavariafilmstadt: 'end booking in satellite'
+            cologneduesseldorf: 'Miete beenden in der anderen Stadt',
+            duesseldorfcologne: 'Miete beenden in der anderen Stadt',
+            hildengerresheim: 'zzgl. Intercity-Gebühr von Köln aus',
+            neubibergbavariafilmstadt: 'Miete beenden im Satelliten'
+          }
           }
         }
       }
