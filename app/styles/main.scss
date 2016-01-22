@@ -125,7 +125,7 @@ $stadtmobil-brand-color: #E2001A;
 $flinkster-brand-color: #FF0000;
 $greenwheels-brand-color: #56be00;
 $drivenow-brand-color: #007ea4;
-
+$bookndrive-brand-color: #E10020;
 
 @mixin brand-page($color) {
   .nav-pills li div button.nav-button,
@@ -163,4 +163,6 @@ $drivenow-brand-color: #007ea4;
 .drivenow {
   @include brand-page($drivenow-brand-color);
 }
-
+.bookndrive {
+  @include brand-page($bookndrive-brand-color);
+}
