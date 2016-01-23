@@ -58,6 +58,10 @@ angular.module('c2gyoApp')
           'hildengerresheim': false,
           'neubibergbavariafilmstadt': false,
         }
+      },
+      bookndrive: {
+        tariff: 'basic',
+        carClass: 'xs',
       }
     };
 
