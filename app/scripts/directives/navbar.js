@@ -41,6 +41,9 @@ angular.module('c2gyoApp')
         }, {
           name: 'DriveNow',
           url: 'drivenow'
+        }, {
+          name: 'book-n-drive',
+          url: 'bookndrive'
         }];
 
         $scope.isActive = function(viewLocation) {
@@ -54,7 +57,8 @@ angular.module('c2gyoApp')
             stadtmobil: 'Stadtmobil',
             flinkster: 'Flinkster',
             greenwheels: 'Greenwheels',
-            drivenow: 'DriveNow'
+            drivenow: 'DriveNow',
+            bookndrive: 'book-n-drive'
           };
 
           var tab = $location.path().substring(1);
