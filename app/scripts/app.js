@@ -47,6 +47,10 @@ angular
         templateUrl: 'views/drivenow.html',
         controller: 'DriveNowCtrl'
       })
+      .when('/bookndrive', {
+        templateUrl: 'views/bookndrive.html',
+        controller: 'BookndriveCtrl'
+      })
       .otherwise({
         redirectTo: '/car2go'
       });
