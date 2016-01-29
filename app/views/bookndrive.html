@@ -10,19 +10,27 @@
           {{"tariff" | translate }}:
           <form>
             <input type="radio"
-                   ng-model="rental.greenwheels.tariff"
-                   value="standard"
-                   id="tariffstandard">
-            <span tariff-popover="popover.greenwheels.tariff.standard">
-              Standard
+                   ng-model="rental.bookndrive.tariff"
+                   value="basic"
+                   id="tariffbasic">
+            <span tariff-popover="popover.bookndrive.tariff.basic">
+              Basic
             </span>
             <br/>
             <input type="radio"
-                   ng-model="rental.greenwheels.tariff"
-                   value="joker"
-                   id="tariffjoker">
-            <span tariff-popover="popover.greenwheels.tariff.joker">
-              Joker
+                   ng-model="rental.bookndrive.tariff"
+                   value="komfort"
+                   id="tariffkomfort">
+            <span tariff-popover="popover.bookndrive.tariff.komfort">
+              Komfort
+            </span>
+            <br/>
+            <input type="radio"
+                   ng-model="rental.bookndrive.tariff"
+                   value="abo"
+                   id="tariffabo">
+            <span tariff-popover="popover.bookndrive.tariff.abo">
+              Abo
             </span>
             <br/>
           </form>
