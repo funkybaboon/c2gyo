@@ -40,19 +40,43 @@
           {{"carClass" | translate }}:
           <form>
             <input type="radio"
-                   ng-model="rental.greenwheels.carClass"
-                   value="compact"
-                   id="ratecompact">
-            <span tariff-popover="popover.greenwheels.carClass.Compact">
-                Compact
+                   ng-model="rental.bookndrive.carClass"
+                   value="cityflitzer"
+                   id="ratecityflitzer">
+            <span tariff-popover="popover.bookndrive.carClass.cityflitzer">
+                CityFlitzer
             </span>
             <br/>
             <input type="radio"
-                   ng-model="rental.greenwheels.carClass"
-                   value="van"
-                   id="ratevan">
-            <span tariff-popover="popover.greenwheels.carClass.Van">
-                Van / Lieferwagen
+                   ng-model="rental.bookndrive.carClass"
+                   value="xs"
+                   id="ratexs">
+            <span tariff-popover="popover.bookndrive.carClass.xs">
+                XS
+            </span>
+            <br/>
+            <input type="radio"
+                   ng-model="rental.bookndrive.carClass"
+                   value="s"
+                   id="rates">
+            <span tariff-popover="popover.bookndrive.carClass.s">
+                S
+            </span>
+            <br/>
+            <input type="radio"
+                   ng-model="rental.bookndrive.carClass"
+                   value="m"
+                   id="ratem">
+            <span tariff-popover="popover.bookndrive.carClass.m">
+                M
+            </span>
+            <br/>
+            <input type="radio"
+                   ng-model="rental.bookndrive.carClass"
+                   value="l"
+                   id="ratel">
+            <span tariff-popover="popover.bookndrive.carClass.l">
+                L
             </span>
             <br/>
           </form>
