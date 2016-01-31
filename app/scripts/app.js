@@ -281,6 +281,12 @@ angular
             hildengerresheim: 'zzgl. Intercity-Gebühr von Köln aus',
             neubibergbavariafilmstadt: 'Miete beenden im Satelliten'
           }
+        },
+        bookndrive: {
+          tariff: {
+            basic: 'Kein Grundpreis',
+            komfort: 'Grundpreis 4,90€ je Monat',
+            abo: 'Grundpreis 14,90€ je Monat'
           }
         }
       }
