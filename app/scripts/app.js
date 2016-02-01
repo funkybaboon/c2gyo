@@ -517,6 +517,13 @@ angular
             hildengerresheim: 'plus intercity fee from Cologne',
             neubibergbavariafilmstadt: 'end booking in satellite'
           }
+        },
+        bookndrive: {
+          tariff: {
+            basic: 'No monthly fee',
+            komfort: '4,90€ monthly fee',
+            abo: '14,90€ monthly fee'
+          }
         }
       }
     });
