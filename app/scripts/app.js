@@ -287,6 +287,13 @@ angular
             basic: 'Kein Grundpreis',
             komfort: 'Grundpreis 4,90€ je Monat',
             abo: 'Grundpreis 14,90€ je Monat'
+          },
+          carClass: {
+            cityflitzer: 'Seat Mii oder VW up!',
+            xs: 'z.B. Seat Mii',
+            s: 'z.B. Seat Ibiza ST Kombi',
+            m: 'z.B. Opel Astra Kombi',
+            l: 'z.B. 9-Sitzer Bus oder Transporter'
           }
         }
       }
