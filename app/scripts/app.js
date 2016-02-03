@@ -530,6 +530,13 @@ angular
             basic: 'No monthly fee',
             komfort: '4,90€ monthly fee',
             abo: '14,90€ monthly fee'
+          },
+          carClass: {
+            cityflitzer: 'Seat Mii or VW up',
+            xs: 'f.ex. Seat Mii',
+            s: 'f.ex. Seat Ibiza ST Kombi',
+            m: 'f.ex. Opel Astra Kombi',
+            l: 'f.ex. 9-Sitzer Bus or Transporter'
           }
         }
       }
