@@ -284,9 +284,9 @@ angular
         },
         bookndrive: {
           tariff: {
-            basic: 'Kein Grundpreis',
-            komfort: 'Grundpreis 4,90€ je Monat',
-            abo: 'Grundpreis 14,90€ je Monat'
+            basic: '2€ pro Buchung, kein Grundpreis',
+            komfort: '2€ pro Buchung, Grundpreis 4,90€ je Monat',
+            abo: '2€ pro Buchung, Grundpreis 14,90€ je Monat'
           },
           carClass: {
             cityflitzer: 'Seat Mii oder VW up!',
