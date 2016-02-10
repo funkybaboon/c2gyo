@@ -527,9 +527,9 @@ angular
         },
         bookndrive: {
           tariff: {
-            basic: 'No monthly fee',
-            komfort: '4,90€ monthly fee',
-            abo: '14,90€ monthly fee'
+            basic: '2€ per booking, no monthly fee',
+            komfort: '2€ per booking, 4,90€ monthly fee',
+            abo: '2€ per booking, 14,90€ monthly fee'
           },
           carClass: {
             cityflitzer: 'Seat Mii or VW up',
