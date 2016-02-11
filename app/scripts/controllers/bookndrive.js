@@ -255,8 +255,9 @@ angular.module('c2gyoApp')
       //-----------------------------------------------------------------------
       $scope.price = function() {
         return (
-        $scope.getFeeTime() +
-        $scope.getFeeDistance()
+          2 +
+          $scope.getFeeTime() +
+          $scope.getFeeDistance()
         );
       };
 
