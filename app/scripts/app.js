@@ -293,7 +293,11 @@ angular
             xs: 'z.B. Seat Mii',
             s: 'z.B. Seat Ibiza ST Kombi',
             m: 'z.B. Opel Astra Kombi',
-            l: 'z.B. 9-Sitzer Bus oder Transporter'
+            l: 'z.B. 9-Sitzer Bus oder Transporter',
+            reisexs: 'z.B. Seat Mii, Mindestbuchungsdauer 24 Stunden',
+            reises: 'z.B. Seat Ibiza ST Kombi, Mindestbuchungsdauer 24 Stunden',
+            reisem: 'z.B. Opel Astra Kombi, Mindestbuchungsdauer 24 Stunden',
+            reisel: 'z.B. 9-Sitzer Bus oder Transporter, Mindestbuchungsdauer 24 Stunden'
           }
         }
       }
