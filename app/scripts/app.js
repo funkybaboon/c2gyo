@@ -540,7 +540,11 @@ angular
             xs: 'f.ex. Seat Mii',
             s: 'f.ex. Seat Ibiza ST Kombi',
             m: 'f.ex. Opel Astra Kombi',
-            l: 'f.ex. 9-Sitzer Bus or Transporter'
+            l: 'f.ex. 9-Sitzer Bus or Transporter',
+            reisexs: 'f.ex. Seat Mii, rental for at least 24h',
+            reises: 'f.ex. Seat Ibiza ST Kombi, rental for at least 24h',
+            reisem: 'f.ex. Opel Astra Kombi, rental for at least 24h',
+            reisel: 'f.ex. 9-Sitzer Bus or Transporter, rental for at least 24h'
           }
         }
       }
