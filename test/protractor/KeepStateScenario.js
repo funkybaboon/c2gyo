@@ -46,6 +46,12 @@ describe('Keep State over different tabs', function() {
     expect(price.getText()).toEqual('3.310,80 €');
     expect(priceDistance.getText()).toEqual('0,00 €');
     expect(priceTime.getText()).toEqual('3.310,80 €');
+
+    element(by.id('nav-button')).click();
+    element(by.id('bookndrive')).click();
+    expect(price.getText()).toEqual('267,00 €');
+    expect(priceDistance.getText()).toEqual('25,00 €');
+    expect(priceTime.getText()).toEqual('240,00 €');
   });
 
 });
