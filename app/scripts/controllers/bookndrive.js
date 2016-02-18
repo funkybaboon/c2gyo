@@ -25,9 +25,9 @@ angular.module('c2gyoApp')
 
       $scope.rental = state.rental;
       $scope.resolution = function() {
-        return ['hours', 'days'];
+        return ['hours', 'days', 'weeks'];
       };
-      $scope.resolutionTime = ['hours', 'days'];
+      $scope.resolutionTime = ['hours', 'days', 'weeks'];
 
       //-----------------------------------------------------------------------
       // convert dates and minutes, hours, weeks into durations
@@ -47,6 +47,10 @@ angular.module('c2gyoApp')
         return Math.floor(durationAll().asDays() % 7);
       };
 
+      $scope.getWeeks = function() {
+        return Math.floor(durationAll().asDays() / 7);
+      };
+
       //-----------------------------------------------------------------------
       // get billed time
       //-----------------------------------------------------------------------
@@ -55,7 +59,11 @@ angular.module('c2gyoApp')
       };
 
       $scope.getDaysBilled = function() {
-        return Math.floor(getDurationBilled().asDays() % 7);
+        return Math.floor(getDurationBilled().asDays());
+      };
+
+      $scope.getWeeksBilled = function() {
+        return 0;
       };
 
       //-----------------------------------------------------------------------
@@ -80,7 +88,8 @@ angular.module('c2gyoApp')
         var feeDays = $scope.getDays() * rate.day;
 
         var hoursBilled = $scope.getHours();
-        var daysBilled = $scope.getDays();
+        var daysBilled = $scope.getDays() + $scope.getWeeks()*7;
+        var weeksBilled = 0;
 
         if (feeHours >= rate.day) {
           hoursBilled = 0;
@@ -92,6 +101,7 @@ angular.module('c2gyoApp')
         var duration = moment.duration({
           hours: hoursBilled,
           days: daysBilled,
+          weeks: weeksBilled
         });
 
         return duration;
@@ -139,9 +149,11 @@ angular.module('c2gyoApp')
         var rate = getCurrentRate().time;
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
-        var feeDays = $scope.getDaysBilled() * rate.day;
+        var feeDays = $scope.getDaysBilled() * rate.day +
+          $scope.getWeeksBilled() * rate.day*7;
+        var feeWeeks = 0;
 
-        var fee = feeHours + feeDays;
+        var fee = feeHours + feeDays + feeWeeks;
 
         return fee;
       };
@@ -158,12 +170,14 @@ angular.module('c2gyoApp')
         // init variables for calculating fee
         var totalFeeHours = 0;
         var totalFeeDays = 0;
+        var totalFeeWeeks = 0;
         var rate = getCurrentRate().time;
         var feeDay = rate.day;
 
         // init variables for billed time
         var hoursBilled = 0;
         var daysBilled = 0;
+        var weeksBilled = 0;
 
         var startDate = new moment($scope.rental.startDate);
         var endDate = new moment($scope.rental.endDate);
@@ -206,10 +220,11 @@ angular.module('c2gyoApp')
         var duration = moment.duration({
           hours: hoursBilled,
           days: daysBilled,
+          weeks: weeksBilled
         });
 
         // fee billed
-        var totalFee = totalFeeDays + totalFeeHours;
+        var totalFee = totalFeeDays + totalFeeHours + totalFeeWeeks;
 
         return {
           duration: duration,
