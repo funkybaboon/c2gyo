@@ -98,6 +98,17 @@ angular.module('c2gyoApp')
           feeDays = daysBilled * rate.day;
         }
 
+        // special for Reise Tariff, which are at least 24h
+        var carClass = $scope.rental.bookndrive.carClass;
+        if (carClass.substring(0,5) === 'reise') {
+          if (daysBilled === 0 && hoursBilled <= 24) {
+            hoursBilled = 0;
+            feeHours = 0;
+            daysBilled += 1;
+            feeDays = daysBilled * rate.day;
+          }
+        }
+
         var duration = moment.duration({
           hours: hoursBilled,
           days: daysBilled,
