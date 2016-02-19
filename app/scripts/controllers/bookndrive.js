@@ -138,8 +138,6 @@ angular.module('c2gyoApp')
       var getFeeTimeSimple = function() {
         var rate = getCurrentRate().time;
 
-        console.log(getCurrentRate());
-
         var feeHours = $scope.getHoursBilled() * rate.hour;
         var feeDays = $scope.getDaysBilled() * rate.day;
 
