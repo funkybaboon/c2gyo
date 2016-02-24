@@ -86,5 +86,36 @@ describe('test bookndrive input fields', function() {
 
   });
 
+  var popover = [
+    'tariff.basic',
+    'tariff.komfort',
+    'tariff.abo',
+    'carClass.cityflitzer',
+    'carClass.xs',
+    'carClass.s',
+    'carClass.m',
+    'carClass.l',
+    'carClass.reisexs',
+    'carClass.reises',
+    'carClass.reisem',
+    'carClass.reisel'
+  ];
 
+  popover.forEach(function(entry) {
+    it('should display the popover-content on mouseover for ' + entry,
+    function() {
+      var path = 'span[tariff-popover="popover.bookndrive.' + entry + '"]';
+      var pathIcon =  path + ' > .fa.fa-info-circle';
+      var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
+      var popoverIcon = element(by.css(pathIcon));
+      var popover = element(by.css(pathPopover));
+
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), browser.params.timeout);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        browser.params.timeout
+        );
+    });
+  });
 });
