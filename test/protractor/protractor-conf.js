@@ -14,6 +14,7 @@ exports.config = {
     'greenwheels.js',
     'stadtmobil.js',
     'drivenow.js',
+    'bookndrive.js',
 
     'KeepStateScenario.js',
   ],
