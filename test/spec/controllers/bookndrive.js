@@ -289,6 +289,53 @@ describe('Controller: BookndriveCtrl', function () {
       test(testdata);
     });
 
+    describe (
+      'should calculate the correct price with 10km distance and a 2 days ' +
+      '16 hour lease, triggering the price for 4 days',
+      function () {
+      var testdata = {
+        timeHours: '16',
+        timeDays: '2',
+        tab: 'tabSimple',
+        distance: 10,
+        expectedPrices: {
+          basic: {
+            cityflitzer: '68.50',
+            xs: '94.50',
+            s: '124.70',
+            m: '154.90',
+            l: '185.40',
+            reisexs: '78.50',
+            reises: '90.70',
+            reisem: '138.90',
+            reisel: '181.20'
+          },
+          komfort: {
+            cityflitzer: '67.50',
+            xs: '90.50',
+            s: '108.70',
+            m: '123.90',
+            l: '184.20',
+            reisexs: '48.50',
+            reises: '60.70',
+            reisem: '78.90',
+            reisel: '121.20'
+          },
+          abo: {
+            cityflitzer: '67.50',
+            xs: '48.50',
+            s: '60.70',
+            m: '78.90',
+            l: '121.20',
+            reisexs: '48.50',
+            reises: '60.70',
+            reisem: '78.90',
+            reisel: '121.20'
+          }
+        }
+      };
+      test(testdata);
+    });
   });
 
 });
