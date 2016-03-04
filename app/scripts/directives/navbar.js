@@ -6,7 +6,6 @@
  * @description
  * # navBar
  * ToDo:
- *   - Book N Drive
  *   - CiteeCar
  *   - Cambio
  *   - Hertz
