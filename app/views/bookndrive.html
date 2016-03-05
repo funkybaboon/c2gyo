@@ -9,108 +9,36 @@
         <div class="form-group">
           {{"tariff" | translate }}:
           <form>
-            <input type="radio"
-                   ng-model="rental.bookndrive.tariff"
-                   value="basic"
-                   id="tariffbasic">
-            <span tariff-popover="popover.bookndrive.tariff.basic">
-              Basic
+
+            <span ng-repeat="tariff in tariffs">
+              <input type="radio"
+                     ng-model="rental.bookndrive.tariff"
+                     value="{{tariff.value}}"
+                     id="{{tariff.id}}">
+              <span tariff-popover="{{tariff.popover}}">
+                {{tariff.name}}
+              </span>
+              <br/>
             </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.tariff"
-                   value="komfort"
-                   id="tariffkomfort">
-            <span tariff-popover="popover.bookndrive.tariff.komfort">
-              Komfort
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.tariff"
-                   value="abo"
-                   id="tariffabo">
-            <span tariff-popover="popover.bookndrive.tariff.abo">
-              Abo
-            </span>
-            <br/>
+
           </form>
         </div>
 
         <div class="form-group">
           {{"carClass" | translate }}:
           <form>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="cityflitzer"
-                   id="ratecityflitzer">
-            <span tariff-popover="popover.bookndrive.carClass.cityflitzer">
-                CityFlitzer
+
+            <span ng-repeat="carclass in carclasses">
+              <input type="radio"
+                     ng-model="rental.bookndrive.carClass"
+                     value="{{carclass.value}}"
+                     id="{{carclass.id}}">
+              <span tariff-popover="{{carclass.popover}}">
+                  {{carclass.name}}
+              </span>
+              <br/>
             </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="xs"
-                   id="ratexs">
-            <span tariff-popover="popover.bookndrive.carClass.xs">
-                XS
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="s"
-                   id="rates">
-            <span tariff-popover="popover.bookndrive.carClass.s">
-                S
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="m"
-                   id="ratem">
-            <span tariff-popover="popover.bookndrive.carClass.m">
-                M
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="l"
-                   id="ratel">
-            <span tariff-popover="popover.bookndrive.carClass.l">
-                L
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="reisexs"
-                   id="ratereisexs">
-            <span tariff-popover="popover.bookndrive.carClass.reisexs">
-                Reise-XS
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="reises"
-                   id="ratereises">
-            <span tariff-popover="popover.bookndrive.carClass.reises">
-                Reise-S
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="reisem"
-                   id="ratereisem">
-            <span tariff-popover="popover.bookndrive.carClass.reisem">
-                Reise-M
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.bookndrive.carClass"
-                   value="reisel"
-                   id="ratereisel">
-            <span tariff-popover="popover.bookndrive.carClass.reisel">
-                Reise-L
-            </span>
-            <br/>
+
           </form>
         </div>
       </div>

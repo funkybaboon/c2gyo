@@ -23,6 +23,76 @@ angular.module('c2gyoApp')
       duration,
       state) {
 
+      var vendor = 'bookndrive';
+      var createForm = function(tariffs, type) {
+        for (var key in tariffs) {
+          if (tariffs.hasOwnProperty(key)) {
+            var tariff = tariffs[key];
+            tariff.model = 'rental.' + vendor + '.' + type;
+            tariff.value = tariff.technicalName;
+            tariff.id = type + tariff.technicalName;
+            tariff.popover = 'popover.' + vendor + '.' + type + '.' + tariff.technicalName;
+          }
+        }
+        return tariffs;
+      };
+
+      var tariffs = [
+        {
+          'technicalName': 'basic',
+          'name': 'Basic'
+        },
+        {
+          'technicalName': 'komfort',
+          'name': 'Komfort'
+        },
+        {
+          'technicalName': 'abo',
+          'name': 'Abo'
+        }
+      ];
+      $scope.tariffs = createForm(tariffs, 'tariff');
+
+      var carclasses = [
+        {
+          'technicalName': 'cityflitzer',
+          'name': 'CityFlitzer'
+        },
+        {
+          'technicalName': 'xs',
+          'name': 'XS'
+        },
+        {
+          'technicalName': 's',
+          'name': 'S'
+        },
+        {
+          'technicalName': 'm',
+          'name': 'M'
+        },
+        {
+          'technicalName': 'l',
+          'name': 'L'
+        },
+        {
+          'technicalName': 'reisexs',
+          'name': 'Reise-XS'
+        },
+        {
+          'technicalName': 'reises',
+          'name': 'Reise-S'
+        },
+        {
+          'technicalName': 'reisem',
+          'name': 'Reise-M'
+        },
+        {
+          'technicalName': 'reisel',
+          'name': 'Reise-L'
+        }
+      ];
+      $scope.carclasses = createForm(carclasses, 'carClass');
+
       $scope.rental = state.rental;
       $scope.resolution = function() {
         return ['hours', 'days', 'weeks'];
