@@ -39,47 +39,47 @@ describe('test bookndrive input fields', function() {
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('ratecityflitzer')).click();
+    element(by.id('carClasscityflitzer')).click();
     expect(price.getText()).toEqual('421,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('386,00 €');
 
-    element(by.id('ratexs')).click();
+    element(by.id('carClassxs')).click();
     expect(price.getText()).toEqual('278,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('rates')).click();
+    element(by.id('carClasss')).click();
     expect(price.getText()).toEqual('347,54 €');
     expect(priceDistance.getText()).toEqual('37,74 €');
     expect(priceTime.getText()).toEqual('307,80 €');
 
-    element(by.id('ratem')).click();
+    element(by.id('carClassm')).click();
     expect(price.getText()).toEqual('449,18 €');
     expect(priceDistance.getText()).toEqual('42,18 €');
     expect(priceTime.getText()).toEqual('405,00 €');
 
-    element(by.id('ratel')).click();
+    element(by.id('carClassl')).click();
     expect(price.getText()).toEqual('682,64 €');
     expect(priceDistance.getText()).toEqual('48,84 €');
     expect(priceTime.getText()).toEqual('631,80 €');
 
-    element(by.id('ratereisexs')).click();
+    element(by.id('carClassreisexs')).click();
     expect(price.getText()).toEqual('278,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('ratereises')).click();
+    element(by.id('carClassreises')).click();
     expect(price.getText()).toEqual('347,54 €');
     expect(priceDistance.getText()).toEqual('37,74 €');
     expect(priceTime.getText()).toEqual('307,80 €');
 
-    element(by.id('ratem')).click();
+    element(by.id('carClassm')).click();
     expect(price.getText()).toEqual('449,18 €');
     expect(priceDistance.getText()).toEqual('42,18 €');
     expect(priceTime.getText()).toEqual('405,00 €');
 
-    element(by.id('ratel')).click();
+    element(by.id('carClassl')).click();
     expect(price.getText()).toEqual('682,64 €');
     expect(priceDistance.getText()).toEqual('48,84 €');
     expect(priceTime.getText()).toEqual('631,80 €');
