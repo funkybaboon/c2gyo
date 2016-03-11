@@ -6,23 +6,12 @@
 
       <div class="highlight">
 
-        <div class="form-group">
-          {{"tariff" | translate }}:
-          <form>
+        <tarif-form
+          listofoptions="tariffs"
+          vendor="bookndrive">
+        </tarif-form>
 
-            <span ng-repeat="tariff in tariffs">
-              <input type="radio"
-                     ng-model="rental.bookndrive.tariff"
-                     value="{{tariff.value}}"
-                     id="{{tariff.id}}">
-              <span tariff-popover="{{tariff.popover}}">
-                {{tariff.name}}
-              </span>
-              <br/>
-            </span>
 
-          </form>
-        </div>
 
         <div class="form-group">
           {{"carClass" | translate }}:
