@@ -11,25 +11,11 @@
           vendor="bookndrive">
         </tarif-form>
 
+        <car-class-form
+          listofoptions="carclasses"
+          vendor="bookndrive">
+        </car-class-form>
 
-
-        <div class="form-group">
-          {{"carClass" | translate }}:
-          <form>
-
-            <span ng-repeat="carclass in carclasses">
-              <input type="radio"
-                     ng-model="rental.bookndrive.carClass"
-                     value="{{carclass.value}}"
-                     id="{{carclass.id}}">
-              <span tariff-popover="{{carclass.popover}}">
-                  {{carclass.name}}
-              </span>
-              <br/>
-            </span>
-
-          </form>
-        </div>
       </div>
     </div>
 
