@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name c2gyoApp.bookndriverateabo
+ * @name c2gyoApp.bookndrivetariffabo
  * @description
- * # bookndriverateabo
+ * # bookndrivetariffabo
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('bookndriverateabo', {
+  .constant('bookndrivetariffabo', {
     'resolution': 'h',
     'cityflitzer': {
       'time': {
