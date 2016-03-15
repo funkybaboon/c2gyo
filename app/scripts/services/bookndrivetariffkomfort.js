@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name c2gyoApp.bookndriveratekomfort
+ * @name c2gyoApp.bookndrivetariffkomfort
  * @description
- * # bookndriveratebasic
+ * # bookndrivetariffbasic
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('bookndriveratekomfort', {
+  .constant('bookndrivetariffkomfort', {
     'resolution': 'h',
     'cityflitzer': {
       'time': {
