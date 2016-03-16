@@ -10,16 +10,16 @@
 angular.module('c2gyoApp')
   .controller('BookndriveCtrl', [
     '$scope',
-    'bookndriveratebasic',
-    'bookndriveratekomfort',
-    'bookndriverateabo',
+    'bookndrivetariffbasic',
+    'bookndrivetariffkomfort',
+    'bookndrivetariffabo',
     'duration',
     'state',
     function(
       $scope,
-      bookndriveratebasic,
-      bookndriveratekomfort,
-      bookndriverateabo,
+      bookndrivetariffbasic,
+      bookndrivetariffkomfort,
+      bookndrivetariffabo,
       duration,
       state) {
 
@@ -201,11 +201,11 @@ angular.module('c2gyoApp')
         var rate = {};
 
         if (tariff === 'basic') {
-          rate = bookndriveratebasic[carClass];
+          rate = bookndrivetariffbasic[carclass];
         } else if (tariff === 'komfort') {
-          rate = bookndriveratekomfort[carClass];
+          rate = bookndrivetariffkomfort[carclass];
         } else {
-          rate = bookndriverateabo[carClass];
+          rate = bookndrivetariffabo[carclass];
         }
 
         return rate;
