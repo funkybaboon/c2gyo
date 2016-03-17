@@ -24,6 +24,7 @@ angular.module('c2gyoApp')
       state) {
 
       var vendor = 'bookndrive';
+      $scope.vendor = vendor;
       var createForm = function(tariffs, type) {
         for (var key in tariffs) {
           if (tariffs.hasOwnProperty(key)) {
