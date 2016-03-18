@@ -31,8 +31,9 @@ angular.module('c2gyoApp')
             var tariff = tariffs[key];
             tariff.model = 'rental.' + vendor + '.' + type;
             tariff.value = tariff.technicalName;
-            tariff.id = type + tariff.technicalName;
-            tariff.popover = 'popover.' + vendor + '.' + type + '.' + tariff.technicalName;
+            tariff.id = type + '.' + tariff.technicalName;
+            tariff.popover = 'popover.' + vendor + '.' + type + '.'
+              + tariff.technicalName;
           }
         }
         return tariffs;
@@ -92,7 +93,7 @@ angular.module('c2gyoApp')
           'name': 'Reise-L'
         }
       ];
-      $scope.carclasses = createForm(carclasses, 'carClass');
+      $scope.carclasses = createForm(carclasses, 'carclass');
 
       $scope.rental = state.rental;
       $scope.resolution = function() {
@@ -170,8 +171,8 @@ angular.module('c2gyoApp')
         }
 
         // special for Reise Tariff, which are at least 24h
-        var carClass = $scope.rental.bookndrive.carClass;
-        if (carClass.substring(0,5) === 'reise') {
+        var carclass = $scope.rental.bookndrive.carclass;
+        if (carclass.substring(0,5) === 'reise') {
           if (daysBilled === 0 && hoursBilled <= 24) {
             hoursBilled = 0;
             feeHours = 0;
@@ -197,7 +198,7 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.bookndrive.carClass;
+        var carclass = $scope.rental.bookndrive.carclass;
         var tariff = $scope.rental.bookndrive.tariff;
         var rate = {};
 
@@ -300,8 +301,8 @@ angular.module('c2gyoApp')
         }
 
         // special for Reise Tariffs, which are at least 24h
-        var carClass = $scope.rental.bookndrive.carClass;
-        if (carClass.substring(0,5) === 'reise') {
+        var carclass = $scope.rental.bookndrive.carclass;
+        if (carclass.substring(0,5) === 'reise') {
           if (daysBilled === 0 && hoursBilled <= 24) {
             totalFeeHours = feeDay;
             hoursBilled = 0;
