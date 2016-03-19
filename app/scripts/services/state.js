@@ -61,7 +61,7 @@ angular.module('c2gyoApp')
       },
       bookndrive: {
         tariff: 'basic',
-        carClass: 'xs',
+        carclass: 'xs'
       }
     };
 
