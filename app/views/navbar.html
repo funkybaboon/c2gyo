@@ -19,8 +19,10 @@
           {{ active() }}
           <span class="caret"></span>
         </button>
-        <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button" >
-          <li role="menuitem" ng-class="{ active:isActive('/{{tab.url}}') }" ng-repeat="tab in tabs">
+        <ul class="uib-dropdown-menu" role="menu"
+            aria-labelledby="single-button">
+          <li role="menuitem" ng-class="{ active:isActive('/{{tab.url}}') }"
+              ng-repeat="tab in tabs">
             <a ng-href="#{{tab.url}}" id="{{tab.url}}">{{tab.name}}</a>
           </li>
         </ul>
@@ -28,7 +30,8 @@
     </li>
 
     <li>
-      <div class="btn-group" uib-dropdown is-open="status.isopen" ng-controller="LangCtrl">
+      <div class="btn-group" uib-dropdown is-open="status.isopen"
+           ng-controller="LangCtrl">
         <button
           id="single-button"
           type="button"
@@ -38,9 +41,20 @@
           {{ "languageButton" | translate }}
           <span class="caret"></span>
         </button>
-        <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button" >
-          <li role="menuituem"><a href="" ng-click="changeLang('en_US')">English</a></li>
-          <li role="menuituem"><a href="" ng-click="changeLang('de_DE')">Deutsch</a></li>
+        <ul class="uib-dropdown-menu" role="menu"
+            aria-labelledby="single-button">
+          <li role="menuituem">
+            <a href=""
+               ng-click="changeLang('en_US')">
+              English
+            </a>
+          </li>
+          <li role="menuituem">
+            <a href=""
+               ng-click="changeLang('de_DE')">
+              Deutsch
+            </a>
+          </li>
         </ul>
       </div>
     </li>
