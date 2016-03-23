@@ -24,62 +24,62 @@ describe('test bookndrive input fields', function() {
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
-    element(by.id('tariffbasic')).click();
+    element(by.id('tariff.basic')).click();
     expect(price.getText()).toEqual('543,50 €');
     expect(priceDistance.getText()).toEqual('55,50 €');
     expect(priceTime.getText()).toEqual('486,00 €');
 
-    element(by.id('tariffkomfort')).click();
+    element(by.id('tariff.komfort')).click();
     expect(price.getText()).toEqual('505,10 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('469,80 €');
 
-    element(by.id('tariffabo')).click();
+    element(by.id('tariff.abo')).click();
     expect(price.getText()).toEqual('278,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('carClasscityflitzer')).click();
+    element(by.id('carclass.cityflitzer')).click();
     expect(price.getText()).toEqual('421,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('386,00 €');
 
-    element(by.id('carClassxs')).click();
+    element(by.id('carclass.xs')).click();
     expect(price.getText()).toEqual('278,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('carClasss')).click();
+    element(by.id('carclass.s')).click();
     expect(price.getText()).toEqual('347,54 €');
     expect(priceDistance.getText()).toEqual('37,74 €');
     expect(priceTime.getText()).toEqual('307,80 €');
 
-    element(by.id('carClassm')).click();
+    element(by.id('carclass.m')).click();
     expect(price.getText()).toEqual('449,18 €');
     expect(priceDistance.getText()).toEqual('42,18 €');
     expect(priceTime.getText()).toEqual('405,00 €');
 
-    element(by.id('carClassl')).click();
+    element(by.id('carclass.l')).click();
     expect(price.getText()).toEqual('682,64 €');
     expect(priceDistance.getText()).toEqual('48,84 €');
     expect(priceTime.getText()).toEqual('631,80 €');
 
-    element(by.id('carClassreisexs')).click();
+    element(by.id('carclass.reisexs')).click();
     expect(price.getText()).toEqual('278,30 €');
     expect(priceDistance.getText()).toEqual('33,30 €');
     expect(priceTime.getText()).toEqual('243,00 €');
 
-    element(by.id('carClassreises')).click();
+    element(by.id('carclass.reises')).click();
     expect(price.getText()).toEqual('347,54 €');
     expect(priceDistance.getText()).toEqual('37,74 €');
     expect(priceTime.getText()).toEqual('307,80 €');
 
-    element(by.id('carClassm')).click();
+    element(by.id('carclass.m')).click();
     expect(price.getText()).toEqual('449,18 €');
     expect(priceDistance.getText()).toEqual('42,18 €');
     expect(priceTime.getText()).toEqual('405,00 €');
 
-    element(by.id('carClassl')).click();
+    element(by.id('carclass.l')).click();
     expect(price.getText()).toEqual('682,64 €');
     expect(priceDistance.getText()).toEqual('48,84 €');
     expect(priceTime.getText()).toEqual('631,80 €');
@@ -90,15 +90,15 @@ describe('test bookndrive input fields', function() {
     'tariff.basic',
     'tariff.komfort',
     'tariff.abo',
-    'carClass.cityflitzer',
-    'carClass.xs',
-    'carClass.s',
-    'carClass.m',
-    'carClass.l',
-    'carClass.reisexs',
-    'carClass.reises',
-    'carClass.reisem',
-    'carClass.reisel'
+    'carclass.cityflitzer',
+    'carclass.xs',
+    'carclass.s',
+    'carclass.m',
+    'carclass.l',
+    'carclass.reisexs',
+    'carclass.reises',
+    'carclass.reisem',
+    'carclass.reisel'
   ];
 
   popover.forEach(function(entry) {
