@@ -288,7 +288,7 @@ angular
             komfort: '2€ pro Buchung, Grundpreis 4,90€ je Monat',
             abo: '2€ pro Buchung, Grundpreis 14,90€ je Monat'
           },
-          carClass: {
+          carclass: {
             cityflitzer: 'Seat Mii oder VW up!',
             xs: 'z.B. Seat Mii',
             s: 'z.B. Seat Ibiza ST Kombi',
@@ -297,7 +297,8 @@ angular
             reisexs: 'z.B. Seat Mii, Mindestbuchungsdauer 24 Stunden',
             reises: 'z.B. Seat Ibiza ST Kombi, Mindestbuchungsdauer 24 Stunden',
             reisem: 'z.B. Opel Astra Kombi, Mindestbuchungsdauer 24 Stunden',
-            reisel: 'z.B. 9-Sitzer Bus oder Transporter, Mindestbuchungsdauer 24 Stunden'
+            reisel: 'z.B. 9-Sitzer Bus oder Transporter, Mindestbuchungsdauer' +
+            ' 24 Stunden'
           }
         }
       }
@@ -535,7 +536,7 @@ angular
             komfort: '2€ per booking, 4,90€ monthly fee',
             abo: '2€ per booking, 14,90€ monthly fee'
           },
-          carClass: {
+          carclass: {
             cityflitzer: 'Seat Mii or VW up',
             xs: 'f.ex. Seat Mii',
             s: 'f.ex. Seat Ibiza ST Kombi',
