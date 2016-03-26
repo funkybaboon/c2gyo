@@ -6,43 +6,11 @@
       <time-Input-Form></time-Input-Form>
       <div class="highlight">
 
-        <div class="form-group">
-          {{"carClass" | translate }}:
-          <form>
-            <input type="radio"
-                   ng-model="rental.drivenow.tariff"
-                   value="mini"
-                   id="carClass.Mini">
-            <span tariff-popover="popover.drivenow.carClass.Mini">
-              Mini
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.drivenow.tariff"
-                   value="bmw"
-                   id="carClass.BMW">
-            <span tariff-popover="popover.drivenow.carClass.BMW">
-              BMW
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.drivenow.tariff"
-                   value="minicabriosummer"
-                   id="carClass.MiniCabrioSummer">
-            <span tariff-popover="popover.drivenow.carClass.MiniCabrioSummer">
-              Mini Cabrio Sommer
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.drivenow.tariff"
-                   value="minicabriowinter"
-                   id="carClass.MiniCabrioWinter">
-            <span tariff-popover="popover.drivenow.carClass.MiniCabrioWinter">
-              Mini Cabrio Winter
-            </span>
-            <br/>
-          </form>
-        </div>
+        <car-class-form
+          listofoptions="carclasses"
+          vendor="drivenow">
+        </car-class-form>
+
 
         <div class="form-group">
           {{"airports" | translate }}:
