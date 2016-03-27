@@ -19,8 +19,43 @@ angular.module('c2gyoApp')
       duration,
       state) {
 
-      $scope.rental = state.rental;
+      var vendor = 'drivenow';
+      $scope.vendor = vendor;
+      var createForm = function(tariffs, type) {
+        for (var key in tariffs) {
+          if (tariffs.hasOwnProperty(key)) {
+            var tariff = tariffs[key];
+            tariff.model = 'rental.' + vendor + '.' + type;
+            tariff.value = tariff.technicalName;
+            tariff.id = type + '.' + tariff.technicalName;
+            tariff.popover = 'popover.' + vendor + '.' + type + '.'
+              + tariff.technicalName;
+          }
+        }
+        return tariffs;
+      };
 
+      var carclasses = [
+        {
+          'technicalName': 'mini',
+          'name': 'Mini'
+        },
+        {
+          'technicalName': 'bmw',
+          'name': 'BMW'
+        },
+        {
+          'technicalName': 'minicabriosummer',
+          'name': 'Mini Cabrio Sommer'
+        },
+        {
+          'technicalName': 'minicabriowinter',
+          'name': 'Mini Cabrio Winter'
+        }
+      ];
+      $scope.carclasses = createForm(carclasses, 'carclass');
+
+      $scope.rental = state.rental;
       $scope.resolution = function() {
         var resolution = [
           'minutes',
