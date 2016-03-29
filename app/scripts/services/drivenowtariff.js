@@ -8,7 +8,7 @@
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('drivenowrate', {
+  .constant('drivenowtariff', {
     'resolution': 'm',
     'mini': {
       'time': {
