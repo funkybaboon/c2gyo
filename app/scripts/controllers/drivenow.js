@@ -10,12 +10,12 @@
 angular.module('c2gyoApp')
   .controller('DriveNowCtrl', [
     '$scope',
-    'drivenowrate',
+    'drivenowtariff',
     'duration',
     'state',
     function(
       $scope,
-      drivenowrate,
+      drivenowtariff,
       duration,
       state) {
 
@@ -118,8 +118,8 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var tariff = $scope.rental.drivenow.tariff;
-        return drivenowrate[tariff];
+        var carclass = $scope.rental.drivenow.carclass;
+        return drivenowtariff[carclass];
       };
 
       //-----------------------------------------------------------------------
@@ -174,14 +174,14 @@ angular.module('c2gyoApp')
       // get other fees
       //-----------------------------------------------------------------------
       $scope.getFeeStanding = function() {
-        return $scope.rental.timeStanding * drivenowrate.parking;
+        return $scope.rental.timeStanding * drivenowtariff.parking;
       };
 
       $scope.getFeeAirport = function() {
         var fee = 0;
         for (var i in $scope.rental.drivenow.airport) {
           if ($scope.rental.drivenow.airport[i]) {
-            fee += drivenowrate.airport[i];
+            fee += drivenowtariff.airport[i];
           }
         }
         return fee;
@@ -191,7 +191,7 @@ angular.module('c2gyoApp')
         var fee = 0;
         for (var i in $scope.rental.drivenow.drivecitytocity) {
           if ($scope.rental.drivenow.drivecitytocity[i]) {
-            fee += drivenowrate.drivecitytocity[i];
+            fee += drivenowtariff.drivecitytocity[i];
           }
         }
         return fee;
