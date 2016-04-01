@@ -257,23 +257,23 @@ angular
             'montags und dienstags',
             wien: 'Pro Start/Ende der Buchung',
           },
-          carClass: {
-            BMW:
+          carclass: {
+            bmw:
             '<ul>' +
               '<li>BMW i3</li>' +
               '<li>BMW X1</li>' +
               '<li>BMW 2er Active Tourer</li>' +
               '<li>BMW 2er Cabrio</li>' +
             '</ul>',
-            Mini:
+            mini:
             '<ul>' +
               '<li>Mini</li>' +
               '<li>Mini Clubman</li>' +
               '<li>Mini Countryman</li>' +
               '<li>BMW 1er</li>' +
             '</ul>',
-            MiniCabrioSummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
-            MiniCabrioWinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+            minicabriosummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
+            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
           },
           drivecitytocity: {
             cologneduesseldorf: 'Miete beenden in der anderen Stadt',
@@ -505,23 +505,23 @@ angular
             'and tuesday',
             wien: 'for each start/end of booking',
           },
-          carClass: {
-            BMW:
+          carclass: {
+            bmw:
             '<ul>' +
               '<li>BMW i3</li>' +
               '<li>BMW X1</li>' +
               '<li>BMW 2er Active Tourer</li>' +
               '<li>BMW 2er Cabrio</li>' +
             '</ul>',
-            Mini:
+            mini:
             '<ul>' +
               '<li>Mini</li>' +
               '<li>Mini Clubman</li>' +
               '<li>Mini Countryman</li>' +
               '<li>BMW 1er</li>' +
             '</ul>',
-            MiniCabrioSummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
-            MiniCabrioWinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+            minicabriosummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
+            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
           },
           drivecitytocity: {
             cologneduesseldorf: 'end booking in the other city',
