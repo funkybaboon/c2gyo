@@ -42,7 +42,7 @@ angular.module('c2gyoApp')
         carClass: 'compact',
       },
       drivenow: {
-        tariff: 'mini',
+        carclass: 'mini',
         'airport': {
           'berlintegel': false,
           'berlinschoenefeld': false,
@@ -56,7 +56,7 @@ angular.module('c2gyoApp')
           'duesseldorfcologne': false,
           'cologneduesseldorf': false,
           'hildengerresheim': false,
-          'neubibergbavariafilmstadt': false,
+          'neubibergbavariafilmstadt': false
         }
       },
       bookndrive: {
