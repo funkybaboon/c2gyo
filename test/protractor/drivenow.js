@@ -35,10 +35,10 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   var popover = [
-    ['carClass.Mini','930,00 €','0,00 €','930,00 €'],
-    ['carClass.BMW','1.020,00 €','0,00 €','1.020,00 €'],
-    ['carClass.MiniCabrioSummer','930,00 €','0,00 €','930,00 €'],
-    ['carClass.MiniCabrioWinter','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carclass.mini','930,00 €','0,00 €','930,00 €'],
+    ['carclass.bmw','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carclass.minicabriosummer','930,00 €','0,00 €','930,00 €'],
+    ['carclass.minicabriowinter','1.020,00 €','0,00 €','1.020,00 €'],
 
     ['airport.berlintegel','934,00 €','0,00 €','930,00 €'],
     ['airport.berlinschoenefeld','940,00 €','0,00 €','930,00 €'],
