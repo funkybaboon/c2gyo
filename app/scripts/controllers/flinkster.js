@@ -119,15 +119,15 @@ angular.module('c2gyoApp')
       // get current rate
       //-----------------------------------------------------------------------
       var getCurrentRate = function() {
-        var carClass = $scope.rental.flinkster.carClass;
+        var carclass = $scope.rental.flinkster.carclass;
         var tariff = $scope.rental.flinkster.tariff;
         var rate = {};
 
 
         if (tariff === 'lokal') {
-          rate = flinksterratelokal[carClass];
+          rate = flinksterratelokal[carclass];
         } else {
-          rate = flinksterratebundesweit[carClass];
+          rate = flinksterratebundesweit[carclass];
           // add a fake weekly rate here
           rate.time.week = rate.time.day1 * 7;
           //debugger;
