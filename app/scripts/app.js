@@ -151,7 +151,7 @@ angular
           'nur zum Tagespreis der bundesweiten Flinkster Preisliste möglich' +
           '. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt ' +
           'auf eigene Rechnung ohne Verbrauchspauschale.',
-          carClass: {
+          carclass: {
             Sonder:
             '<ul>' +
               '<li>Citroen DS3</li>' +
@@ -398,7 +398,7 @@ angular
           airport: 'Rentals on Airports have a minimum duration of one day ' +
           'and are billed according to tariff \"Bundesweit\" + 25%. No ' +
           'tariff \"Lokal\" possible. Fuel completely at your own charge.',
-          carClass: {
+          carclass: {
             Sonder:
             '<ul>' +
               '<li>Citroen DS3</li>' +
