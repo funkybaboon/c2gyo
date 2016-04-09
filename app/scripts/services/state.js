@@ -30,7 +30,7 @@ angular.module('c2gyoApp')
       },
       flinkster: {
         tariff: 'bundesweit',
-        carClass: 'sonder',
+        carclass: 'sonder',
         airport: false,
       },
       stadtmobil: {
