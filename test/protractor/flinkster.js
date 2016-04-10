@@ -75,12 +75,12 @@ describe('test flinkster input fields', function() {
   var popover = [
     'tariff.bundesweit',
     'tariff.lokal',
-    'carClass.Sonder',
-    'carClass.Mini',
-    'carClass.Klein',
-    'carClass.Kompakt',
-    'carClass.Mittel',
-    'carClass.Transporter',
+    'carclass.Sonder',
+    'carclass.Mini',
+    'carclass.Klein',
+    'carclass.Kompakt',
+    'carclass.Mittel',
+    'carclass.Transporter',
     'airport'
   ];
 
