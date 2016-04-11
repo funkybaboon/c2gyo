@@ -19,10 +19,10 @@ describe('Controller: FlinksterCtrl', function () {
 
   var test = function( testdata ) {
     for (var tariff in testdata.expectedPrices) {
-      for (var carClass in testdata.expectedPrices[tariff]) {
-        var expectedPrice = testdata.expectedPrices[tariff][carClass];
-        (function(tariff, carClass, expectedPrice){
-          it('tariff: ' + tariff + ', carClass: ' + carClass, function () {
+      for (var carclass in testdata.expectedPrices[tariff]) {
+        var expectedPrice = testdata.expectedPrices[tariff][carclass];
+        (function(tariff, carclass, expectedPrice){
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function () {
             if( testdata.tab === 'tabExact') {
               scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
               scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
@@ -34,10 +34,10 @@ describe('Controller: FlinksterCtrl', function () {
             scope.rental.flinkster.airport = false || testdata.airport;
 
             scope.rental.flinkster.tariff = tariff;
-            scope.rental.flinkster.carClass = carClass;
+            scope.rental.flinkster.carclass = carclass;
             expect(scope.price().toFixed(2)).toEqual(expectedPrice);
           });
-        })(tariff, carClass, expectedPrice);
+        })(tariff, carclass, expectedPrice);
       }
     }
   };
