@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name c2gyoApp.flinksterratebundesweit
+ * @name c2gyoApp.flinkstertariffbundesweit
  * @description
- * # flinksterratebundesweit
+ * # flinkstertariffbundesweit
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('flinksterratelokal', {
+  .constant('flinkstertarifflokal', {
     'resolution': 'h',
     'sonder': {
       'time': {
