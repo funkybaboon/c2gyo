@@ -10,14 +10,14 @@
 angular.module('c2gyoApp')
   .controller('FlinksterCtrl', [
     '$scope',
-    'flinksterratebundesweit',
-    'flinksterratelokal',
+    'flinkstertariffbundesweit',
+    'flinkstertarifflokal',
     'duration',
     'state',
     function(
       $scope,
-      flinksterratebundesweit,
-      flinksterratelokal,
+      flinkstertariffbundesweit,
+      flinkstertarifflokal,
       duration,
       state) {
 
@@ -125,9 +125,9 @@ angular.module('c2gyoApp')
 
 
         if (tariff === 'lokal') {
-          rate = flinksterratelokal[carclass];
+          rate = flinkstertarifflokal[carclass];
         } else {
-          rate = flinksterratebundesweit[carclass];
+          rate = flinkstertariffbundesweit[carclass];
           // add a fake weekly rate here
           rate.time.week = rate.time.day1 * 7;
           //debugger;
