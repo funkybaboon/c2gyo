@@ -6,27 +6,10 @@
 
       <div class="highlight">
 
-        <div class="form-group">
-          {{"tariff" | translate }}:
-          <form>
-            <input type="radio"
-                   ng-model="rental.flinkster.tariff"
-                   value="bundesweit"
-                   id="tariffbundesweit">
-            <span tariff-popover="popover.flinkster.tariff.bundesweit">
-              Bundesweit
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.flinkster.tariff"
-                   value="lokal"
-                   id="tarifflokal">
-            <span tariff-popover="popover.flinkster.tariff.lokal">
-              Lokal
-            </span>
-            <br/>
-          </form>
-        </div>
+        <tarif-form
+          listofoptions="tariffs"
+          vendor="flinkster">
+        </tarif-form>
 
         <div class="form-group">
           {{"carclass" | translate }}:
