@@ -152,11 +152,11 @@ angular
           '. Der Lokaltarif findet keine Anwendung. Die Betankung erfolgt ' +
           'auf eigene Rechnung ohne Verbrauchspauschale.',
           carclass: {
-            Sonder:
+            sonder:
             '<ul>' +
               '<li>Citroen DS3</li>' +
             '</ul>',
-            Mini:
+            mini:
             '<ul>' +
               '<li>Smart</li>' +
               '<li>Fiat Panda</li>' +
@@ -164,7 +164,7 @@ angular
               '<li>Citroen C1</li>' +
               '<li>Toyota Aygo</li>' +
             '</ul>',
-            Klein:
+            klein:
             '<ul>' +
               '<li>VW Polo</li>' +
               '<li>Citroen DS3</li>' +
@@ -173,14 +173,14 @@ angular
               '<li>MINI E</li>' +
               '<li>Peugeot iOn</li>' +
             '</ul>',
-            Kompakt:
+            kompakt:
             '<ul>' +
               '<li>Opel Astra</li>' +
               '<li>VW Golf</li>' +
               '<li>Seat Leon</li>' +
               '<li>VW Caddy</li>' +
             '</ul>',
-            Mittel:
+            mittel:
             '<ul>' +
               '<li>Ford Mondeo</li>' +
               '<li>VW Passat</li>' +
@@ -188,7 +188,7 @@ angular
               '<li>Toyota Prius Plug-In PHV</li>' +
               '<li>Opel Ampera</li>' +
             '</ul>',
-            Transporter:
+            transporter:
             '<ul>' +
               '<li>Ford Transit</li>' +
               '<li>Mercedes Sprinter</li>' +
@@ -399,11 +399,11 @@ angular
           'and are billed according to tariff \"Bundesweit\" + 25%. No ' +
           'tariff \"Lokal\" possible. Fuel completely at your own charge.',
           carclass: {
-            Sonder:
+            sonder:
             '<ul>' +
               '<li>Citroen DS3</li>' +
             '</ul>',
-            Mini:
+            mini:
             '<ul>' +
               '<li>Smart</li>' +
               '<li>Fiat Panda</li>' +
@@ -411,7 +411,7 @@ angular
               '<li>Citroen C1</li>' +
               '<li>Toyota Aygo</li>' +
             '</ul>',
-            Klein:
+            klein:
             '<ul>' +
               '<li>VW Polo</li>' +
               '<li>Citroen DS3</li>' +
@@ -420,14 +420,14 @@ angular
               '<li>MINI E</li>' +
               '<li>Peugeot iOn</li>' +
             '</ul>',
-            Kompakt:
+            kompakt:
             '<ul>' +
               '<li>Opel Astra</li>' +
               '<li>VW Golf</li>' +
               '<li>Seat Leon</li>' +
               '<li>VW Caddy</li>' +
             '</ul>',
-            Mittel:
+            mittel:
             '<ul>' +
               '<li>Ford Mondeo</li>' +
               '<li>VW Passat</li>' +
@@ -435,7 +435,7 @@ angular
               '<li>Toyota Prius Plug-In PHV</li>' +
               '<li>Opel Ampera</li>' +
             '</ul>',
-            Transporter:
+            transporter:
             '<ul>' +
               '<li>Ford Transit</li>' +
               '<li>Mercedes Sprinter</li>' +
