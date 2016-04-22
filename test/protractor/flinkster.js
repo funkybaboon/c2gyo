@@ -36,27 +36,27 @@ describe('test flinkster input fields', function() {
   });
 
   it('should calculate a price with all radio boxes ticked', function() {
-    element(by.id('ratemini')).click();
+    element(by.id('carclass.mini')).click();
     expect(price.getText()).toEqual('668,56 €');
     expect(priceDistance.getText()).toEqual('39,96 €');
     expect(priceTime.getText()).toEqual('628,60 €');
 
-    element(by.id('rateklein')).click();
+    element(by.id('carclass.klein')).click();
     expect(price.getText()).toEqual('849,96 €');
     expect(priceDistance.getText()).toEqual('39,96 €');
     expect(priceTime.getText()).toEqual('810,00 €');
 
-    element(by.id('ratekompakt')).click();
+    element(by.id('carclass.kompakt')).click();
     expect(price.getText()).toEqual('1.011,96 €');
     expect(priceDistance.getText()).toEqual('39,96 €');
     expect(priceTime.getText()).toEqual('972,00 €');
 
-    element(by.id('ratemittel')).click();
+    element(by.id('carclass.mittel')).click();
     expect(price.getText()).toEqual('1.178,40 €');
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.134,00 €');
 
-    element(by.id('ratetransporter')).click();
+    element(by.id('carclass.transporter')).click();
     expect(price.getText()).toEqual('1.340,40 €');
     expect(priceDistance.getText()).toEqual('44,40 €');
     expect(priceTime.getText()).toEqual('1.296,00 €');
@@ -75,12 +75,12 @@ describe('test flinkster input fields', function() {
   var popover = [
     'tariff.bundesweit',
     'tariff.lokal',
-    'carclass.Sonder',
-    'carclass.Mini',
-    'carclass.Klein',
-    'carclass.Kompakt',
-    'carclass.Mittel',
-    'carclass.Transporter',
+    'carclass.sonder',
+    'carclass.mini',
+    'carclass.klein',
+    'carclass.kompakt',
+    'carclass.mittel',
+    'carclass.transporter',
     'airport'
   ];
 
