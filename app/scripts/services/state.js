@@ -39,7 +39,7 @@ angular.module('c2gyoApp')
       },
       greenwheels: {
         tariff: 'standard',
-        carClass: 'compact',
+        carclass: 'compact',
       },
       drivenow: {
         carclass: 'mini',
