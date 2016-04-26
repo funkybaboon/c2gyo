@@ -121,7 +121,7 @@ angular
           airport: '4,90€ für alle Fahrten von und zum Flughafen'
         },
         greenwheels: {
-          carClass: {
+          carclass: {
             Compact: 'VW Up',
             Van:
             '<ul>' +
@@ -369,7 +369,7 @@ angular
           airport: '4,90€ for all rides to and from the airport'
         },
         greenwheels: {
-          carClass: {
+          carclass: {
             Compact: 'VW Up',
             Van:
             '<ul>' +
