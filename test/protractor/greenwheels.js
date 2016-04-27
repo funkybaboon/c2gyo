@@ -50,8 +50,8 @@ describe('greenwheels test all input fields and checkboxes', function() {
   var popover = [
     'tariff.standard',
     'tariff.joker',
-    'carClass.Compact',
-    'carClass.Van'
+    'carclass.Compact',
+    'carclass.Van'
   ];
 
   popover.forEach(function(entry) {
