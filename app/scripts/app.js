@@ -122,8 +122,8 @@ angular
         },
         greenwheels: {
           carclass: {
-            Compact: 'VW Up',
-            Van:
+            compact: 'VW Up',
+            van:
             '<ul>' +
               '<li>VW Golf Variant</li>' +
               '<li>VW Caddy</li>' +
@@ -370,8 +370,8 @@ angular
         },
         greenwheels: {
           carclass: {
-            Compact: 'VW Up',
-            Van:
+            compact: 'VW Up',
+            van:
             '<ul>' +
               '<li>VW Golf Variant</li>' +
               '<li>VW Caddy</li>' +
