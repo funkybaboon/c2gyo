@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name c2gyoApp.greenwheelsrate
+ * @name c2gyoApp.greenwheelstariff
  * @description
- * # greenwheelsrate
+ * # greenwheelstariff
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('greenwheelsratejoker', {
+  .constant('greenwheelstariffjoker', {
     'resolution': 'h',
     'compact': {
       'time': {
