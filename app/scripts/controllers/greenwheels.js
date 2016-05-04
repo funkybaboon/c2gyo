@@ -10,14 +10,14 @@
 angular.module('c2gyoApp')
   .controller('GreenwheelsCtrl', [
     '$scope',
-    'greenwheelsratestandard',
-    'greenwheelsratejoker',
+    'greenwheelstariffstandard',
+    'greenwheelstariffjoker',
     'duration',
     'state',
     function(
       $scope,
-      greenwheelsratestandard,
-      greenwheelsratejoker,
+      greenwheelstariffstandard,
+      greenwheelstariffjoker,
       duration,
       state) {
 
@@ -124,9 +124,9 @@ angular.module('c2gyoApp')
         var rate = {};
 
         if (tariff === 'standard') {
-          rate = greenwheelsratestandard[carclass];
+          rate = greenwheelstariffstandard[carclass];
         } else {
-          rate = greenwheelsratejoker[carclass];
+          rate = greenwheelstariffjoker[carclass];
         }
 
         return rate;
