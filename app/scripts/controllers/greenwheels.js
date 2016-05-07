@@ -48,6 +48,19 @@ angular.module('c2gyoApp')
         }
       ];
       $scope.tariffs = createForm(tariffs, 'tariff');
+
+      var carclasses = [
+        {
+          'technicalName': 'compact',
+          'name': 'Compact'
+        },
+        {
+          'technicalName': 'van',
+          'name': 'Van / Lieferwagen'
+        }
+      ];
+      $scope.carclasses = createForm(carclasses, 'carclass');
+      
       $scope.rental = state.rental;
       $scope.resolution = function() {
         return ['hours', 'days', 'weeks'];

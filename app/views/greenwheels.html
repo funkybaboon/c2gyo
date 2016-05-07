@@ -11,27 +11,11 @@
           vendor="greenwheels">
         </tarif-form>
 
-        <div class="form-group">
-          {{"carclass" | translate }}:
-          <form>
-            <input type="radio"
-                   ng-model="rental.greenwheels.carclass"
-                   value="compact"
-                   id="ratecompact">
-            <span tariff-popover="popover.greenwheels.carclass.compact">
-                Compact
-            </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.greenwheels.carclass"
-                   value="van"
-                   id="ratevan">
-            <span tariff-popover="popover.greenwheels.carclass.van">
-                Van / Lieferwagen
-            </span>
-            <br/>
-          </form>
-        </div>
+        <car-class-form
+          listofoptions="carclasses"
+          vendor="greenwheels">
+        </car-class-form>
+
       </div>
     </div>
 
