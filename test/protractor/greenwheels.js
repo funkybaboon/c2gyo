@@ -31,17 +31,17 @@ describe('greenwheels test all input fields and checkboxes', function() {
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
-    element(by.id('ratevan')).click();
+    element(by.id('carclass.van')).click();
     expect(price.getText()).toEqual('1.231,62 €');
     expect(priceDistance.getText()).toEqual('75,48 €');
     expect(priceTime.getText()).toEqual('1.156,14 €');
 
-    element(by.id('tariffjoker')).click();
+    element(by.id('tariff.joker')).click();
     expect(price.getText()).toEqual('723,46 €');
     expect(priceDistance.getText()).toEqual('75,48 €');
     expect(priceTime.getText()).toEqual('647,98 €');
 
-    element(by.id('ratecompact')).click();
+    element(by.id('carclass.compact')).click();
     expect(price.getText()).toEqual('537,26 €');
     expect(priceDistance.getText()).toEqual('53,28 €');
     expect(priceTime.getText()).toEqual('483,98 €');
