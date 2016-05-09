@@ -202,7 +202,7 @@ angular
           },
         },
         stadtmobil: {
-          carClass: {
+          carclass: {
             RateA:
             '<ul>' +
               '<li>Toyota Aygo</li>' +
@@ -449,7 +449,7 @@ angular
           },
         },
         stadtmobil: {
-          carClass: {
+          carclass: {
             RateA:
             '<ul>' +
               '<li>Toyota Aygo</li>' +
