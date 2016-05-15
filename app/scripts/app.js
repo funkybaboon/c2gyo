@@ -203,11 +203,11 @@ angular
         },
         stadtmobil: {
           carclass: {
-            RateA:
+            a:
             '<ul>' +
               '<li>Toyota Aygo</li>' +
             '</ul>',
-            RateB:
+            b:
             '<ul>' +
               '<li>Opel Agila</li>' +
               '<li>Opel Corsa</li>' +
@@ -219,22 +219,22 @@ angular
               '<li>Opel Combo Kastenwagen</li>' +
               '<li>Renault Kangoo Kastenwagen</li>' +
             '</ul>',
-            RateC:
+            c:
             '<ul>' +
               '<li>Opel Astra Kombi</li>' +
               '<li>Ford Tourneo Hochdachkombi</li>' +
               '<li>Mini One</li>' +
             '</ul>',
-            RateD:
+            d:
             '<ul>' +
               '<li>BMW 116d</li>' +
               '<li>Mazda MX5 Cabrio</li>' +
               '<li>Ford Custom Kleinbus</li>' +
               '<li>Opel Vivaro Kleinbus</li>' +
             '</ul>',
-            RateF:
+            f:
             '<ul>' +
-              '<li>FFord Transit Transporter</li>' +
+              '<li>Ford Transit Transporter</li>' +
             '</ul>'
           },
           tariff: {
@@ -450,11 +450,11 @@ angular
         },
         stadtmobil: {
           carclass: {
-            RateA:
+            a:
             '<ul>' +
               '<li>Toyota Aygo</li>' +
             '</ul>',
-            RateB:
+            b:
             '<ul>' +
               '<li>Opel Agila</li>' +
               '<li>Opel Corsa</li>' +
@@ -466,20 +466,20 @@ angular
               '<li>Opel Combo Kastenwagen</li>' +
               '<li>Renault Kangoo Kastenwagen</li>' +
             '</ul>',
-            RateC:
+            c:
             '<ul>' +
               '<li>Opel Astra Kombi</li>' +
               '<li>Ford Tourneo Hochdachkombi</li>' +
               '<li>Mini One</li>' +
             '</ul>',
-            RateD:
+            d:
             '<ul>' +
               '<li>BMW 116d</li>' +
               '<li>Mazda MX5 Cabrio</li>' +
               '<li>Ford Custom Kleinbus</li>' +
               '<li>Opel Vivaro Kleinbus</li>' +
             '</ul>',
-            RateF:
+            f:
             '<ul>' +
               '<li>Ford Transit Transporter</li>' +
             '</ul>',
