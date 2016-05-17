@@ -70,11 +70,11 @@ describe('test stadtmobil input fields', function() {
     'tariff.basic',
     'tariff.studi',
     'tariff.business',
-    'carclass.RateA',
-    'carclass.RateB',
-    'carclass.RateC',
-    'carclass.RateD',
-    'carclass.RateF'
+    'carclass.a',
+    'carclass.b',
+    'carclass.c',
+    'carclass.d',
+    'carclass.f'
   ];
 
   popover.forEach(function(entry) {
