@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name c2gyoApp.stadtmobilrates2
+ * @name c2gyoApp.stadtmobiltariffbusiness
  * @description
- * # stadtmobilrates2
+ * # stadtmobiltariffbusiness
  * Constant in the c2gyoApp.
  */
 angular.module('c2gyoApp')
-  .constant('stadtmobilratebusiness', {
+  .constant('stadtmobiltariffbusiness', {
     'resolution': 'h',
     'A': {
       'time': {
