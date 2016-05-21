@@ -10,16 +10,16 @@
 angular.module('c2gyoApp')
   .controller('StadtmobilCtrl', [
     '$scope',
-    'stadtmobilratebasic',
-    'stadtmobilrateclassic',
-    'stadtmobilratebusiness',
+    'stadtmobiltariffbasic',
+    'stadtmobiltariffclassic',
+    'stadtmobiltariffbusiness',
     'duration',
     'state',
     function(
       $scope,
-      stadtmobilratebasic,
-      stadtmobilrateclassic,
-      stadtmobilratebusiness,
+      stadtmobiltariffbasic,
+      stadtmobiltariffclassic,
+      stadtmobiltariffbusiness,
       duration,
       state) {
 
@@ -127,11 +127,11 @@ angular.module('c2gyoApp')
 
         // studi and classic have the same rates
         if (tariff === 'classic' || tariff === 'studi') {
-          rate = stadtmobilrateclassic[carclass];
+          rate = stadtmobiltariffclassic[carclass];
         } else if (tariff === 'basic') {
-          rate = stadtmobilratebasic[carclass];
+          rate = stadtmobiltariffbasic[carclass];
         } else { // tariff === business
-          rate = stadtmobilratebusiness[carclass];
+          rate = stadtmobiltariffbusiness[carclass];
         }
 
         return rate;
