@@ -23,6 +23,42 @@ angular.module('c2gyoApp')
       duration,
       state) {
 
+      var vendor = 'stadtmobil';
+      $scope.vendor = vendor;
+      var createForm = function(tariffs, type) {
+        for (var key in tariffs) {
+          if (tariffs.hasOwnProperty(key)) {
+            var tariff = tariffs[key];
+            tariff.model = 'rental.' + vendor + '.' + type;
+            tariff.value = tariff.technicalName;
+            tariff.id = type + '.' + tariff.technicalName;
+            tariff.popover = 'popover.' + vendor + '.' + type + '.'
+              + tariff.technicalName;
+          }
+        }
+        return tariffs;
+      };
+
+      var tariffs = [
+        {
+          'technicalName': 'classic',
+          'name': 'Classic'
+        },
+        {
+          'technicalName': 'basic',
+          'name': 'Basic'
+        },
+        {
+          'technicalName': 'studi',
+          'name': 'Studi'
+        },
+        {
+          'technicalName': 'business',
+          'name': 'Business'
+        }
+      ];
+      $scope.tariffs = createForm(tariffs, 'tariff');
+
       $scope.rental = state.rental;
       $scope.resolution = function() {
         return ['hours', 'days', 'weeks'];
