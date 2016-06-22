@@ -35,7 +35,7 @@ angular.module('c2gyoApp')
       },
       stadtmobil: {
         tariff: 'classic',
-        carclass: 'A',
+        carclass: 'a'
       },
       greenwheels: {
         tariff: 'standard',

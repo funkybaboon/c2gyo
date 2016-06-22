@@ -10,7 +10,7 @@
 angular.module('c2gyoApp')
   .constant('stadtmobiltariffclassic', {
     'resolution': 'h',
-    'A': {
+    'a': {
       'time': {
         '1': [
           {'start': 0, 'end': 6, 'fee': 0},
@@ -42,7 +42,7 @@ angular.module('c2gyoApp')
         {'start': 100, 'end': 700, 'fee': 0.18},
         {'start': 700, 'end': -1, 'fee': 0.18}]
    },
-    'B': {
+    'b': {
       'time': {
         '1': [
           {'start': 0, 'end': 6, 'fee': 0},
@@ -74,7 +74,7 @@ angular.module('c2gyoApp')
         {'start': 100, 'end': 700, 'fee': 0.19},
         {'start': 700, 'end': -1, 'fee': 0.16}]
    },
-    'C': {
+    'c': {
       'time': {
         '1': [
           {'start': 0, 'end': 6, 'fee': 0},
@@ -106,7 +106,7 @@ angular.module('c2gyoApp')
         {'start': 100, 'end': 700, 'fee': 0.21},
         {'start': 700, 'end': -1, 'fee': 0.17}]
    },
-    'D': {
+    'd': {
       'time': {
         '1': [
           {'start': 0, 'end': 6, 'fee': 1},
@@ -138,7 +138,7 @@ angular.module('c2gyoApp')
         {'start': 100, 'end': 700, 'fee': 0.25},
         {'start': 700, 'end': -1, 'fee': 0.25}]
    },
-    'F': {
+    'f': {
       'time': {
         '1': [
           {'start': 0, 'end': 6, 'fee': 2},

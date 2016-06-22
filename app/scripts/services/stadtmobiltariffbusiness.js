@@ -10,7 +10,7 @@
 angular.module('c2gyoApp')
   .constant('stadtmobiltariffbusiness', {
     'resolution': 'h',
-    'A': {
+    'a': {
       'time': {
         '1': [
           {'start':  0, 'end':  6, 'fee': 0},
@@ -47,7 +47,7 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.17}]
     },
-    'B': {
+    'b': {
       'time': {
         '1': [
           {'start':  0, 'end':  6, 'fee': 0},
@@ -84,7 +84,7 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.17}]
     },
-    'C': {
+    'c': {
       'time': {
         '1': [
           {'start':  0, 'end':  6, 'fee': 0},
@@ -121,7 +121,7 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.18}]
     },
-    'D': {
+    'd': {
       'time': {
         '1': [
           {'start':  0, 'end':  6, 'fee': 1},
@@ -158,7 +158,7 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.25}]
     },
-    'F': {
+    'f': {
       'time': {
         '1': [
           {'start':  0, 'end':  6, 'fee': 2},
