@@ -6,89 +6,15 @@
       <time-Input-Form></time-Input-Form>
       <div class="highlight">
 
-        <div class="form-group">
-          Tarif:
-          <form>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.tariff"
-                   value="classic"
-                   id="tariffclassic">
-          <span tariff-popover="popover.stadtmobil.tariff.classic">
-            Classic
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.tariff"
-                   value="basic"
-                   id="tariffbasic">
-          <span tariff-popover="popover.stadtmobil.tariff.basic">
-            Basic
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.tariff"
-                   value="studi"
-                   id="tariffstudi">
-          <span tariff-popover="popover.stadtmobil.tariff.studi">
-            Studi
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.tariff"
-                   value="business"
-                   id="tariffbusiness">
-          <span tariff-popover="popover.stadtmobil.tariff.business">
-            Business
-          </span>
-            <br/>
-          </form>
-        </div>
+        <tarif-form
+          listofoptions="tariffs"
+          vendor="stadtmobil">
+        </tarif-form>
 
-        <div class="form-group">
-          Fahrzeugklasse:
-          <form>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.carclass"
-                   value="A"
-                   id="rateA">
-          <span tariff-popover="popover.stadtmobil.carclass.a">
-            A Kleinstwagen
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.carclass"
-                   value="B"
-                   id="rateB">
-          <span tariff-popover="popover.stadtmobil.carclass.b">
-            B Kleinwagen
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.carclass"
-                   value="C"
-                   id="rateC">
-          <span tariff-popover="popover.stadtmobil.carclass.c">
-            C Kombi/Fun
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.carclass"
-                   value="D"
-                   id="rateD">
-          <span tariff-popover="popover.stadtmobil.carclass.d">
-            D Komfort/Kleinbus
-          </span>
-            <br/>
-            <input type="radio"
-                   ng-model="rental.stadtmobil.carclass"
-                   value="F"
-                   id="rateF">
-          <span tariff-popover="popover.stadtmobil.carclass.f">
-            F Transporter
-          </span>
-            <br/>
-          </form>
-        </div>
+        <car-class-form
+          listofoptions="carclasses"
+          vendor="stadtmobil">
+        </car-class-form>
 
       </div>
     </div>
