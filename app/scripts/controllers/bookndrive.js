@@ -160,7 +160,7 @@ angular.module('c2gyoApp')
         var feeDays = $scope.getDays() * rate.day;
 
         var hoursBilled = $scope.getHours();
-        var daysBilled = $scope.getDays() + $scope.getWeeks()*7;
+        var daysBilled = $scope.getDays() + $scope.getWeeks() * 7;
         var weeksBilled = 0;
 
         if (feeHours >= rate.day) {
@@ -233,7 +233,7 @@ angular.module('c2gyoApp')
 
         var feeHours = $scope.getHoursBilled() * rate.hour;
         var feeDays = $scope.getDaysBilled() * rate.day +
-          $scope.getWeeksBilled() * rate.day*7;
+          $scope.getWeeksBilled() * rate.day * 7;
         var feeWeeks = 0;
 
         var fee = feeHours + feeDays + feeWeeks;

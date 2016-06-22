@@ -5,8 +5,8 @@ describe('Controller: Car2goCtrl', function() {
   // load the controller's module
   beforeEach(module('c2gyoApp'));
 
-  var Car2goCtrl,
-    scope;
+  var Car2goCtrl;
+  var scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller, $rootScope) {

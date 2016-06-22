@@ -36,10 +36,10 @@ angular.module('c2gyoApp')
         'hour': 1.99,
         'day': 30,
         'week': 210
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.24}]
-   },
+    },
     'van': {
       'time': {
         '1': [
@@ -66,9 +66,9 @@ angular.module('c2gyoApp')
         'hour': 3.99,
         'day': 40,
         'week': 280
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.34}]
-   }
- }
+    }
+  }
 );

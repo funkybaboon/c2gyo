@@ -29,7 +29,7 @@ angular.module('c2gyoApp')
             tariff.value = tariff.technicalName;
             tariff.id = type + '.' + tariff.technicalName;
             tariff.popover = 'popover.' + vendor + '.' + type + '.' +
-              tariff.technicalName;
+              tariff.technicalName  ;
           }
         }
         return tariffs;
@@ -64,7 +64,7 @@ angular.module('c2gyoApp')
           'days'
         ];
 
-        if(durationAll().asMinutes() > 60*24*7){
+        if (durationAll().asMinutes() > 60 * 24 * 7) {
           resolution.push('weeks');
         }
 
@@ -196,8 +196,6 @@ angular.module('c2gyoApp')
         }
         return fee;
       };
-
-
 
       //-----------------------------------------------------------------------
       // calculate final prices

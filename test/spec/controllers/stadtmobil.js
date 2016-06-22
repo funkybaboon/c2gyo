@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: SmCtrl', function () {
+describe('Controller: SmCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
@@ -9,23 +9,24 @@ describe('Controller: SmCtrl', function () {
   var scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
     SmCtrl = $controller('StadtmobilCtrl', {
       $scope: scope
     });
   }));
 
-
-  var test = function (testdata) {
+  var test = function(testdata) {
     for (var tariff in testdata.expectedPrices) {
       for (var carclass in testdata.expectedPrices[tariff]) {
         var expectedPrice = testdata.expectedPrices[tariff][carclass];
-        (function (tariff, carclass, expectedPrice) {
-          it('tariff: ' + tariff + ', carclass: ' + carclass, function () {
+        (function(tariff, carclass, expectedPrice) {
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function() {
             if (testdata.tab === 'tabExact') {
-              scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
-              scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
+              scope.rental.startDate = new moment(
+                testdata.start, 'YYYY-MM-DD HH:mm');
+              scope.rental.endDate = new moment(
+                testdata.end, 'YYYY-MM-DD HH:mm');
             } else {
               scope.rental.timeHours = parseInt(testdata.timeHours);
               scope.rental.timeDays = parseInt(testdata.timeDays);
@@ -43,11 +44,12 @@ describe('Controller: SmCtrl', function () {
     }
   };
 
-  describe(' tests with exact start and end date', function () {
+  describe(' tests with exact start and end date', function() {
 
     describe(
-      'should calculate the correct price with 10km distance and a 10 hour lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 10 hour' +
+      'lease',
+      function() {
         var testdata = {
           start: '2016-05-24 07:00',
           end: '2016-05-24 17:00',
@@ -82,8 +84,9 @@ describe('Controller: SmCtrl', function () {
     );
 
     describe(
-      'should calculate the correct price with 10km distance and a 36 hour lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 36 hour ' +
+      'lease',
+      function() {
         var testdata = {
           start: '2016-05-24 00:00',
           end: '2016-05-25 12:00',
@@ -118,12 +121,12 @@ describe('Controller: SmCtrl', function () {
     );
   });
 
-
-  describe('should calculate the correct price using simple time', function () {
+  describe('should calculate the correct price using simple time', function() {
 
     describe(
-      'should calculate the correct price with 10km distance and a 10 hour lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 10 hour ' +
+      'lease',
+      function() {
         var testdata = {
           timeHours: '10',
           timeDays: '0',
@@ -159,7 +162,7 @@ describe('Controller: SmCtrl', function () {
 
     describe(
       'should calculate the correct price for 50 km',
-      function () {
+      function() {
         var testdata = {
           timeHours: '0',
           timeDays: '0',
@@ -202,7 +205,7 @@ describe('Controller: SmCtrl', function () {
 
     describe(
       'should calculate the correct price for 150 km',
-      function () {
+      function() {
         var testdata = {
           timeHours: '0',
           timeDays: '0',
@@ -245,7 +248,7 @@ describe('Controller: SmCtrl', function () {
 
     describe(
       'should calculate the correct price for 750 km',
-      function () {
+      function() {
         var testdata = {
           timeHours: '0',
           timeDays: '0',
@@ -287,5 +290,5 @@ describe('Controller: SmCtrl', function () {
       });
 
   });
-  
+
 });

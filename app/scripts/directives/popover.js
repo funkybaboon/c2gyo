@@ -12,7 +12,7 @@ angular.module('c2gyoApp')
   .directive('tariffPopover', [
     '$translate',
     '$rootScope',
-    function ($translate, $rootScope) {
+    function($translate, $rootScope) {
       return {
         restrict: 'A',
         transclude: true,
@@ -27,9 +27,9 @@ angular.module('c2gyoApp')
           '      popover-trigger="mouseenter" ' +
           '      class="fa fa-info-circle">' +
           '</span>',
-        controller: function ($scope) {
-          var translate = function(){
-            $translate($scope.translateText).then(function (translatedText) {
+        controller: function($scope) {
+          var translate = function() {
+            $translate($scope.translateText).then(function(translatedText) {
               $scope.text = translatedText;
             });
           };

@@ -36,12 +36,12 @@ angular.module('c2gyoApp')
         'hour': 1.4,
         'day': 21,
         'week': 125
-     },
+      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.2},
         {'start': 100, 'end': 700, 'fee': 0.18},
         {'start': 700, 'end': -1, 'fee': 0.18}]
-   },
+    },
     'b': {
       'time': {
         '1': [
@@ -68,12 +68,12 @@ angular.module('c2gyoApp')
         'hour': 2.2,
         'day': 25,
         'week': 140
-     },
+      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.22},
         {'start': 100, 'end': 700, 'fee': 0.19},
         {'start': 700, 'end': -1, 'fee': 0.16}]
-   },
+    },
     'c': {
       'time': {
         '1': [
@@ -100,12 +100,12 @@ angular.module('c2gyoApp')
         'hour': 2.8,
         'day': 32,
         'week': 160
-     },
+      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.26},
         {'start': 100, 'end': 700, 'fee': 0.21},
         {'start': 700, 'end': -1, 'fee': 0.17}]
-   },
+    },
     'd': {
       'time': {
         '1': [
@@ -132,12 +132,12 @@ angular.module('c2gyoApp')
         'hour': 3.2,
         'day': 35,
         'week': 190
-     },
+      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.29},
         {'start': 100, 'end': 700, 'fee': 0.25},
         {'start': 700, 'end': -1, 'fee': 0.25}]
-   },
+    },
     'f': {
       'time': {
         '1': [
@@ -164,11 +164,11 @@ angular.module('c2gyoApp')
         'hour': 4.2,
         'day': 44,
         'week': 245
-     },
+      },
       'km': [
         {'start': 0, 'end': 100, 'fee': 0.33},
         {'start': 100, 'end': 700, 'fee': 0.27},
         {'start': 700, 'end': -1, 'fee': 0.27}]
-   }
- }
+    }
+  }
 );

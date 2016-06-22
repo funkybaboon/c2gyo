@@ -13,7 +13,7 @@ angular.module('c2gyoApp')
       '$translate',
       '$rootScope',
       'state',
-      function ($translate, $rootScope, state) {
+      function($translate, $rootScope, state) {
         return {
           restrict: 'E',
           replace: 'true',
@@ -22,7 +22,7 @@ angular.module('c2gyoApp')
             options: '=listofoptions',
             vendor: '@'
           },
-          controller: function ($scope) {
+          controller: function($scope) {
             $scope.rental = state.rental[$scope.vendor];
           }
         };

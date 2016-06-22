@@ -47,7 +47,7 @@ describe('Controller: GreenwheelsCtrl', function() {
     describe(
       'should calculate the correct price with 10km distance and a 36 hour ' +
       'lease',
-      function () {
+      function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-21 16:00',

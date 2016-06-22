@@ -28,10 +28,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 1.00}],
         'hour': 1.00,
         'day': 24.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.15}]
-   },
+    },
     'xs': {
       'time': {
         '1': [
@@ -50,10 +50,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 2.90}],
         'hour': 2.90,
         'day': 29.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.15}]
-   },
+    },
     's': {
       'time': {
         '1': [
@@ -72,10 +72,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 3.50}],
         'hour': 3.50,
         'day': 35.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.17}]
-   },
+    },
     'm': {
       'time': {
         '1': [
@@ -94,10 +94,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 4.00}],
         'hour': 4.00,
         'day': 40.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.19}]
-   },
+    },
     'l': {
       'time': {
         '1': [
@@ -116,10 +116,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 6.00}],
         'hour': 6.00,
         'day': 60.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.22}]
-   },
+    },
     'reisexs': {
       'time': {
         '1': [
@@ -138,10 +138,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 1.50}],
         'hour': 1.50,
         'day': 15.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.15}]
-   },
+    },
     'reises': {
       'time': {
         '1': [
@@ -160,10 +160,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 1.90}],
         'hour': 1.90,
         'day': 19.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.17}]
-   },
+    },
     'reisem': {
       'time': {
         '1': [
@@ -182,10 +182,10 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 2.50}],
         'hour': 2.50,
         'day': 25.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.19}]
-   },
+    },
     'reisel': {
       'time': {
         '1': [
@@ -204,9 +204,9 @@ angular.module('c2gyoApp')
           {'start': 0, 'end': 23, 'fee': 3.90}],
         'hour': 3.90,
         'day': 39.00
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.22}]
-   }
- }
+    }
+  }
 );

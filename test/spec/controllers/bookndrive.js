@@ -1,31 +1,32 @@
 'use strict';
 
-describe('Controller: BookndriveCtrl', function () {
+describe('Controller: BookndriveCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
 
-  var BookndriveCtrl,
-    scope;
+  var BookndriveCtrl;
+  var scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
     BookndriveCtrl = $controller('BookndriveCtrl', {
       $scope: scope
     });
   }));
 
-
-  var test = function( testdata ) {
+  var test = function(testdata) {
     for (var tariff in testdata.expectedPrices) {
       for (var carclass in testdata.expectedPrices[tariff]) {
         var expectedPrice = testdata.expectedPrices[tariff][carclass];
-        (function(tariff, carclass, expectedPrice){
-          it('tariff: ' + tariff + ', carclass: ' + carclass, function () {
-            if( testdata.tab === 'tabExact') {
-              scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
-              scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
+        (function(tariff, carclass, expectedPrice) {
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function() {
+            if (testdata.tab === 'tabExact') {
+              scope.rental.startDate = new moment(
+                testdata.start, 'YYYY-MM-DD HH:mm');
+              scope.rental.endDate = new moment(
+                testdata.end, 'YYYY-MM-DD HH:mm');
             } else {
               scope.rental.timeHours = parseInt(testdata.timeHours);
               scope.rental.timeDays = parseInt(testdata.timeDays);
@@ -46,8 +47,9 @@ describe('Controller: BookndriveCtrl', function () {
   describe (' tests with exact start and end date', function() {
 
     describe (
-      'should calculate the correct price with 10km distance and a 8 hour lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      ' lease',
+      function() {
       var testdata = {
         start: '2010-04-20 04:00',
         end: '2010-04-20 12:00',
@@ -92,11 +94,10 @@ describe('Controller: BookndriveCtrl', function () {
       test(testdata);
     });
 
-
     describe (
       'should calculate the correct price with 10km distance and a 16 hour ' +
       ' lease, triggering the price for a day',
-      function () {
+      function() {
       var testdata = {
         start: '2010-04-20 04:00',
         end: '2010-04-20 20:00',
@@ -144,7 +145,7 @@ describe('Controller: BookndriveCtrl', function () {
     describe (
       'should calculate the correct price with 10km distance and a 2 days ' +
       '16 hour lease, triggering the price for 4 days',
-      function () {
+      function() {
       var testdata = {
         start: '2010-04-20 04:00',
         end: '2010-04-22 20:00',
@@ -190,12 +191,12 @@ describe('Controller: BookndriveCtrl', function () {
     });
   });
 
-
   describe (' tests with simple date', function() {
 
     describe (
-      'should calculate the correct price with 10km distance and a 8 hour lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      'lease',
+      function() {
       var testdata = {
         timeHours: '8',
         timeDays: '0',
@@ -240,11 +241,10 @@ describe('Controller: BookndriveCtrl', function () {
       test(testdata);
     });
 
-
     describe (
       'should calculate the correct price with 10km distance and a 16 hour ' +
       ' lease, triggering the price for a day',
-      function () {
+      function() {
       var testdata = {
         timeHours: '16',
         timeDays: '0',
@@ -292,7 +292,7 @@ describe('Controller: BookndriveCtrl', function () {
     describe (
       'should calculate the correct price with 10km distance and a 2 days ' +
       '16 hour lease, triggering the price for 4 days',
-      function () {
+      function() {
       var testdata = {
         timeHours: '16',
         timeDays: '2',

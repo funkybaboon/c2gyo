@@ -60,7 +60,7 @@ angular.module('c2gyoApp')
             'days'
           ];
 
-          if(durationAll().asMinutes() > 60*24*7){
+          if (durationAll().asMinutes() > 60 * 24 * 7) {
             resolution.push('weeks');
           }
 
@@ -326,7 +326,6 @@ angular.module('c2gyoApp')
           return totalFee;
         };
 
-
         //-----------------------------------------------------------------------
         // get other fees
         //-----------------------------------------------------------------------
@@ -343,7 +342,6 @@ angular.module('c2gyoApp')
           }
           return fee;
         };
-
 
         //-----------------------------------------------------------------------
         // calculate final prices

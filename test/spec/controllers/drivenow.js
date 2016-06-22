@@ -96,13 +96,13 @@ describe('Controller: DriveNowCtrl', function() {
     ['drivecitytocity', 'neubibergbavariafilmstadt', 189.00]
   ];
 
-  extraFares.forEach(function(entry){
+  extraFares.forEach(function(entry) {
     var extraFareCategory = entry[0];
     var extraFare = entry[1];
     var extraFarePrice = entry[2];
 
-    it('should calculate the correct price with extra fare ' + extraFareCategory +
-      ' ' + extraFare, function() {
+    it('should calculate the correct price with extra fare ' +
+      extraFareCategory + ' ' + extraFare, function() {
       scope.rental.drivenow[extraFareCategory][extraFare] = true;
       expect(scope.price().toFixed(2)).toEqual((extraFarePrice).toFixed(2));
       scope.rental.drivenow[extraFareCategory][extraFare] = false;

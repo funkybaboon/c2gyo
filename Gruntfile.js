@@ -74,7 +74,7 @@ module.exports = function(grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               connect.static('.tmp'),
               connect().use(
@@ -134,6 +134,19 @@ module.exports = function(grunt) {
       }
     },
 
+    // check Javascript Code Style
+    jscs: {
+        src: [
+          'Gruntfile.js',
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          'test/spec/{,*/}*.js'
+        ],
+        options: {
+            config: '.jscsrc',
+            fix: true
+          }
+      },
+
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -189,14 +202,14 @@ module.exports = function(grunt) {
         fileTypes:{
           js: {
             block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-              detect: {
-                js: /'(.*\.js)'/gi
-              },
-              replace: {
-                js: '\'{{filePath}}\','
-              }
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
             }
           }
+        }
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -390,7 +403,8 @@ module.exports = function(grunt) {
         }, {
           expand: true,
           cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          src: 'bower_components/bootstrap-sass-official/assets/fonts/' +
+          'bootstrap/*',
           dest: '<%= yeoman.dist %>'
         },{
           expand: true,
@@ -453,11 +467,12 @@ module.exports = function(grunt) {
         ],
         dest: '<%= yeoman.dist %>/views/views.js',
         options: {
-          url: function (url) {
+          url: function(url) {
             return url.replace('app/', '');
           },
-          bootstrap: function (module, script) {
-            return 'angular.module("c2gyoApp").run(["$templateCache", function($templateCache) {' + script + '}]);';
+          bootstrap: function(module, script) {
+            return 'angular.module("c2gyoApp").run(["$templateCache", ' +
+            'function($templateCache) {' + script + '}]);';
           }
         }
       }
@@ -468,7 +483,8 @@ module.exports = function(grunt) {
         dir: 'dist',
         commit: true,
         push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        message: 'Built %sourceName% from commit %sourceCommit% on branch ' +
+        '%sourceBranch%'
       },
       pages: {
         options: {
@@ -480,7 +496,8 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server',
+    function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -495,8 +512,10 @@ module.exports = function(grunt) {
     ]);
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead',
+    function(target) {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` ' +
+      'to start a server.');
     grunt.task.run(['serve:' + target]);
   });
 

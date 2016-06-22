@@ -1,31 +1,32 @@
 'use strict';
 
-describe('Controller: FlinksterCtrl', function () {
+describe('Controller: FlinksterCtrl', function() {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
 
-  var FlinksterCtrl,
-    scope;
+  var FlinksterCtrl;
+  var scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
     FlinksterCtrl = $controller('FlinksterCtrl', {
       $scope: scope
     });
   }));
 
-
-  var test = function( testdata ) {
+  var test = function(testdata) {
     for (var tariff in testdata.expectedPrices) {
       for (var carclass in testdata.expectedPrices[tariff]) {
         var expectedPrice = testdata.expectedPrices[tariff][carclass];
-        (function(tariff, carclass, expectedPrice){
-          it('tariff: ' + tariff + ', carclass: ' + carclass, function () {
-            if( testdata.tab === 'tabExact') {
-              scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
-              scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
+        (function(tariff, carclass, expectedPrice) {
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function() {
+            if (testdata.tab === 'tabExact') {
+              scope.rental.startDate = new moment(
+                testdata.start, 'YYYY-MM-DD HH:mm');
+              scope.rental.endDate = new moment(
+                testdata.end, 'YYYY-MM-DD HH:mm');
             }
 
             scope.rental.tab = testdata.tab;
@@ -45,9 +46,9 @@ describe('Controller: FlinksterCtrl', function () {
   describe (' tests with exact start and end date', function() {
 
     describe (
-      'should calculate the correct price with 10km distance and a 8 hour lease' +
-      ' between 2 time zones',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      'lease between 2 time zones',
+      function() {
       var testdata = {
         start: '2010-04-20 04:00',
         end: '2010-04-20 12:00',
@@ -75,9 +76,9 @@ describe('Controller: FlinksterCtrl', function () {
       test(testdata);
     });
 
-    describe ('should calculate the correct price with 10km distance and a 12 ' +
-    'hour lease triggering the price for a day',
-      function () {
+    describe ('should calculate the correct price with 10km distance and a ' +
+      '12 hour lease triggering the price for a day',
+      function() {
       var testdata = {
         start: '2010-04-20 08:00',
         end: '2010-04-20 20:00',
@@ -103,9 +104,9 @@ describe('Controller: FlinksterCtrl', function () {
       test(testdata);
     });
 
-    describe ('should calculate the correct price with 10km distance and a 19 ' +
-    'hour lease triggering the price for a day',
-      function () {
+    describe ('should calculate the correct price with 10km distance and a ' +
+      '19 hour lease triggering the price for a day',
+      function() {
       var testdata = {
         start: '2010-04-20 03:00',
         end: '2010-04-20 22:00',
@@ -121,9 +122,9 @@ describe('Controller: FlinksterCtrl', function () {
       test(testdata);
     });
 
-    describe ('should calculate the correct price with 10km distance and a 36 ' +
-      'hour lease triggering the price for a day and a second day',
-      function () {
+    describe ('should calculate the correct price with 10km distance and a ' +
+      '36 hour lease triggering the price for a day and a second day',
+      function() {
         var testdata = {
           start: '2010-04-20 08:00',
           end: '2010-04-21 20:00',
@@ -141,9 +142,9 @@ describe('Controller: FlinksterCtrl', function () {
         test(testdata);
       });
 
-    describe ('should calculate the correct price with 10km distance and a 43 ' +
-      'hour lease triggering the price for a day and a second day',
-      function () {
+    describe ('should calculate the correct price with 10km distance and a ' +
+      '43 hour lease triggering the price for a day and a second day',
+      function() {
         var testdata = {
           start: '2010-04-20 03:00',
           end: '2010-04-21 22:00',
@@ -160,9 +161,9 @@ describe('Controller: FlinksterCtrl', function () {
       });
 
     describe (
-      'should calculate the correct price with 10km distance and a 8 hour lease' +
-      ' triggering the price for a week',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      'lease triggering the price for a week',
+      function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-26 10:00',
@@ -183,9 +184,9 @@ describe('Controller: FlinksterCtrl', function () {
       });
 
     describe (
-      'should calculate the correct price with 10km distance and a 8 hour lease' +
-      ' between 2 time zones and an airport lease',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      'lease between 2 time zones and an airport lease',
+      function() {
         var testdata = {
           start: '2010-04-20 04:00',
           end: '2010-04-20 12:00',
@@ -210,9 +211,9 @@ describe('Controller: FlinksterCtrl', function () {
   describe (' tests with simple time', function() {
 
     describe(
-      'should calculate the correct price with 10km distance and a 8 hour lease' +
-      ' with simple calculation',
-      function () {
+      'should calculate the correct price with 10km distance and a 8 hour ' +
+      'lease with simple calculation',
+      function() {
         var testdata = {
           tab: 'tabSimple',
           distance: 10,

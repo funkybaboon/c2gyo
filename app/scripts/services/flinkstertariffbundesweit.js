@@ -43,7 +43,7 @@ angular.module('c2gyoApp')
         'hour': 2.5,
         'day1': 40,
         'day2': 29,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.2}]
     },
@@ -80,7 +80,7 @@ angular.module('c2gyoApp')
         'hour': 2.3,
         'day1': 39,
         'day2': 29,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.18}]
     },
@@ -117,7 +117,7 @@ angular.module('c2gyoApp')
         'hour': 5,
         'day1': 50,
         'day2': 29,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.18}]
     },
@@ -154,7 +154,7 @@ angular.module('c2gyoApp')
         'hour': 6,
         'day1': 60,
         'day2': 39,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.18}]
     },
@@ -191,7 +191,7 @@ angular.module('c2gyoApp')
         'hour': 7,
         'day1': 70,
         'day2': 49,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.2}]
     },
@@ -228,7 +228,7 @@ angular.module('c2gyoApp')
         'hour': 8,
         'day1': 80,
         'day2': 59,
-     },
+      },
       'km': [
         {'start': 0, 'end': -1, 'fee': 0.2}]
     }
