@@ -26,9 +26,6 @@ angular.module('c2gyoApp')
           name: 'Car2go',
           url: 'car2go'
         }, {
-          name: 'Car2goBlack',
-          url: 'car2goblack'
-        }, {
           name: 'Stadtmobil',
           url: 'stadtmobil'
         }, {
@@ -52,7 +49,6 @@ angular.module('c2gyoApp')
         $scope.active = function() {
           var tabs = {
             car2go: 'Car2go',
-            car2goblack: 'Car2goBlack',
             stadtmobil: 'Stadtmobil',
             flinkster: 'Flinkster',
             greenwheels: 'Greenwheels',

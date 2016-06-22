@@ -120,7 +120,6 @@ body {
 }
 
 $car2go-brand-color: #009fe4;
-$car2goblack-brand-color: black;
 $stadtmobil-brand-color: #E2001A;
 $flinkster-brand-color: #FF0000;
 $greenwheels-brand-color: #56be00;
@@ -147,9 +146,6 @@ $bookndrive-brand-color: #E10020;
 
 .car2go {
   @include brand-page($car2go-brand-color);
-}
-.car2goblack {
-  @include brand-page($car2goblack-brand-color);
 }
 .stadtmobil {
   @include brand-page($stadtmobil-brand-color);
