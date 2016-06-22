@@ -23,15 +23,21 @@ angular.module('c2gyoApp')
       timeWeeks: 0,
       timeStanding: 0,
       car2go: {
-        airport: false,
-      },
-      car2goblack: {
-        airport: false,
+        carclass: 'smart',
+        airport: {
+          berlin: false,
+          hamburg: false,
+          cologne: false,
+          duesseldorf: false,
+          frankfurt: false,
+          stuttgart: false,
+          munich: false
+        }
       },
       flinkster: {
         tariff: 'bundesweit',
         carclass: 'sonder',
-        airport: false,
+        airport: false
       },
       stadtmobil: {
         tariff: 'classic',
@@ -39,24 +45,24 @@ angular.module('c2gyoApp')
       },
       greenwheels: {
         tariff: 'standard',
-        carclass: 'compact',
+        carclass: 'compact'
       },
       drivenow: {
         carclass: 'mini',
-        'airport': {
-          'berlintegel': false,
-          'berlinschoenefeld': false,
-          'hamburg': false,
-          'munich': false,
-          'cologne': false,
-          'duesseldorf': false,
-          'wien': false,
+        airport: {
+          berlintegel: false,
+          berlinschoenefeld: false,
+          hamburg: false,
+          munich: false,
+          cologne: false,
+          duesseldorf: false,
+          wien: false,
         },
-        'drivecitytocity': {
-          'duesseldorfcologne': false,
-          'cologneduesseldorf': false,
-          'hildengerresheim': false,
-          'neubibergbavariafilmstadt': false
+        drivecitytocity: {
+          duesseldorfcologne: false,
+          cologneduesseldorf: false,
+          hildengerresheim: false,
+          neubibergbavariafilmstadt: false
         }
       },
       bookndrive: {

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: SmCtrl', function() {
+describe('Controller: SmCtrl', function () {
 
   // load the controller's module
   beforeEach(module('c2gyoApp'));
@@ -9,409 +9,283 @@ describe('Controller: SmCtrl', function() {
   var scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     SmCtrl = $controller('StadtmobilCtrl', {
       $scope: scope
     });
   }));
 
-  it('should calculate the correct price using the datetimepicker', function() {
-    scope.rental.startDate = new moment().startOf('hour').hour(7).isoWeekday(1);
-    scope.rental.endDate = scope.rental.startDate.clone().add(10, 'h');
 
-    scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'tabExact';
-    scope.rental.distance = 10;
+  var test = function (testdata) {
+    for (var tariff in testdata.expectedPrices) {
+      for (var carclass in testdata.expectedPrices[tariff]) {
+        var expectedPrice = testdata.expectedPrices[tariff][carclass];
+        (function (tariff, carclass, expectedPrice) {
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function () {
+            if (testdata.tab === 'tabExact') {
+              scope.rental.startDate = new moment(testdata.start, 'YYYY-MM-DD HH:mm');
+              scope.rental.endDate = new moment(testdata.end, 'YYYY-MM-DD HH:mm');
+            } else {
+              scope.rental.timeHours = parseInt(testdata.timeHours);
+              scope.rental.timeDays = parseInt(testdata.timeDays);
+            }
 
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((18.20).toFixed(2));
+            scope.rental.tab = testdata.tab;
+            scope.rental.distance = testdata.distance;
 
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((29.70).toFixed(2));
+            scope.rental.stadtmobil.tariff = tariff;
+            scope.rental.stadtmobil.carclass = carclass;
+            expect(scope.price().toFixed(2)).toEqual(expectedPrice);
+          });
+        })(tariff, carclass, expectedPrice);
+      }
+    }
+  };
 
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((36.10).toFixed(2));
+  describe(' tests with exact start and end date', function () {
 
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((40.40).toFixed(2));
+    describe(
+      'should calculate the correct price with 10km distance and a 10 hour lease',
+      function () {
+        var testdata = {
+          start: '2016-05-24 07:00',
+          end: '2016-05-24 17:00',
+          tab: 'tabExact',
+          distance: 10,
+          expectedPrices: {
+            basic: {
+              a: '18.20',
+              b: '29.70',
+              c: '36.10',
+              d: '40.40',
+              f: '50.80'
+            },
+            classic: {
+              a: '16.00',
+              b: '24.20',
+              c: '30.60',
+              d: '34.90',
+              f: '45.30'
+            },
+            business: {
+              a: '14.70',
+              b: '15.30',
+              c: '21.20',
+              d: '32.50',
+              f: '40.70'
+            }
+          }
+        };
+        test(testdata);
+      }
+    );
 
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((16.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((24.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((30.60).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((34.90).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((14.70).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((15.30).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((21.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((32.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((40.70).toFixed(2));
+    describe(
+      'should calculate the correct price with 10km distance and a 36 hour lease',
+      function () {
+        var testdata = {
+          start: '2016-05-24 00:00',
+          end: '2016-05-25 12:00',
+          tab: 'tabExact',
+          distance: 10,
+          expectedPrices: {
+            basic: {
+              a: '36.20',
+              b: '46.20',
+              c: '56.60',
+              d: '68.90',
+              f: '90.30'
+            },
+            classic: {
+              a: '30.00',
+              b: '38.20',
+              c: '48.60',
+              d: '60.90',
+              f: '82.30'
+            },
+            business: {
+              a: '28.20',
+              b: '30.20',
+              c: '39.30',
+              d: '56.50',
+              f: '75.70'
+            }
+          }
+        };
+        test(testdata);
+      }
+    );
   });
 
-  it('should calculate the correct price using simple time', function() {
-    scope.rental.timeHours = 10;
-    scope.rental.timeDays = 0;
-    scope.rental.timeWeeks = 0;
 
-    scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'tabSimple';
-    scope.rental.distance = 10;
+  describe('should calculate the correct price using simple time', function () {
 
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((18.20).toFixed(2));
+    describe(
+      'should calculate the correct price with 10km distance and a 10 hour lease',
+      function () {
+        var testdata = {
+          timeHours: '10',
+          timeDays: '0',
+          timeWeeks: '0',
+          tab: 'tabSimple',
+          distance: 10,
+          expectedPrices: {
+            basic: {
+              a: '18.20',
+              b: '29.70',
+              c: '36.10',
+              d: '40.40',
+              f: '50.80'
+            },
+            classic: {
+              a: '16.00',
+              b: '24.20',
+              c: '30.60',
+              d: '34.90',
+              f: '45.30'
+            },
+            business: {
+              a: '14.70',
+              b: '20.70',
+              c: '24.80',
+              d: '32.50',
+              f: '40.70'
+            }
+          }
+        };
+        test(testdata);
+      });
 
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((29.70).toFixed(2));
+    describe(
+      'should calculate the correct price for 50 km',
+      function () {
+        var testdata = {
+          timeHours: '0',
+          timeDays: '0',
+          timeWeeks: '0',
+          tab: 'tabSimple',
+          distance: 50,
+          expectedPrices: {
+            basic: {
+              a: '11.00',
+              b: '13.50',
+              c: '15.50',
+              d: '17.00',
+              f: '19.00'
+            },
+            classic: {
+              a: '10.00',
+              b: '11.00',
+              c: '13.00',
+              d: '14.50',
+              f: '16.50'
+            },
+            studi: {
+              a: '10.00',
+              b: '11.00',
+              c: '13.00',
+              d: '14.50',
+              f: '16.50'
+            },
+            business: {
+              a: '8.50',
+              b: '8.50',
+              c: '9.00',
+              d: '12.50',
+              f: '13.50'
+            }
+          }
+        };
+        test(testdata);
+      });
 
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((36.10).toFixed(2));
+    describe(
+      'should calculate the correct price for 150 km',
+      function () {
+        var testdata = {
+          timeHours: '0',
+          timeDays: '0',
+          timeWeeks: '0',
+          tab: 'tabSimple',
+          distance: 150,
+          expectedPrices: {
+            basic: {
+              a: '31.00',
+              b: '37.50',
+              c: '42.50',
+              d: '46.50',
+              f: '51.50'
+            },
+            classic: {
+              a: '29.00',
+              b: '31.50',
+              c: '36.50',
+              d: '41.50',
+              f: '46.50'
+            },
+            studi: {
+              a: '29.00',
+              b: '31.50',
+              c: '36.50',
+              d: '41.50',
+              f: '46.50'
+            },
+            business: {
+              a: '25.50',
+              b: '25.50',
+              c: '27.00',
+              d: '37.50',
+              f: '40.50'
+            }
+          }
+        };
+        test(testdata);
+      });
 
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((40.40).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((50.80).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((16.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((24.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((30.60).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((34.90).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((45.30).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((14.70).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((20.70).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((24.80).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((32.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((40.70).toFixed(2));
+    describe(
+      'should calculate the correct price for 750 km',
+      function () {
+        var testdata = {
+          timeHours: '0',
+          timeDays: '0',
+          timeWeeks: '0',
+          tab: 'tabSimple',
+          distance: 750,
+          expectedPrices: {
+            basic: {
+              a: '139.00',
+              b: '161.00',
+              c: '177.50',
+              d: '196.50',
+              f: '213.50'
+            },
+            classic: {
+              a: '137.00',
+              b: '144.00',
+              c: '160.50',
+              d: '191.50',
+              f: '208.50'
+            },
+            studi: {
+              a: '137.00',
+              b: '144.00',
+              c: '160.50',
+              d: '191.50',
+              f: '208.50'
+            },
+            business: {
+              a: '127.50',
+              b: '127.50',
+              c: '135.00',
+              d: '187.50',
+              f: '202.50'
+            }
+          }
+        };
+        test(testdata);
+      });
 
   });
-
-  it('should calculate the correct price for 50 km', function() {
-    scope.rental.tab = 'tabSimple';
-    scope.rental.distance = 50;
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((10.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((14.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((16.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'basic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((15.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((17.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((19.00).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'studi';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((10.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((11.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((14.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((16.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((8.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((8.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((9.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((12.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((13.50).toFixed(2));
-
-  });
-
-  it('should calculate the correct price for 150 km', function() {
-    scope.rental.tab = 'tabSimple';
-    scope.rental.distance = 150;
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((36.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((41.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'basic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((37.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((42.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((51.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'studi';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((29.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((31.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((36.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((41.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((46.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((25.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((25.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((27.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((37.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((40.50).toFixed(2));
-
-  });
-
-  it('should calculate the correct price for 750 km', function() {
-    scope.rental.tab = 'tabSimple';
-    scope.rental.distance = 750;
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((137.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((144.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((160.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((191.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((208.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'basic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((139.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((161.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((177.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((196.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((213.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'studi';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((137.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((144.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((160.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((191.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((208.50).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((127.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((127.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((135.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((187.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.getFeeDistance().toFixed(2)).toEqual((202.50).toFixed(2));
-
-  });
-
-  it('should calculate the correct price for 1.5 days', function() {
-    scope.rental.startDate = new moment().startOf('hour').hour(0).isoWeekday(1);
-    scope.rental.endDate = scope.rental.startDate.clone().add(36, 'h');
-
-    scope.rental.stadtmobil.tariff = 'basic';
-    scope.rental.tab = 'tabExact';
-    scope.rental.distance = 10;
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((36.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((46.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((56.60).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((68.90).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((90.30).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'classic';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((30.00).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((38.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((48.60).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((60.90).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((82.30).toFixed(2));
-
-    scope.rental.stadtmobil.tariff = 'business';
-
-    scope.rental.stadtmobil.carclass = 'A';
-    expect(scope.price().toFixed(2)).toEqual((28.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'B';
-    expect(scope.price().toFixed(2)).toEqual((30.20).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'C';
-    expect(scope.price().toFixed(2)).toEqual((39.30).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'D';
-    expect(scope.price().toFixed(2)).toEqual((56.50).toFixed(2));
-
-    scope.rental.stadtmobil.carclass = 'F';
-    expect(scope.price().toFixed(2)).toEqual((75.70).toFixed(2));
-  });
-
+  
 });

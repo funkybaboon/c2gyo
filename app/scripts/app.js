@@ -109,13 +109,33 @@ angular
             hildengerresheim: 'Fahrt von Hilden / Gerresheim',
             neubibergbavariafilmstadt: 'Fahrt von Neubiberg / Bavaria Filmstadt'
           }
+        },
+        car2go: {
+          airport: {
+            berlin: 'Flughafen Berlin',
+            hamburg: 'Flughafen Hamburg',
+            cologne: 'Flughafen Köln',
+            duesseldorf: 'Flughafen Düsseldorf',
+            frankfurt: 'Flughafen Frankfurt',
+            stuttgart: 'Flughafen Stuttgart',
+            munich: 'Flughafen München'
+          }
         }
       },
 
       //popovers
       popover: {
         car2go: {
-          airport: '4,90€ für alle Fahrten von und zum Flughafen'
+          airport: '4,90€ für alle Fahrten von und zum Flughafen',
+          carclass: {
+            smart: 'Smart',
+            mercedesbenz1: 'A Klasse',
+            mercedesbenz2: '<ul>' +
+            '<li>B KLasse</li>' +
+            '<li>GLA</li>' +
+            '<li>CLA</li>' +
+            '</ul>'
+          }
         },
         car2goblack: {
           airport: '4,90€ für alle Fahrten von und zum Flughafen'
@@ -345,11 +365,11 @@ angular
           airport: {
             berlintegel: 'Berlin-Tegel Airport',
             berlinschoenefeld: 'Berlin Schönefeld Airport',
-            hamburg: 'Hamburg International Airport',
-            munich: 'Munich International Airport',
-            cologne: 'Cologne International Airport',
-            duesseldorf: 'Dusseldorf International Airport',
-            wien: 'Vienna International Airport'
+            hamburg: 'Hamburg Airport',
+            munich: 'Munich Airport',
+            cologne: 'Cologne Airport',
+            duesseldorf: 'Dusseldorf Airport',
+            wien: 'Vienna Airport'
           },
           drivecitytocity: {
             duesseldorfcologne: 'Trip from Dusseldorf to Cologne',
@@ -357,13 +377,34 @@ angular
             hildengerresheim: 'Trip to Hilden/Gerresheim',
             neubibergbavariafilmstadt: 'Trip to Neubiberg/Bavaria Filmstadt'
           }
+        },
+        car2go: {
+          airport: {
+            berlin: 'Berlin Airport',
+            hamburg: 'Hamburg Airport',
+            cologne: 'Cologne Airport',
+            duesseldorf: 'Dusseldorf Aiport',
+            frankfurt: 'Frankfurt Airport',
+            stuttgart: 'Stuttgart Airport',
+            munich: 'Munich Airport'
+          }
         }
       },
 
       //popovers
       popover: {
         car2go: {
-          airport: '4,90€ for all rides to and from the airport'
+          airport: '4,90€ for all rides to and from the airport',
+          carclass: {
+            smart: 'Smart',
+            mercedesbenz1: 'A Class',
+            mercedesbenz2:
+            '<ul>' +
+              '<li>B Class</li>' +
+              '<li>GLA</li>' +
+              '<li>CLA</li>' +
+            '</ul>'
+          }
         },
         car2goblack: {
           airport: '4,90€ for all rides to and from the airport'
