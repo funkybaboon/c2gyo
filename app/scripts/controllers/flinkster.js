@@ -30,8 +30,8 @@ angular.module('c2gyoApp')
             tariff.model = 'rental.' + vendor + '.' + type;
             tariff.value = tariff.technicalName;
             tariff.id = type + '.' + tariff.technicalName;
-            tariff.popover = 'popover.' + vendor + '.' + type + '.'
-              + tariff.technicalName;
+            tariff.popover = 'popover.' + vendor + '.' + type + '.' +
+              tariff.technicalName;
           }
         }
         return tariffs;
