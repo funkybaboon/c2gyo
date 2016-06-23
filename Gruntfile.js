@@ -34,15 +34,15 @@ module.exports = function(grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'Gruntfile.js'],
+        tasks: ['newer:jshint:all', 'newer:jscs:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -130,22 +130,27 @@ module.exports = function(grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
+        src: ['test/*/{,*/}*.js']
       }
     },
 
     // check Javascript Code Style
     jscs: {
+      options: {
+          config: '.jscsrc',
+          fix: false,
+          force: true
+        },
+      all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js',
-          'test/spec/{,*/}*.js'
-        ],
-        options: {
-            config: '.jscsrc',
-            fix: true
-          }
+          '<%= yeoman.app %>/scripts/{,*/}*.js'
+        ]
       },
+      test: {
+        src: ['test/*/{,*/}*.js']
+      }
+    },
 
     // Empties folders to start fresh
     clean: {
@@ -503,6 +508,8 @@ module.exports = function(grunt) {
     }
 
     grunt.task.run([
+      'jscs',
+      'jshint',
       'clean:server',
       'wiredep',
       'concurrent:server',

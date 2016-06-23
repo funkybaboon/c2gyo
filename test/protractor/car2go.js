@@ -1,3 +1,5 @@
+'use strict';
+
 describe('car2go test all input fields and checkboxes', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));

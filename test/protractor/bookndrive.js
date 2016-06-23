@@ -1,3 +1,5 @@
+'use strict';
+
 describe('test bookndrive input fields', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));

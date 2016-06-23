@@ -1,3 +1,5 @@
+'use strict';
+
 describe('test stadtmobil input fields', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));

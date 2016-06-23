@@ -34,7 +34,8 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js',
+      'bower_components/angular-bootstrap-datetimepicker/src/js/' +
+      'datetimepicker.js',
       'bower_components/angular-translate/angular-translate.js'
     ],
 

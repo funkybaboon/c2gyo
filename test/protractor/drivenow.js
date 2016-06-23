@@ -1,4 +1,6 @@
-var vendor = 'drivenow'
+'use strict';
+
+var vendor = 'drivenow';
 
 describe('drivenow test all input fields and checkboxes', function() {
   var price = element(by.id('price'));

@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Keep State over different tabs', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));

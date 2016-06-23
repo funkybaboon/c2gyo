@@ -1,3 +1,5 @@
+'use strict';
+
 describe('test flinkster input fields', function() {
   var price = element(by.id('price'));
   var priceDistance = element(by.id('priceDistance'));
@@ -24,9 +26,13 @@ describe('test flinkster input fields', function() {
   });
 
   it('should not display an airport checkbox on tariff "lokal"', function() {
-    expect(element(by.model('rental.flinkster.airport')).isPresent()).toBe(true);
+    expect(
+      element(by.model('rental.flinkster.airport')).isPresent()
+    ).toBe(true);
     element(by.id('tariff.lokal')).click();
-    expect(element(by.model('rental.flinkster.airport')).isPresent()).toBe(false);
+    expect(
+      element(by.model('rental.flinkster.airport')).isPresent()
+    ).toBe(false);
   });
 
   it('should calculate a price with all input forms filled', function() {
