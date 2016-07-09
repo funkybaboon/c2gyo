@@ -16,164 +16,56 @@ describe('Controller: Car2goCtrl', function() {
     });
   }));
 
-  it('should calculate the correct price using simple time', function() {
-    scope.rental.tab = 'tabSimple';
+  var test = function(testdata) {
+    for (var tariff in testdata.expectedPrices) {
+      for (var carclass in testdata.expectedPrices[tariff]) {
+        var expectedPrice = testdata.expectedPrices[tariff][carclass];
+        (function(tariff, carclass, expectedPrice) {
+          it('tariff: ' + tariff + ', carclass: ' + carclass, function() {
+            if (testdata.tab === 'tabExact') {
+              scope.rental.startDate = new moment(
+                testdata.start, 'YYYY-MM-DD HH:mm');
+              scope.rental.endDate = new moment(
+                testdata.end, 'YYYY-MM-DD HH:mm');
+            } else {
+              scope.rental.timeHours = parseInt(testdata.timeHours);
+              scope.rental.timeDays = parseInt(testdata.timeDays);
+            }
 
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((5.80).toFixed(2));
+            scope.rental.tab = testdata.tab;
+            scope.rental.distance = testdata.distance;
 
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((10.70).toFixed(2));
+            scope.rental.car2go.tariff = tariff;
+            scope.rental.car2go.carclass = carclass;
+            expect(scope.price()).toEqual(expectedPrice);
+          });
+        })(tariff, carclass, expectedPrice);
+      }
+    }
+  };
 
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((7.70).toFixed(2));
+  describe (' tests with exact start and end date', function() {
 
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((12.60).toFixed(2));
+    describe (
+      'should calculate the correct price with 222km distance and a 8 hour ' +
+      ' lease',
+      function() {
+      var testdata = {
+        start: '2010-04-20 04:00',
+        end: '2010-04-20 12:00',
+        tab: 'tabExact',
+        distance: 222,
+        expectedPrices: {
+          standard: {
+            smart: 79+22*0.29,
+            mercedesbenz1: 99+22*0.29,
+            mercedesbenz2: 109+22*0.29
+          }
+        }
+      };
+      test(testdata);
+    });
 
-    //---
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 229;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((58.91).toFixed(2));
-
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 230;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((59.00).toFixed(2));
-
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 1439;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((59.00).toFixed(2));
-
-    //---
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((118.00).toFixed(2));
-
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((122.90).toFixed(2));
-
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((119.90).toFixed(2));
-
-    scope.rental.distance = 10;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((124.80).toFixed(2));
-
-    //---
-    scope.rental.distance = 100;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((20.30).toFixed(2));
-
-    scope.rental.distance = 100;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((25.20).toFixed(2));
-
-    scope.rental.distance = 100;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((22.20).toFixed(2));
-
-    scope.rental.distance = 100;
-    scope.rental.timeMinutes = 20;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((27.10).toFixed(2));
-
-    //---
-    scope.rental.distance = 1000;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((393.50).toFixed(2));
-
-    scope.rental.distance = 1000;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 0;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((398.40).toFixed(2));
-
-    scope.rental.distance = 1000;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = false;
-    expect(scope.price().toFixed(2)).toEqual((395.40).toFixed(2));
-
-    scope.rental.distance = 1000;
-    scope.rental.timeMinutes = 2000;
-    scope.rental.timeStanding = 10;
-    scope.rental.timeHours = 0;
-    scope.rental.timeDays = 0;
-    scope.rental.car2go.airport = true;
-    expect(scope.price().toFixed(2)).toEqual((400.30).toFixed(2));
   });
 
 });
