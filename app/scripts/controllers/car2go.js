@@ -234,8 +234,11 @@ angular.module('c2gyoApp')
             daysBilled++;
           }
 
+          // separate enddate as we don't want to count the minutes for hours
+          var endDateForHours = endDate.clone().minute(0);
+
           // go through hours exactly until endate - 1 hour
-          for (var i = currentTime.clone(); i < endDate; i.add(1, 'h')) {
+          for (var i = currentTime.clone(); i < endDateForHours; i.add(1, 'h')) {
             var day = i.isoWeekday();
             var hour = i.hour();
             var currentRate = rate[day];

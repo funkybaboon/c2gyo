@@ -48,23 +48,43 @@ describe('Controller: Car2goCtrl', function() {
 
     describe (
       'should calculate the correct price with 222km distance and a 8 hour ' +
-      ' lease',
+      'lease',
       function() {
-      var testdata = {
-        start: '2010-04-20 04:00',
-        end: '2010-04-20 12:00',
-        tab: 'tabExact',
-        distance: 222,
-        expectedPrices: {
-          standard: {
-            smart: 79+22*0.29,
-            mercedesbenz1: 99+22*0.29,
-            mercedesbenz2: 109+22*0.29
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 12:00',
+          tab: 'tabExact',
+          distance: 222,
+          expectedPrices: {
+            standard: {
+              smart: 79 + 22 * 0.29,
+              mercedesbenz1: 99 + 22 * 0.29,
+              mercedesbenz2: 109 + 22 * 0.29
+            }
           }
-        }
-      };
-      test(testdata);
-    });
+        };
+        test(testdata);
+      });
+
+    describe (
+      'should calculate the correct price with 22km distance and a 4 hour ' +
+      '30 minutes lease',
+      function() {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 8:30',
+          tab: 'tabExact',
+          distance: 22,
+          expectedPrices: {
+            standard: {
+              smart: 4 * 14.99 + 30 * 0.29,
+              mercedesbenz1: 4 *  16.99 + 30 * 0.31,
+              mercedesbenz2: 4 * 19.99 + 30 * 0.34
+            }
+          }
+        };
+        test(testdata);
+      });
 
   });
 
