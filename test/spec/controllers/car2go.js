@@ -87,8 +87,8 @@ describe('Controller: Car2goCtrl', function() {
       });
 
     describe (
-      'should round the price to an hour with 22km distance and a 59 minutes' +
-      ' lease',
+      'should calculate the price to an hour with 22km distance and a 59 ' +
+      'minutes lease - rounding the price to a full hour',
       function() {
         var testdata = {
           start: '2010-04-20 04:00',
@@ -100,6 +100,26 @@ describe('Controller: Car2goCtrl', function() {
               smart: 14.99,
               mercedesbenz1: 16.99,
               mercedesbenz2: 19.99
+            }
+          }
+        };
+        test(testdata);
+      });
+
+    describe (
+      'should calculate the price to an hour with 22km distance and a 6h ' +
+      'minutes lease - rounding the price to a full day',
+      function() {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 10:00',
+          tab: 'tabExact',
+          distance: 22,
+          expectedPrices: {
+            standard: {
+              smart: 79,
+              mercedesbenz1: 99,
+              mercedesbenz2: 109
             }
           }
         };
