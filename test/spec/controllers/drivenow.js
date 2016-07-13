@@ -50,6 +50,14 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.timeHours = 8;
     scope.rental.timeDays = 0;
     expect(scope.price().toFixed(2)).toEqual((163.20).toFixed(2));
+
+    scope.rental.drivenow.carclass = 'drivensave';
+    scope.rental.distance = 10;
+    scope.rental.timeMinutes = 0;
+    scope.rental.timeStanding = 0;
+    scope.rental.timeHours = 8;
+    scope.rental.timeDays = 0;
+    expect(scope.price().toFixed(2)).toEqual((96.00).toFixed(2));
   });
 
   it('should calculate the correct price using exact time', function() {
@@ -79,6 +87,12 @@ describe('Controller: DriveNowCtrl', function() {
     scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
     scope.rental.distance = 10;
     expect(scope.price().toFixed(2)).toEqual((734.40).toFixed(2));
+
+    scope.rental.drivenow.carclass = 'drivensave';
+    scope.rental.startDate = now.clone().startOf('hour').add(1, 'h');
+    scope.rental.endDate = now.clone().startOf('hour').add(37, 'h');
+    scope.rental.distance = 10;
+    expect(scope.price().toFixed(2)).toEqual((432.00).toFixed(2));
   });
 
   var extraFares = [

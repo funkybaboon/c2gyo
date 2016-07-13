@@ -293,7 +293,11 @@ angular
               '<li>BMW 1er</li>' +
             '</ul>',
             minicabriosummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
-            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.',
+            drivensave: 'Die DriveNow Autos mit Sonderkonditionen sind auf ' +
+            'der Karte durch eine %-Markierung links über dem Icon zum ' +
+            'Fahrzeugstandort gekennzeichnet. Abhängig von Verfügbarkeit und ' +
+            'nur gültig für reservierte Fahrzeuge.'
           },
           drivecitytocity: {
             cologneduesseldorf: 'Miete beenden in der anderen Stadt',
@@ -561,8 +565,12 @@ angular
               '<li>Mini Countryman</li>' +
               '<li>BMW 1er</li>' +
             '</ul>',
-            minicabriosummer: 'Mini Cabrio, Sommer 01.04. - 31.10.',
-            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.'
+            minicabriosummer: 'Mini Cabrio, Summer 01.04. - 31.10.',
+            minicabriowinter: 'Mini Cabrio, Winter 01.11. - 31.03.',
+            drivensave: 'DriveNow Cars with special conditions are ' +
+            'marked on the map with a %-sign on the left over the icon of ' +
+            'the car location. Depending on availability and only valid for ' +
+            'reserved vehicles.'
           },
           drivecitytocity: {
             cologneduesseldorf: 'end booking in the other city',

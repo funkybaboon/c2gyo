@@ -51,6 +51,10 @@ angular.module('c2gyoApp')
         {
           'technicalName': 'minicabriowinter',
           'name': 'Mini Cabrio Winter'
+        },
+        {
+          'technicalName': 'drivensave',
+          'name': 'Drive\'n Save'
         }
       ];
       $scope.carclasses = createForm(carclasses, 'carclass');

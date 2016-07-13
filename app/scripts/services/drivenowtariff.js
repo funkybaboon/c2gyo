@@ -94,6 +94,27 @@ angular.module('c2gyoApp')
       'km': [
         {'start': 0, 'end': -1, 'fee': 0}]
     },
+    'drivensave': {
+      'time': {
+        '1': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '2': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '3': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '4': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '5': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '6': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        '7': [
+          {'start': 0, 'end': 23, 'fee': 0.20}],
+        'minute': 0.20,
+      },
+      'km': [
+        {'start': 0, 'end': -1, 'fee': 0}]
+    },
     'parking': 0.15,
     'reservation': [
       {'start': 15, 'end': -1, 'fee': 0.1}],

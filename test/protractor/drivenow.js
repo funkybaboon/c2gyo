@@ -41,6 +41,7 @@ describe('drivenow test all input fields and checkboxes', function() {
     ['carclass.bmw','1.020,00 €','0,00 €','1.020,00 €'],
     ['carclass.minicabriosummer','930,00 €','0,00 €','930,00 €'],
     ['carclass.minicabriowinter','1.020,00 €','0,00 €','1.020,00 €'],
+    ['carclass.drivensave','600,00 €','0,00 €','600,00 €'],
 
     ['airport.berlintegel','934,00 €','0,00 €','930,00 €'],
     ['airport.berlinschoenefeld','940,00 €','0,00 €','930,00 €'],
