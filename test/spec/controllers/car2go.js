@@ -35,6 +35,10 @@ describe('Controller: Car2goCtrl', function() {
             scope.rental.tab = testdata.tab;
             scope.rental.distance = testdata.distance;
 
+            if (testdata.timeStanding) {
+              scope.rental.timeStanding = testdata.timeStanding;
+            }
+
             scope.rental.car2go.tariff = tariff;
             scope.rental.car2go.carclass = carclass;
             expect(scope.price()).toEqual(expectedPrice);
@@ -149,4 +153,29 @@ describe('Controller: Car2goCtrl', function() {
 
   });
 
-});
+  describe (' tests with exact start and end date and parking', function() {
+
+    describe(
+      'should calculate the correct price with 222km distance and a 8 hour ' +
+      'lease and 20 minutes parking',
+      function () {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 12:00',
+          tab: 'tabExact',
+          distance: 222,
+          timeStanding: 20,
+          expectedPrices: {
+            standard: {
+              smart: 79 + 22 * 0.29 + 20 * 0.19,
+              mercedesbenz1: 99 + 22 * 0.29 + 20 * 0.19,
+              mercedesbenz2: 109 + 22 * 0.29 + 20 * 0.19
+            }
+          }
+        };
+        test(testdata);
+      });
+
+  });
+
+  });
