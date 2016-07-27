@@ -48,9 +48,9 @@ describe('Controller: Car2goCtrl', function() {
     }
   };
 
-  describe (' tests with exact start and end date', function() {
+  describe(' tests with exact start and end date', function() {
 
-    describe (
+    describe(
       'should calculate the correct price with 222km distance and a 8 hour ' +
       'lease',
       function() {
@@ -70,7 +70,7 @@ describe('Controller: Car2goCtrl', function() {
         test(testdata);
       });
 
-    describe (
+    describe(
       'should calculate the correct price with 22km distance and a 4 hour ' +
       '30 minutes lease',
       function() {
@@ -82,7 +82,7 @@ describe('Controller: Car2goCtrl', function() {
           expectedPrices: {
             standard: {
               smart: 4 * 14.99 + 30 * 0.29,
-              mercedesbenz1: 4 *  16.99 + 30 * 0.31,
+              mercedesbenz1: 4 * 16.99 + 30 * 0.31,
               mercedesbenz2: 4 * 19.99 + 30 * 0.34
             }
           }
@@ -90,7 +90,7 @@ describe('Controller: Car2goCtrl', function() {
         test(testdata);
       });
 
-    describe (
+    describe(
       'should calculate the price with 22km distance and a 59 ' +
       'minutes lease - rounding the price to a full hour',
       function() {
@@ -110,7 +110,7 @@ describe('Controller: Car2goCtrl', function() {
         test(testdata);
       });
 
-    describe (
+    describe(
       'should calculate the price with 22km distance and a 6h ' +
       'lease - rounding the price to a full day',
       function() {
@@ -130,7 +130,7 @@ describe('Controller: Car2goCtrl', function() {
         test(testdata);
       });
 
-    describe (
+    describe(
       'should calculate the price for carclass smart with with 22km distance ' +
       'and a 5h 59 minutes lease - rounding the price to an hour, then to a ' +
       'full day',
@@ -153,23 +153,83 @@ describe('Controller: Car2goCtrl', function() {
 
   });
 
-  describe (' tests with exact start and end date and parking', function() {
+  describe(' tests with exact start and end date and parking', function() {
 
     describe(
-      'should calculate the correct price with 222km distance and a 8 hour ' +
+      'should calculate the correct price with 222km distance and a 4 hour ' +
       'lease and 20 minutes parking',
-      function () {
+      function() {
         var testdata = {
           start: '2010-04-20 04:00',
-          end: '2010-04-20 12:00',
+          end: '2010-04-20 8:00',
           tab: 'tabExact',
           distance: 222,
           timeStanding: 20,
           expectedPrices: {
             standard: {
-              smart: 79 + 22 * 0.29 + 20 * 0.19,
-              mercedesbenz1: 99 + 22 * 0.29 + 20 * 0.19,
-              mercedesbenz2: 109 + 22 * 0.29 + 20 * 0.19
+              smart: 4 * 14.99 + 22 * 0.29 + 20 * 0.19,
+              mercedesbenz1: 4 * 16.99 + 22 * 0.29 + 20 * 0.19,
+              mercedesbenz2: 4 * 19.99 + 22 * 0.29 + 20 * 0.19
+            }
+          }
+        };
+        test(testdata);
+      });
+
+    describe(
+      'should calculate the price with 22km distance and a 51 ' +
+      'minutes lease plust 2 minutes standing - rounding the price to a full ' +
+      'hour in car class smart.',
+      function() {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 4:51',
+          tab: 'tabExact',
+          distance: 22,
+          timeStanding: 2,
+          expectedPrices: {
+            standard: {
+              smart: 14.99
+            }
+          }
+        };
+        test(testdata);
+      });
+
+    describe(
+      'should calculate the price with 22km distance and a 54 ' +
+      'minutes lease plust 2 minutes standing - rounding the price to a full ' +
+      'hour in car class mercedesbenz1.',
+      function() {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 4:54',
+          tab: 'tabExact',
+          distance: 22,
+          timeStanding: 2,
+          expectedPrices: {
+            standard: {
+              mercedesbenz1: 16.99
+            }
+          }
+        };
+        test(testdata);
+      });
+
+    describe(
+      'should calculate the price with 22km distance and a 58 ' +
+      'minutes lease plust 2 minutes standing - rounding the price to a full ' +
+      'hour in car class mercedesbenz2.',
+      function() {
+        var testdata = {
+          start: '2010-04-20 04:00',
+          end: '2010-04-20 4:58',
+          tab: 'tabExact',
+          distance: 22,
+          timeStanding: 2,
+          expectedPrices: {
+            standard: {
+              mercedesbenz2: 19.99
             }
           }
         };
@@ -178,4 +238,4 @@ describe('Controller: Car2goCtrl', function() {
 
   });
 
-  });
+});
