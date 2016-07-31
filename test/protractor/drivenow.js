@@ -77,7 +77,7 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
-    var checkboxes = popover.splice(4);
+    var checkboxes = popover.splice(5);
     checkboxes.forEach(function(entry) {
       var drivenowModel = 'rental.drivenow.' + entry[0];
       var drivenowPrice = entry[1];
@@ -93,7 +93,7 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   it('should calculate a price with all tariffs chosen', function() {
-    var tariffs = popover.splice(0,3);
+    var tariffs = popover.splice(0,4);
     tariffs.forEach(function(entry) {
       var drivenowModel = entry[0];
       var drivenowPrice = entry[1];
