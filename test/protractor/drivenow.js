@@ -24,7 +24,6 @@ describe('drivenow test all input fields and checkboxes', function() {
     element(by.model('rental.timeHours')).clear().sendKeys(2);
     element(by.model('rental.timeDays')).clear().sendKeys(2);
     element(by.model('rental.distance')).clear().sendKeys(222);
-
   });
 
   it('should display the week input field if rental time is greater than 7 ' +
@@ -79,15 +78,15 @@ describe('drivenow test all input fields and checkboxes', function() {
   it('should calculate a price with all checkboxes ticked', function() {
     var checkboxes = popover.splice(5);
     checkboxes.forEach(function(entry) {
-      var drivenowModel = 'rental.drivenow.' + entry[0];
-      var drivenowPrice = entry[1];
-      var drivenowPriceDistance = entry[2];
-      var drivenowPriceTime = entry[3];
+      var Model = 'rental.'  + vendor + '.' + entry[0];
+      var Price = entry[1];
+      var PriceDistance = entry[2];
+      var PriceTime = entry[3];
 
-      element(by.model(drivenowModel)).click();
-      expect(price.getText()).toEqual(drivenowPrice);
-      expect(priceDistance.getText()).toEqual(drivenowPriceDistance);
-      expect(priceTime.getText()).toEqual(drivenowPriceTime);
+      element(by.model(Model)).click();
+      expect(price.getText()).toEqual(Price);
+      expect(priceDistance.getText()).toEqual(PriceDistance);
+      expect(priceTime.getText()).toEqual(PriceTime);
 
     });
   });
@@ -95,15 +94,15 @@ describe('drivenow test all input fields and checkboxes', function() {
   it('should calculate a price with all tariffs chosen', function() {
     var tariffs = popover.splice(0,4);
     tariffs.forEach(function(entry) {
-      var drivenowModel = entry[0];
-      var drivenowPrice = entry[1];
-      var drivenowPriceDistance = entry[2];
-      var drivenowPriceTime = entry[3];
+      var Model = entry[0];
+      var Price = entry[1];
+      var PriceDistance = entry[2];
+      var PriceTime = entry[3];
 
-      element(by.id(drivenowModel)).click();
-      expect(price.getText()).toEqual(drivenowPrice);
-      expect(priceDistance.getText()).toEqual(drivenowPriceDistance);
-      expect(priceTime.getText()).toEqual(drivenowPriceTime);
+      element(by.id(Model)).click();
+      expect(price.getText()).toEqual(Price);
+      expect(priceDistance.getText()).toEqual(PriceDistance);
+      expect(priceTime.getText()).toEqual(PriceTime);
 
     });
   });
