@@ -54,20 +54,20 @@ describe('car2go test all input fields and checkboxes', function() {
   popover.forEach(function(entry) {
     entry = entry[0];
     it('should display the popover-content of ' + entry + ' on mouseover',
-      function() {
-        var path = 'span[tariff-popover="popover.' + vendor + '.' + entry + '"]';
-        var pathIcon =  path + ' > .fa.fa-info-circle';
-        var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
-        var popoverIcon = element(by.css(pathIcon));
-        var popover = element(by.css(pathPopover));
+    function() {
+      var path = 'span[tariff-popover="popover.' + vendor + '.' + entry + '"]';
+      var pathIcon =  path + ' > .fa.fa-info-circle';
+      var pathPopover = path + ' > .popover.ng-isolate-scope.right.fade.in';
+      var popoverIcon = element(by.css(pathIcon));
+      var popover = element(by.css(pathPopover));
 
-        browser.actions().mouseMove(popoverIcon).perform();
-        browser.wait(EC.visibilityOf(popover), browser.params.timeout);
-        browser.wait(
-          patternToBePresentInElement(popover, browser.params.regexNotEmpty),
-          browser.params.timeout
-        );
-      });
+      browser.actions().mouseMove(popoverIcon).perform();
+      browser.wait(EC.visibilityOf(popover), browser.params.timeout);
+      browser.wait(
+        patternToBePresentInElement(popover, browser.params.regexNotEmpty),
+        browser.params.timeout
+      );
+    });
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
