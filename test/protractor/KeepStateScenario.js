@@ -20,9 +20,9 @@ describe('Keep State over different tabs', function() {
 
     element(by.id('nav-button')).click();
     element(by.id('car2go')).click();
-    expect(price.getText()).toEqual('486,50 €');
-    expect(priceDistance.getText()).toEqual('14,50 €');
-    expect(priceTime.getText()).toEqual('472,00 €');
+    expect(price.getText()).toEqual('632,00 €');
+    expect(priceDistance.getText()).toEqual('0,00 €');
+    expect(priceTime.getText()).toEqual('632,00 €');
 
     element(by.id('nav-button')).click();
     element(by.id('greenwheels')).click();
