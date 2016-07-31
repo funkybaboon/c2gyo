@@ -1,0 +1,1 @@
+<div class="form-group"> {{ 'carClass' | translate }}: <form> <span ng-repeat="option in options"> <input type="radio" ng-model="rental.carclass" value="{{option.value}}" id="{{option.id}}"> <span tariff-popover="{{option.popover}}"> {{option.name}} </span> <br> </span> </form> </div>
