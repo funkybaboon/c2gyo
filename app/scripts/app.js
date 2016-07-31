@@ -126,7 +126,15 @@ angular
       //popovers
       popover: {
         car2go: {
-          airport: '4,90€ für alle Fahrten von und zum Flughafen',
+          airport: {
+            berlin: '4,90€ für alle Fahrten von und zum Flughafen',
+            hamburg: '4,90€ für alle Fahrten von und zum Flughafen',
+            cologne: '4,90€ für alle Fahrten von und zum Flughafen',
+            duesseldorf: '4,90€ für alle Fahrten von und zum Flughafen',
+            frankfurt: '4,90€ für alle Fahrten von und zum Flughafen',
+            stuttgart: '4,90€ für alle Fahrten von und zum Flughafen',
+            munich: '12€ für alle Fahrten von und zum Flughafen'
+          },
           carclass: {
             smart: 'Smart',
             mercedesbenz1: 'A Klasse',
@@ -136,9 +144,6 @@ angular
             '<li>CLA</li>' +
             '</ul>'
           }
-        },
-        car2goblack: {
-          airport: '4,90€ für alle Fahrten von und zum Flughafen'
         },
         greenwheels: {
           carclass: {
@@ -398,7 +403,15 @@ angular
       //popovers
       popover: {
         car2go: {
-          airport: '4,90€ for all rides to and from the airport',
+          airport: {
+            berlin: '4,90€ for all rides to and from the airport',
+            hamburg: '4,90€ for all rides to and from the airport',
+            cologne: '4,90€ for all rides to and from the airport',
+            duesseldorf: '4,90€ for all rides to and from the airport',
+            frankfurt: '4,90€ for all rides to and from the airport',
+            stuttgart: '4,90€ for all rides to and from the airport',
+            munich: '12€ for all rides to and from the airport'
+          },
           carclass: {
             smart: 'Smart',
             mercedesbenz1: 'A Class',
@@ -409,9 +422,6 @@ angular
               '<li>CLA</li>' +
             '</ul>'
           }
-        },
-        car2goblack: {
-          airport: '4,90€ for all rides to and from the airport'
         },
         greenwheels: {
           carclass: {
