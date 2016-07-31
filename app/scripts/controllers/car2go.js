@@ -294,7 +294,9 @@ angular.module('c2gyoApp')
         // check to see if it is cheaper to rent for the full day
         while (
         totalFeeMinutes + totalFeeHours + totalFeeMinutesStanding >= feeDay) {
-          minutesStandingBilled = 1440 - hoursBilled * 60 - minutesBilled;
+
+          minutesStandingBilled =
+            1440 - hoursBilled * 60 - minutesBilled - minutesStandingBilled;
 
           // if we have over one day with regular usage time and parking,
           // add the overtime fee
