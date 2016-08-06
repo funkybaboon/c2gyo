@@ -197,8 +197,15 @@ module.exports = function(grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//,
-        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+        ignorePath: /\.\.\//,
+        exclude: [
+          'bower_components/bootstrap/dist/js/bootstrap.js'
+        ],
+        overrides: {
+          'angular-i18n': {
+            'main': 'angular-locale_de-de.js'
+          }
+        }
       },
       test: {
         devDependencies: true,
@@ -214,11 +221,21 @@ module.exports = function(grunt) {
               js: '\'{{filePath}}\','
             }
           }
+        },
+        overrides: {
+          'angular-i18n': {
+            'main': 'angular-locale_de-de.js'
+          }
         }
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
+        ignorePath: /(\.\.\/){1,2}bower_components\//,
+        overrides: {
+          'angular-i18n': {
+            'main': 'angular-locale_de-de.js'
+          }
+        }
       }
     },
 
