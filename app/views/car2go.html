@@ -7,72 +7,13 @@
       <div class="highlight">
 
         <car-class-form
-                listofoptions="carclasses"
-                vendor="car2go">
+          listofoptions="carclasses"
+          vendor="car2go">
         </car-class-form>
 
-        <div class="form-group">
-          {{"airports" | translate }}:
-          <div class="input-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.berlin">
-                <span tariff-popover="popover.car2go.airport.berlin">
-                  {{"rental.car2go.airport.berlin" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.hamburg">
-                <span tariff-popover="popover.car2go.airport.hamburg">
-                  {{"rental.car2go.airport.hamburg" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.cologne">
-                <span tariff-popover="popover.car2go.airport.cologne">
-                  {{"rental.car2go.airport.cologne" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.duesseldorf">
-                <span tariff-popover="popover.car2go.airport.duesseldorf">
-                  {{"rental.car2go.airport.duesseldorf" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.frankfurt">
-                <span tariff-popover="popover.car2go.airport.frankfurt">
-                  {{"rental.car2go.airport.frankfurt" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.stuttgart">
-                <span tariff-popover="popover.car2go.airport.stuttgart">
-                  {{"rental.car2go.airport.stuttgart" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.car2go.airport.munich">
-                <span tariff-popover="popover.car2go.airport.munich">
-                  {{"rental.car2go.airport.munich" | translate }}
-                </span>
-              </label>
-            </div>
-          </div>
-        </div>
+    <airport-form
+      vendor="car2go">
+    </airport-form>
 
       </div>
     </div>
