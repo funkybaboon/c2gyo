@@ -30,6 +30,7 @@ angular.module('c2gyoApp')
               if ($scope.rental.airport.hasOwnProperty(key)) {
                 $scope.airports.push({
                   name: key,
+                  class: 'rental-' + vendor + '-airport-' + key,
                   translateName: 'rental.' + vendor + '.airport.' + key,
                   popover: 'popover.' + vendor + '.airport.' + key,
                   model: $scope.rental.airport[key]

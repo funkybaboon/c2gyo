@@ -7,7 +7,8 @@
         <label>
           <input type="checkbox"
                  ng-model="airport.model"
-                 ng-change="changeAirport(airport)">
+                 ng-change="changeAirport(airport)"
+                 class="{{airport.class}}">
           <span tariff-popover="{{airport.popover}}">
                     {{ airport.translateName | translate }}
           </span>

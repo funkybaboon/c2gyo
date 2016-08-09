@@ -74,11 +74,12 @@ describe('car2go test all input fields and checkboxes', function() {
     var checkboxes = popover.splice(3);
     checkboxes.forEach(function(entry) {
       var Model = 'rental.'  + vendor + '.' + entry[0];
+      var cssClass = '.' + Model.replace(/\./g, '-');
       var Price = entry[1];
       var PriceDistance = entry[2];
       var PriceTime = entry[3];
 
-      element(by.model(Model)).click();
+      element(by.css(cssClass)).click();
       expect(price.getText()).toEqual(Price);
       expect(priceDistance.getText()).toEqual(PriceDistance);
       expect(priceTime.getText()).toEqual(PriceTime);
