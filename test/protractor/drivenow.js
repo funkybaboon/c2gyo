@@ -76,8 +76,8 @@ describe('drivenow test all input fields and checkboxes', function() {
   });
 
   it('should calculate a price with all checkboxes ticked', function() {
-    var checkboxesAirport = popover.slice(5, 12);
-    checkboxesAirport.forEach(function(entry) {
+    var checkboxes = popover.slice(5);
+    checkboxes.forEach(function(entry) {
       var Model = 'rental.'  + vendor + '.' + entry[0];
       var cssClass = '.' + Model.replace(/\./g, '-');
       var Price = entry[1];
@@ -85,19 +85,6 @@ describe('drivenow test all input fields and checkboxes', function() {
       var PriceTime = entry[3];
 
       element(by.css(cssClass)).click();
-      expect(price.getText()).toEqual(Price);
-      expect(priceDistance.getText()).toEqual(PriceDistance);
-      expect(priceTime.getText()).toEqual(PriceTime);
-    });
-
-    var checkboxesDriveCityToCity = popover.slice(12);
-    checkboxesDriveCityToCity.forEach(function(entry) {
-      var Model = 'rental.'  + vendor + '.' + entry[0];
-      var Price = entry[1];
-      var PriceDistance = entry[2];
-      var PriceTime = entry[3];
-
-      element(by.model(Model)).click();
       expect(price.getText()).toEqual(Price);
       expect(priceDistance.getText()).toEqual(PriceDistance);
       expect(priceTime.getText()).toEqual(PriceTime);

@@ -17,45 +17,11 @@
           title="airports">
         </option-form>
 
-        <div class="form-group">
-          {{"specialDestinations" | translate }}:
-          <div class="input-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.drivenow.drivecitytocity.duesseldorfcologne">
-                <span tariff-popover="popover.drivenow.drivecitytocity.duesseldorfcologne">
-                  {{"rental.drivenow.drivecitytocity.duesseldorfcologne" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.drivenow.drivecitytocity.cologneduesseldorf">
-                <span tariff-popover="popover.drivenow.drivecitytocity.cologneduesseldorf">
-                  {{"rental.drivenow.drivecitytocity.cologneduesseldorf" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.drivenow.drivecitytocity.hildengerresheim">
-                <span tariff-popover="popover.drivenow.drivecitytocity.hildengerresheim">
-                  {{"rental.drivenow.drivecitytocity.hildengerresheim" | translate }}
-                </span>
-              </label>
-              <br/>
-              <label>
-                <input type="checkbox"
-                       ng-model="rental.drivenow.drivecitytocity.neubibergbavariafilmstadt">
-                <span tariff-popover="popover.drivenow.drivecitytocity.neubibergbavariafilmstadt">
-                  {{"rental.drivenow.drivecitytocity.neubibergbavariafilmstadt" | translate }}
-                </span>
-              </label>
-            </div>
-          </div>
-        </div>
-
+        <option-form
+          vendor="drivenow"
+          type="drivecitytocity"
+          title="specialDestinations">
+        </option-form>
 
       </div>
     </div>
