@@ -108,8 +108,8 @@ body {
 
 /* Boxes for input forms and calculation */
 .highlight {
-  padding: 9px 14px;
-  margin-bottom: 14px;
+  padding: 14px;
+  margin-bottom: 20px;
   border: 1px solid #e1e1e8;
   border-radius: 4px;
 }
@@ -161,4 +161,8 @@ $bookndrive-brand-color: #E10020;
 }
 .bookndrive {
   @include brand-page($bookndrive-brand-color);
+}
+
+.columns {
+  padding: 0 10px;
 }
