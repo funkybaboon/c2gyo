@@ -1,0 +1,23 @@
+<div class="form-group">
+  {{ title | translate }}:
+  <div class="input-group">
+    <div class="checkbox">
+
+      <span ng-repeat="option in options">
+        <label>
+          <input type="checkbox"
+                 ng-model="option.model"
+                 ng-change="changeOption(option)"
+                 class="{{option.class}}">
+          <span tariff-popover="{{option.popover}}">
+                    {{ option.translateName | translate }}
+          </span>
+
+        </label>
+        </br>
+      </span>
+
+    </div>
+  </div>
+
+</div>
